@@ -1,0 +1,38 @@
+/*Gallery*/
+
+.gallery {
+  background-image: -webkit-image-set(
+  url("../../image/gallery/galleryBackround@2.webp") 2x,
+  url("../../image/gallery/galleryBackround@1.webp") 1x,
+  url("../../image/gallery/galleryBackround@2.jpg") 2x,
+  url("../../image/gallery/galleryBackround@1.jpg") 1x
+  );
+}
+
+.container__gallery {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery__left-side {
+  width: 25%;
+}
+
+.gallery__right-side {
+  width: 75%;
+  height: 810px;
+}
+
+.gallery__title {
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+.select__label {
+  color: #FFFFFF;
+}
+
+.gallery__offer {
+  padding-right: 20px;
+  color: #FFFFFF;
+}

@@ -1,0 +1,533 @@
+<!doctype html>
+<html class="page" lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/choices.min.js"></script>
+  <!--  <script src="js/swiper-bundle.min.js"></script>-->
+
+  <!--  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>-->
+  <link rel="stylesheet" href="style/index.css">
+  <title>Blanchard</title>
+</head>
+<body class="page__body">
+
+<header class="logo">
+  <div class="container container__logo">
+    <img class="logo__logo" src="svg/logo(320).svg" alt="художественная галерея Blanchard">
+    <h1 class="visually-hidden">Blanchard художественная галерея</h1>
+    <button id="#burger" class="burger">
+      <svg class="burger-icon">
+        <use xlink:href="sprite/sprite.svg#burger"></use>
+      </svg>
+    </button>
+    <nav class="logo__nav">
+      <ul class="logo__list">
+        <li class="logo__item"><a href="">О нас</a></li>
+        <li class="logo__item"><a href="">Галерея</a></li>
+        <li class="logo__item"><a href="">Каталог</a></li>
+        <li class="logo__item"><a href="">События</a></li>
+        <li class="logo__item"><a href="">Издания</a></li>
+        <li class="logo__item"><a href="">Проекты</a></li>
+        <li class="logo__item"><a href="">Контакты</a></li>
+      </ul>
+    </nav>
+    <a class="logo__log-in" tabindex="0">Войти</a>
+    <button id="#search" class="search">
+      <svg class="search-icon">
+        <use xlink:href="sprite/sprite.svg#search"></use>
+      </svg>
+    </button>
+  </div>
+</header>
+<main>
+  <section class="hero hero__background1">
+    <div class="container-hero-nav">
+      <div class="container container--narrow">
+        <nav class="hero__nav">
+          <ul class="hero__list">
+            <li class="hero__item accordion">
+              <button class="hero__item-button accordion__control" data-path="one" aria-expanded="false">Реализм
+                <svg class="hero__item-button-svg accordion-icon" width="12" height="7">
+                  <use xlink:href="sprite/sprite.svg#show-more"></use>
+                </svg>
+              </button>
+              <ul class="item-description__list custom-scroll accordion__content" data-simplebar data-target="one"
+                  aria-hidden="true">
+                <li class="item-description__item background-item1">
+                  <button class="item-description__item-content ">Тинторетто</button>
+                </li>
+                <li class="item-description__item background-item2">
+                  <button class="item-description__item-content ">Фридрих</button>
+                </li>
+                <li class="item-description__item background-item3">
+                  <button class="item-description__item-content">Леонардо</button>
+                </li>
+                <li class="item-description__item background-item4">
+                  <button class="item-description__item-content">Верроккьо</button>
+                </li>
+                <li class="item-description__item background-item1">
+                  <button class="item-description__item-content ">Тинторетто</button>
+                </li>
+                <li class="item-description__item background-item2">
+                  <button class="item-description__item-content ">Фридрих</button>
+                </li>
+                <li class="item-description__item background-item3">
+                  <button class="item-description__item-content">Леонардо</button>
+                </li>
+                <li class="item-description__item background-item4">
+                  <button class="item-description__item-content">Верроккьо</button>
+                </li>
+                <li class="item-description__item background-item1">
+                  <button class="item-description__item-content ">Тинторетто</button>
+                </li>
+                <li class="item-description__item background-item2">
+                  <button class="item-description__item-content ">Фридрих</button>
+                </li>
+                <li class="item-description__item background-item3">
+                  <button class="item-description__item-content">Леонардо</button>
+                </li>
+                <li class="item-description__item background-item4">
+                  <button class="item-description__item-content">Верроккьо</button>
+                </li>
+              </ul>
+            </li>
+            <li class="hero__item accordion">
+              <button class="hero__item-button accordion__control" data-path="two" aria-expanded="false">Импрессионизм
+                <svg class="hero__item-button-svg accordion-icon" width="12" height="7">
+                  <use xlink:href="sprite/sprite.svg#show-more"></use>
+                </svg>
+              </button>
+              <ul class="item-description__list custom-scroll accordion__content" data-simplebar data-target="two"
+                  aria-hidden="true">
+                <li class="item-description__item background-item5">
+                  <button class="item-description__item-content ">Моне</button>
+                </li>
+                <li class="item-description__item background-item6">
+                  <button class="item-description__item-content ">Сислей</button>
+                </li>
+                <li class="item-description__item background-item7">
+                  <button class="item-description__item-content">Мане</button>
+                </li>
+                <li class="item-description__item background-item8">
+                  <button class="item-description__item-content">Ренуар</button>
+                </li>
+                <li class="item-description__item background-item5">
+                  <button class="item-description__item-content ">Моне</button>
+                </li>
+                <li class="item-description__item background-item6">
+                  <button class="item-description__item-content ">Сислей</button>
+                </li>
+                <li class="item-description__item background-item7">
+                  <button class="item-description__item-content">Мане</button>
+                </li>
+                <li class="item-description__item background-item8">
+                  <button class="item-description__item-content">Ренуар</button>
+                </li>
+              </ul>
+            </li>
+            <li class="hero__item accordion">
+              <button class="hero__item-button accordion__control" data-path="three" aria-expanded="false">
+                Постимпрессионизм
+                <svg class="hero__item-button-svg accordion-icon" width="12" height="7">
+                  <use xlink:href="sprite/sprite.svg#show-more"></use>
+                </svg>
+              </button>
+              <ul class="item-description__list custom-scroll accordion__content" data-simplebar data-target="three"
+                  aria-hidden="true">
+                <li class="item-description__item background-item9">
+                  <button class="item-description__item-content ">Тинторетто</button>
+                </li>
+                <li class="item-description__item background-item10">
+                  <button class="item-description__item-content ">Фридрих</button>
+                </li>
+                <li class="item-description__item background-item11">
+                  <button class="item-description__item-content">Леонардо</button>
+                </li>
+                <li class="item-description__item background-item12">
+                  <button class="item-description__item-content">Верроккьо</button>
+                </li>
+                <li class="item-description__item background-item9">
+                  <button class="item-description__item-content ">Тинторетто</button>
+                </li>
+                <li class="item-description__item background-item10">
+                  <button class="item-description__item-content ">Фридрих</button>
+                </li>
+                <li class="item-description__item background-item11">
+                  <button class="item-description__item-content">Леонардо</button>
+                </li>
+                <li class="item-description__item background-item12">
+                  <button class="item-description__item-content">Верроккьо</button>
+                </li>
+              </ul>
+            </li>
+            <li class="hero__item accordion">
+              <button class="hero__item-button accordion__control" data-path="four" aria-expanded="false">Авангард
+                <svg class="hero__item-button-svg accordion-icon" width="12" height="7">
+                  <use xlink:href="sprite/sprite.svg#show-more"></use>
+                </svg>
+              </button>
+              <ul class="item-description__list custom-scroll accordion__content" data-simplebar data-target="four"
+                  aria-hidden="true">
+                <li class="item-description__item background-item13">
+                  <button class="item-description__item-content ">Тинторетто</button>
+                </li>
+                <li class="item-description__item background-item14">
+                  <button class="item-description__item-content ">Фридрих</button>
+                </li>
+                <li class="item-description__item background-item15">
+                  <button class="item-description__item-content">Леонардо</button>
+                </li>
+                <li class="item-description__item background-item16">
+                  <button class="item-description__item-content">Верроккьо</button>
+                </li>
+                <li class="item-description__item background-item13">
+                  <button class="item-description__item-content ">Тинторетто</button>
+                </li>
+                <li class="item-description__item background-item14">
+                  <button class="item-description__item-content ">Фридрих</button>
+                </li>
+                <li class="item-description__item background-item15">
+                  <button class="item-description__item-content">Леонардо</button>
+                </li>
+                <li class="item-description__item background-item16">
+                  <button class="item-description__item-content">Верроккьо</button>
+                </li>
+              </ul>
+            </li>
+            <li class="hero__item accordion">
+              <button class="hero__item-button accordion__control" data-path="five" aria-expanded="false">Футуризм
+                <svg class="hero__item-button-svg accordion-icon" width="12" height="7">
+                  <use xlink:href="sprite/sprite.svg#show-more"></use>
+                </svg>
+              </button>
+              <ul class="item-description__list custom-scroll accordion__content" data-simplebar data-target="five"
+                  aria-hidden="true">
+                <li class="item-description__item background-item17">
+                  <button class="item-description__item-content ">Тинторетто</button>
+                </li>
+                <li class="item-description__item background-item18">
+                  <button class="item-description__item-content ">Фридрих</button>
+                </li>
+                <li class="item-description__item background-item19">
+                  <button class="item-description__item-content">Леонардо</button>
+                </li>
+                <li class="item-description__item background-item20">
+                  <button class="item-description__item-content">Верроккьо</button>
+                </li>
+                <li class="item-description__item background-item17">
+                  <button class="item-description__item-content ">Тинторетто</button>
+                </li>
+                <li class="item-description__item background-item18">
+                  <button class="item-description__item-content ">Фридрих</button>
+                </li>
+                <li class="item-description__item background-item19">
+                  <button class="item-description__item-content">Леонардо</button>
+                </li>
+                <li class="item-description__item background-item20">
+                  <button class="item-description__item-content">Верроккьо</button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <form class="hero__form" action="">
+            <label>
+              <span class="visually-hidden">Поиск</span>
+              <input class="hero__input" required type="text" placeholder="Поиск по сайту" aria-label="Поиск по сайту">
+            </label>
+          </form>
+        </nav>
+      </div>
+    </div>
+    <div class="container container__hero">
+      <div class="hero__hero">
+        <h2 class="hero__title">Прикоснитесь к&nbsp;прекрасному</h2>
+        <p class="hero__text">Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт
+          предпосылки для новых предложений.</p>
+        <button class="btn btn--size-x">Подписаться на рассылку</button>
+      </div>
+    </div>
+  </section>
+  <section class="about-us">
+    <div class="container container__about-us">
+      <h2 class="title about-us__title">О наc</h2>
+      <p class="text about-us__text">Ясность нашей позиции очевидна: семантический разбор внешних противодействий
+        однозначно определяет
+        каждого участника как способного принимать собственные решения касаемо распределения внутренних резервов и
+        ресурсов. Не&nbsp;следует, однако, забывать, что высококачественный прототип будущего проекта влечет за&nbsp;собой
+        процесс
+        внедрения и&nbsp;модернизации модели развития. Повседневная практика показывает, что высокое качество
+        позиционных
+        исследований создаёт необходимость включения в&nbsp;производственный план целого ряда внеочередных мероприятий с
+        учётом комплекса распределения внутренних резервов и&nbsp;ресурсов. В&nbsp;рамках спецификации современных
+        стандартов,
+        действия представителей оппозиции набирают популярность среди определенных слоев населения, а&nbsp;значит,
+        должны
+        быть разоблачены.</p>
+    </div>
+  </section>
+  <section class="gallery">
+    <div class="container container__gallery">
+      <div class="gallery__left-side">
+        <h2 class="title gallery__title">Галерея</h2>
+        <div class="select">
+          <label for="selectCustom" class="select__label">Фильтр</label>
+          <select name="select" id="selectCustom">
+            <option value="">Материал</option>
+            <option value="Древесина">Древесина</option>
+            <option value="Металл">Металл</option>
+            <option value="Камень">Камень</option>
+            <option value="Пластик">Пластик</option>
+            <option value="Композитный">Композитный</option>
+            <option value="Гипс">Гипс</option>
+          </select>
+        </div>
+        <p class="text gallery__offer">
+          Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <span
+          class="text--color-theme">авторизуйтесь</span>, либо
+          воспользуйтесь лицензией.
+        </p>
+      </div>
+      <div class="gallery__right-side slider-container">
+        <div class="slider-buttons">
+          <div class="swiper-button-prev">
+            <svg class="button-prev-icon">
+              <use xlink:href="sprite/sprite.svg#buttonPrev"></use>
+            </svg>
+          </div>
+          <div class="swiper-button-next">
+            <svg class="button-next-icon">
+              <use xlink:href="sprite/sprite.svg#buttonNext"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <picture>
+                <!--              <source media="(max-width: 320px)" type="image/webp"-->
+                <!--                      srcset="images/media320/techerOne@1(320).webp 1x, images/media320/techerOne@2(320).webp 2x">-->
+                <!--              <source media="(max-width: 320px)" type="image/png"-->
+                <!--                      srcset="images/media320/techerOne@1(320).png 1x, images/media320/techerOne@2(320).png 2x">-->
+
+                <!--              <source media="(max-width: 576px)" type="image/webp"-->
+                <!--                      srcset="images/media510/techerOne@1(510).webp 1x, images/media510/techerOne@2(510).webp 2x">-->
+                <!--              <source media="(max-width: 576px)" type="image/png"-->
+                <!--                      srcset="images/media510/techerOne@1(510).png 1x, images/media510/techerOne@2(510).png 2x">-->
+
+                <!--              <source media="(max-width: 991px)" type="image/webp"-->
+                <!--                      srcset="images/media690/techerOne@1(690).webp 1x, images/media690/techerOne@2(690).webp 2x">-->
+                <!--              <source media="(max-width: 991px)" type="image/png"-->
+                <!--                      srcset="images/media690/techerOne@1(690).png 1x, images/media690/techerOne@2(690).png 2x">-->
+
+                <!--              <source type="image/webp" srcset="images/teacherOne@1.webp 1x, images/teacherOne@2.webp 2x">-->
+                <img src="image/gallery/gallery1.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery2.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery3.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery4.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery5.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery6.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery7.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery8.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery9.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery10.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery11.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery12.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery13.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery14.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery15.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery16.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery17.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery18.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery19.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery20.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery21.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <img src="image/gallery/gallery22.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+
+              <picture>
+                <img src="image/gallery/gallery23.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-slide">
+
+              <picture>
+                <img src="image/gallery/gallery24.jpg"
+                     srcset=""
+                     alt="Картинка">
+
+              </picture>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+<script defer src="js/simplebar.min.js"></script>
+<!--<script defer src="src/selector.js"></script>-->
+<script defer src="js/main.js"></script>
+<script defer src="js/focus-visible.min.js"></script>
+</body>
+</html>

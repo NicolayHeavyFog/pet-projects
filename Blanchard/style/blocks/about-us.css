@@ -1,0 +1,26 @@
+/*About Us*/
+
+.container__about-us {
+  padding-bottom: 72px;
+}
+
+.about-us__title {
+  margin-bottom: 16px;
+}
+
+.about-us__text {
+  max-width: 1080px;
+}
+
+
+@media (max-width: 450px) {
+  .about-us__title {
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 11px;
+  }
+
+  .container__about-us {
+    padding: 51px 15px 20px 15px;
+  }
+}

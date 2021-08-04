@@ -1,0 +1,11 @@
+:root {
+
+  --theme-color: #9D5CD0;
+
+  --theme-color-focus: #7943A4;
+  --theme-color-hover: #9D5CD0;
+  --theme-color-active: #7943A4;
+  --text-color: #333333;
+
+  --text-font-size: 16px;
+}

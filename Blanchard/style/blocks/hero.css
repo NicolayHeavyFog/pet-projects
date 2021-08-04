@@ -1,0 +1,488 @@
+/*Hero*/
+
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.hero__hero {
+  width: 600px;
+  color: #FFFFFF;
+}
+
+.container__hero {
+  padding-top: 72px;
+  padding-bottom: 121px;
+}
+
+.hero__title {
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 83px;
+  margin-bottom: 19px;
+}
+
+.hero__text {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  margin-bottom: 92px;
+}
+
+.container-hero-nav {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.hero__form {
+  padding-left: 33px;
+  background-image: url("../../svg/search.svg");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+
+.hero__input {
+  width: 218px;
+  padding: 4px 0;
+  color: #FFFFFF;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.hero__input:focus,
+.hero__input:hover {
+  outline: none;
+  border-bottom: 1px solid var(--theme-color-hover);
+}
+
+.hero__input:active {
+  border-bottom: 1px solid var(--theme-color-active);
+}
+
+.hero__input:focus::placeholder {
+  color: transparent;
+}
+
+
+.hero__input::placeholder {
+  font-size: 18px;
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.85);
+  transform: translateX(-1px);
+}
+
+.hero__list {
+  display: flex;
+  transform: translate(-8px, 0);
+}
+
+.hero__item:not(:last-child) {
+  margin-right: 85px;
+}
+
+.hero__item-button {
+  position: relative;
+  padding: 3px 6px;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.1s ease-in-out;
+}
+
+.hero__item-button-svg {
+  stroke: #FFFFFF;
+}
+
+.hero__item-button:focus {
+  outline: none;
+  background-color: var(--theme-color-focus);
+}
+
+
+.open .hero__item-button {
+  background-color: transparent;
+  color: var(--theme-color-active);
+}
+
+.open .hero__item-button-svg {
+  stroke: var(--theme-color-active);
+  transform: rotate(180deg);
+}
+
+.hero__item-button:hover {
+  color: var(--theme-color-hover);
+}
+
+.hero__item-button:hover .hero__item-button-svg {
+  stroke: var(--theme-color-hover);
+}
+
+.item-description__list {
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+.item-description__item {
+  background-position: top;
+  background-size: contain;
+}
+
+.item-description__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.item-description__item-content {
+  text-align: start;
+  width: 220px;
+  height: 40px;
+  padding-top: 9px;
+  padding-left: 14px;
+  color: #FFFFFF;
+  cursor: pointer;
+
+}
+
+.item-description__item-content:hover,
+.item-description__item-content:focus {
+  outline: none;
+  border: 2px solid #9D5CD0;
+}
+
+.item-description__item-content:active {
+  background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
+  border: 2px solid #D1A9F0;
+}
+
+.hero__item {
+  position: relative;
+}
+
+.hero__background1 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroBackground1@2(1920).webp") 2x,
+    url("../../image/hero/heroBackground1@1(1920).webp") 1x,
+    url("../../image/hero/heroBackground1@2(1920).jpg") 2x,
+    url("../../image/hero/heroBackground1@1(1920).jpg") 1x
+  );
+}
+
+
+@media (max-width: 1464px) {
+
+  .container__hero {
+    padding-top: 115px;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .hero__background1 {
+    background-image: -webkit-image-set(
+      url("../../image/hero/heroBackground1@2(1024).webp") 2x,
+      url("../../image/hero/heroBackground1@1(1024).webp") 1x,
+      url("../../image/hero/heroBackground1@2(1024).jpg") 2x,
+      url("../../image/hero/heroBackground1@1(1024).jpg") 1x
+    );
+  }
+
+  .container__hero {
+    padding-bottom: 115px;
+  }
+
+  .hero__hero {
+    width: 700px;
+  }
+
+  .hero__title {
+    margin-bottom: 10px;
+  }
+
+  .hero__text {
+    margin-bottom: 133px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero__background1 {
+    background-image: -webkit-image-set(
+      url("../../image/hero/heroBackground1@2(768).webp") 2x,
+      url("../../image/hero/heroBackground1@1(768).webp") 1x,
+      url("../../image/hero/heroBackground1@2(768).jpg") 2x,
+      url("../../image/hero/heroBackground1@1(768).jpg") 1x
+    );
+  }
+
+  .container__hero {
+    padding-top: 113px;
+    padding-bottom: 114px;
+  }
+
+  .hero__hero {
+    width: 100%;
+  }
+
+  .hero__title {
+    font-size: 72px;
+    line-height: 84px;
+  }
+
+  .hero__text {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .hero__hero {
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: 45px;
+    line-height: 50px;
+  }
+
+  .hero__text {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: normal;
+  }
+}
+
+@media (max-width: 450px) {
+
+  .hero__background1 {
+    background-image: -webkit-image-set(
+      url("../../image/hero/heroBackground1@2(320).webp") 2x,
+      url("../../image/hero/heroBackground1@1(320).webp") 1x,
+      url("../../image/hero/heroBackground1@2(320).jpg") 2x,
+      url("../../image/hero/heroBackground1@1(320).jpg") 1x
+    );
+  }
+
+  .container__hero {
+    padding: 34px 28px 45px 30px;
+  }
+
+  .hero__title {
+    font-size: 32px;
+    line-height: 37px;
+    margin-bottom: 11px;
+  }
+
+  .hero__text {
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 42px;
+
+  }
+}
+
+
+/*Item One*/
+
+.background-item1 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList1@2.webp") 2x,
+    url("../../image/hero/heroItemList1@1.webp") 1x,
+    url("../../image/hero/heroItemList1@2.jpg") 2x,
+    url("../../image/hero/heroItemList1@1.jpg") 1x
+  );
+}
+
+.background-item2 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList2@2.webp") 2x,
+    url("../../image/hero/heroItemList2@1.webp") 1x,
+    url("../../image/hero/heroItemList2@2.jpg") 2x,
+    url("../../image/hero/heroItemList2@1.jpg") 1x
+  );
+}
+
+.background-item3 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList3@2.webp") 2x,
+    url("../../image/hero/heroItemList3@1.webp") 1x,
+    url("../../image/hero/heroItemList3@2.jpg") 2x,
+    url("../../image/hero/heroItemList3@1.jpg") 1x
+  );
+}
+
+.background-item4 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList4@2.webp") 2x,
+    url("../../image/hero/heroItemList4@1.webp") 1x,
+    url("../../image/hero/heroItemList4@2.jpg") 2x,
+    url("../../image/hero/heroItemList4@1.jpg") 1x
+  );
+}
+
+/*Item Two*/
+
+.background-item5 {
+  background-size: unset;
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(2)1@2.webp") 2x,
+    url("../../image/hero/heroItemList(2)1@1.webp") 1x,
+    url("../../image/hero/heroItemList(2)1@2.jpg") 2x,
+    url("../../image/hero/heroItemList(2)1@1.jpg") 1x
+  );
+}
+
+.background-item6 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(2)2@2.webp") 2x,
+    url("../../image/hero/heroItemList(2)2@1.webp") 1x,
+    url("../../image/hero/heroItemList(2)2@2.jpg") 2x,
+    url("../../image/hero/heroItemList(2)2@1.jpg") 1x
+  );
+}
+
+.background-item7 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(2)3@2.webp") 2x,
+    url("../../image/hero/heroItemList(2)3@1.webp") 1x,
+    url("../../image/hero/heroItemList(2)3@2.jpg") 2x,
+    url("../../image/hero/heroItemList(2)3@1.jpg") 1x
+  );
+}
+
+.background-item8 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(2)4@2.webp") 2x,
+    url("../../image/hero/heroItemList(2)4@1.webp") 1x,
+    url("../../image/hero/heroItemList(2)4@2.jpg") 2x,
+    url("../../image/hero/heroItemList(2)4@1.jpg") 1x
+  );
+}
+
+/*Item Three*/
+
+.background-item9 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(3)1@2.webp") 2x,
+    url("../../image/hero/heroItemList(3)1@1.webp") 1x,
+    url("../../image/hero/heroItemList(3)1@2.jpg") 2x,
+    url("../../image/hero/heroItemList(3)1@2.jpg") 1x
+  );
+}
+
+.background-item10 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(3)2@2.webp") 2x,
+    url("../../image/hero/heroItemList(3)2@1.webp") 1x,
+    url("../../image/hero/heroItemList(3)2@2.jpg") 2x,
+    url("../../image/hero/heroItemList(3)2@1.jpg") 1x
+  );
+}
+
+.background-item11 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(3)3@2.webp") 2x,
+    url("../../image/hero/heroItemList(3)3@1.webp") 1x,
+    url("../../image/hero/heroItemList(3)3@2.jpg") 2x,
+    url("../../image/hero/heroItemList(3)3@1.jpg") 1x
+  );
+}
+
+.background-item12 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(3)4@2.webp") 2x,
+    url("../../image/hero/heroItemList(3)4@1.webp") 1x,
+    url("../../image/hero/heroItemList(3)4@2.jpg") 2x,
+    url("../../image/hero/heroItemList(3)4@1.jpg") 1x
+  );
+}
+
+/*Item Four*/
+
+.background-item13 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(4)1@2.webp") 2x,
+    url("../../image/hero/heroItemList(4)1@1.webp") 1x,
+    url("../../image/hero/heroItemList(4)1@2.jpg") 2x,
+    url("../../image/hero/heroItemList(4)1@2.jpg") 1x
+  );
+}
+
+.background-item14 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(4)2@2.webp") 2x,
+    url("../../image/hero/heroItemList(4)2@1.webp") 1x,
+    url("../../image/hero/heroItemList(4)2@2.jpg") 2x,
+    url("../../image/hero/heroItemList(4)2@1.jpg") 1x
+  );
+}
+
+.background-item15 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(4)3@2.webp") 2x,
+    url("../../image/hero/heroItemList(4)3@1.webp") 1x,
+    url("../../image/hero/heroItemList(4)3@2.jpg") 2x,
+    url("../../image/hero/heroItemList(4)3@1.jpg") 1x
+  );
+}
+
+.background-item16 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(4)4@2.webp") 2x,
+    url("../../image/hero/heroItemList(4)4@1.webp") 1x,
+    url("../../image/hero/heroItemList(4)4@2.jpg") 2x,
+    url("../../image/hero/heroItemList(4)4@1.jpg") 1x
+  );
+}
+
+/*Item Five*/
+
+
+.background-item17 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(5)1@2.webp") 2x,
+    url("../../image/hero/heroItemList(5)1@1.webp") 1x,
+    url("../../image/hero/heroItemList(5)1@2.jpg") 2x,
+    url("../../image/hero/heroItemList(5)1@2.jpg") 1x
+  );
+}
+
+.background-item18 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(5)2@2.webp") 2x,
+    url("../../image/hero/heroItemList(5)2@1.webp") 1x,
+    url("../../image/hero/heroItemList(5)2@2.jpg") 2x,
+    url("../../image/hero/heroItemList(5)2@1.jpg") 1x
+  );
+}
+
+.background-item19 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(5)3@2.webp") 2x,
+    url("../../image/hero/heroItemList(5)3@1.webp") 1x,
+    url("../../image/hero/heroItemList(5)3@2.jpg") 2x,
+    url("../../image/hero/heroItemList(5)3@1.jpg") 1x
+  );
+}
+
+.background-item20 {
+  background-image: -webkit-image-set(
+    url("../../image/hero/heroItemList(5)4@2.webp") 2x,
+    url("../../image/hero/heroItemList(5)4@1.webp") 1x,
+    url("../../image/hero/heroItemList(5)4@2.jpg") 2x,
+    url("../../image/hero/heroItemList(5)4@1.jpg") 1x
+  );
+}

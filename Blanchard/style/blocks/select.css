@@ -1,0 +1,24 @@
+/*Select*/
+
+/*.choices__item:first-child {*/
+/*  display: none;*/
+/*}*/
+
+[class*="item-choice-1"] {
+  /*display: none;*/
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted:after {
+  /*display: none;*/
+}
+
+.choices__inner {
+  /*border: none;*/
+  /*color: #FFFFFF;*/
+  /*background-color: transparent;*/
+}
+
+
+.select {
+  width: 100%;
+}

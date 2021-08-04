@@ -1,0 +1,188 @@
+/*Logo*/
+
+.logo {
+  color: #FFFFFF;
+  background-color: #000000;
+}
+
+.container__logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.logo__logo {
+  width: 173px;
+  height: 40px;
+}
+
+.logo__log-in,
+.logo__nav {
+  display: inline-block;
+}
+
+.logo__nav {
+  transform: translate(-19px, -1px);
+}
+
+.logo__list {
+  display: flex;
+}
+
+.logo__item a {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.logo__log-in,
+.logo__item a {
+  transition: background 0.1s ease-in-out, color 0.1s ease-in-out
+}
+
+.logo__item {
+  margin-right: 50px;
+}
+
+.logo__log-in {
+  padding: 2px 6px 2px 26px;
+  transform: translate(7px, -1px);
+  font-size: 18px;
+  line-height: 25px;
+  background-image: url("../../svg/log-in.svg");
+  background-position: center left 6px;
+  background-repeat: no-repeat;
+}
+
+.logo__log-in:hover,
+.logo__item a:hover {
+  color: var(--theme-color);
+  background-color: transparent;
+}
+
+.logo__log-in:active,
+.logo__item a:active {
+  color: var(--theme-color-active);
+}
+
+.logo__log-in:hover {
+  background-position: center left 1px;
+  background-image: url("../../svg/log-in-hover.svg");
+}
+
+.logo__log-in:active {
+  background-position: center left 1px;
+  background-image: url("../../svg/log-in-active.svg");
+}
+
+.search {
+  padding-left: 4px;
+}
+
+.search,
+.burger {
+  display: none;
+  width: 35px;
+  height: 30px;
+}
+
+.search:focus,
+.burger:focus {
+  outline: none;
+  background-color: var(--theme-color-focus);
+}
+
+.burger-icon,
+.search-icon {
+  width: 35px;
+  height: 30px;
+  fill: #FFFFFF;
+}
+
+.burger-icon:hover,
+.search-icon:hover {
+  fill: var(--theme-color-hover);
+}
+
+@media (max-width: 1464px) {
+
+  .logo__log-in {
+    display: none;
+  }
+
+  .logo__nav {
+    display: none;
+  }
+
+  .burger {
+    display: inline-block;
+    order: 1;
+  }
+
+  .logo__logo {
+    order: 2;
+    width: 188px;
+    height: 42px;
+  }
+
+  .search {
+    display: inline-block;
+    order: 3;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .search-icon {
+    padding-top: 2px;
+    padding-left: 2px;
+    height: 28px;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .container__logo {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .container__logo {
+    height: 45px;
+  }
+
+  .logo__logo {
+    width: 97px;
+    height: 22px;
+  }
+
+  .search,
+  .burger {
+    width: 25px;
+    height: 20px;
+  }
+
+  .search-icon {
+    width: 24px;
+    height: 23px;
+    padding: 0 0 5px 1px;
+  }
+
+  .burger-icon {
+    display: none;
+  }
+
+  .burger {
+    background-image: url("../../svg/Burger(320).svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+}

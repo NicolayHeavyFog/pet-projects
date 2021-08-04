@@ -1,0 +1,192 @@
+/*Page*/
+
+.page__body {
+  font-family: 'open_sans', sans-serif;
+}
+
+.container {
+  max-width: 1700px;
+  padding: 80px 50px;
+  margin: 0 auto;
+}
+
+.container--narrow {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/*Button*/
+
+button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 17px 35px;
+  color: #FFFFFF;
+  font-size: 18px;
+  line-height: 25px;
+  background-color: var(--theme-color);
+  border: 3px solid transparent;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.1s ease-in-out, border-color 0.1s ease-in-out,
+  box-shadow 0.3s ease-in-out;
+}
+
+.btn--size-x {
+  width: 314px;
+  height: 70px;
+  padding: 18px 30px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.btn::before {
+  content: none;
+  display: inline-block;
+  position: absolute;
+  top: -8px;
+  right: -9px;
+  bottom: -8px;
+  left: -8px;
+  border: 2px solid #C283F3;
+  border-radius: 100px;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:focus::before {
+  content: "";
+}
+
+.btn:hover {
+  border-color: #C283F3;
+}
+
+.btn:active {
+  border-color: #d1a9f0;
+  background: #7943a4;
+}
+
+/*Hidden*/
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+/*Title*/
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 65px;
+  color: var(--text-color);
+}
+
+/*Text*/
+
+p {
+  margin: 0;
+}
+
+.text {
+  font-size: var(--text-font-size);
+  line-height: 2em;
+  color: var(--text-color);
+}
+
+.text--color-theme {
+  color: var(--theme-color);
+}
+
+/*Link*/
+
+a {
+  /*color: transparent;*/
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+  background-color: var(--theme-color);
+}
+
+/*Images*/
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+
+/*List*/
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+@media (max-width: 1464px) {
+
+  .container--narrow {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .btn {
+    padding: 0;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .btn {
+    width: 200px;
+    height: 40px;
+    padding: 0;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@media (max-width: 450px) {
+
+  .btn--size-x {
+    padding: 0 0 0 2px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}

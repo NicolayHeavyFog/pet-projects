@@ -1,0 +1,41 @@
+/*Global*/
+
+@import "box-model.css";
+@import "normalize.css";
+@import "variabels.css";
+@import "../fonts/font.css";
+
+/*Polyfill*/
+
+@import "focus-visible.css";
+@import "choices.min.css";
+
+/*Scrollbar*/
+
+@import "simplebar.css";
+
+/*Swiper*/
+
+@import "swiper-bundle.min.css";
+
+/*Tooltip*/
+
+@import "tooltip.css";
+
+/*Blocks*/
+
+@import "blocks/page.css";
+@import "blocks/logo.css";
+@import "blocks/hero.css";
+@import "blocks/about-us.css";
+@import "blocks/gallery.css";
+@import "blocks/catalog.css";
+@import "blocks/events.css";
+@import "blocks/publications.css";
+@import "blocks/projects.css";
+@import "blocks/contacts.css";
+@import "blocks/footer.css";
+@import "blocks/select.css";
+@import "blocks/accordion.css";
+@import "blocks/scroll.css";
+@import "blocks/gallery-swiper.css";

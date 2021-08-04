@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="search" viewBox="0 0 23 22">
+    <g>
+      <rect width="6.8678" height="1.71695" transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)"/>
+      <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z"/>
+    </g>
+  </symbol>
+  <symbol id="show-more" viewBox="0 0 12 7" fill="none">
+    <g>
+      <path d="M11 1L6 6L1 1"/>
+    </g>
+  </symbol>
+  <symbol id="burger" viewBox="0 0 36 29">
+    <rect width="36" height="3.65217" transform="matrix(-1 0 0 1 36 0.700012)"/>
+    <path d="M28.2002 12.8739H0.00019455V16.5261H28.2002V12.8739Z"/>
+    <path d="M24 25.0479H0V28.7H24V25.0479Z"/>
+  </symbol>
+  <symbol id="buttonNext" viewBox="0 0 30 30">
+    <g>
+      <path
+        d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 0.999999 15 0.999999C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+        fill="" stroke="" stroke-width="2"/>
+      <path d="M14 20L19 15L14 10" stroke="white"/>
+    </g>
+  </symbol>
+  <symbol id="buttonPrev" viewBox="0 0 30 30">
+    <g>
+      <path
+        d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 0.999999 15 0.999999C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+        fill="" stroke="" stroke-width="2"/>
+      <path d="M14 20L19 15L14 10" stroke="white"/>
+    </g>
+  </symbol>
+</svg>
