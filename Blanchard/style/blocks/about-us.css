@@ -1,11 +1,11 @@
 /*About Us*/
 
 .container__about-us {
-  padding-bottom: 72px;
+  padding-bottom: 70px;
 }
 
 .about-us__title {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .about-us__text {
@@ -21,6 +21,6 @@
   }
 
   .container__about-us {
-    padding: 51px 15px 20px 15px;
+    padding: 51px 15px 40px 15px;
   }
 }

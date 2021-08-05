@@ -1,6 +1,7 @@
 /*Logo*/
 
 .logo {
+  position: relative;
   color: #FFFFFF;
   background-color: #000000;
 }
