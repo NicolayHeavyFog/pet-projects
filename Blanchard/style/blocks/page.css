@@ -26,7 +26,7 @@ button {
 .btn {
   position: relative;
   display: inline-block;
-  padding: 17px 35px;
+  padding: 15px;
   color: #FFFFFF;
   font-size: 18px;
   line-height: 25px;
@@ -38,10 +38,10 @@ button {
   box-shadow 0.3s ease-in-out;
 }
 
-.btn--size-x {
+.btn--size_x {
   width: 314px;
   height: 70px;
-  padding: 18px 30px;
+  padding: 20px;
   font-weight: bold;
   font-size: 18px;
   line-height: 25px;
@@ -55,7 +55,7 @@ button {
   right: -9px;
   bottom: -8px;
   left: -8px;
-  border: 2px solid #C283F3;
+  border: 2px solid var(--theme-color-btn-outer-rim);
   border-radius: 100px;
 }
 
@@ -68,13 +68,92 @@ button {
 }
 
 .btn:hover {
-  border-color: #C283F3;
+  border-color: var(--theme-color-btn-outer-rim);
 }
 
 .btn:active {
-  border-color: #d1a9f0;
-  background: #7943a4;
+  border-color: var(--theme-color-btn-focus);
+  background: var(--theme-color-focus);
 }
+
+/*Buttons Slider*/
+
+.swiper-notification,
+.gallery__slider-button-prev::after,
+.gallery__slider-button-next::after {
+  display: none;
+}
+
+.publications__slider-pagination,
+.swiper-pagination {
+  padding: 4px 0;
+  position: static;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.projects__button-prev,
+.projects__button-next,
+.publications__slider-button-prev,
+.publications__slider-button-next,
+.gallery__slider-button-prev,
+.gallery__slider-button-next {
+  position: static;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.projects__button-prev,
+.projects__button-next,
+.publications__slider-button-prev,
+.publications__slider-button-next,
+.button-prev-icon,
+.button-next-icon {
+  width: 30px;
+  height: 30px;
+  fill: #666666;
+  stroke: none;
+}
+
+.projects__button-prev:focus,
+.projects__button-next:focus,
+.publications__slider-button-prev:focus,
+.publications__slider-button-next:focus,
+.gallery__slider-button-next:focus,
+.gallery__slider-button-prev:focus {
+  outline: none;
+}
+
+.projects__button-prev:focus .button-prev-icon,
+.projects__button-next:focus .button-next-icon,
+.publications__slider-button-prev:focus .button-prev-icon,
+.publications__slider-button-next:focus .button-next-icon,
+.gallery__slider-button-next:focus .button-next-icon,
+.gallery__slider-button-prev:focus .button-prev-icon {
+  stroke: black;
+}
+
+.button-prev-icon:hover,
+.button-next-icon:hover {
+  fill: var(--theme-color-hover);
+}
+
+.button-prev-icon:active,
+.button-next-icon:active {
+  fill: var(--theme-color-active);
+  stroke: black;
+}
+
+.button-prev-icon {
+  transform: rotate(180deg);
+}
+
+.swiper-button-disabled {
+  cursor: no-drop;
+  opacity: 50%;
+}
+
 
 /*Hidden*/
 
@@ -120,33 +199,42 @@ p {
   color: var(--text-color);
 }
 
-.text--color-theme {
+.text--size_xs {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.text--size_s {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.text--color_grey {
+  color: #999999;
+}
+
+.text--color_theme {
   color: var(--theme-color);
 }
 
 /*Link*/
 
 a {
-  /*color: transparent;*/
   text-decoration: none;
 }
 
 a:focus {
   outline: none;
-  background-color: var(--theme-color);
+  background-color: var(--theme-color-hover);
   color: #FFFFFF;
-}
-
-a:hover {
 }
 
 /*Images*/
 
 img {
-  /*width: 100%;*/
-  height: 100%;
+  display: block;
+  width: 100%;
 }
-
 
 /*List*/
 
@@ -159,6 +247,25 @@ li {
   list-style-type: none;
 }
 
+/*Form*/
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
 @media (max-width: 1464px) {
 
   .container--narrow {
@@ -168,9 +275,10 @@ li {
 
 @media (max-width: 768px) {
 
-  .btn {
-    padding: 0;
-  }
+  /*.btn {*/
+  /*  padding: 0;*/
+  /*}*/
+
 }
 
 @media (max-width: 650px) {
@@ -186,11 +294,21 @@ li {
 
 @media (max-width: 450px) {
 
-  .btn--size-x {
+  .btn--size_x {
     padding: 0 0 0 2px;
   }
 
   .text {
     font-size: 14px;
+  }
+
+  .text--size_xs {
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  .text--size_s {
+    font-size: 16px;
+    line-height: 22px;
   }
 }

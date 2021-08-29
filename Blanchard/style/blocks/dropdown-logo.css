@@ -1,0 +1,21 @@
+/*Dropdown-Logo*/
+
+.logo__dropdown-content {
+  opacity: 0;
+  max-height: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.open.logo__dropdown-content {
+  display: flex;
+  opacity: 1;
+  max-height: 300px;
+  visibility: visible;
+}
+
+.logo__dropdown-control {
+  cursor: pointer;
+}
+
+

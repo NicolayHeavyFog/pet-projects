@@ -1,0 +1,20 @@
+/*Map*/
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+
+[class*="copyrights-pane"] {
+  display: none;
+  margin: unset;
+}
+
+/*[class*="control_toolbar"] {*/
+/*  position: absolute !important;*/
+/*  right: 0;*/
+/*  margin-top: 320px;*/
+/*}*/
+
+#map {
+  /*height: 700px;*/
+}

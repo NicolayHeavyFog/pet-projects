@@ -7,5 +7,12 @@
   --theme-color-active: #7943A4;
   --text-color: #333333;
 
+  --theme-color-btn-outer-rim: #C283F3;
+
+  --border-color-default: #CACACA;
+
+  --theme-color-btn-focus: #D1A9F0;
+  --theme-color-btn-defolt: #ECECEC;
+
   --text-font-size: 16px;
 }

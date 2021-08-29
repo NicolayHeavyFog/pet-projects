@@ -10,6 +10,7 @@
 @import "focus-visible.css";
 @import "choices.min.css";
 
+
 /*Scrollbar*/
 
 @import "simplebar.css";
@@ -22,6 +23,14 @@
 
 @import "tooltip.css";
 
+/*Tabs*/
+
+@import "tabs.css";
+
+/*Map*/
+
+@import "map.css";
+
 /*Blocks*/
 
 @import "blocks/page.css";
@@ -30,13 +39,14 @@
 @import "blocks/hero-swiper.css";
 @import "blocks/about-us.css";
 @import "blocks/gallery.css";
+@import "blocks/gallery-swiper.css";
 @import "blocks/catalog.css";
+@import "blocks/catalog-accordion.css";
 @import "blocks/events.css";
 @import "blocks/publications.css";
 @import "blocks/projects.css";
 @import "blocks/contacts.css";
 @import "blocks/footer.css";
 @import "blocks/select.css";
-@import "blocks/accordion.css";
+@import "blocks/dropdown-logo.css";
 @import "blocks/scroll.css";
-@import "blocks/gallery-swiper.css";

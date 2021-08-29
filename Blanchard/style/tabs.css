@@ -1,0 +1,28 @@
+/*Tabs*/
+
+.tab-content {
+  display: none;
+}
+
+.tab-content-active {
+  display: block !important;
+}
+
+.tab-content__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab__btns {
+  display: flex;
+}
+
+.tabs__btn {
+  background-color: transparent;
+}
+
+@media (max-width: 1024px) {
+  .tab-content__item {
+    flex-wrap: wrap;
+  }
+}

@@ -19,21 +19,21 @@
 .hero__title {
   font-weight: bold;
   font-size: 72px;
-  line-height: 83px;
-  margin-bottom: 19px;
+  line-height: 84px;
+  margin-bottom: 18px;
 }
 
 .hero__text {
   font-weight: bold;
   font-size: 18px;
   line-height: 30px;
-  margin-bottom: 92px;
+  margin-bottom: 91px;
 }
 
 .container-hero-nav {
   position: absolute;
   bottom: -70px;
-  z-index: 10;
+  z-index: 100;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -59,6 +59,7 @@
   background-color: transparent;
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  transition: border-bottom 0.3s ease-in-out;
 }
 
 .hero__input:focus,
@@ -74,7 +75,6 @@
 .hero__input:focus::placeholder {
   color: transparent;
 }
-
 
 .hero__input::placeholder {
   font-size: 18px;
@@ -92,6 +92,19 @@
   margin-right: 85px;
 }
 
+.mobile__list .hero__item {
+  margin-right: 0;
+}
+
+.hero__list.mobile__list {
+  margin: 0 auto;
+  justify-content: flex-start;
+}
+
+.mobile--svg {
+  display: none;
+}
+
 .hero__item-button {
   position: relative;
   padding: 3px 6px;
@@ -106,6 +119,8 @@
 }
 
 .hero__item-button-svg {
+  width: 12px;
+  height: 7px;
   stroke: #FFFFFF;
   transition: transform 0.2s ease-in-out;
 }
@@ -115,8 +130,7 @@
   background-color: var(--theme-color-focus);
 }
 
-
-.open .hero__item-button {
+.open.hero__item-button {
   background-color: transparent;
   color: var(--theme-color-active);
 }
@@ -143,6 +157,7 @@
 .item-description__item {
   background-position: top;
   background-size: contain;
+  /*border: 2px solid transparent;*/
 }
 
 .item-description__item:not(:last-child) {
@@ -157,51 +172,34 @@
   padding-left: 14px;
   color: #FFFFFF;
   cursor: pointer;
-
+  border: 2px solid transparent;
+  transition: border 0.1s ease-in-out;
 }
 
 .item-description__item-content:hover,
 .item-description__item-content:focus {
   outline: none;
-  border: 2px solid #9D5CD0;
+  border: 2px solid var(--theme-color-hover);
 }
 
 .item-description__item-content:active {
   background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
-  border: 2px solid #D1A9F0;
+  border: 2px solid var(--theme-color-btn-focus);
 }
 
 .hero__item {
   position: relative;
 }
 
-/*.swiper-slide {*/
-/*  background-image: -webkit-image-set(*/
-/*    url("../../image/hero/heroBackground1@2(1920).webp") 2x,*/
-/*    url("../../image/hero/heroBackground1@1(1920).webp") 1x,*/
-/*    url("../../image/hero/heroBackground1@2(1920).jpg") 2x,*/
-/*    url("../../image/hero/heroBackground1@1(1920).jpg") 1x*/
-/*  );*/
-/*}*/
-
-
 @media (max-width: 1464px) {
 
   .container__hero {
-    padding-top: 115px;
+    padding-top: 112px;
   }
 }
 
 @media (max-width: 1024px) {
 
-  /*.swiper-slide {*/
-  /*  background-image: -webkit-image-set(*/
-  /*    url("../../image/hero/heroBackground1@2(1024).webp") 2x,*/
-  /*    url("../../image/hero/heroBackground1@1(1024).webp") 1x,*/
-  /*    url("../../image/hero/heroBackground1@2(1024).jpg") 2x,*/
-  /*    url("../../image/hero/heroBackground1@1(1024).jpg") 1x*/
-  /*  );*/
-  /*}*/
   .container__hero {
     padding-bottom: 115px;
   }
@@ -221,14 +219,6 @@
 
 @media (max-width: 768px) {
 
-  /*.swiper-slide {*/
-  /*  background-image: -webkit-image-set(*/
-  /*    url("../../image/hero/heroBackground1@2(768).webp") 2x,*/
-  /*    url("../../image/hero/heroBackground1@1(768).webp") 1x,*/
-  /*    url("../../image/hero/heroBackground1@2(768).jpg") 2x,*/
-  /*    url("../../image/hero/heroBackground1@1(768).jpg") 1x*/
-  /*  );*/
-  /*}*/
   .container__hero {
     padding-top: 113px;
     padding-bottom: 114px;
@@ -270,14 +260,6 @@
 
 @media (max-width: 450px) {
 
-  /*.swiper-slide {*/
-  /*  background-image: -webkit-image-set(*/
-  /*    url("../../image/hero/heroBackground1@2(320).webp") 2x,*/
-  /*    url("../../image/hero/heroBackground1@1(320).webp") 1x,*/
-  /*    url("../../image/hero/heroBackground1@2(320).jpg") 2x,*/
-  /*    url("../../image/hero/heroBackground1@1(320).jpg") 1x*/
-  /*  );*/
-  /*}*/
   .container__hero {
     padding: 34px 28px 45px 30px;
   }
@@ -292,8 +274,18 @@
     font-size: 12px;
     line-height: 16px;
     margin-bottom: 42px;
+  }
+
+  .hero__input::placeholder {
+    font-size: 14px;
+    line-height: 20px;
 
   }
+
+  .hero__input {
+    width: 150px;
+  }
+
 }
 
 

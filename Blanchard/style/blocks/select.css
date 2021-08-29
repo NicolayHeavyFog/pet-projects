@@ -24,8 +24,8 @@
   line-height: 2em;
 }
 
-.choices:focus,
-.choices:hover {
+.choices:focus .choices__inner,
+.choices:hover .choices__inner {
   background: rgba(255, 255, 255, 0.2);
 }
 
@@ -101,4 +101,21 @@
 .is-highlighted {
   background: rgba(255, 255, 255, 0.2) !important;
   color: #FFFFFF !important;
+}
+
+@media (max-width: 768px) {
+  .choices__list--dropdown {
+    z-index: 40;
+    background-color: rgba(0, 0, 0, 0.8);
+
+  }
+
+  .is-open .choices__inner {
+    border-radius: 6px;
+  }
+
+  .is-open .choices__list--dropdown {
+    border-color: #FFFFFF;
+  }
+
 }
