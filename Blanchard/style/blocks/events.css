@@ -35,6 +35,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 483px;
   padding: 13px 18px 42px 49px;
   border: 1px solid #CACACA;
   border-top: none;
@@ -188,7 +189,7 @@
 
 }
 
-@media (max-width: 660px) {
+@media (max-width: 600px) {
 
   .container__events .wrapper-cards {
     flex-wrap: nowrap;
@@ -207,9 +208,17 @@
     margin-right: unset;
   }
 
+  .event__btn {
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+  }
+
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
 
   .container__events {
     padding: 0 15px 46px;
@@ -239,12 +248,5 @@
     line-height: 2em;
   }
 
-  .event__btn {
-    visibility: hidden;
-    opacity: 0;
-    max-height: 0 !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-  }
 }
 

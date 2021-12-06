@@ -8,6 +8,10 @@
   <script src="https://api-maps.yandex.ru/2.1/?apikey=373a2fb4-7a7a-4a04-9e68-4ccb6065477a&lang=ru_RU"
           type="text/javascript"></script>
   <link rel="stylesheet" href="style/index.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
   <title>Blanchard</title>
 </head>
 <body class="page__body">
@@ -16,23 +20,25 @@
   <div class="container container__logo">
     <img class="logo__logo" src="svg/logo(320).svg" alt="художественная галерея Blanchard">
     <h1 class="visually-hidden">Blanchard художественная галерея</h1>
-    <button id="#burger" class="burger">
-      <svg class="burger-icon">
-        <use xlink:href="sprite/sprite.svg#burger"></use>
-      </svg>
+
+    <button class="burger" aria-expanded="true">
+      <span class="burger__sticks">Меню</span>
     </button>
+
     <nav class="logo__nav">
-      <ul class="logo__list">
-        <li class="logo__item"><a href="#aboutUs" tabindex="0">О нас</a></li>
-        <li class="logo__item"><a href="#gallery" tabindex="0">Галерея</a></li>
-        <li class="logo__item"><a href="#catalog" tabindex="0">Каталог</a></li>
-        <li class="logo__item"><a href="#events" tabindex="0">События</a></li>
-        <li class="logo__item"><a href="#publications" tabindex="0">Издания</a></li>
-        <li class="logo__item"><a href="#projects" tabindex="0">Проекты</a></li>
-        <li class="logo__item"><a href="#contacts" tabindex="0">Контакты</a></li>
-      </ul>
+      <div class="logo__aside">
+        <ul class="logo__list">
+          <li class="logo__item"><a href="#aboutUs">О нас</a></li>
+          <li class="logo__item"><a href="#gallery">Галерея</a></li>
+          <li class="logo__item"><a href="#catalog">Каталог</a></li>
+          <li class="logo__item"><a href="#events">События</a></li>
+          <li class="logo__item"><a href="#publications">Издания</a></li>
+          <li class="logo__item"><a href="#projects">Проекты</a></li>
+          <li class="logo__item"><a href="#contacts">Контакты</a></li>
+        </ul>
+      </div>
     </nav>
-    <button class="logo__log-in" tabindex="0">Войти</button>
+    <button class="logo__log-in">Войти</button>
     <button id="#search" class="search">
       <svg class="search-icon">
         <use xlink:href="sprite/sprite.svg#search"></use>
@@ -40,270 +46,96 @@
     </button>
   </div>
 
-  <aside class="mobile_burger">
-    <nav class="logo__nav mobile__nav">
-      <ul class="logo__list mobile__list">
-        <li class="logo__item mobile__item"><a href="#aboutUs" tabindex="0">О нас</a></li>
-        <li class="logo__item mobile__item"><a href="#gallery" tabindex="0">Галерея</a></li>
-        <li class="logo__item mobile__item"><a href="#" tabindex="0">Каталог</a></li>
-        <li class="logo__item mobile__item"><a href="#" tabindex="0">События</a></li>
-        <li class="logo__item mobile__item"><a href="#" tabindex="0">Издания</a></li>
-        <li class="logo__item mobile__item"><a href="#" tabindex="0">Проекты</a></li>
-        <li class="logo__item mobile__item"><a href="#" tabindex="0">Контакты</a></li>
-        <li class="logo__item mobile__item">
-          <button class="logo__log-in mobile__log-in" tabindex="0">Войти</button>
-        </li>
-      </ul>
-
-      <ul class="hero__list mobile__list">
-
-        <li class="hero__item mobile__item">
-          <a href="#" class="hero__item-button">Реализм
-            <svg class="hero__item-button-svg mobile--svg">
-              <use xlink:href="sprite/sprite.svg#show-more"></use>
-            </svg>
-          </a>
-        </li>
-
-        <li class="hero__item mobile__item">
-          <a href="#" class="hero__item-button">Импрессионизм
-            <svg class="hero__item-button-svg mobile--svg">
-              <use xlink:href="sprite/sprite.svg#show-more"></use>
-            </svg>
-          </a>
-        </li>
-
-        <li class="hero__item mobile__item">
-          <a href="#" class="hero__item-button">Постимпрессионизм
-            <svg class="hero__item-button-svg mobile--svg">
-              <use xlink:href="sprite/sprite.svg#show-more"></use>
-            </svg>
-          </a>
-        </li>
-
-        <li class="hero__item mobile__item">
-          <a href="#" class="hero__item-button">Авангард
-            <svg class="hero__item-button-svg mobile--svg">
-              <use xlink:href="sprite/sprite.svg#show-more"></use>
-            </svg>
-          </a>
-        </li>
-
-        <li class="hero__item mobile__item">
-          <a href="#" class="hero__item-button">Футуризм
-            <svg class="hero__item-button-svg mobile--svg">
-              <use xlink:href="sprite/sprite.svg#show-more"></use>
-            </svg>
-          </a>
-        </li>
-
-      </ul>
-    </nav>
-  </aside>
-
-  <aside class="mobile_search">
-    <form class="hero__form mobile_search__form" action="">
-      <label>
-        <span class="visually-hidden">Поиск</span>
-        <input class="hero__input" required type="search" placeholder="Поиск по сайту" aria-label="Поиск по сайту">
-      </label>
-    </form>
-  </aside>
-
   <div class="container-hero-nav">
     <div class="container container--narrow">
       <nav class="hero__nav">
 
         <ul class="hero__list">
-
-          <li class="hero__item logo__dropdown-item">
-            <button class="hero__item-button logo__dropdown-control" aria-expanded="false">Реализм
-              <svg class="hero__item-button-svg">
-                <use xlink:href="sprite/sprite.svg#show-more"></use>
-              </svg>
+          <li class="hero__item">
+            <button class="hero__item-btn" data-path="one">
+              <strong class="hero__item-heading">Реализм</strong>
             </button>
-            <ul class="item-description__list custom-scroll logo__dropdown-content" data-simplebar
-                aria-hidden="true">
-              <li class="item-description__item background-item1">
-                <button class="item-description__item-content ">Тинторетто</button>
-              </li>
-              <li class="item-description__item background-item2">
-                <button class="item-description__item-content ">Фридрих</button>
-              </li>
-              <li class="item-description__item background-item3">
-                <button class="item-description__item-content">Леонардо</button>
-              </li>
-              <li class="item-description__item background-item4">
-                <button class="item-description__item-content">Верроккьо</button>
-              </li>
-              <li class="item-description__item background-item1">
-                <button class="item-description__item-content ">Тинторетто</button>
-              </li>
-              <li class="item-description__item background-item2">
-                <button class="item-description__item-content ">Фридрих</button>
-              </li>
-              <li class="item-description__item background-item3">
-                <button class="item-description__item-content">Леонардо</button>
-              </li>
-              <li class="item-description__item background-item4">
-                <button class="item-description__item-content">Верроккьо</button>
-              </li>
-              <li class="item-description__item background-item1">
-                <button class="item-description__item-content ">Тинторетто</button>
-              </li>
-              <li class="item-description__item background-item2">
-                <button class="item-description__item-content ">Фридрих</button>
-              </li>
-              <li class="item-description__item background-item3">
-                <button class="item-description__item-content">Леонардо</button>
-              </li>
-              <li class="item-description__item background-item4">
-                <button class="item-description__item-content">Верроккьо</button>
-              </li>
-            </ul>
+            <div class="hero__dropdown" data-target="one">
+              <div class="hero__dropdown-wrap" data-simplebar>
+                <ul class="hero__drop-list">
+                  <li class="hero__dropdown-item hero__item-background-item1"><a href="" class="hero__item-link">Тинторрето</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item2"><a href="" class="hero__item-link">Фридрих</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item3"><a href="" class="hero__item-link">Леонардо</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item4"><a href="" class="hero__item-link">Тинторрето</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item1"><a href="" class="hero__item-link">Тинторрето</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item2"><a href="" class="hero__item-link">Тинторрето</a></li>
+                </ul>
+              </div>
+            </div>
           </li>
-
-          <li class="hero__item logo__dropdown-item">
-            <button class="hero__item-button logo__dropdown-control" aria-expanded="false">Импрессионизм
-              <svg class="hero__item-button-svg">
-                <use xlink:href="sprite/sprite.svg#show-more"></use>
-              </svg>
+          <li class="hero__item">
+            <button class="hero__item-btn" data-path="two">
+              <strong class="hero__item-heading">Импрессионизм</strong>
             </button>
-            <ul class="item-description__list custom-scroll logo__dropdown-content" data-simplebar
-                aria-hidden="true">
-              <li class="item-description__item background-item5">
-                <button class="item-description__item-content ">Моне</button>
-              </li>
-              <li class="item-description__item background-item6">
-                <button class="item-description__item-content ">Сислей</button>
-              </li>
-              <li class="item-description__item background-item7">
-                <button class="item-description__item-content">Мане</button>
-              </li>
-              <li class="item-description__item background-item8">
-                <button class="item-description__item-content">Ренуар</button>
-              </li>
-              <li class="item-description__item background-item5">
-                <button class="item-description__item-content ">Моне</button>
-              </li>
-              <li class="item-description__item background-item6">
-                <button class="item-description__item-content ">Сислей</button>
-              </li>
-              <li class="item-description__item background-item7">
-                <button class="item-description__item-content">Мане</button>
-              </li>
-              <li class="item-description__item background-item8">
-                <button class="item-description__item-content">Ренуар</button>
-              </li>
-            </ul>
+            <div class="hero__dropdown" data-target="two">
+              <div class="hero__dropdown-wrap" data-simplebar>
+                <ul class="hero__drop-list">
+                  <li class="hero__dropdown-item hero__item-background-item5"><a href="" class="hero__item-link">Тинторрето</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item6"><a href="" class="hero__item-link">Фридрих</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item7"><a href="" class="hero__item-link">Леонардо</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item8"><a href="" class="hero__item-link">Тинторрето</a></li>
+                </ul>
+              </div>
+            </div>
           </li>
-
-          <li class="hero__item logo__dropdown-item">
-            <button class="hero__item-button logo__dropdown-control" aria-expanded="false">Постимпрессионизм
-              <svg class="hero__item-button-svg">
-                <use xlink:href="sprite/sprite.svg#show-more"></use>
-              </svg>
+          <li class="hero__item">
+            <button class="hero__item-btn" data-path="three">
+              <strong class="hero__item-heading">Постимпрессионизм</strong>
             </button>
-            <ul class="item-description__list custom-scroll logo__dropdown-content" data-simplebar
-                aria-hidden="true">
-              <li class="item-description__item background-item9">
-                <button class="item-description__item-content ">Тинторетто</button>
-              </li>
-              <li class="item-description__item background-item10">
-                <button class="item-description__item-content ">Фридрих</button>
-              </li>
-              <li class="item-description__item background-item11">
-                <button class="item-description__item-content">Леонардо</button>
-              </li>
-              <li class="item-description__item background-item12">
-                <button class="item-description__item-content">Верроккьо</button>
-              </li>
-              <li class="item-description__item background-item9">
-                <button class="item-description__item-content ">Тинторетто</button>
-              </li>
-              <li class="item-description__item background-item10">
-                <button class="item-description__item-content ">Фридрих</button>
-              </li>
-              <li class="item-description__item background-item11">
-                <button class="item-description__item-content">Леонардо</button>
-              </li>
-              <li class="item-description__item background-item12">
-                <button class="item-description__item-content">Верроккьо</button>
-              </li>
-            </ul>
+            <div class="hero__dropdown" data-target="three">
+              <div class="hero__dropdown-wrap" data-simplebar>
+                <ul class="hero__drop-list">
+                  <li class="hero__dropdown-item hero__item-background-item9"><a href="" class="hero__item-link">Тинторрето</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item10"><a href="" class="hero__item-link">Фридрих</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item11"><a href="" class="hero__item-link">Леонардо</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item12"><a href="" class="hero__item-link">Тинторрето</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item9"><a href="" class="hero__item-link">Тинторрето</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item10"><a href="" class="hero__item-link">Тинторрето</a></li>
+                </ul>
+              </div>
+            </div>
           </li>
-
-          <li class="hero__item logo__dropdown-item">
-            <button class="hero__item-button logo__dropdown-control" aria-expanded="false">Авангард
-              <svg class="hero__item-button-svg">
-                <use xlink:href="sprite/sprite.svg#show-more"></use>
-              </svg>
+          <li class="hero__item">
+            <button class="hero__item-btn" data-path="four">
+              <strong class="hero__item-heading">Авангард</strong>
             </button>
-            <ul class="item-description__list custom-scroll logo__dropdown-content" data-simplebar
-                aria-hidden="true">
-              <li class="item-description__item background-item13">
-                <button class="item-description__item-content ">Тинторетто</button>
-              </li>
-              <li class="item-description__item background-item14">
-                <button class="item-description__item-content ">Фридрих</button>
-              </li>
-              <li class="item-description__item background-item15">
-                <button class="item-description__item-content">Леонардо</button>
-              </li>
-              <li class="item-description__item background-item16">
-                <button class="item-description__item-content">Верроккьо</button>
-              </li>
-              <li class="item-description__item background-item13">
-                <button class="item-description__item-content ">Тинторетто</button>
-              </li>
-              <li class="item-description__item background-item14">
-                <button class="item-description__item-content ">Фридрих</button>
-              </li>
-              <li class="item-description__item background-item15">
-                <button class="item-description__item-content">Леонардо</button>
-              </li>
-              <li class="item-description__item background-item16">
-                <button class="item-description__item-content">Верроккьо</button>
-              </li>
-            </ul>
+            <div class="hero__dropdown" data-target="four">
+              <div class="hero__dropdown-wrap" data-simplebar>
+                <ul class="hero__drop-list">
+                  <li class="hero__dropdown-item hero__item-background-item13"><a href="" class="hero__item-link">Тинторрето</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item14"><a href="" class="hero__item-link">Фридрих</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item15"><a href="" class="hero__item-link">Леонардо</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item16"><a href="" class="hero__item-link">Тинторрето</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item13"><a href="" class="hero__item-link">Тинторрето</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item14"><a href="" class="hero__item-link">Тинторрето</a></li>
+                </ul>
+              </div>
+            </div>
           </li>
-
-          <li class="hero__item logo__dropdown-item">
-            <button class="hero__item-button logo__dropdown-control" aria-expanded="false">Футуризм
-              <svg class="hero__item-button-svg">
-                <use xlink:href="sprite/sprite.svg#show-more"></use>
-              </svg>
+          <li class="hero__item">
+            <button class="hero__item-btn" data-path="five">
+              <strong class="hero__item-heading">Футуризм</strong>
             </button>
-            <ul class="item-description__list custom-scroll logo__dropdown-content" data-simplebar
-                aria-hidden="true">
-              <li class="item-description__item background-item17">
-                <button class="item-description__item-content ">Тинторетто</button>
-              </li>
-              <li class="item-description__item background-item18">
-                <button class="item-description__item-content ">Фридрих</button>
-              </li>
-              <li class="item-description__item background-item19">
-                <button class="item-description__item-content">Леонардо</button>
-              </li>
-              <li class="item-description__item background-item20">
-                <button class="item-description__item-content">Верроккьо</button>
-              </li>
-              <li class="item-description__item background-item17">
-                <button class="item-description__item-content ">Тинторетто</button>
-              </li>
-              <li class="item-description__item background-item18">
-                <button class="item-description__item-content ">Фридрих</button>
-              </li>
-              <li class="item-description__item background-item19">
-                <button class="item-description__item-content">Леонардо</button>
-              </li>
-              <li class="item-description__item background-item20">
-                <button class="item-description__item-content">Верроккьо</button>
-              </li>
-            </ul>
+            <div class="hero__dropdown" data-target="five">
+              <div class="hero__dropdown-wrap" data-simplebar>
+                <ul class="hero__drop-list">
+                  <li class="hero__dropdown-item hero__item-background-item17"><a href="" class="hero__item-link">Тинторрето</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item18"><a href="" class="hero__item-link">Фридрих</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item19"><a href="" class="hero__item-link">Леонардо</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item20"><a href="" class="hero__item-link">Тинторрето</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item17"><a href="" class="hero__item-link">Тинторрето</a></li>
+                  <li class="hero__dropdown-item hero__item-background-item18"><a href="" class="hero__item-link">Тинторрето</a></li>
+                </ul>
+              </div>
+            </div>
           </li>
-
         </ul>
+
 
         <form class="hero__form" action="">
           <label>
@@ -357,312 +189,309 @@
   </section>
 
   <section class="gallery">
-    <div class="container container__gallery">
-      <div class="gallery__left-side">
-        <h2 class="title gallery__title" id="gallery">Галерея</h2>
-        <div class="select">
-          <label class="select__label"> <span class="select__descr">Фильтр:</span>
-            <select name="select" class="selectCustom" aria-label="Выбор вида искусства">
-              <option value="">Живопись</option>
-              <option value="Рисунок" tabindex="0">Рисунок</option>
-              <option value="Скульптура" tabindex="0">Скульптура</option>
-            </select>
-          </label>
+    <div class="container">
+      <div class="gallery__wrap">
+        <div class="gallery__left-side">
+          <h2 class="title gallery__title" id="gallery">Галерея</h2>
+          <div class="select">
+            <label class="select__label"> <span class="select__descr">Фильтр:</span>
+              <select name="select" class="selectCustom" aria-label="Выбор вида искусства">
+                <option value="">Живопись</option>
+                <option value="Рисунок" tabindex="0">Рисунок</option>
+                <option value="Скульптура" tabindex="0">Скульптура</option>
+              </select>
+            </label>
+          </div>
+
+        </div>
+        <div class="gallery__right-side">
+
+          <div class="swiper-container">
+
+            <div class="gallery__slider-buttons">
+              <button class="gallery__nav-btn gallery__slider-button-prev"></button>
+
+              <div class="gallery__slider-pagination"></div>
+
+              <button class="gallery__nav-btn gallery__slider-button-next"></button>
+            </div>
+
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery1(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery1(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery1(1024).jpg 1x">
+
+                  <img src="image/gallery/gallery1.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery2(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery2(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery2(1024).jpg 1x">
+                  <img src="image/gallery/gallery2.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery3(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery3(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery3(1024).jpg 1x">
+                  <img src="image/gallery/gallery3.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery4(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery4(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery4(1024).jpg 1x">
+                  <img src="image/gallery/gallery4.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery5(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery5(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery5(1024).jpg 1x">
+                  <img src="image/gallery/gallery5.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery6(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery6(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery6(1024).jpg 1x">
+                  <img src="image/gallery/gallery6.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery7(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery7(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery7(1024).jpg 1x">
+                  <img src="image/gallery/gallery7.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery8(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery8(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery8(1024).jpg 1x">
+                  <img src="image/gallery/gallery8.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery9(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery9(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery9(1024).jpg 1x">
+                  <img src="image/gallery/gallery9.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery10(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery10(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery10(1024).jpg 1x">
+                  <img src="image/gallery/gallery10.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery11(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery11(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery11(1024).jpg 1x">
+                  <img src="image/gallery/gallery11.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery12(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery12(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery12(1024).jpg 1x">
+                  <img src="image/gallery/gallery12.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery13(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery13(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery13(1024).jpg 1x">
+                  <img src="image/gallery/gallery13.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery14(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery14(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery14(1024).jpg 1x">
+                  <img src="image/gallery/gallery14.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery15(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery15(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery15(1024).jpg 1x">
+                  <img src="image/gallery/gallery15.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery16(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery16(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery16(1024).jpg 1x">
+                  <img src="image/gallery/gallery16.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery17(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery17(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery17(1024).jpg 1x">
+                  <img src="image/gallery/gallery17.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery18(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery18(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery18(1024).jpg 1x">
+                  <img src="image/gallery/gallery18.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery19(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery19(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery19(1024).jpg 1x">
+                  <img src="image/gallery/gallery19.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery20(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery20(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery20(1024).jpg 1x">
+                  <img src="image/gallery/gallery20.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery21(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery21(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery21(1024).jpg 1x">
+                  <img src="image/gallery/gallery21.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery22(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery22(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery21(1024).jpg 1x">
+                  <img src="image/gallery/gallery22.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery23(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery23(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery23(1024).jpg 1x">
+                  <img src="image/gallery/gallery23.jpg" alt="Картинка">
+                </picture>
+              </div>
+              <div class="swiper-slide" tabindex="0">
+                <picture class="">
+                  <source media="(max-width: 600px)" type="image/png"
+                          srcset="image/gallery/gallery24(320).jpg 1x">
+                  <source media="(max-width: 800px)" type="image/png"
+                          srcset="image/gallery/gallery24(768).jpg 1x">
+                  <source media="(max-width: 1186px)" type="image/png"
+                          srcset="image/gallery/gallery24(1024).jpg 1x">
+                  <img src="image/gallery/gallery24.jpg" alt="Картинка">
+                </picture>
+              </div>
+            </div>
+          </div>
         </div>
 
-      </div>
-      <p class="text gallery__offer">
-        Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a href="#"
-                                                                                              class="text--color_theme">авторизуйтесь</a>,
-        либо воспользуйтесь лицензией.
-      </p>
-      <div class="gallery__right-side slider-container">
-
-
-        <div class="swiper-container">
-          <!--          swiper-button-prev-->
-          <div class="slider-buttons">
-            <div class="gallery__slider-button-prev">
-              <svg class="button-prev-icon">
-                <use xlink:href="sprite/sprite.svg#buttonPrev"></use>
-              </svg>
-            </div>
-            <!--            swiper-button-next-->
-            <div class="swiper-pagination"></div>
-            <div class="gallery__slider-button-next">
-              <svg class="button-next-icon">
-                <use xlink:href="sprite/sprite.svg#buttonNext"></use>
-              </svg>
-            </div>
-          </div>
-
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery1(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery1(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery1(1024).jpg 1x">
-
-                <img src="image/gallery/gallery1.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery2(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery2(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery2(1024).jpg 1x">
-                <img src="image/gallery/gallery2.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery3(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery3(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery3(1024).jpg 1x">
-                <img src="image/gallery/gallery3.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery4(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery4(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery4(1024).jpg 1x">
-                <img src="image/gallery/gallery4.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery5(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery5(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery5(1024).jpg 1x">
-                <img src="image/gallery/gallery5.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery6(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery6(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery6(1024).jpg 1x">
-                <img src="image/gallery/gallery6.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery7(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery7(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery7(1024).jpg 1x">
-                <img src="image/gallery/gallery7.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery8(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery8(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery8(1024).jpg 1x">
-                <img src="image/gallery/gallery8.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery9(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery9(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery9(1024).jpg 1x">
-                <img src="image/gallery/gallery9.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery10(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery10(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery10(1024).jpg 1x">
-                <img src="image/gallery/gallery10.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery11(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery11(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery11(1024).jpg 1x">
-                <img src="image/gallery/gallery11.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery12(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery12(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery12(1024).jpg 1x">
-                <img src="image/gallery/gallery12.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery13(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery13(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery13(1024).jpg 1x">
-                <img src="image/gallery/gallery13.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery14(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery14(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery14(1024).jpg 1x">
-                <img src="image/gallery/gallery14.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery15(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery15(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery15(1024).jpg 1x">
-                <img src="image/gallery/gallery15.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery16(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery16(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery16(1024).jpg 1x">
-                <img src="image/gallery/gallery16.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery17(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery17(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery17(1024).jpg 1x">
-                <img src="image/gallery/gallery17.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery18(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery18(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery18(1024).jpg 1x">
-                <img src="image/gallery/gallery18.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery19(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery19(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery19(1024).jpg 1x">
-                <img src="image/gallery/gallery19.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery20(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery20(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery20(1024).jpg 1x">
-                <img src="image/gallery/gallery20.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery21(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery21(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery21(1024).jpg 1x">
-                <img src="image/gallery/gallery21.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery22(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery22(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery21(1024).jpg 1x">
-                <img src="image/gallery/gallery22.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery23(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery23(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery23(1024).jpg 1x">
-                <img src="image/gallery/gallery23.jpg" alt="Картинка">
-              </picture>
-            </div>
-            <div class="swiper-slide" tabindex="0">
-              <picture class="">
-                <source media="(max-width: 600px)" type="image/png"
-                        srcset="image/gallery/gallery24(320).jpg 1x">
-                <source media="(max-width: 800px)" type="image/png"
-                        srcset="image/gallery/gallery24(768).jpg 1x">
-                <source media="(max-width: 1186px)" type="image/png"
-                        srcset="image/gallery/gallery24(1024).jpg 1x">
-                <img src="image/gallery/gallery24.jpg" alt="Картинка">
-              </picture>
-            </div>
-          </div>
+        <div class="gallery__offer">
+          <p class="text gallery__offer-text">
+            Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a href="#"
+                                                                                                  class="text--color_theme">авторизуйтесь</a>,
+            либо воспользуйтесь лицензией.
+          </p>
         </div>
 
       </div>
@@ -1139,7 +968,7 @@
             <a class="event__card-link" href="#gallery">Подробнее</a>
           </div>
         </article>
-        <article class="event__card event__card--disabled">
+        <article class="event__card">
           <picture>
             <source media="(max-width: 450px)" type="image/webp"
                     srcset="image/events/eventsCard4(320)@2.webp 2x">
@@ -1172,7 +1001,7 @@
             <a class="event__card-link" href="#gallery">Подробнее</a>
           </div>
         </article>
-        <article class="event__card event__card--disabled">
+        <article class="event__card">
           <picture>
             <source media="(max-width: 450px)" type="image/webp"
                     srcset="image/events/eventsCard5(320)@1.webp 1x, image/events/eventsCard5(320)@2.webp 2x">
@@ -1208,7 +1037,6 @@
           </div>
         </article>
       </div>
-      <div class="event__pagination visually-hidden"></div>
       <button class="btn event__btn">Все события</button>
     </div>
   </section>
@@ -1221,9 +1049,8 @@
 
           <div class="checkbox">
 
-            <button class="filter__title" id="filter__title-dropdown" aria-expanded="false">Категории</button>
-
-            <ul class="checkbox__list" aria-hidden="true">
+            <button class="filter__title" aria-expanded="true" disabled="disabled">Категории</button>
+            <ul class="checkbox__list" aria-hidden="false">
               <li class="checkbox__item">
                 <label class="check" tabindex="0">
                   <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
@@ -1248,10 +1075,10 @@
                 </label>
               </li>
 
-              <li class="checkbox__item checkbox__item--active">
+              <li class="checkbox__item">
                 <label class="check" tabindex="0">
-                  <input class="check__input" type="checkbox" checked tabindex="-1">
-                  <span class="check__box" role="checkbox" aria-checked="true"></span>
+                  <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
+                  <span class="check__box" role="checkbox" aria-checked="false"></span>
                   <span class="check__text">Дизайн</span>
                 </label>
               </li>
@@ -1275,7 +1102,7 @@
               <li class="checkbox__item">
                 <label class="check" tabindex="0">
                   <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
-                  <span class="check__box check__box--position_top" role="checkbox" aria-checked="false"></span>
+                  <span class="check__box" role="checkbox" aria-checked="false"></span>
                   <span class="check__text">Художественная литература</span>
                 </label>
               </li>
@@ -1323,7 +1150,7 @@
             </ul>
           </div>
 
-          <h3 class="filter__title filter__title-border_none filter__title-before_none">Цена</h3>
+          <h3 class="filter__title filter__title-border-none filter__title-before-none">Цена</h3>
 
           <table class="filter__table">
             <tr>
@@ -1346,26 +1173,10 @@
           </table>
         </aside>
       </div>
+
       <div class="right-side">
-        <div class="slider-buttons publications__slider-buttons">
 
-          <div class="publications__slider-button-prev">
-            <svg class="button-prev-icon">
-              <use xlink:href="sprite/sprite.svg#buttonPrev"></use>
-            </svg>
-          </div>
-
-          <div class="publications__slider-pagination"></div>
-
-          <div class="publications__slider-button-next">
-            <svg class="button-next-icon">
-              <use xlink:href="sprite/sprite.svg#buttonNext"></use>
-            </svg>
-          </div>
-
-        </div>
-        <div class="publications__slider-container" data-mobile="false">
-
+        <div class="publications__slider-container">
 
           <div class="publications__slider-wrapper">
 
@@ -1625,7 +1436,10 @@
         <div class="tooltip" role="tooltip"
              data-description="Пример современных тенденций &ndash; современная&nbsp;методология&nbsp;разработки">
           <button class="tooltip__button" aria-label="Кнопка" data-path="one">
-            <span class="tooltip__i">i</span>
+            <!--            <span class="tooltip__i">i</span>-->
+            <svg class="tooltip__i">
+              <use xlink:href="sprite/sprite.svg#toolTipDefault"></use>
+            </svg>
           </button>
         </div>
 
@@ -1638,7 +1452,9 @@
              data-description="Приятно,&nbsp;граждане,&nbsp;наблюдать,&nbsp;как сделанные&nbsp;на&nbsp;базе&nbsp;аналитики&nbsp;выводы
           вызывают&nbsp;у&nbsp;вас&nbsp;эмоции">
           <button class="tooltip__button" aria-label="Кнопка" data-path="two">
-            <span class="tooltip__i">i</span>
+            <svg class="tooltip__i">
+              <use xlink:href="sprite/sprite.svg#toolTipDefault"></use>
+            </svg>
           </button>
         </div>
 
@@ -1648,11 +1464,13 @@
         <div class="tooltip" role="tooltip"
              data-description="В стремлении повысить качество">
           <button class="tooltip__button" aria-label="Кнопка" data-path="three">
-            <span class="tooltip__i">i</span>
+            <svg class="tooltip__i">
+              <use xlink:href="sprite/sprite.svg#toolTipDefault"></use>
+            </svg>
           </button>
         </div>
         <p class="text projects__text">
-          предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных
+          &nbsp;предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных
           резервов
           призывают
           нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными
@@ -1674,57 +1492,54 @@
 
       <h3 class="projects__slider-title">Партнёры проектов:</h3>
       <div class="projects__slider">
-        <div class="projects__button-prev">
-          <svg class="button-prev-icon">
-            <use xlink:href="sprite/sprite.svg#buttonPrev"></use>
-          </svg>
-        </div>
+
+        <button class="projects__nav-btn projects__slider-button-prev" tabindex="0"></button>
 
         <div class="projects__slider-container">
 
           <ul class="projects__slider-wrapper">
 
-            <li class="projects__slide" tabindex="0">
+            <li class="projects__slide" tabindex="-1">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)1.png" alt="Freelands Foundation">
               </a>
             </li>
-            <li class="projects__slide" tabindex="0">
+            <li class="projects__slide" tabindex="-1">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)2.png" alt="Institute for Contemporary Art">
               </a>
             </li>
-            <li class="projects__slide" tabindex="0">
+            <li class="projects__slide" tabindex="-1">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)3.png" alt="Workhouse">
               </a>
             </li>
-            <li class="projects__slide" tabindex="0">
+            <li class="projects__slide" tabindex="-1">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)4.png" alt="1849">
               </a>
             </li>
-            <li class="projects__slide" tabindex="0">
+            <li class="projects__slide" tabindex="-1">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)5.png" alt="HISCOX">
               </a>
             </li>
-            <li class="projects__slide" tabindex="0">
+            <li class="projects__slide" tabindex="-1">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)6.png" alt="CAMDEN">
               </a>
             </li>
-            <li class="projects__slide" tabindex="0">
+            <li class="projects__slide" tabindex="-1">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)7.png" alt="STASSEN">
               </a>
             </li>
-            <li class="projects__slide" tabindex="0">
+            <li class="projects__slide" tabindex="-1">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)8.png" alt="Whatts Gallery Artists Village">
               </a>
             </li>
-            <li class="projects__slide" tabindex="0">
+            <li class="projects__slide" tabindex="-1">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)9.png" alt="Партнер">
               </a>
@@ -1733,69 +1548,73 @@
 
         </div>
 
-        <div class="projects__button-next projects__button-next--position_right ">
-          <svg class="button-next-icon">
-            <use xlink:href="sprite/sprite.svg#buttonNext"></use>
-          </svg>
-        </div>
+        <button class="projects__nav-btn projects__slider-button-next" tabindex="0"></button>
+
       </div>
     </div>
   </section>
 
   <section class="contacts">
-    <div class="container__contacts">
-      <h2 class="title title__contacts" id="contacts">Контакты</h2>
-      <div class="contacts__content">
-        <div class="contacts__form">
-          <div class="contacts__form-info">
-            <h3 class="contacts__form-title contacts--desktop">Шоурум №4</h3>
-            <address class="contacts__form-address contacts--desktop">Леонтьевский переулок, дом 5/1</address>
-            <form class="form" action="https://jsonplaceholder.typicode.com/posts" autocomplete="on" method="post">
-              <fieldset>
-                <legend class="form__title">Заказать обратный звонок</legend>
-                <label class="label"> <span class="visually-hidden"> Как вас зовут? </span>
-                  <input class="input"
-                         name="Имя"
-                         type="text"
-                         placeholder="Имя*"
-                         data-validate-field="name"
-                         pattern="[A-Za-zА-Яа-яёЁ]{3,15}"
-                  >
-                </label>
-                <label class="label"> <span class="visually-hidden"> Укажите ваш телефон </span>
-                  <input class="input"
-                         name="tel"
-                         type="tel"
-                         placeholder="Телефон*"
-                         data-validate-field="tel"
-                         data-validate-rules="phone"
-                  >
-                </label>
-              </fieldset>
-              <button class="btn contacts__btn" type="submit">Заказать</button>
-            </form>
-            <span class="contacts__list-title">Связаться в один клик</span>
-            <ul class="contacts__list-icon">
-              <li class="contacts__item">
-                <a class="contacts__link" href="">
-                  <svg class="contacts__icon contacts__icon--whats-up">
-                    <use xlink:href="sprite/sprite.svg#whatsup"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="contacts__item">
-                <a class="contacts__link" href="">
-                  <svg class="contacts__icon contacts__icon--telegram">
-                    <use xlink:href="sprite/sprite.svg#telegram"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
+    <div class="contacts__container">
+      <h2 class="title contacts__title" id="contacts">Контакты</h2>
+    </div>
+    <div class="contacts__wrap">
+      <div class="contacts__container">
+
+        <div class="contacts__contacts__location">
+          <h3 class="contacts__contacts-title">Шоурум №4</h3>
+          <address class="contacts__contacts-address">Леонтьевский переулок, дом 5/1</address>
         </div>
-        <h3 class="contacts__form-title contacts--mobile">Шоурум №4</h3>
-        <address class="contacts__form-address contacts--mobile">Леонтьевский переулок, дом 5/1</address>
-        <div id="map" class="contacts__map"></div>
+
+
+        <div class="contacts__contacts">
+
+          <form class="form" action="https://jsonplaceholder.typicode.com/posts" autocomplete="on" method="post">
+            <fieldset>
+              <legend class="form__title">Заказать обратный звонок</legend>
+              <label class="label"> <span class="visually-hidden"> Как вас зовут? </span>
+                <input class="input"
+                       name="Имя"
+                       type="text"
+                       placeholder="Имя*"
+                       data-validate-field="name"
+                       pattern="[A-Za-zА-Яа-яёЁ]{3,15}"
+                >
+              </label>
+              <label class="label"> <span class="visually-hidden"> Укажите ваш телефон </span>
+                <input class="input"
+                       name="tel"
+                       type="tel"
+                       placeholder="Телефон*"
+                       data-validate-field="tel"
+                       data-validate-rules="phone"
+                >
+              </label>
+            </fieldset>
+            <button class="btn contacts__btn" type="submit">Заказать</button>
+          </form>
+          <span class="contacts__list-title">Связаться в один клик</span>
+          <ul class="contacts__list-icon">
+            <li class="contacts__item">
+              <a class="contacts__link" href="">
+                <svg class="contacts__icon contacts__icon--whats-up">
+                  <use xlink:href="sprite/sprite.svg#whatsup"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="contacts__item">
+              <a class="contacts__link" href="">
+                <svg class="contacts__icon contacts__icon--telegram">
+                  <use xlink:href="sprite/sprite.svg#telegram"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+        <div class="contacts__map" id="map">
+
+        </div>
       </div>
     </div>
   </section>
@@ -1831,11 +1650,13 @@
 </footer>
 
 <script defer src="js/simplebar.min.js"></script>
-<script defer src="js/swiper-bundle.min.js"></script>
+
 <script defer src="js/choices.min.js"></script>
-<script defer src="js/just-validate.min.js"></script>
+<script src="js/just-validate.min.js"></script>
 <script defer src="js/inputmask.min.js"></script>
 <script defer src="js/focus-visible.min.js"></script>
+<script defer src="js/jquery.min.js"></script>
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Element.prototype.classList"></script>
 <script defer src="js/main.js"></script>
 </body>
 </html>

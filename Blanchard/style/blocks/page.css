@@ -15,6 +15,20 @@
   padding-bottom: 0;
 }
 
+.body--noscroll {
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(40,40,40, .75);
+}
+
 /*Button*/
 
 button {
@@ -76,15 +90,13 @@ button {
   background: var(--theme-color-focus);
 }
 
-/*Buttons Slider*/
 
-.swiper-notification,
-.gallery__slider-button-prev::after,
-.gallery__slider-button-next::after {
+/* Кнопки слайдеров*/
+
+.swiper-notification {
   display: none;
 }
 
-.publications__slider-pagination,
 .swiper-pagination {
   padding: 4px 0;
   position: static;
@@ -92,68 +104,139 @@ button {
   text-align: center;
 }
 
-.projects__button-prev,
-.projects__button-next,
-.publications__slider-button-prev,
-.publications__slider-button-next,
-.gallery__slider-button-prev,
-.gallery__slider-button-next {
-  position: static;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
+.publications__slider-buttons,
+.gallery__slider-buttons {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.projects__button-prev,
-.projects__button-next,
-.publications__slider-button-prev,
-.publications__slider-button-next,
-.button-prev-icon,
-.button-next-icon {
-  width: 30px;
-  height: 30px;
-  fill: #666666;
-  stroke: none;
+.publications__slider-pagination,
+.gallery__slider-pagination {
+  margin-right: 10px;
+  text-align: center;
+  color: #FFFFFF;
 }
 
-.projects__button-prev:focus,
-.projects__button-next:focus,
-.publications__slider-button-prev:focus,
-.publications__slider-button-next:focus,
-.gallery__slider-button-next:focus,
-.gallery__slider-button-prev:focus {
+.projects__nav-btn,
+.publications__nav-btn,
+.gallery__nav-btn {
+  position: relative;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #666666;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.projects__nav-btn::before,
+.publications__nav-btn::before,
+.gallery__nav-btn::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 6px / 2);
+  width: 7px;
+  height: 7px;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+.publications__slider-button-prev,
+.gallery__slider-button-prev {
+  margin-right: 10px;
+}
+
+.projects__slider-button-next::before,
+.publications__slider-button-next::before,
+.gallery__slider-button-next::before {
+  left: calc(50% - 8px / 2);
+  border-top: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+}
+
+.projects__slider-button-prev::before,
+.publications__slider-button-prev::before,
+.gallery__slider-button-prev::before {
+  left: calc(50% - 4px / 2);
+  border-left: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+/* Анимации кнопок */
+
+.projects__nav-btn:focus,
+.publications__nav-btn:focus,
+.gallery__nav-btn:focus {
   outline: none;
 }
 
-.projects__button-prev:focus .button-prev-icon,
-.projects__button-next:focus .button-next-icon,
-.publications__slider-button-prev:focus .button-prev-icon,
-.publications__slider-button-next:focus .button-next-icon,
-.gallery__slider-button-next:focus .button-next-icon,
-.gallery__slider-button-prev:focus .button-prev-icon {
-  stroke: black;
+.publications__nav-btn:active,
+.gallery__nav-btn:active,
+.publications__nav-btn:hover,
+.gallery__nav-btn:hover {
+  background-color: var(--theme-color);
 }
 
-.button-prev-icon:hover,
-.button-next-icon:hover {
-  fill: var(--theme-color-hover);
+.projects__nav-btn:focus::after,
+.publications__nav-btn:focus::after,
+.gallery__nav-btn:focus::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  border: 2px solid black;
 }
 
-.button-prev-icon:active,
-.button-next-icon:active {
-  fill: var(--theme-color-active);
-  stroke: black;
+/* Отдельно описываю цвета кнопок слайдера Project */
+
+.projects__nav-btn {
+  background-color: #ECECEC;
 }
 
-.button-prev-icon {
-  transform: rotate(180deg);
+.projects__slider-button-prev::before {
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #000000;
 }
 
-.swiper-button-disabled {
+.projects__slider-button-next::before {
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
+
+.projects__nav-btn:focus::after {
+  border: 2px solid var(--theme-color);
+}
+
+.projects__nav-btn:hover {
+  background-color: var(--theme-color-btn-focus);
+}
+
+.swiper-button-disabled.projects__slider-button-prev::before {
+  border-left: 1px solid #BBBBBB;
+  border-bottom: 1px solid #BBBBBB;
+}
+
+.swiper-button-disabled.projects__slider-button-next::before {
+  border-top: 1px solid #BBBBBB;
+  border-right: 1px solid #BBBBBB;
+}
+
+/* Стили задизейблиных кнопок слайдеров */
+
+[class*="__nav-btn"].swiper-button-disabled {
   cursor: no-drop;
-  opacity: 50%;
+  background-color: #B0B0B0;
 }
 
+[class*="projects__slider-button"].swiper-button-disabled {
+  background-color: #ECECEC;
+}
 
 /*Hidden*/
 
@@ -225,7 +308,7 @@ a {
 
 a:focus {
   outline: none;
-  background-color: var(--theme-color-hover);
+  background-color: var(--theme-color-focus);
   color: #FFFFFF;
 }
 
@@ -281,7 +364,7 @@ input::-webkit-inner-spin-button {
 
 }
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
 
   .btn {
     width: 200px;
@@ -290,9 +373,23 @@ input::-webkit-inner-spin-button {
     font-size: 12px;
     line-height: 16px;
   }
+
+  /* Убираем анимации в мобильной версии */
+  .swiper-slide:focus::before {
+    content: none;
+  }
+
+  .swiper-slide:hover::after {
+    content: none;
+  }
+
+  .swiper-slide:active::before {
+    content: none;
+    background: none;
+  }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
 
   .btn--size_x {
     padding: 0 0 0 2px;

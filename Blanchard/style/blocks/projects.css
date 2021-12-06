@@ -21,25 +21,22 @@
 .tooltip {
   position: relative;
   display: inline-block;
-  transform: translate(-1px, 0);
+  transform: translate(-1px, 3px);
 }
 
 .tooltip__button {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   width: 16px;
   height: 16px;
   padding: 0;
-  font-weight: 700;
-  background-color: #FFFFFF;
-  border-radius: 50%;
   cursor: pointer;
-  border: 1px solid #9D5CD0;
+  border-radius: 50%;
 }
 
 .tooltip__i {
-  font-size: 13px;
-  margin: auto;
+  width: 16px;
+  height: 16px;
 }
 
 .tooltip__button:focus,
@@ -224,15 +221,6 @@
   width: unset;
 }
 
-.projects__button-next,
-.projects__button-prev {
-  /*min-width: 40px;*/
-}
-
-.projects__button-next--position_right {
-  text-align: end;
-}
-
 .tooltip__list {
   display: none;
 }
@@ -352,10 +340,10 @@
 
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
 
   .container__projects {
-    padding: 50px 15px 46px;
+    padding: 50px 15px 51px;
   }
 
   .projects__title {
