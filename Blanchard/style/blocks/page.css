@@ -6,11 +6,11 @@
 
 .container {
   max-width: 1700px;
-  padding: 80px 50px;
+  padding: var(--desktop-padding);
   margin: 0 auto;
 }
 
-.container--narrow {
+.container--slim {
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -26,7 +26,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(40,40,40, .75);
+  background: rgba(40, 40, 40, .75);
 }
 
 /*Button*/
@@ -48,8 +48,8 @@ button {
   border: 3px solid transparent;
   border-radius: 100px;
   cursor: pointer;
-  transition: background 0.1s ease-in-out, border-color 0.1s ease-in-out,
-  box-shadow 0.3s ease-in-out;
+  transition: background 0.1s var(--transition-timing-function), border-color 0.1s var(--transition-timing-function),
+  box-shadow var(--transition-time) var(--transition-timing-function);
 }
 
 .btn--size_x {
@@ -62,15 +62,17 @@ button {
 }
 
 .btn::before {
-  content: none;
-  display: inline-block;
+  content: '';
   position: absolute;
   top: -8px;
   right: -9px;
   bottom: -8px;
   left: -8px;
+  display: inline-block;
+  opacity: 0;
   border: 2px solid var(--theme-color-btn-outer-rim);
   border-radius: 100px;
+  transition: opacity var(--transition-time) var(--transition-timing-function);
 }
 
 .btn:focus {
@@ -78,7 +80,7 @@ button {
 }
 
 .btn:focus::before {
-  content: "";
+  opacity: 1;
 }
 
 .btn:hover {
@@ -88,6 +90,39 @@ button {
 .btn:active {
   border-color: var(--theme-color-btn-focus);
   background: var(--theme-color-focus);
+}
+
+.btn__background-slide::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: var(--theme-color-focus);
+  transition: transform 300ms var(--transition-timing-function);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.btn__background-slide:hover::after {
+  background-color: var(--theme-color-hover);
+}
+
+.btn__background-slide:hover::after,
+.btn__background-slide:focus::after {
+  transform: scaleX(1);
+}
+
+.btn__background-slide {
+  transition: color 300ms var(--transition-timing-function);
+  z-index: 1;
+}
+
+.btn__background-slide:hover,
+.btn__background-slide:focus {
+  color: white;
 }
 
 
@@ -108,14 +143,22 @@ button {
 .gallery__slider-buttons {
   display: inline-flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  margin-left: 2px;
 }
 
 .publications__slider-pagination,
 .gallery__slider-pagination {
-  margin-right: 10px;
   text-align: center;
   color: #FFFFFF;
+}
+
+.gallery__slider-pagination {
+  margin-right: 14px;
+}
+
+.publications__slider-pagination {
+  margin-right: 19px;
 }
 
 .projects__nav-btn,
@@ -129,7 +172,7 @@ button {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  transition: border 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition: border var(--transition-time) var(--transition-timing-function), background-color var(--transition-time) var(--transition-timing-function);
 }
 
 .projects__nav-btn::before,
@@ -144,9 +187,12 @@ button {
   transform-origin: center;
 }
 
-.publications__slider-button-prev,
 .gallery__slider-button-prev {
-  margin-right: 10px;
+  margin-right: 14px;
+}
+
+.publications__slider-button-prev {
+  margin-right: 18px;
 }
 
 .projects__slider-button-next::before,
@@ -304,11 +350,12 @@ p {
 
 a {
   text-decoration: none;
+  transition: background-color var(--transition-time) var(--transition-timing-function);
 }
 
 a:focus {
   outline: none;
-  background-color: var(--theme-color-focus);
+  background-color: var(--theme-color);
   color: #FFFFFF;
 }
 
@@ -344,14 +391,13 @@ input:focus {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
   -webkit-appearance: none;
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 @media (max-width: 1464px) {
 
-  .container--narrow {
+  .container--slim {
     display: none;
   }
 }
@@ -387,9 +433,14 @@ input::-webkit-inner-spin-button {
     content: none;
     background: none;
   }
+
 }
 
 @media (max-width: 480px) {
+
+  .container {
+    padding: var(--mobile-padding);
+  }
 
   .btn--size_x {
     padding: 0 0 0 2px;
@@ -408,4 +459,5 @@ input::-webkit-inner-spin-button {
     font-size: 16px;
     line-height: 22px;
   }
+
 }

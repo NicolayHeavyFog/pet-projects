@@ -26,14 +26,15 @@
 
 @media (max-width: 480px) {
 
+  .container__about-us {
+    padding-top: 51px;
+    padding-bottom: 40px;
+  }
+
   .about-us__title {
     font-size: 28px;
     line-height: 38px;
     margin-bottom: 11px;
-  }
-
-  .container__about-us {
-    padding: 51px 15px 40px 15px;
   }
 
 }

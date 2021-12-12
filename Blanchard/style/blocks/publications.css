@@ -30,6 +30,7 @@
   color: #FFFFFF;
 }
 
+.checkbox__title,
 .filter__title {
   margin-bottom: 7px;
   font-size: var(--text-font-size);
@@ -41,7 +42,7 @@
 .checkbox__list {
   display: flex;
   flex-direction: column;
-  margin-bottom: 34px;
+  margin-bottom: 33px;
 }
 
 .checkbox__item {
@@ -61,20 +62,20 @@
 }
 
 .check:hover {
-  color: var(--theme-color-hover);
+  color: var(--publication-color-checkbox-hover);
 }
 
 .check:hover .check__box {
-  border-color: var(--theme-color-hover);
+  border-color: var(--publication-color-checkbox-hover);
 }
 
 .check:focus {
   outline: none;
-  color: var(--theme-color-hover);
+  color: var(--publication-color-checkbox-focus);
 }
 
 .check:focus .check__box {
-  border-color: var(--theme-color-hover);
+  border-color: var(--publication-color-checkbox-focus);
 }
 
 .check__input {
@@ -82,6 +83,7 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  opacity: 0;
 }
 
 .check__box {
@@ -92,56 +94,27 @@
   height: 12px;
   background-color: transparent;
   border: 1px solid #FFFFFF;
+  transition: border-color var(--transition-time) var(--transition-timing-function);
 }
 
-
-/*.check__box::after {*/
-/*  content: none;*/
-/*  position: absolute;*/
-/*  top: -5px;*/
-/*  right: -5px;*/
-/*  bottom: -5px;*/
-/*  left: -5px;*/
-/*  z-index: 1;*/
-/*  background-color: white;*/
-/*  border-radius: 50%;*/
-  /*animation: pulse 20s infinite;*/
-  /*animation-iteration-count: 1;*/
-/*}*/
-
-/*.check:active .check__box::after {*/
-/*  content: '';*/
-/*}*/
-
-/*@keyframes pulse {*/
-/*  0% {*/
-/*    transform: scale(1);*/
-/*    opacity: 0.35;*/
-/*  }*/
-/*  3% {*/
-/*    transform: scale(1.15);*/
-/*    opacity: 0;*/
-/*  }*/
-/*  100% {*/
-/*    transform: scale(1);*/
-/*    opacity: 0;*/
-/*  }*/
-
-/*}*/
-
-
-.checkbox__item--active.checkbox__item .check__text {
-  color: var(--theme-color-hover);
+.check__text {
+  position: relative;
+  transition: color var(--transition-time) var(--transition-timing-function);
+  line-height: 1.13;
 }
 
-.checkbox__item--active.checkbox__item .check__box {
-  border-color: var(--theme-color);
+.checkbox__item--active .check__text {
+  color: var(--publication-color-checkbox-active);
+}
+
+.checkbox__item--active .check__box {
+  border-color: var(--publication-color-checkbox-active);
   background-size: auto;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
-.checkbox__item--active.checkbox__item .check__box::before {
+.checkbox__item--active .check__box::before {
   content: "";
   position: absolute;
   top: 3px;
@@ -149,14 +122,14 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: var(--theme-color);
+  background-color: var(--publication-color-checkbox-active);
 }
 
 .filter__table {
   display: inline-block;
   height: 40px;
   min-width: 277px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--border-color-default);
   border-radius: 6px;
   border-spacing: 0;
   overflow: hidden;
@@ -185,29 +158,29 @@
   width: 73px;
   height: 38px;
   border: 1px solid transparent;
-  background-color: rgba(157, 92, 208, 0.5);
+  background-color: var(--publication-color-background-input);
   color: #FFFFFF;
+  transition: border-color var(--transition-time) var(--transition-timing-function), background-color var(--transition-time) var(--transition-timing-function);
 }
 
 .filter__table-input:hover {
-  background-color: var(--theme-color-hover);
+  background-color: var(--publication-color-background-input-hover);
+}
+
+.filter__table-input:focus {
+  background-color: var(--publication-color-background-input-focus)
 }
 
 .filter__table-input:focus {
   outline: none;
-  border: 1px solid #FFFFFF;
-  background-color: var(--theme-color-hover);
-}
-
-.filter__table-input:active {
-  background-color: var(--theme-color-active);
+  border-color: #FFFFFF;
 }
 
 /* Правая сторона */
 
 .right-side {
   width: calc(100% - 28%);
-  padding-top: 30px;
+  padding-top: 32px;
   overflow: hidden;
 }
 
@@ -267,9 +240,8 @@
 
 .publications-card__btn {
   width: 120px;
-  /*margin-top: auto;*/
   padding: 5px 19px 6px 20px;
-  border: 2px solid var(--theme-color);
+  border: 2px solid var(--publication-color-border-btn);
   background-color: transparent;
 }
 
@@ -309,26 +281,26 @@
       url("../../image/publications/publicationsBackground(1024)@1.jpg") 1x
     );
   }
-
 }
-
 
 @media (max-width: 920px) {
 
   .container__publications {
     display: flex;
     flex-wrap: wrap;
-    padding: 85px 50px 81px;
+    padding-bottom: 80px;
   }
 
   .publications__title {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
+    line-height: 72px;
   }
 
   .left-side {
     width: 100%;
   }
 
+  .checkbox__title,
   .filter__title {
     margin-bottom: 0;
   }
@@ -339,7 +311,7 @@
 
   .right-side {
     width: 100%;
-    padding-top: 44px;
+    padding-top: 47px;
   }
 
   .publications__slider-buttons {
@@ -347,7 +319,7 @@
   }
 
   .publications__slider-container {
-    padding: 0 14px;
+    padding: 0 27px;
   }
 
   .publications__slider-container .publications__slider-wrapper {
@@ -388,7 +360,7 @@
   }
 
   .publications-card__pic {
-    margin-bottom: 14px;
+    margin-bottom: 13px;
   }
 
   .publications-card__price {
@@ -416,40 +388,48 @@
 
 @media (max-width: 750px) {
 
-  .filter__title {
+  .checkbox__title {
     position: relative;
     display: block;
     width: 100%;
     height: 40px;
     text-align: start;
     font-weight: 700;
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid var(--border-color-default);
+    border-bottom: 1px solid var(--border-color-default);
+    transition: background-color var(--transition-time) var(--transition-timing-function);
   }
 
-  .filter__title::before {
+  .checkbox__title::before {
     content: "";
     position: absolute;
-    top: 45%;
-    right: 1%;
+    top: 14px;
+    right: 2px;
     display: block;
     width: 8px;
     height: 8px;
     border-top: 1px solid #FFFFFF;
     border-left: 1px solid #FFFFFF;
     transform-origin: center;
+    transform: rotate(-135deg);
+    transition: transform var(--transition-time) var(--transition-timing-function);
+  }
+
+  .checkbox__title[aria-expanded="true"]::before {
     transform: rotate(45deg);
-
-    transition: transform 0.3s ease-in-out;
   }
 
-  .filter__title[aria-expanded="true"]::before {
-    transform: rotate(225deg);
-  }
-
-  .filter__title:focus {
+  .checkbox__title:focus {
     outline: none;
-    background-color: var(--theme-color-focus);
+    background-color: var(--publication-color-checkbox-focus);
+  }
+
+  .checkbox__title:active {
+    background-color: var(--publication-color-checkbox-active);
+  }
+
+  .checkbox__title:hover {
+    background-color: var(--publication-color-checkbox-hover);
   }
 
   .checkbox__list {
@@ -467,25 +447,23 @@
     display: block;
     width: 100%;
     height: fit-content;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid var(--border-color-default);
   }
 
   .checkbox__item--active {
     order: 1;
   }
 
-
   .checkbox__item--active::before,
   .checkbox__item--active::after {
     content: "";
     position: absolute;
-    top: 28%;
-    right: 9px;
+    top: 11px;
+    right: 6px;
     display: block;
     width: 1px;
     height: 16px;
-    background-color: #C283F3;
-    /*border-top: 1px solid #C283F3;*/
+    background-color: var(--publication-color-checkbox);
   }
   .checkbox__item--active::after {
     transform: rotate(45deg);
@@ -502,11 +480,12 @@
     margin-top: 0;
   }
 
-  .filter__title-border-none {
+  .filter__title {
+    margin-bottom: 7px;
     border: none;
   }
 
-  .filter__title-before-none::before {
+  .filter__title::before {
     content: none;
   }
 
@@ -519,8 +498,8 @@
   }
 
   .publications-card {
-    width: calc((100% / 2) - 30px);
-    margin-bottom: 50px;
+    width: calc((100% / 2) - 15px);
+    margin-bottom: 51px;
   }
 
   .publications-card__pic {
@@ -550,7 +529,6 @@
 
   .publications-card__btn {
     order: 5;
-    /*height: 40px;*/
     padding: 12px 0 15px;
     font-weight: 700;
   }
@@ -570,13 +548,13 @@
 @media (max-width: 480px) {
 
   .container__publications {
-    padding: 51px 15px 51px 15px;
+    padding-bottom: 50px;
   }
 
   .publications__title {
     font-size: 28px;
     line-height: 38px;
-    margin-bottom: 11px;
+    margin-bottom: 10px;
   }
 
   .publications__slider-container {
@@ -592,6 +570,10 @@
 
   .publications-card__btn {
     padding: 0;
+  }
+
+  .check__text {
+    line-height: 38px;
   }
 
   .publications {
