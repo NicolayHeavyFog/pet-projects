@@ -2,7 +2,8 @@
 <html class="page" lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="initial-scale=1.0, width=device-width">
+  <meta name="viewport"
+        content="initial-scale=1.0, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <script src="https://api-maps.yandex.ru/2.1/?apikey=373a2fb4-7a7a-4a04-9e68-4ccb6065477a&lang=ru_RU"
@@ -12,154 +13,187 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+
   <title>Blanchard</title>
 </head>
 <body class="page__body">
+<div class="top-wrapper">
+  <header class="header">
+    <div class="header-top">
+      <div class="container header__container">
+        <img class="header-top__logo" src="svg/logo(320).svg" alt="художественная галерея Blanchard">
+        <h1 class="visually-hidden">Blanchard художественная галерея</h1>
 
-<header class="logo">
-  <div class="container container__logo">
-    <img class="logo__logo" src="svg/logo(320).svg" alt="художественная галерея Blanchard">
-    <h1 class="visually-hidden">Blanchard художественная галерея</h1>
+        <button class="header-top__burger" aria-expanded="true">
+          <span class="header-top__burger-stick">Меню</span>
+        </button>
 
-    <button class="burger" aria-expanded="true">
-      <span class="burger__sticks">Меню</span>
-    </button>
+        <nav class="header-top__nav">
+          <div class="header-top__aside">
+            <ul class="header-top__list">
+              <li class="header-top__item"><a class="header-top__link" href="#aboutUs">О нас</a></li>
+              <li class="header-top__item"><a class="header-top__link" href="#gallery">Галерея</a></li>
+              <li class="header-top__item"><a class="header-top__link" href="#catalog">Каталог</a></li>
+              <li class="header-top__item"><a class="header-top__link" href="#events">События</a></li>
+              <li class="header-top__item"><a class="header-top__link" href="#publications">Издания</a></li>
+              <li class="header-top__item"><a class="header-top__link" href="#projects">Проекты</a></li>
+              <li class="header-top__item"><a class="header-top__link" href="#contacts">Контакты</a></li>
+            </ul>
+          </div>
+        </nav>
 
-    <nav class="logo__nav">
-      <div class="logo__aside">
-        <ul class="logo__list">
-          <li class="logo__item"><a class="logo__item-link" href="#aboutUs">О нас</a></li>
-          <li class="logo__item"><a class="logo__item-link" href="#gallery">Галерея</a></li>
-          <li class="logo__item"><a class="logo__item-link" href="#catalog">Каталог</a></li>
-          <li class="logo__item"><a class="logo__item-link" href="#events">События</a></li>
-          <li class="logo__item"><a class="logo__item-link" href="#publications">Издания</a></li>
-          <li class="logo__item"><a class="logo__item-link" href="#projects">Проекты</a></li>
-          <li class="logo__item"><a class="logo__item-link" href="#contacts">Контакты</a></li>
-        </ul>
+        <button class="btn header-top__log-in-btn">
+          <span class="header-top__log-in-text">Войти</span>
+        </button>
+
+        <div class="header-top__search-bar">
+          <button id="#search" class="header-top__search">
+            <svg class="header-top__search-icon">
+              <use xlink:href="sprite/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
       </div>
-    </nav>
-    <button class="logo__log-in">Войти</button>
-    <button id="#search" class="search">
-      <svg class="search-icon">
-        <use xlink:href="sprite/sprite.svg#search"></use>
-      </svg>
-    </button>
-  </div>
-
-  <div class="container-hero-nav">
-    <div class="container container--slim">
-      <nav class="hero__nav">
-
-        <ul class="hero__list">
-          <li class="hero__item">
-            <button class="hero__item-btn" data-path="one">
-              <strong class="hero__item-heading">Реализм</strong>
+    </div>
+    <div class="header-bottom">
+      <nav class="container header__container">
+        <ul class="header-bottom__list">
+          <li class="header-bottom__item">
+            <button class="header-bottom__btn" data-path="one">
+              <strong class="header-bottom__heading">Реализм</strong>
             </button>
-            <div class="hero__dropdown" data-target="one">
-              <div class="hero__dropdown-wrap" data-simplebar>
-                <ul class="hero__drop-list">
-                  <li class="hero__dropdown-item hero__item-background-item1"><a href="" class="hero__item-link">Тинторрето</a>
+            <div class="header-bottom__dropdown" data-target="one">
+              <div class="header-bottom__dropdown-wrap" data-simplebar>
+                <ul class="header-bottom__dropdown-list">
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-1"><a href=""
+                                                                                                   class="header-bottom__link">Тинторрето</a>
                   </li>
-                  <li class="hero__dropdown-item hero__item-background-item2"><a href=""
-                                                                                 class="hero__item-link">Фридрих</a>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-2"><a href=""
+                                                                                                   class="header-bottom__link">Фридрих</a>
                   </li>
-                  <li class="hero__dropdown-item hero__item-background-item3"><a href="" class="hero__item-link">Леонардо</a>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-3"><a href=""
+                                                                                                   class="header-bottom__link">Леонардо</a>
                   </li>
-                  <li class="hero__dropdown-item hero__item-background-item4"><a href="" class="hero__item-link">Тинторрето</a>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-4"><a href=""
+                                                                                                   class="header-bottom__link">Тинторрето</a>
                   </li>
-                  <li class="hero__dropdown-item hero__item-background-item1"><a href="" class="hero__item-link">Тинторрето</a>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-1"><a href=""
+                                                                                                   class="header-bottom__link">Тинторрето</a>
                   </li>
-                  <li class="hero__dropdown-item hero__item-background-item2"><a href="" class="hero__item-link">Тинторрето</a>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-2"><a href=""
+                                                                                                   class="header-bottom__link">Тинторрето</a>
                   </li>
                 </ul>
               </div>
             </div>
           </li>
-          <li class="hero__item">
-            <button class="hero__item-btn" data-path="two">
-              <strong class="hero__item-heading">Импрессионизм</strong>
+          <li class="header-bottom__item">
+            <button class="header-bottom__btn" data-path="two">
+              <strong class="header-bottom__heading">Импрессионизм</strong>
             </button>
-            <div class="hero__dropdown" data-target="two">
-              <div class="hero__dropdown-wrap" data-simplebar>
-                <ul class="hero__drop-list">
-                  <li class="hero__dropdown-item hero__item-background-item5"><a href=""
-                                                                                 class="hero__item-link">Моне</a></li>
-                  <li class="hero__dropdown-item hero__item-background-item6"><a href=""
-                                                                                 class="hero__item-link">Сислей</a></li>
-                  <li class="hero__dropdown-item hero__item-background-item7"><a href=""
-                                                                                 class="hero__item-link">Мане</a></li>
-                  <li class="hero__dropdown-item hero__item-background-item8"><a href=""
-                                                                                 class="hero__item-link">Ренуар</a></li>
+            <div class="header-bottom__dropdown" data-target="two">
+              <div class="header-bottom__dropdown-wrap" data-simplebar>
+                <ul class="header-bottom__dropdown-list">
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-5"><a href=""
+                                                                                                   class="header-bottom__link">Моне</a>
+                  </li>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-6"><a href=""
+                                                                                                   class="header-bottom__link">Сислей</a>
+                  </li>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-7"><a href=""
+                                                                                                   class="header-bottom__link">Мане</a>
+                  </li>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-8"><a href=""
+                                                                                                   class="header-bottom__link">Ренуар</a>
+                  </li>
                 </ul>
               </div>
             </div>
           </li>
-          <li class="hero__item">
-            <button class="hero__item-btn" data-path="three">
-              <strong class="hero__item-heading">Постимпрессионизм</strong>
+          <li class="header-bottom__item">
+            <button class="header-bottom__btn" data-path="three">
+              <strong class="header-bottom__heading">Постимпрессионизм</strong>
             </button>
-            <div class="hero__dropdown" data-target="three">
-              <div class="hero__dropdown-wrap" data-simplebar>
-                <ul class="hero__drop-list">
-                  <li class="hero__dropdown-item hero__item-background-item9"><a href="" class="hero__item-link">Ван
+            <div class="header-bottom__dropdown" data-target="three">
+              <div class="header-bottom__dropdown-wrap" data-simplebar>
+                <ul class="header-bottom__dropdown-list">
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-9"><a href=""
+                                                                                                   class="header-bottom__link">Ван
                     Гог</a></li>
-                  <li class="hero__dropdown-item hero__item-background-item10"><a href=""
-                                                                                  class="hero__item-link">Сезанн</a>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-10"><a href=""
+                                                                                                    class="header-bottom__link">Сезанн</a>
                   </li>
-                  <li class="hero__dropdown-item hero__item-background-item11"><a href=""
-                                                                                  class="hero__item-link">Гоген</a></li>
-                  <li class="hero__dropdown-item hero__item-background-item12"><a href=""
-                                                                                  class="hero__item-link">Сера</a></li>
-                  <li class="hero__dropdown-item hero__item-background-item9"><a href="" class="hero__item-link">Ван
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-11"><a href=""
+                                                                                                    class="header-bottom__link">Гоген</a>
+                  </li>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-12"><a href=""
+                                                                                                    class="header-bottom__link">Сера</a>
+                  </li>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-9"><a href=""
+                                                                                                   class="header-bottom__link">Ван
                     Гог</a></li>
-                  <li class="hero__dropdown-item hero__item-background-item10"><a href=""
-                                                                                  class="hero__item-link">Сезанн</a>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-10"><a href=""
+                                                                                                    class="header-bottom__link">Сезанн</a>
                   </li>
                 </ul>
               </div>
             </div>
           </li>
-          <li class="hero__item">
-            <button class="hero__item-btn" data-path="four">
-              <strong class="hero__item-heading">Авангард</strong>
+          <li class="header-bottom__item">
+            <button class="header-bottom__btn" data-path="four">
+              <strong class="header-bottom__heading">Авангард</strong>
             </button>
-            <div class="hero__dropdown" data-target="four">
-              <div class="hero__dropdown-wrap" data-simplebar>
-                <ul class="hero__drop-list">
-                  <li class="hero__dropdown-item hero__item-background-item13"><a href="" class="hero__item-link">Кандинский</a>
+            <div class="header-bottom__dropdown" data-target="four">
+              <div class="header-bottom__dropdown-wrap" data-simplebar>
+                <ul class="header-bottom__dropdown-list">
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-13"><a href=""
+                                                                                                    class="header-bottom__link">Кандинский</a>
                   </li>
-                  <li class="hero__dropdown-item hero__item-background-item14"><a href="" class="hero__item-link">Маринетти</a>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-14"><a href=""
+                                                                                                    class="header-bottom__link">Маринетти</a>
                   </li>
-                  <li class="hero__dropdown-item hero__item-background-item15"><a href="" class="hero__item-link">Малевич</a>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-15"><a href=""
+                                                                                                    class="header-bottom__link">Малевич</a>
                   </li>
-                  <li class="hero__dropdown-item hero__item-background-item16"><a href="" class="hero__item-link">Пикассо</a>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-16"><a href=""
+                                                                                                    class="header-bottom__link">Пикассо</a>
                   </li>
-                  <li class="hero__dropdown-item hero__item-background-item13"><a href="" class="hero__item-link">Кандинский</a>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-13"><a href=""
+                                                                                                    class="header-bottom__link">Кандинский</a>
                   </li>
-                  <li class="hero__dropdown-item hero__item-background-item14"><a href="" class="hero__item-link">Маринетти</a>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-14"><a href=""
+                                                                                                    class="header-bottom__link">Маринетти</a>
                   </li>
                 </ul>
               </div>
             </div>
           </li>
-          <li class="hero__item">
-            <button class="hero__item-btn" data-path="five">
-              <strong class="hero__item-heading">Футуризм</strong>
+          <li class="header-bottom__item">
+            <button class="header-bottom__btn" data-path="five">
+              <strong class="header-bottom__heading">Футуризм</strong>
             </button>
-            <div class="hero__dropdown" data-target="five">
-              <div class="hero__dropdown-wrap" data-simplebar>
-                <ul class="hero__drop-list">
-                  <li class="hero__dropdown-item hero__item-background-item17"><a href=""
-                                                                                  class="hero__item-link">Карра</a></li>
-                  <li class="hero__dropdown-item hero__item-background-item18"><a href="" class="hero__item-link">Прателла</a>
+            <div class="header-bottom__dropdown" data-target="five">
+              <div class="header-bottom__dropdown-wrap" data-simplebar>
+                <ul class="header-bottom__dropdown-list">
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-17"><a href=""
+                                                                                                    class="header-bottom__link">Карра</a>
                   </li>
-                  <li class="hero__dropdown-item hero__item-background-item19"><a href="" class="hero__item-link">Северини</a>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-18"><a href=""
+                                                                                                    class="header-bottom__link">Прателла</a>
                   </li>
-                  <li class="hero__dropdown-item hero__item-background-item20"><a href=""
-                                                                                  class="hero__item-link">Балла</a></li>
-                  <li class="hero__dropdown-item hero__item-background-item17"><a href=""
-                                                                                  class="hero__item-link">Карра</a></li>
-                  <li class="hero__dropdown-item hero__item-background-item18"><a href="" class="hero__item-link">Прателла</a>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-19"><a href=""
+                                                                                                    class="header-bottom__link">Северини</a>
+                  </li>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-20"><a href=""
+                                                                                                    class="header-bottom__link">Балла</a>
+                  </li>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-17"><a href=""
+                                                                                                    class="header-bottom__link">Карра</a>
+                  </li>
+                  <li class="header-bottom__dropdown-item header-bottom__dropdown-background-18"><a href=""
+                                                                                                    class="header-bottom__link">Прателла</a>
                   </li>
                 </ul>
               </div>
@@ -167,34 +201,41 @@
           </li>
         </ul>
 
-
-        <form class="hero__form" action="">
-          <label>
+        <form class="header-bottom__form" action="">
+          <label class="header-bottom__form-label">
             <span class="visually-hidden">Поиск</span>
-            <input class="hero__input" required type="search" placeholder="Поиск по сайту" aria-label="Поиск по сайту">
+            <button class="header-bottom__search-btn">
+              <svg class="header-bottom__search-icon">
+                <use xlink:href="sprite/sprite.svg#search"></use>
+              </svg>
+            </button>
+            <input class="header-bottom__input" required type="search" placeholder="Поиск по сайту"
+                   aria-label="Поиск по сайту">
           </label>
         </form>
+
       </nav>
     </div>
-  </div>
-</header>
-
-<main>
+  </header>
   <section class="hero">
-    <div class="hero__background">
-      <div class="hero__background-one"></div>
-      <div class="hero__background-two"></div>
-      <div class="hero__background-three"></div>
-    </div>
     <div class="container container__hero">
       <div class="hero__hero">
         <h2 class="hero__title">Прикоснитесь к&nbsp;прекрасному</h2>
         <p class="hero__text">Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт
           предпосылки для новых предложений.</p>
-        <button class="btn btn--size_x">Подписаться на рассылку</button>
+        <button class="btn hero__btn">Подписаться на рассылку</button>
       </div>
     </div>
   </section>
+  <div class="hero__slider-container ">
+    <div class="hero__slider-wrapper ">
+      <div class="hero__slide swiper-slide hero__background-one"></div>
+      <div class="hero__slide swiper-slide hero__background-two"></div>
+      <div class="hero__slide swiper-slide hero__background-three"></div>
+    </div>
+  </div>
+</div>
+<main>
 
   <section class="about-us">
     <div class="container container__about-us">
@@ -214,7 +255,6 @@
         быть разоблачены.</p>
     </div>
   </section>
-
   <section class="gallery">
     <div class="container gallery__container">
       <div class="gallery__wrap">
@@ -232,7 +272,6 @@
 
         </div>
         <div class="gallery__right-side">
-
           <div class="gallery__slider-container">
 
             <div class="gallery__slider-buttons">
@@ -244,7 +283,7 @@
             </div>
 
             <div class="gallery__slider-wrapper swiper-wrapper">
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery1(320).jpg 1x">
@@ -255,8 +294,8 @@
 
                   <img src="image/gallery/gallery1.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery2(320).jpg 1x">
@@ -266,8 +305,8 @@
                           srcset="image/gallery/gallery2(1024).jpg 1x">
                   <img src="image/gallery/gallery2.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery3(320).jpg 1x">
@@ -277,8 +316,8 @@
                           srcset="image/gallery/gallery3(1024).jpg 1x">
                   <img src="image/gallery/gallery3.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery4(320).jpg 1x">
@@ -288,8 +327,8 @@
                           srcset="image/gallery/gallery4(1024).jpg 1x">
                   <img src="image/gallery/gallery4.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery5(320).jpg 1x">
@@ -299,8 +338,8 @@
                           srcset="image/gallery/gallery5(1024).jpg 1x">
                   <img src="image/gallery/gallery5.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery6(320).jpg 1x">
@@ -310,8 +349,8 @@
                           srcset="image/gallery/gallery6(1024).jpg 1x">
                   <img src="image/gallery/gallery6.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery7(320).jpg 1x">
@@ -321,8 +360,8 @@
                           srcset="image/gallery/gallery7(1024).jpg 1x">
                   <img src="image/gallery/gallery7.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery8(320).jpg 1x">
@@ -332,8 +371,8 @@
                           srcset="image/gallery/gallery8(1024).jpg 1x">
                   <img src="image/gallery/gallery8.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery9(320).jpg 1x">
@@ -343,8 +382,8 @@
                           srcset="image/gallery/gallery9(1024).jpg 1x">
                   <img src="image/gallery/gallery9.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery10(320).jpg 1x">
@@ -354,8 +393,8 @@
                           srcset="image/gallery/gallery10(1024).jpg 1x">
                   <img src="image/gallery/gallery10.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery11(320).jpg 1x">
@@ -365,8 +404,8 @@
                           srcset="image/gallery/gallery11(1024).jpg 1x">
                   <img src="image/gallery/gallery11.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery12(320).jpg 1x">
@@ -376,8 +415,8 @@
                           srcset="image/gallery/gallery12(1024).jpg 1x">
                   <img src="image/gallery/gallery12.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery13(320).jpg 1x">
@@ -387,8 +426,8 @@
                           srcset="image/gallery/gallery13(1024).jpg 1x">
                   <img src="image/gallery/gallery13.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery14(320).jpg 1x">
@@ -398,8 +437,8 @@
                           srcset="image/gallery/gallery14(1024).jpg 1x">
                   <img src="image/gallery/gallery14.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery15(320).jpg 1x">
@@ -409,8 +448,8 @@
                           srcset="image/gallery/gallery15(1024).jpg 1x">
                   <img src="image/gallery/gallery15.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery16(320).jpg 1x">
@@ -420,8 +459,8 @@
                           srcset="image/gallery/gallery16(1024).jpg 1x">
                   <img src="image/gallery/gallery16.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery17(320).jpg 1x">
@@ -431,8 +470,8 @@
                           srcset="image/gallery/gallery17(1024).jpg 1x">
                   <img src="image/gallery/gallery17.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery18(320).jpg 1x">
@@ -442,8 +481,8 @@
                           srcset="image/gallery/gallery18(1024).jpg 1x">
                   <img src="image/gallery/gallery18.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery19(320).jpg 1x">
@@ -453,8 +492,8 @@
                           srcset="image/gallery/gallery19(1024).jpg 1x">
                   <img src="image/gallery/gallery19.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery20(320).jpg 1x">
@@ -464,8 +503,8 @@
                           srcset="image/gallery/gallery20(1024).jpg 1x">
                   <img src="image/gallery/gallery20.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery21(320).jpg 1x">
@@ -475,8 +514,8 @@
                           srcset="image/gallery/gallery21(1024).jpg 1x">
                   <img src="image/gallery/gallery21.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery22(320).jpg 1x">
@@ -486,8 +525,8 @@
                           srcset="image/gallery/gallery21(1024).jpg 1x">
                   <img src="image/gallery/gallery22.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery23(320).jpg 1x">
@@ -497,8 +536,8 @@
                           srcset="image/gallery/gallery23(1024).jpg 1x">
                   <img src="image/gallery/gallery23.jpg" alt="Картинка">
                 </picture>
-              </div>
-              <div class="gallery__slide swiper-slide" tabindex="0">
+              </button>
+              <button class="gallery__slide swiper-slide">
                 <picture class="">
                   <source media="(max-width: 600px)" type="image/png"
                           srcset="image/gallery/gallery24(320).jpg 1x">
@@ -508,7 +547,7 @@
                           srcset="image/gallery/gallery24(1024).jpg 1x">
                   <img src="image/gallery/gallery24.jpg" alt="Картинка">
                 </picture>
-              </div>
+              </button>
             </div>
           </div>
         </div>
@@ -516,7 +555,7 @@
         <div class="gallery__offer">
           <p class="text gallery__offer-text">
             Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a href="#"
-                                                                                                  class="text--color_theme">авторизуйтесь</a>,
+                                                                                                  class="text--color-theme">авторизуйтесь</a>,
             либо воспользуйтесь лицензией.
           </p>
         </div>
@@ -601,7 +640,7 @@
         quisquam reprehenderit rerum vero? A ad, consequatur doloremque ducimus ea error inventore itaque nesciunt nisi
         officia perferendis velit voluptatem. Consequuntur, maxime, quam?
       </div>
-      <div class="catalog__content tab-content tab-content-active" data-target="Italy">
+      <div class="catalog__content tab-content" data-target="Italy">
         <p class="text catalog__text">Акционеры крупнейших компаний, которые представляют собой яркий пример
           континентально-европейского
           типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и&nbsp;морали. Являясь
@@ -611,8 +650,7 @@
         <div class="accordion-container">
 
           <div class="catalog__accordion-list-pic">
-
-            <div class="tab-content__accordion-list-pic tab-content-active" data-target="author12">
+            <div class="tab-content__accordion-list-pic" data-target="author12">
 
               <picture class="accordion__pic">
                 <source media="(max-width: 1024px)" type="image/webp"
@@ -628,7 +666,7 @@
               </picture>
 
               <h3 class="accordion__pic-desc-title">Доменико Гирландайо</h3>
-              <span class="text text--size_xs text--color_grey">2 июня 1448 — 11 января 1494.</span>
+              <span class="text text--size-xs text--color-grey">2 июня 1448 — 11 января 1494.</span>
               <p class="text accordion__pic-desc-text">Один из&nbsp;ведущих флорентийских художников Кватроченто,
                 основатель художественной
                 династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где
@@ -651,9 +689,9 @@
 
               </div>
               <h3 class="accordion__pic-desc-title">Что мы о нём знаем?</h3>
-              <p class="text text--size_s">Пока ничего... Зато мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что
+              <p class="text text--size-s">Пока ничего... Зато мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что
                 посмотреть!</p>
-              <a href="#gallery" class="text text--color_theme text--size_s">В галерею</a>
+              <a href="#gallery" class="text text--color-theme text--size-s">В галерею</a>
             </div>
           </div>
 
@@ -913,27 +951,16 @@
       <div class="wrapper-cards">
         <article class="event__card">
           <picture>
-            <source media="(max-width: 450px)" type="image/webp"
-                    srcset="image/events/eventsCard1(320)@1.webp 1x, image/events/eventsCard1(320)@2.webp 2x">
             <source media="(max-width: 450px)" type="image/jpg"
-                    srcset="image/events/eventsCard1(320)@1.jpg 1x, image/events/eventsCard1(320)@2.jpg 2x">
+                    srcset="image/events/eventsCard1(320)@1.jpg">
 
-            <source media="(max-width: 914px)" type="image/webp"
-                    srcset="image/events/eventsCard1(768)@1.webp 1x, image/events/eventsCard1(768)@2.webp 2x">
             <source media="(max-width: 914px)" type="image/jpg"
-                    srcset="image/events/eventsCard1(768)@1.jpg 1x, image/events/eventsCard1(768)@2.jpg 2x">
+                    srcset="image/events/eventsCard1(768)@1.jpg">
 
-            <source media="(max-width: 1464px)" type="image/webp"
-                    srcset="image/events/eventsCard1(1024)@1.webp 1x, image/events/eventsCard1(1024)@2.webp 2x">
             <source media="(max-width: 1464px)" type="image/jpg"
-                    srcset="image/events/eventsCard1(1024)@1.jpg 1x, image/events/eventsCard1(1024)@2.jpg 2x">
+                    srcset="image/events/eventsCard1(1024)@1.jpg">
 
-            <source media="(max-width: 1920px)" type="image/webp"
-                    srcset="image/events/eventsCard1(1920)@1.webp 1x, image/events/eventsCard1(1920)@2.webp 2x">
-            <source media="(max-width: 1920px)" type="image/jpg"
-                    srcset="image/events/eventsCard1(1920)@1.jpg 1x, image/events/eventsCard1(1920)@2.jpg 2x">
             <img class="event__card-image" src="image/events/eventsCard1(1920)@1.jpg"
-                 srcset="image/events/eventsCard1(1920)@2.jpg"
                  alt="Книжная гравюра в живом восприятии">
           </picture>
           <div class="event__card-desc">
@@ -949,25 +976,15 @@
         </article>
         <article class="event__card">
           <picture>
-            <source media="(max-width: 450px)" type="image/webp"
-                    srcset="image/events/eventsCard2(320)@1.webp 1x, image/events/eventsCard2(320)@2.webp 2x">
             <source media="(max-width: 450px)" type="image/jpg"
-                    srcset="image/events/eventsCard2(320)@1.jpg 1x, image/events/eventsCard2(320)@2.jpg 2x">
+                    srcset="image/events/eventsCard2(320)@1.jpg">
 
-            <source media="(max-width: 914px)" type="image/webp"
-                    srcset="image/events/eventsCard2(768)@1.webp 1x, image/events/eventsCard2(768)@2.webp 2x">
             <source media="(max-width: 914px)" type="image/jpg"
-                    srcset="image/events/eventsCard2(768)@1.jpg 1x, image/events/eventsCard2(768)@2.jpg 2x">
+                    srcset="image/events/eventsCard2(768)@1.jpg">
 
-            <source media="(max-width: 1464px)" type="image/webp"
-                    srcset="image/events/eventsCard2(1024)@1.webp 1x, image/events/eventsCard2(1024)@2.webp 2x">
             <source media="(max-width: 1464px)" type="image/jpg"
-                    srcset="image/events/eventsCard2(1024)@1.jpg 1x, image/events/eventsCard2(1024)@2.jpg 2x">
+                    srcset="image/events/eventsCard2(1024)@1.jpg">
 
-            <source media="(max-width: 1920px)" type="image/webp"
-                    srcset="image/events/eventsCard2(1920)@1.webp 1x, image/events/eventsCard2(1920)@2.webp 2x">
-            <source media="(max-width: 1920px)" type="image/jpg"
-                    srcset="image/events/eventsCard2(1920)@1.jpg 1x, image/events/eventsCard2(1920)@2.jpg 2x">
             <img class="event__card-image" src="image/events/eventsCard2(1920)@1.jpg"
                  alt="Дмитрий Петров и Сергей Ильин.">
           </picture>
@@ -984,25 +1001,15 @@
         </article>
         <article class="event__card">
           <picture>
-            <source media="(max-width: 450px)" type="image/webp"
-                    srcset="image/events/eventsCard3(320)@1.webp 1x, image/events/eventsCard3(320)@2.webp 2x">
             <source media="(max-width: 450px)" type="image/jpg"
-                    srcset="image/events/eventsCard3(320)@1.jpg 1x, image/events/eventsCard3(320)@2.jpg 2x">
+                    srcset="image/events/eventsCard3(320)@1.jpg">
 
-            <source media="(max-width: 914px)" type="image/webp"
-                    srcset="image/events/eventsCard3(768)@1.webp 1x, image/events/eventsCard3(768)@2.webp 2x">
             <source media="(max-width: 914px)" type="image/jpg"
-                    srcset="image/events/eventsCard3(768)@1.jpg 1x, image/events/eventsCard3(768)@2.jpg 2x">
+                    srcset="image/events/eventsCard3(768)@1.jpg">
 
-            <source media="(max-width: 1464px)" type="image/webp"
-                    srcset="image/events/eventsCard3(1024)@1.webp 1x, image/events/eventsCard3(1024)@2.webp 2x">
             <source media="(max-width: 1464px)" type="image/jpg"
-                    srcset="image/events/eventsCard3(1024)@1.jpg 1x, image/events/eventsCard3(1024)@2.jpg 2x">
+                    srcset="image/events/eventsCard3(1024)@1.jpg">
 
-            <source media="(max-width: 1920px)" type="image/webp"
-                    srcset="image/events/eventsCard3(1920)@1.webp 1x, image/events/eventsCard3(1920)@2.webp 2x">
-            <source media="(max-width: 1920px)" type="image/jpg"
-                    srcset="image/events/eventsCard3(1920)@1.jpg 1x, image/events/eventsCard3(1920)@2.jpg 2x">
             <img class="event__card-image" src="image/events/eventsCard3(1920)@1.jpg" alt="Выставка">
           </picture>
           <div class="event__card-desc">
@@ -1018,25 +1025,15 @@
         </article>
         <article class="event__card">
           <picture>
-            <source media="(max-width: 450px)" type="image/webp"
-                    srcset="image/events/eventsCard4(320)@2.webp 2x">
             <source media="(max-width: 450px)" type="image/jpg"
-                    srcset="image/events/eventsCard4(320)@1.jpg 1x, image/events/eventsCard4(320)@2.jpg 2x">
+                    srcset="image/events/eventsCard4(320)@1.jpg">
 
-            <source media="(max-width: 914px)" type="image/webp"
-                    srcset="image/events/eventsCard4(768)@1.webp 1x, image/events/eventsCard4(768)@2.webp 2x">
             <source media="(max-width: 914px)" type="image/jpg"
-                    srcset="image/events/eventsCard4(768)@1.jpg 1x, image/events/eventsCard4(768)@2.jpg 2x">
+                    srcset="image/events/eventsCard4(768)@1.jpg">
 
-            <source media="(max-width: 1464px)" type="image/webp"
-                    srcset="image/events/eventsCard4(1024)@1.webp 1x, image/events/eventsCard4(1024)@2.webp 2x">
             <source media="(max-width: 1464px)" type="image/jpg"
-                    srcset="image/events/eventsCard4(1024)@1.jpg 1x, image/events/eventsCard4(1024)@2.jpg 2x">
+                    srcset="image/events/eventsCard4(1024)@1.jpg">
 
-            <source media="(max-width: 1920px)" type="image/webp"
-                    srcset="image/events/eventsCard4(1920)@1.webp 1x, image/events/eventsCard4(1920)@2.webp 2x">
-            <source media="(max-width: 1920px)" type="image/jpg"
-                    srcset="image/events/eventsCard4(1920)@1.jpg 1x, image/events/eventsCard4(1920)@2.jpg 2x">
             <img class="event__card-image" src="image/events/eventsCard4(1920)@1.jpg" alt="Биеннале">
           </picture>
           <div class="event__card-desc">
@@ -1051,25 +1048,15 @@
         </article>
         <article class="event__card">
           <picture>
-            <source media="(max-width: 450px)" type="image/webp"
-                    srcset="image/events/eventsCard5(320)@1.webp 1x, image/events/eventsCard5(320)@2.webp 2x">
             <source media="(max-width: 450px)" type="image/jpg"
-                    srcset="image/events/eventsCard5(320)@1.jpg 1x, image/events/eventsCard5(320)@2.jpg 2x">
+                    srcset="image/events/eventsCard5(320)@1.jpg">
 
-            <source media="(max-width: 914px)" type="image/webp"
-                    srcset="image/events/eventsCard5(768)@1.webp 1x, image/events/eventsCard5(768)@2.webp 2x">
             <source media="(max-width: 914px)" type="image/jpg"
-                    srcset="image/events/eventsCard5(768)@1.jpg 1x, image/events/eventsCard5(768)@2.jpg 2x">
+                    srcset="image/events/eventsCard5(768)@1.jpg 1x">
 
-            <source media="(max-width: 1464px)" type="image/webp"
-                    srcset="image/events/eventsCard5(1024)@1.webp 1x, image/events/eventsCard5(1024)@2.webp 2x">
             <source media="(max-width: 1464px)" type="image/jpg"
-                    srcset="image/events/eventsCard5(1024)@1.jpg 1x, image/events/eventsCard5(1024)@2.jpg 2x">
+                    srcset="image/events/eventsCard5(1024)@1.jpg 1x">
 
-            <source media="(max-width: 1920px)" type="image/webp"
-                    srcset="image/events/eventsCard5(1920)@1.webp 1x, image/events/eventsCard5(1920)@2.webp 2x">
-            <source media="(max-width: 1920px)" type="image/jpg"
-                    srcset="image/events/eventsCard5(1920)@1.jpg 1x, image/events/eventsCard5(1920)@2.jpg 2x">
             <img class="event__card-image" src="image/events/eventsCard5(1920)@1.jpg"
                  alt="Фотография из серии «Метафора серебра»">
           </picture>
@@ -1093,103 +1080,103 @@
     <div class="container container__publications">
       <div class="left-side">
         <h2 class="title publications__title" id="publications">Издания</h2>
-        <aside class="filter">
+        <form class="filter">
 
           <div class="checkbox">
 
             <button class="checkbox__title" aria-expanded="true" disabled="disabled">Категории</button>
             <ul class="checkbox__list" aria-hidden="false">
               <li class="checkbox__item">
-                <label class="check" tabindex="0">
-                  <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
+                <label class="check">
+                  <input class="check__input" type="checkbox" aria-hidden="true">
                   <span class="check__box" role="checkbox" aria-checked="false"></span>
                   <span class="check__text">Бестселлеры</span>
                 </label>
               </li>
 
               <li class="checkbox__item">
-                <label class="check" tabindex="0">
-                  <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
+                <label class="check">
+                  <input class="check__input" type="checkbox" aria-hidden="true">
                   <span class="check__box" role="checkbox" aria-checked="false"></span>
                   <span class="check__text">Искусство</span>
                 </label>
               </li>
 
               <li class="checkbox__item">
-                <label class="check" tabindex="0">
-                  <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
+                <label class="check">
+                  <input class="check__input" type="checkbox" aria-hidden="true">
                   <span class="check__box" role="checkbox" aria-checked="false"></span>
                   <span class="check__text">Архитектура</span>
                 </label>
               </li>
 
               <li class="checkbox__item">
-                <label class="check" tabindex="0">
-                  <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
+                <label class="check">
+                  <input class="check__input" type="checkbox" aria-hidden="true">
                   <span class="check__box" role="checkbox" aria-checked="false"></span>
                   <span class="check__text">Дизайн</span>
                 </label>
               </li>
 
               <li class="checkbox__item">
-                <label class="check" tabindex="0">
-                  <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
+                <label class="check">
+                  <input class="check__input" type="checkbox" aria-hidden="true">
                   <span class="check__box" role="checkbox" aria-checked="false"></span>
                   <span class="check__text">Мода</span>
                 </label>
               </li>
 
               <li class="checkbox__item">
-                <label class="check" tabindex="0">
-                  <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
+                <label class="check">
+                  <input class="check__input" type="checkbox" aria-hidden="true">
                   <span class="check__box" role="checkbox" aria-checked="false"></span>
                   <span class="check__text">Детям</span>
                 </label>
               </li>
 
               <li class="checkbox__item">
-                <label class="check" tabindex="0">
-                  <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
+                <label class="check">
+                  <input class="check__input" type="checkbox" aria-hidden="true">
                   <span class="check__box" role="checkbox" aria-checked="false"></span>
                   <span class="check__text">Художественная литература</span>
                 </label>
               </li>
 
               <li class="checkbox__item">
-                <label class="check" tabindex="0">
-                  <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
+                <label class="check">
+                  <input class="check__input" type="checkbox" aria-hidden="true">
                   <span class="check__box" role="checkbox" aria-checked="false"></span>
                   <span class="check__text">Публицистика</span>
                 </label>
               </li>
 
               <li class="checkbox__item">
-                <label class="check" tabindex="0">
-                  <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
+                <label class="check">
+                  <input class="check__input" type="checkbox" aria-hidden="true">
                   <span class="check__box" role="checkbox" aria-checked="false"></span>
                   <span class="check__text">Путеводители</span>
                 </label>
               </li>
 
               <li class="checkbox__item">
-                <label class="check" tabindex="0">
-                  <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
+                <label class="check">
+                  <input class="check__input" type="checkbox" aria-hidden="true">
                   <span class="check__box" role="checkbox" aria-checked="false"></span>
                   <span class="check__text">Философия</span>
                 </label>
               </li>
 
               <li class="checkbox__item">
-                <label class="check" tabindex="0">
-                  <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
+                <label class="check">
+                  <input class="check__input" type="checkbox" aria-hidden="true">
                   <span class="check__box" role="checkbox" aria-checked="false"></span>
                   <span class="check__text">Учебная литература</span>
                 </label>
               </li>
 
               <li class="checkbox__item">
-                <label class="check" tabindex="0">
-                  <input class="check__input" type="checkbox" aria-hidden="true" tabindex="-1">
+                <label class="check">
+                  <input class="check__input" type="checkbox" aria-hidden="true">
                   <span class="check__box" role="checkbox" aria-checked="false"></span>
                   <span class="check__text">Журналы и газеты</span>
                 </label>
@@ -1219,7 +1206,7 @@
               </td>
             </tr>
           </table>
-        </aside>
+        </form>
       </div>
 
       <div class="right-side">
@@ -1232,25 +1219,10 @@
               <div class="publications-card__pic">
                 <picture>
 
-                  <source media="(max-width: 1440px)" type="image/webp"
-                          srcset="image/publications/publicationsCars1(1024)@2.webp 2x">
-                  <source media="(max-width: 1440px)" type="image/webp"
-                          srcset="image/publications/publicationsCars1(1024)@1.webp 1x">
-                  <source media="(max-width: 1440px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars1(1024)@2.jpg 2x">
                   <source media="(max-width: 1440px)" type="image/jpg"
                           srcset="image/publications/publicationsCars1(1024)@1.jpg 1x">
 
-                  <source media="(max-width: 1920px)" type="image/webp"
-                          srcset="image/publications/publicationsCars1(1920)@2.webp 2x">
-                  <source media="(max-width: 1920px)" type="image/webp"
-                          srcset="image/publications/publicationsCars1(1920)@1.webp 1x">
-                  <source media="(max-width: 1920px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars1(1920)@2.jpg 2x">
-                  <source media="(max-width: 1920px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars1(1920)@1.jpg 1x">
-
-                  <img src="image/publications/publicationsCars1(1920)@2.jpg" alt="Картинка">
+                  <img src="image/publications/publicationsCars1(1920)@1.jpg" alt="Картинка">
                 </picture>
               </div>
               <div class="publications-card__desc">
@@ -1266,25 +1238,10 @@
               <div class="publications-card__pic">
                 <picture>
 
-                  <source media="(max-width: 1440px)" type="image/webp"
-                          srcset="image/publications/publicationsCars2(1024)@2.webp 2x">
-                  <source media="(max-width: 1440px)" type="image/webp"
-                          srcset="image/publications/publicationsCars2(1024)@1.webp 1x">
-                  <source media="(max-width: 1440px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars2(1024)@2.jpg 2x">
                   <source media="(max-width: 1440px)" type="image/jpg"
                           srcset="image/publications/publicationsCars2(1024)@1.jpg 1x">
 
-                  <source media="(max-width: 1920px)" type="image/webp"
-                          srcset="image/publications/publicationsCars2(1920)@2.webp 2x">
-                  <source media="(max-width: 1920px)" type="image/webp"
-                          srcset="image/publications/publicationsCars2(1920)@1.webp 1x">
-                  <source media="(max-width: 1920px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars2(1920)@2.jpg 2x">
-                  <source media="(max-width: 1920px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars2(1920)@1.jpg 1x">
-
-                  <img src="image/publications/publicationsCars2(1920)@2.jpg" alt="Картинка">
+                  <img src="image/publications/publicationsCars2(1920)@1.jpg" alt="Картинка">
                 </picture>
               </div>
               <div class="publications-card__desc">
@@ -1300,25 +1257,10 @@
               <div class="publications-card__pic">
                 <picture>
 
-                  <source media="(max-width: 1440px)" type="image/webp"
-                          srcset="image/publications/publicationsCars3(1024)@2.webp 2x">
-                  <source media="(max-width: 1440px)" type="image/webp"
-                          srcset="image/publications/publicationsCars3(1024)@1.webp 1x">
-                  <source media="(max-width: 1440px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars3(1024)@2.jpg 2x">
                   <source media="(max-width: 1440px)" type="image/jpg"
                           srcset="image/publications/publicationsCars3(1024)@1.jpg 1x">
 
-                  <source media="(max-width: 1920px)" type="image/webp"
-                          srcset="image/publications/publicationsCars3(1920)@2.webp 2x">
-                  <source media="(max-width: 1920px)" type="image/webp"
-                          srcset="image/publications/publicationsCars3(1920)@1.webp 1x">
-                  <source media="(max-width: 1920px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars3(1920)@2.jpg 2x">
-                  <source media="(max-width: 1920px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars3(1920)@1.jpg 1x">
-
-                  <img src="image/publications/publicationsCars3(1920)@2.jpg" alt="Картинка">
+                  <img src="image/publications/publicationsCars3(1920)@1.jpg" alt="Картинка">
                 </picture>
               </div>
               <div class="publications-card__desc">
@@ -1334,25 +1276,10 @@
               <div class="publications-card__pic">
                 <picture>
 
-                  <source media="(max-width: 1440px)" type="image/webp"
-                          srcset="image/publications/publicationsCars4(1024)@2.webp 2x">
-                  <source media="(max-width: 1440px)" type="image/webp"
-                          srcset="image/publications/publicationsCars4(1024)@1.webp 1x">
-                  <source media="(max-width: 1440px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars4(1024)@2.jpg 2x">
                   <source media="(max-width: 1440px)" type="image/jpg"
                           srcset="image/publications/publicationsCars4(1024)@1.jpg 1x">
 
-                  <source media="(max-width: 1920px)" type="image/webp"
-                          srcset="image/publications/publicationsCars4(1920)@2.webp 2x">
-                  <source media="(max-width: 1920px)" type="image/webp"
-                          srcset="image/publications/publicationsCars4(1920)@1.webp 1x">
-                  <source media="(max-width: 1920px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars4(1920)@2.jpg 2x">
-                  <source media="(max-width: 1920px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars4(1920)@1.jpg 1x">
-
-                  <img src="image/publications/publicationsCars4(1920)@2.jpg" alt="Картинка">
+                  <img src="image/publications/publicationsCars4(1920)@1.jpg" alt="Картинка">
                 </picture>
               </div>
               <div class="publications-card__desc">
@@ -1368,25 +1295,10 @@
               <div class="publications-card__pic">
                 <picture>
 
-                  <source media="(max-width: 1440px)" type="image/webp"
-                          srcset="image/publications/publicationsCars5(1024)@2.webp 2x">
-                  <source media="(max-width: 1440px)" type="image/webp"
-                          srcset="image/publications/publicationsCars5(1024)@1.webp 1x">
-                  <source media="(max-width: 1440px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars5(1024)@2.jpg 2x">
                   <source media="(max-width: 1440px)" type="image/jpg"
                           srcset="image/publications/publicationsCars5(1024)@1.jpg 1x">
 
-                  <source media="(max-width: 1920px)" type="image/webp"
-                          srcset="image/publications/publicationsCars5(1920)@2.webp 2x">
-                  <source media="(max-width: 1920px)" type="image/webp"
-                          srcset="image/publications/publicationsCars5(1920)@1.webp 1x">
-                  <source media="(max-width: 1920px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars5(1920)@2.jpg 2x">
-                  <source media="(max-width: 1920px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars5(1920)@1.jpg 1x">
-
-                  <img src="image/publications/publicationsCars5(1920)@2.jpg" alt="Картинка">
+                  <img src="image/publications/publicationsCars5(1920)@1.jpg" alt="Картинка">
                 </picture>
               </div>
               <div class="publications-card__desc">
@@ -1402,25 +1314,10 @@
               <div class="publications-card__pic">
                 <picture>
 
-                  <source media="(max-width: 1440px)" type="image/webp"
-                          srcset="image/publications/publicationsCars6(1024)@2.webp 2x">
-                  <source media="(max-width: 1440px)" type="image/webp"
-                          srcset="image/publications/publicationsCars6(1024)@1.webp 1x">
-                  <source media="(max-width: 1440px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars6(1024)@2.jpg 2x">
                   <source media="(max-width: 1440px)" type="image/jpg"
                           srcset="image/publications/publicationsCars6(1024)@1.jpg 1x">
 
-                  <source media="(max-width: 1920px)" type="image/webp"
-                          srcset="image/publications/publicationsCars6(1920)@2.webp 2x">
-                  <source media="(max-width: 1920px)" type="image/webp"
-                          srcset="image/publications/publicationsCars6(1920)@1.webp 1x">
-                  <source media="(max-width: 1920px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars6(1920)@2.jpg 2x">
-                  <source media="(max-width: 1920px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars6(1920)@1.jpg 1x">
-
-                  <img src="image/publications/publicationsCars6(1920)@2.jpg" alt="Картинка">
+                  <img src="image/publications/publicationsCars6(1920)@1.jpg" alt="Картинка">
                 </picture>
               </div>
               <div class="publications-card__desc">
@@ -1436,25 +1333,10 @@
               <div class="publications-card__pic">
                 <picture>
 
-                  <source media="(max-width: 1440px)" type="image/webp"
-                          srcset="image/publications/publicationsCars7(1024)@2.webp 2x">
-                  <source media="(max-width: 1440px)" type="image/webp"
-                          srcset="image/publications/publicationsCars7(1024)@1.webp 1x">
-                  <source media="(max-width: 1440px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars7(1024)@2.jpg 2x">
                   <source media="(max-width: 1440px)" type="image/jpg"
                           srcset="image/publications/publicationsCars7(1024)@1.jpg 1x">
 
-                  <source media="(max-width: 1920px)" type="image/webp"
-                          srcset="image/publications/publicationsCars7(1920)@2.webp 2x">
-                  <source media="(max-width: 1920px)" type="image/webp"
-                          srcset="image/publications/publicationsCars7(1920)@1.webp 1x">
-                  <source media="(max-width: 1920px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars7(1920)@2.jpg 2x">
-                  <source media="(max-width: 1920px)" type="image/jpg"
-                          srcset="image/publications/publicationsCars7(1920)@1.jpg 1x">
-
-                  <img src="image/publications/publicationsCars7(1920)@2.jpg" alt="Картинка">
+                  <img src="image/publications/publicationsCars7(1920)@1.jpg" alt="Картинка">
                 </picture>
               </div>
               <div class="publications-card__desc">
@@ -1480,43 +1362,30 @@
           деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые
           государства смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего
           возрастает их
-          статус бесполезности. Прежде всего, постоянное <br/> информационно&ndash;пропагандистское</p>
-        <div class="tooltip" role="tooltip"
-             data-description="Пример современных тенденций &ndash; современная&nbsp;методология&nbsp;разработки">
-          <button class="tooltip__button" aria-label="Кнопка" data-path="one">
+          статус бесполезности. Прежде всего, постоянное <br/> информационно-пропагандистское
+          <button class="tooltip__button js-tooltip" aria-label="Кнопка" data-path="one"
+                  data-tippy-content="Пример современных тенденций &ndash; современная методология разработки">
             <svg class="tooltip__i">
               <use xlink:href="sprite/sprite.svg#toolTipDefault"></use>
             </svg>
           </button>
-        </div>
-
-        <p class="text projects__text">
           обеспечение нашей деятельности
-          однозначно фиксирует необходимость&nbsp;экономической целесообразности принимаемых решений. И нет сомнений,
+          однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И нет сомнений,
           что
-          действия представителей оппозиции могут быть рассмотрены</p>
-        <div class="tooltip" role="tooltip"
-             data-description="Приятно,&nbsp;граждане,&nbsp;наблюдать,&nbsp;как сделанные&nbsp;на&nbsp;базе&nbsp;аналитики&nbsp;выводы
-          вызывают&nbsp;у&nbsp;вас&nbsp;эмоции">
-          <button class="tooltip__button" aria-label="Кнопка" data-path="two">
+          действия представителей оппозиции могут быть рассмотрены
+          <button class="tooltip__button js-tooltip" aria-label="Кнопка" data-path="two" data-tippy-content="Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы
+          вызывают у вас эмоции">
             <svg class="tooltip__i">
               <use xlink:href="sprite/sprite.svg#toolTipDefault"></use>
             </svg>
           </button>
-        </div>
-
-        <p class="text projects__text">
-          исключительно в разрезе маркетинговых и финансовых </p>
-
-        <div class="tooltip" role="tooltip"
-             data-description="В стремлении повысить качество">
-          <button class="tooltip__button" aria-label="Кнопка" data-path="three">
+          исключительно в разрезе маркетинговых и финансовых
+          <button class="tooltip__button js-tooltip" aria-label="Кнопка" data-path="three"
+                  data-tippy-content="В стремлении повысить качество">
             <svg class="tooltip__i">
               <use xlink:href="sprite/sprite.svg#toolTipDefault"></use>
             </svg>
           </button>
-        </div>
-        <p class="text projects__text">
           &nbsp;предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных
           резервов
           призывают
@@ -1525,68 +1394,58 @@
           до степени
           совершенной неузнаваемости. Подробнее:
           <a href="" class="projects__link">blanchard-art.ru/projects/about</a></p>
-        <ul class="tooltip__list">
-          <li class="tooltip__notification" data-target="one">Пример современных тенденций&ndash;современная методология
-            разработки
-          </li>
-          <li class="tooltip__notification" data-target="two">Приятно, граждане, наблюдать, как сделанные на базе
-            аналитики выводы
-            вызывают у вас эмоции
-          </li>
-          <li class="tooltip__notification" data-target="three">В стремлении повысить качество</li>
-        </ul>
       </div>
 
       <h3 class="projects__slider-title">Партнёры проектов:</h3>
       <div class="projects__slider">
 
-        <button class="projects__nav-btn projects__slider-button-prev" tabindex="0"></button>
+        <button class="projects__nav-btn projects__slider-button-prev"></button>
 
         <div class="projects__slider-container">
 
           <ul class="projects__slider-wrapper">
 
-            <li class="projects__slide" tabindex="-1">
+            <li class="projects__slide">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)1.png" alt="Freelands Foundation">
               </a>
             </li>
-            <li class="projects__slide" tabindex="-1">
+            <li class="projects__slide">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)2.png" alt="Institute for Contemporary Art">
               </a>
             </li>
-            <li class="projects__slide" tabindex="-1">
+            <li class="projects__slide">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)3.png" alt="Workhouse">
               </a>
             </li>
-            <li class="projects__slide" tabindex="-1">
+            <li class="projects__slide">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)4.png" alt="1849">
               </a>
             </li>
-            <li class="projects__slide" tabindex="-1">
+            <li class="projects__slide">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)5.png" alt="HISCOX">
               </a>
             </li>
-            <li class="projects__slide" tabindex="-1">
+            <li class="projects__slide">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)6.png" alt="CAMDEN">
               </a>
             </li>
-            <li class="projects__slide" tabindex="-1">
+            <li class="projects__slide">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)7.png" alt="STASSEN">
               </a>
             </li>
-            <li class="projects__slide" tabindex="-1">
+            <li class="projects__slide">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)8.png" alt="Whatts Gallery Artists Village">
               </a>
             </li>
-            <li class="projects__slide" tabindex="-1">
+            <li class="projects__slide">
               <a href="" class="projects__slide_content">
                 <img src="image/projects/projectsSlideColor(1920)9.png" alt="Партнер">
               </a>
@@ -1595,7 +1454,7 @@
 
         </div>
 
-        <button class="projects__nav-btn projects__slider-button-next" tabindex="0"></button>
+        <button class="projects__nav-btn projects__slider-button-next"></button>
 
       </div>
     </div>
@@ -1669,7 +1528,9 @@
 
 <footer class="footer">
   <div class="container container__footer">
-    <img class="footer__logo" src="svg/logo(320).svg" alt="художественная галерея Blanchard">
+    <a>
+      <img class="footer__logo" src="svg/logo(320).svg" alt="художественная галерея Blanchard">
+    </a>
     <ul class="footer__list-icon">
       <li class="footer__item">
         <a href="" class="footer__item-link">
@@ -1697,7 +1558,6 @@
 </footer>
 
 <script defer src="js/simplebar.min.js"></script>
-
 <script defer src="js/choices.min.js"></script>
 <script src="js/just-validate.min.js"></script>
 <script defer src="js/inputmask.min.js"></script>

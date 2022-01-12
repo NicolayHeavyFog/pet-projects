@@ -29,46 +29,58 @@
 
   /*overlay*/
 
-  --overlay-background: rgba(45,45,45,0.469625350140056) 27%;
+  --overlay-background: rgba(0,0,0,.8);
 
-  /*logo*/
+  /*header*/
 
-  --logo-background: #000000;
-  --logo-color-link: #FFFFFF;
-  --logo-color-link-focus: #7943A4;
-  --logo-color-link-hover: #C283F3;
-  --logo-color-link-active: #7943A4;
-  --logo-color-burger-focus: #9D5CD0;
-  --logo-color-burger-hover: #9D5CD0;
-  --logo-color-search-focus: #9D5CD0;
-  --logo-color-search-active: #9D5CD0;
-  --logo-color-search-hover: #9D5CD0;
+      /*header top*/
 
-  --logo-aside-padding: 10px 50px;
+  --header-top-background: #000000;
+  --header-top-color-link: #FFFFFF;
+  --header-top-color-link-focus: #7943A4;
+  --header-top-color-link-hover: #C283F3;
+  --header-top-color-link-active: #7943A4;
+  --header-top-color-burger-focus: #9D5CD0;
+  --header-top-color-burger-hover: #9D5CD0;
+  --header-top-color-search-focus: #9D5CD0;
+  --header-top-color-search-active: #9D5CD0;
+  --header-top-color-search-hover: #9D5CD0;
+  --header-top-background-search-bar: #18171B;
+
+      /*header bottom*/
+
+  --header-bottom-background: rgba(0, 0, 0, 0.4);
+  --header-bottom-gradient-link: linear-gradient(rgba(194, 131, 243, .3), rgba(194, 131, 243, .3));
+  --header-bottom-link-hover: #9D5CD0;
+  --header-bottom-link-focus: #9D5CD0;
+  --header-bottom-color-btn: #FFFFFF;
+  --header-bottom-color-btn-active: #7943A4;
+  --header-bottom-color-btn-hover: #9D5CD0;
+  --header-bottom-color-btn-focus: #9D5CD0;
+
+      /*header dropdown*/
+
+  --header-dropdown-link-color: #FFFFFF;
+  --header-dropdown-background: rgba(0, 0, 0, .9);
+
+  --aside-burger-menu-color: #FFFFFF;
+  --aside-burger-menu-padding: 36px 50px;
   --logo-aside-color-border: #E5E5E5;
 
   /*hero*/
 
-  --hero-background: rgba(0, 0, 0, 0.4);
+  --hero-color-text: #FFFFFF;
   --hero-input-border: rgba(255, 255, 255, 0.85);
   --hero-input-border-hover: #9D5CD0;
   --hero-input-border-focus: #9D5CD0;
   --hero-input-border-active: #7943A4;
   --hero-input-color-placeholder: rgba(255, 255, 255, 0.85);
-  --hero-btn-color: #FFFFFF;
-  --hero-btn-color-hover: #9D5CD0;
-  --hero-btn-color-focus: #9D5CD0;
-  --hero-btn-color-active: #7943A4;
-  --hero-dropdown-background: rgba(0, 0, 0, 0.6);
-  --hero-dropdown-link-color: #FFFFFF;
-  --hero-dropdown-link-hover: #9D5CD0;
-  --hero-dropdown-link-focus: #9D5CD0;
-  --hero-dropdown-gradient-link: linear-gradient(rgba(194, 131, 243, .3), rgba(194, 131, 243, .3));
 
   /*gallery*/
 
   --gallery-color-slide-focus: #7943A4;
   --gallery-gradient-slide-active: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
+  --gallery-color-btn-focus: #7943A4;
 
   /*catalog*/
 
@@ -108,6 +120,18 @@
   --publication-color-background-input-hover: #9D5CD0;
   --publication-color-background-input-focus: #9D5CD0;
 
+  /*project*/
+
+  --project-background-tooltip: #9D5CD0;
+  --project-color-tooltip: #FFFFFF;
+
+  --project-background-button-tooltip-hover: #D1A9F0;
+  --project-background-button-tooltip-focus: #D1A9F0;
+
+  --project-border-color-slide-focus: #7943A4;
+  --project-border-color-slide-hover: #7943A4;
+
+  --project-color-link: #9D5CD0;
 
   --text-font-size: 16px;
 }

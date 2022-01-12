@@ -13,7 +13,7 @@
 }
 
 .contacts__title {
-  padding-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .contacts__wrap {
@@ -45,7 +45,7 @@
 .contacts__contacts {
   position: relative;
   width: calc(522 / 1600 * 100%);
-  padding-top: 216px;
+  padding-top: 218px;
   padding-bottom: 122px;
   padding-right: 121px;
   background-color: #fff;
@@ -72,7 +72,6 @@
 }
 
 .contacts__contacts-address {
-  margin-bottom: 27px;
   font-style: normal;
   font-size: 16px;
   line-height: 32px;
@@ -86,7 +85,7 @@
 
 .contacts__btn {
   padding: 15px 33px;
-  margin-bottom: 39px;
+  margin-bottom: 38px;
   font-weight: 700;
   background-color: transparent;
   color: var(--theme-color);
@@ -175,7 +174,6 @@
 .contacts__icon--telegram {
   fill: rgb(42, 171, 238);
 }
-
 
 .contacts__map {
   min-height: 320px;
@@ -327,7 +325,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
 
   .form__title {
     margin-bottom: 14px;

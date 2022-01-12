@@ -1,19 +1,15 @@
 /*Publications*/
 
 .publications {
-  background-image: -webkit-image-set(
-    url("../../image/publications/publicationsBackground(1920)@2.webp") 2x,
-    url("../../image/publications/publicationsBackground(1920)@1.webp") 1x,
-    url("../../image/publications/publicationsBackground(1920)@2.jpg") 2x,
-    url("../../image/publications/publicationsBackground(1920)@1.jpg") 1x
-  );
+  background-image: url("../../image/publications/publicationsBackground(1920)@1.jpg");
   background-size: cover;
 }
 
 .container__publications {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 77px;
+  padding-bottom: 75px;
+  padding-right: 44px;
 }
 
 /* Левая сторона */
@@ -26,6 +22,7 @@
 
 .publications__title {
   display: inline-block;
+  line-height: 64px;
   margin-bottom: 15px;
   color: #FFFFFF;
 }
@@ -69,12 +66,12 @@
   border-color: var(--publication-color-checkbox-hover);
 }
 
-.check:focus {
+.check__input:focus ~ .check__text {
   outline: none;
   color: var(--publication-color-checkbox-focus);
 }
 
-.check:focus .check__box {
+.check__input:focus + .check__box {
   border-color: var(--publication-color-checkbox-focus);
 }
 
@@ -83,15 +80,18 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }
 
 .check__box {
   position: absolute;
   z-index: 10;
   margin-left: -25px;
-  width: 12px;
-  height: 12px;
+  width: .8em;
+  height: .8em;
   background-color: transparent;
   border: 1px solid #FFFFFF;
   transition: border-color var(--transition-time) var(--transition-timing-function);
@@ -117,10 +117,10 @@
 .checkbox__item--active .check__box::before {
   content: "";
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 4px;
-  height: 4px;
+  top: 0.23em;
+  left: 0.23em;
+  width: 0.20em;
+  height: 0.20em;
   border-radius: 50%;
   background-color: var(--publication-color-checkbox-active);
 }
@@ -179,20 +179,27 @@
 /* Правая сторона */
 
 .right-side {
-  width: calc(100% - 28%);
-  padding-top: 32px;
-  overflow: hidden;
+  width: calc(100% - 28% + 6px);
+  padding-top: 30px;
+  overflow: visible;
+}
+
+.publications__slider-buttons {
+  margin-left: 6px;
+  margin-bottom: 30px;
 }
 
 .publications__slider-container {
   height: 100%;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .publications__slider-container .publications__slider-wrapper {
   display: flex;
   flex-wrap: nowrap;
   justify-content: initial;
-  padding-left: 2px;
+  /*padding-left: 6px;*/
   padding-top: 1px;
 }
 
@@ -211,7 +218,7 @@
 }
 
 .publications-card__pic {
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
 .publications-card__desc {
@@ -230,7 +237,7 @@
 .publications-card__price {
   width: 40%;
   text-align: end;
-  padding-right: 3px;
+  /*padding-right: 3px;*/
 }
 
 .publications-card__author {
@@ -253,12 +260,17 @@
     width: calc(100% - 70%);
   }
 
+  .publications__title {
+    margin-bottom: 17px;
+  }
+
   .right-side {
     width: calc(100% - 30%);
+    padding-top: 33px;
   }
 
   .publications__slider-buttons {
-    margin-left: 18px;
+    margin-left: 16px;
   }
 
   .publications__slider-container {
@@ -266,7 +278,7 @@
   }
 
   .publications-card__pic {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
   }
 
   .publications-card {
@@ -274,12 +286,7 @@
   }
 
   .publications {
-    background-image: -webkit-image-set(
-      url("../../image/publications/publicationsBackground(1024)@2.webp") 2x,
-      url("../../image/publications/publicationsBackground(1024)@1.webp") 1x,
-      url("../../image/publications/publicationsBackground(1024)@2.jpg") 2x,
-      url("../../image/publications/publicationsBackground(1024)@1.jpg") 1x
-    );
+    background-image: url("../../image/publications/publicationsBackground(1024)@1.jpg");
   }
 }
 
@@ -288,6 +295,7 @@
   .container__publications {
     display: flex;
     flex-wrap: wrap;
+    padding: var(--desktop-padding);
     padding-bottom: 80px;
   }
 
@@ -306,7 +314,7 @@
   }
 
   .filter__table {
-    margin-top: 7px;
+    margin-top: 8px;
   }
 
   .right-side {
@@ -377,12 +385,7 @@
   }
 
   .publications {
-    background-image: -webkit-image-set(
-      url("../../image/publications/publicationsBackground(768)@2.webp") 2x,
-      url("../../image/publications/publicationsBackground(768)@1.webp") 1x,
-      url("../../image/publications/publicationsBackground(768)@2.jpg") 2x,
-      url("../../image/publications/publicationsBackground(768)@1.jpg") 1x
-    );
+    background-image: url("../../image/publications/publicationsBackground(768)@1.jpg");
   }
 }
 
@@ -548,6 +551,7 @@
 @media (max-width: 480px) {
 
   .container__publications {
+    padding: var(--mobile-padding);
     padding-bottom: 50px;
   }
 
@@ -577,11 +581,6 @@
   }
 
   .publications {
-    background-image: -webkit-image-set(
-      url("../../image/publications/publicationsBackground(320)@1-2.webp") 2x,
-      url("../../image/publications/publicationsBackground(320)@1.webp") 1x,
-      url("../../image/publications/publicationsBackground(320)@2.jpg") 2x,
-      url("../../image/publications/publicationsBackground(320)@1.jpg") 1x
-    );
+    background-image: url("../../image/publications/publicationsBackground(320)@1.jpg");
   }
 }

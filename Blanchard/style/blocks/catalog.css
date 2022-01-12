@@ -7,8 +7,8 @@
 .catalog__title-list {
   display: flex;
   justify-content: flex-start;
-  height: 60px;
-  margin-bottom: 20px;
+  height: 62px;
+  margin-bottom: 18px;
 }
 
 .catalog__title {
@@ -369,9 +369,8 @@
 
   .catalog__title-list {
     height: 68px;
-    margin-bottom: 13px;
+    margin-bottom: 12px;
   }
-
 
   .catalog__title {
     margin-right: 43px;
@@ -487,6 +486,10 @@
     margin-bottom: 32px;
   }
 
+  .accordion__pic-desc-text {
+    margin-top: 6px;
+  }
+
 }
 
 @media (max-width: 767px) {
@@ -521,7 +524,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 120px;
-    margin-bottom: 17px;
+    margin-bottom: 16px;
   }
 
   .accordion__empty-pic {

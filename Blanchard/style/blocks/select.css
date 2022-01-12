@@ -90,6 +90,10 @@
   font-weight: 400;
 }
 
+.choices__item.choices__item--choice:not(:last-child) {
+  border-bottom: 1px solid #999999;
+}
+
 .is-highlighted {
   background: rgba(255, 255, 255, 0.2) !important;
   color: #FFFFFF !important;

@@ -21,7 +21,7 @@
 /*Blocks*/
 
 @import "blocks/page.css";
-@import "blocks/logo.css";
+@import "blocks/header.css";
 @import "blocks/hero.css";
 @import "blocks/about-us.css";
 @import "blocks/gallery.css";

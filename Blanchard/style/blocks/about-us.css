@@ -17,11 +17,13 @@
   .container__about-us {
     padding-bottom: 70px;
   }
+}
+
+@media (max-width: 768px) {
 
   .about-us__title {
-    margin-bottom: 16px;
+    margin-bottom: 13px;
   }
-
 }
 
 @media (max-width: 480px) {
