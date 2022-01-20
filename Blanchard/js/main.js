@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', function () {
   // header bottom dropdown
 
   const params = {
-    btnClassName: "header-bottom__btn", activeClassName: "is-active", disabledClassName: "is-disabled"
+    btnClassName: "header-bottom__button", activeClassName: "is-active", disabledClassName: "is-disabled"
   }
 
   function onDisable(evt) {
@@ -56,9 +56,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
   // hero slider
 
-  const swiper = new Swiper('.hero__slider-container', {
-    slideClass: "hero__slide",
-    wrapperClass: "hero__slider-wrapper",
+  const swiper = new Swiper('.hero-slider', {
+    slideClass: "hero-slider__slide",
+    wrapperClass: "hero-slider__wrapper",
     allowTouchMove: false,
     loop: true,
     effect: 'fade',
@@ -68,38 +68,12 @@ window.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // const heroBtnDropdown = $('.hero__item-btn');
-
-  // function closeUselessTab() {
-  //   heroBtnDropdown.each(function () {
-  //     let currentBtnDropdown = $(this);
-  //     currentBtnDropdown.on('click', function () {
-  //       if (
-  //         !currentBtnDropdown.hasClass('is-active')
-  //       ) {
-  //         const dataCurrentBtnDropdown = currentBtnDropdown.attr('data-path');
-  //         heroBtnDropdown.each(function () {
-  //           if (
-  //             $(this).attr('data-path') !== dataCurrentBtnDropdown
-  //           ) {
-  //             $(this).closest('.hero__item').hide(300);
-  //           }
-  //         });
-  //       } else {
-  //         heroBtnDropdown.each(function () {
-  //           $(this).closest('.hero__item').show(300);
-  //         });
-  //       }
-  //     });
-  //   });
-  // }
-
   //  burger side menu
 
   const container = $('.top-wrapper');
   const wrapperNavigation = $('.header-top__nav');
   const navigation = $('.header-top__aside');
-  const logInButton = $('.header-top__log-in-btn');
+  const logInButton = $('.header-top__log-in-button');
   const burgerBtnHeader = $('.header-top__burger');
   const burgerBtnAsideMenu = $('<button class="header-top__burger header-top__burger-stick--active"><span class="header-top__burger-stick"></span></button>');
 
@@ -133,14 +107,15 @@ window.addEventListener('DOMContentLoaded', function () {
   // search string
   const wrapperHeaderBottom = $('.header-bottom .header__container');
   const searchForm = $('.header-bottom__form');
-  const searchFormBtn = $('.header-bottom__search-btn');
+  const searchFormBtn = $('.header-bottom__search-button');
 
   const wrapperSearchForm = $('.header-top__search-bar');
   const searchButton = $('.header-top__search');
   const searchInput = $('.header-bottom__input');
 
   function addingSearchBarForButton() {
-    searchForm.hide();
+    searchForm.css('display', 'none');
+    // searchForm.hide();
     searchInput.attr('placeholder', '');
     wrapperSearchForm.append(searchForm);
     searchForm.append(searchFormBtn);
@@ -179,7 +154,8 @@ window.addEventListener('DOMContentLoaded', function () {
   function createMobileSearchBar() {
 
     searchButton.unbind('click');
-    $('.header-bottom__form').hide();
+    searchForm.css('display', 'none');
+
     wrapperMobileSearchBar.hide();
     $('.header-top').append(wrapperMobileSearchBar);
 
@@ -219,18 +195,18 @@ window.addEventListener('DOMContentLoaded', function () {
     let currentWidth = getWindowWidth();
     if (currentWidth < 1464) {
 
-      if (currentWidth < 1464 && currentWidth > 930) {
+      if (currentWidth < 1464 && currentWidth > 920) {
         destroyMobileSearchBar();
         addingSearchBarForButton();
         destroyContainerForMobileSearchBar();
       }
 
-      if (currentWidth >= 480 && currentWidth <= 930) {
+      if (currentWidth >= 480 && currentWidth <= 920) {
         destroyContainerForMobileSearchBar();
       }
       addsNavigationToBurgerMenu();
 
-      if (currentWidth <= 930) {
+      if (currentWidth <= 920) {
         createMobileSearchBar();
       }
       if (currentWidth <= 480) {
@@ -265,32 +241,6 @@ window.addEventListener('DOMContentLoaded', function () {
       scrollTo(elementPosition);
     });
   });
-
-  //Scroll Accordion
-
-  const accordionItemBtn = document.querySelectorAll('.accordion__item-btn');
-  const accordionItemContent = document.querySelectorAll('.tab-content__accordion-list-pic');
-
-  function goToAuthorPic() {
-    const currentWidth = getWindowWidth();
-    if (currentWidth < 1019) {
-      accordionItemBtn.forEach(function (btn) {
-        btn.addEventListener('click', function (e) {
-          accordionItemContent.forEach(function (tabContent) {
-            const elementPosition = tabContent.getBoundingClientRect().top;
-            scrollTo(elementPosition);
-          });
-        });
-      });
-    } else {
-      //отмена скролла
-    }
-
-  }
-
-
-  goToAuthorPic();
-
 
   // Slider Hero
 
@@ -329,7 +279,7 @@ window.addEventListener('DOMContentLoaded', function () {
       nextEl: ".gallery__slider-button-next", prevEl: ".gallery__slider-button-prev"
     },
 
-    sensitivity: 0.5,
+    sensitivity: 1,
 
     breakpoints: {
       441: {
@@ -355,7 +305,7 @@ window.addEventListener('DOMContentLoaded', function () {
           if (!slide.classList.contains('slide-visible')) {
             slide.tabIndex = '-1';
           } else {
-            slide.tabIndex = '';
+            slide.removeAttribute('tabindex');
           }
         });
       }, slideChange: function () {
@@ -363,7 +313,7 @@ window.addEventListener('DOMContentLoaded', function () {
           if (!slide.classList.contains('slide-visible')) {
             slide.tabIndex = '-1';
           } else {
-            slide.tabIndex = '';
+            slide.removeAttribute('tabindex');
           }
         });
       }
@@ -377,14 +327,15 @@ window.addEventListener('DOMContentLoaded', function () {
     const modalOverlay = $('<div class="modal__overlay"></div>');
     const modalBox = $('<div class="modal__content"></div>');
     const modalPictureContainer = $('<div class="modal__picture"></div>');
+    const modalImg = $('<img src="../image/gallery/modalGallery1920.png" alt="Картина Казимира Малевича &#34;Женщина с граблями&#34;">');
     const modalDescribe = $('<div class="modal__describe"></div>');
     const modalContainerHeaders = $('<div class="modal__headers"></div>');
     const modalHeaderMain = $('<h2 class="modal__header-main">Казимир Малевич</h2>');
     const modalHeaderMiddle = $('<h3 class="modal__header-middle">&#34;Женщина с граблями&#34;</h3>');
     const modalHeaderSmall = $('<h4 class="modal__header-small">1931-1932</h4>');
     const modalText = $('<p class="text modal__text">Картина из второй серии крестьянского цикла работ Казимира Малевича. Художник\n' + '                принялся за её создание в\n' + '                1930-1931 годах, после того, как первый цикл был утерян после Берлинской и Варшавской выставок в 1927\n' + '                году.</p>')
-    const modalBtnClose = $('<button class="modal__btn"></button>');
-    const modalBtnCloseSticks = $('<span class="modal__btn-sticks"></span>');
+    const modalBtnClose = $('<button class="modal__button"></button>');
+    const modalBtnCloseSticks = $('<span class="modal__button-sticks"></span>');
 
     modalContainerHeaders.append(modalHeaderMain);
     modalContainerHeaders.append(modalHeaderMiddle);
@@ -394,6 +345,8 @@ window.addEventListener('DOMContentLoaded', function () {
     modalDescribe.append(modalText);
 
     modalBtnClose.append(modalBtnCloseSticks);
+
+    modalPictureContainer.append(modalImg);
 
     modalBox.append(modalPictureContainer);
     modalBox.append(modalDescribe);
@@ -421,11 +374,12 @@ window.addEventListener('DOMContentLoaded', function () {
         gallerySlide.on('click', (ev) => {
           ev.preventDefault();
 
-          modalWindow.modalPictureContainer.append(gallerySlide.children('picture').clone());
-          modalWindow.modal.show(150);
+          // modalWindow.modalPictureContainer.append(modalImg);
+          // modalWindow.modal.show(150);
+          modalWindow.modal.css('display', 'flex');
           let myTimeout = setTimeout(() => {
             modalWindow.modalBox.show(300);
-            modalWindow.modalBtnClose.focus();
+            // modalWindow.modalBtnClose.focus();
             clearTimeout(myTimeout);
           }, 150);
 
@@ -446,7 +400,7 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
   function deleteModal(pictureContainer, modalBox, modal) {
-    $(pictureContainer).children('picture').remove();
+    // $(pictureContainer).children('picture').remove();
     modalBox.hide(300);
     let myTimeout = setTimeout(() => {
       modal.hide(300);
@@ -454,14 +408,32 @@ window.addEventListener('DOMContentLoaded', function () {
     }, 150)
   }
 
-
   modalWindowFullScreen($('.gallery__container'), $('.gallery__slide'));
 
+  function surveillanceForModal(modalImg) {
+    let currentWidth = getWindowWidth();
+
+    if (currentWidth > 1186) {
+      if (modalImg.attr('src') !== '../image/gallery/modalGallery1920.png') {
+        modalImg.attr('src', '../image/gallery/modalGallery1920.png');
+      }
+    } else if (currentWidth > 600 && currentWidth < 1186) {
+      if (modalImg.attr('src') !== '../image/gallery/modalGallery1024.png') {
+        modalImg.attr('src', '../image/gallery/modalGallery1024.png');
+      }
+    } else if (currentWidth <= 600) {
+      if (modalImg.attr('src') !== '../image/gallery/modalGallery320.png') {
+        modalImg.attr('src', '../image/gallery/modalGallery320.png');
+      }
+    }
+  }
+
+  surveillanceForModal($('.modal__picture').children('img'));
 
   // Tabs Country
 
   function switchingTabsCountry() {
-    $('.tabs__btn').each(function () {
+    $('.tabs__button').each(function () {
       $(this).on('click', function () {
         const activeTab = $(this);
         const path = activeTab.attr('data-path');
@@ -472,7 +444,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
         $(`[data-target="${path}"]`).show(300);
 
-        $('.tabs__btn').each(function () {
+        $('.tabs__button').each(function () {
           $(this).removeClass('active');
         });
 
@@ -487,49 +459,43 @@ window.addEventListener('DOMContentLoaded', function () {
 
   switchingTabsCountry();
 
-
   // Tabs Author
-
-  // document.querySelectorAll('.accordion__item-btn').forEach(function (tabsBtn) {
-  //
-  //   tabsBtn.addEventListener('click', function (event) {
-  //     const activeTab = event.currentTarget;
-  //     const path = event.currentTarget.dataset.path;
-  //
-  //     document.querySelectorAll('.tab-content__accordion-list-pic').forEach(function (tabContent) {
-  //       tabContent.classList.remove('tab-content-active');
-  //     });
-  //
-  //     document.querySelector(`[data-target="${path}"]`).classList.add('tab-content-active');
-  //
-  //     document.querySelectorAll('.accordion__item-btn').forEach(function (tabButton) {
-  //       tabButton.classList.remove('active-button');
-  //     });
-  //     activeTab.classList.add('active-button');
-  //   });
-  // });
+  const accordionItemBtn = $('.catalog-accordion__element-button');
+  const accordionItemContent = $('.catalog-accordion__tab-content');
+  $(`[data-target="author12"]`).show();
 
   function switchingTabsAuthor() {
-    $('.accordion__item-btn').each(function () {
+    const currentWidth = getWindowWidth();
+
+    accordionItemBtn.each(function () {
+      $(this).unbind('click');
+
       $(this).on('click', function () {
         const activeTab = $(this);
         const path = activeTab.attr('data-path');
 
-        $('.tab-content__accordion-list-pic').each(function () {
+        // Scroll Accordion
+        if (currentWidth < 1019) {
+
+          $('html, body').animate({
+            scrollTop: $('.catalog-accordion__list-pic').offset().top
+          }, 500);
+        }
+        accordionItemContent.each(function () {
           $(this).hide(300);
         });
 
         $(`[data-target="${path}"]`).show(300);
 
-        $('.accordion__item-btn').each(function () {
+        accordionItemBtn.each(function () {
           $(this).removeClass('active-button');
         });
 
         activeTab.show(300);
         activeTab.addClass('active-button');
+
       });
     });
-    $(`[data-target="author12"]`).show();
   }
 
   switchingTabsAuthor();
@@ -538,53 +504,47 @@ window.addEventListener('DOMContentLoaded', function () {
 
   function createAccordionCatalog() {
 
-    const catalogAccordionControl = document.querySelectorAll('.catalog__accordion-control');
-    catalogAccordionControl.forEach(button => {
-      button.addEventListener('click', (e) => {
+    const catalogAccordionControl = $('.catalog-accordion__item-control');
+    catalogAccordionControl.each(function () {
+      $(this).on('click', function () {
 
-        const self = e.currentTarget;
-        const accordionHeader = self.parentElement;
-        const accordionItem = accordionHeader.parentElement;
-        const accordionContent = accordionItem.querySelector('.accordion-gallery__content');
+        const self = $(this);
+        const accordionHeader = self.closest('.catalog-accordion__item-header');
+        const accordionItem = accordionHeader.closest('.catalog-accordion__item');
+        const accordionContent = accordionItem.find('.catalog-accordion__item-content')
 
-        accordionContent.classList.toggle('open');
+        accordionContent.toggleClass('open');
 
-        if (accordionContent.classList.contains('open')) {
-          self.setAttribute('aria-expended', true);
-          accordionContent.setAttribute('aria-hidden', false);
+        if (accordionContent.hasClass('open')) {
+          self.attr('aria-expended', true);
+          accordionContent.attr('aria-hidden', false);
+
+          self.addClass('open-tab');
+          accordionItem.addClass('open');
         } else {
-          self.setAttribute('aria-expended', false);
-          accordionContent.setAttribute('aria-hidden', true);
-          accordionContent.style.maxHeight = null;
-        }
+          self.attr('aria-expended', false);
+          accordionContent.attr('aria-hidden', true);
+          accordionContent.css('max-height', null);
 
-        if (accordionContent.classList.contains('open')) {
-          self.classList.add('open-tab');
-          // accordionIcon.classList.add('open-icon');
-          accordionItem.classList.add('open');
-        } else {
-          self.classList.remove('open-tab');
-          // accordionIcon.classList.remove('open-icon');
-          accordionItem.classList.remove('open');
+          self.removeClass('open-tab');
+          accordionItem.removeClass('open');
         }
       });
     });
-
   }
 
   createAccordionCatalog();
 
-
   // Events Slider
 
-  const eventBtn = document.querySelector('.event__btn');
+  const eventBtn = document.querySelector('.events__button');
 
   const sliderMobileParams = {
-    paginationClassName: "event__pagination",
-    cardsContainerName: "container__events",
+    paginationClassName: "events__pagination",
+    cardsContainerName: "events__container",
     cardsWrapName: "wrapper-cards",
-    card: "event__card",
-    hiddenClass: "event__card--disabled"
+    card: "events__card",
+    hiddenClass: "events__card--disabled"
   };
 
   function activateMobileSlider(params) {
@@ -607,33 +567,35 @@ window.addEventListener('DOMContentLoaded', function () {
           document.querySelectorAll(`.${params.card}`).forEach((el) => {
             el.classList.add("swiper-slide");
           });
-        }, beforeDestroy() {
+        },
+        beforeDestroy() {
           this.slides.forEach((el) => {
             el.classList.remove("swiper-slide");
             el.removeAttribute("role");
             el.removeAttribute("aria-label");
           });
           this.pagination.el.remove();
-        }, init: function () {
-          this.slides.forEach(slide => {
-            let slideLink = slide.querySelector('.event__card-link');
-            if (!slide.classList.contains('slide-visible')) {
-              slideLink.setAttribute('tabIndex', '-1')
-            } else {
-              slideLink.setAttribute('tabIndex', '0')
-            }
-
-          });
-        }, slideChange: function () {
-          this.slides.forEach(slide => {
-            let slideLink = slide.querySelector('.event__card-link');
-            if (!slide.classList.contains('slide-visible')) {
-              slideLink.setAttribute('tabIndex', '-1')
-            } else {
-              slideLink.setAttribute('tabIndex', '0')
-            }
-          });
-        }
+        },
+        // init: function () {
+        //   this.slides.forEach(slide => {
+        //     let slideLink = slide.querySelector('.event__card-link');
+        //     if (!slide.classList.contains('slide-visible')) {
+        //       slideLink.setAttribute('tabIndex', '-1')
+        //     } else {
+        //       slideLink.setAttribute('tabIndex', '0')
+        //     }
+        //
+        //   });
+        // }, slideChange: function () {
+        //   this.slides.forEach(slide => {
+        //     let slideLink = slide.querySelector('.event__card-link');
+        //     if (!slide.classList.contains('slide-visible')) {
+        //       slideLink.setAttribute('tabIndex', '-1')
+        //     } else {
+        //       slideLink.setAttribute('tabIndex', '0')
+        //     }
+        //   });
+        // }
       }
     });
   }
@@ -697,7 +659,7 @@ window.addEventListener('DOMContentLoaded', function () {
     card: "publications-card",
     paginationClassName: "publications__slider-pagination",
     navClassName: "publications__slider-buttons",
-    navBtnClassName: "publications__nav-btn",
+    navBtnClassName: "publications__nav-button",
     navPrev: "publications__slider-button-prev",
     navNext: "publications__slider-button-next"
   };
@@ -751,7 +713,7 @@ window.addEventListener('DOMContentLoaded', function () {
             el.classList.remove("swiper-slide");
             el.removeAttribute("role");
             el.removeAttribute("aria-label");
-            el.querySelector('.publications-card__btn').removeAttribute('tabIndex');
+            el.querySelector('.publications-card__button').removeAttribute('tabIndex');
           });
 
           this.pagination.el.remove();
@@ -760,21 +722,21 @@ window.addEventListener('DOMContentLoaded', function () {
 
         init: function () {
           this.slides.forEach(slide => {
-            let cardBtn = slide.querySelector('.publications-card__btn');
+            let cardBtn = slide.querySelector('.publications-card__button');
             if (!slide.classList.contains('slide-visible')) {
               cardBtn.setAttribute('tabIndex', '-1')
             } else {
-              cardBtn.setAttribute('tabIndex', '0')
+              cardBtn.removeAttribute('tabIndex')
             }
 
           });
         }, slideChange: function () {
           this.slides.forEach(slide => {
-            let cardBtn = slide.querySelector('.publications-card__btn');
+            let cardBtn = slide.querySelector('.publications-card__button');
             if (!slide.classList.contains('slide-visible')) {
               cardBtn.setAttribute('tabIndex', '-1')
             } else {
-              cardBtn.setAttribute('tabIndex', '0')
+              cardBtn.removeAttribute('tabIndex')
             }
           });
         }
@@ -886,7 +848,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
   }
 
-
   function listMobile() {
     if (!(checkboxList.hasClass('checkbox__list--open'))) {
       checkboxList.addClass('checkbox__list--open');
@@ -942,24 +903,17 @@ window.addEventListener('DOMContentLoaded', function () {
     const currentWidth = getWindowWidth();
 
     if (currentWidth <= 750) {
-      // if (tooltipDesktop !== undefined) {
-      // tooltipDesktop.destroy();
       let tooltipMobile = tippy(params.tooltip, {
         theme: 'default', trigger: 'click',
       });
-      // }
     } else {
-      // if (tooltipMobile !== undefined) {
-      // tooltipMobile.destroy();
       let tooltipDesktop = tippy(params.tooltip, {
         maxWidth: 264, theme: 'default', trigger: 'focus',
       });
-      // }
     }
   }
 
   surveillanceForTooltip(tooltip);
-
 
 //Projects Slider
 
@@ -999,21 +953,21 @@ window.addEventListener('DOMContentLoaded', function () {
       on: {
         init: function () {
           this.slides.forEach(slide => {
-            let slideLink = slide.querySelector('.projects__slide_content');
+            let slideLink = slide.querySelector('.projects__slide-content');
             if (!slide.classList.contains('slide-visible')) {
-              slideLink.setAttribute('tabIndex', '-1')
+              slideLink.setAttribute('tabindex', '-1')
             } else {
-              slideLink.setAttribute('tabIndex', '0')
+              slideLink.setAttribute('tabindex', '0')
             }
 
           });
         }, slideChange: function () {
           this.slides.forEach(slide => {
-            let slideLink = slide.querySelector('.projects__slide_content');
+            let slideLink = slide.querySelector('.projects__slide-content');
             if (!slide.classList.contains('slide-visible')) {
-              slideLink.setAttribute('tabIndex', '-1')
+              slideLink.setAttribute('tabindex', '-1')
             } else {
-              slideLink.setAttribute('tabIndex', '0')
+              slideLink.setAttribute('tabindex', '0')
             }
           });
         }
@@ -1041,6 +995,31 @@ window.addEventListener('DOMContentLoaded', function () {
       },
     },
 
+    submitHandler: function(form) {
+      let formData = new FormData(form);
+      let xhr = new XMLHttpRequest();
+
+      // xhr.onreadystatechange = function() {
+      //   if (xhr.readyState === 4) {
+      //     if (xhr.status === 200) {
+      //       console.log('Отправлено');
+      //     }
+      //   }
+      // }
+      //
+      // xhr.open('POST', 'mail.php', true);
+      // xhr.send(formData);
+
+      fetch('mail.php', {
+        method: 'POST',
+        body: formData
+      }).then(() => {
+        console.log('Отправлено');
+        form.reset();
+      })
+        .catch(() => console.log('Ошибка'));
+    },
+
     messages: {
       name: 'Как вас зовут?', tel: 'Недопустимый формат',
     },
@@ -1055,11 +1034,11 @@ window.addEventListener('DOMContentLoaded', function () {
   let zoom = 14;
 
   function init() {
+    const currentWidth = getWindowWidth();
+    var controls = [];
 
-    if (window.innerWidth > 1024) {
-      var controls = ['geolocationControl', 'zoomControl'];
-    } else {
-      var controls = [];
+    if (currentWidth > 600) {
+      controls = ['geolocationControl', 'zoomControl'];
     }
 
     let myMap = new ymaps.Map("map", {
@@ -1069,11 +1048,11 @@ window.addEventListener('DOMContentLoaded', function () {
 
       geolocationControlSize: "large",
       geolocationControlFloat: 'none',
-      geolocationControlPosition: {top: "360px", right: "20px"},
+      geolocationControlPosition: {top: "360px", right: "20px"}, //360px
 
       zoomControlSize: "medium",
       zoomControlFloat: "none",
-      zoomControlPosition: {top: "270px", right: "20px"}
+      zoomControlPosition: {top: "270px", right: "20px"} //270px
     });
 
     let myPlacemark = new ymaps.Placemark(point, {}, {
@@ -1086,17 +1065,19 @@ window.addEventListener('DOMContentLoaded', function () {
 
     setTimeout(() => {
       myMap.container.fitToViewport();
-      if (window.innerWidth <= 1024) {
-      }
+
+      // if (currentWidth <= 1500) {
+      //   console.log(myMap.controls);
+      // }
     }, 5000);
 
   }
 
   window.addEventListener("resize", function () {
     checkWindowWidthMobile(sliderMobileParams);
-    surveillanceForModalBoxGallery();
-    goToAuthorPic();
+    switchingTabsAuthor();
     surveillanceForList();
+    surveillanceForModal($('.modal__picture').children('img'));
     surveillanceForActiveElement()
     checkWindowWidth(sliderParamsNotMobile);
   });

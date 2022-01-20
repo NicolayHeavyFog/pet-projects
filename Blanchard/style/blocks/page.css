@@ -2,6 +2,7 @@
 
 .page__body {
   font-family: 'open_sans', sans-serif;
+  background-color: var(--document-background-color);
 }
 
 .container {
@@ -37,7 +38,7 @@ button {
   padding: 0;
 }
 
-.btn {
+.button {
   position: relative;
   display: inline-block;
   padding: 15px;
@@ -50,71 +51,74 @@ button {
   cursor: pointer;
   transition: background 0.1s var(--transition-timing-function), border-color 0.1s var(--transition-timing-function),
   box-shadow var(--transition-time) var(--transition-timing-function);
+  word-wrap: break-word;
+
 }
 
-.btn::before {
+.button::before {
   content: '';
   position: absolute;
-  top: -8px;
-  right: -9px;
-  bottom: -8px;
-  left: -8px;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
   display: inline-block;
   opacity: 0;
-  border: 2px solid var(--theme-color-btn-outer-rim);
+  box-shadow: 0 0 0 2px var(--theme-color-button-outer-rim);
+  /*border: 2px solid var(--theme-color-button-outer-rim);*/
   border-radius: 100px;
   transition: opacity var(--transition-time) var(--transition-timing-function);
 }
 
-.btn:focus {
+.button:focus {
   outline: none;
 }
 
-.btn:focus::before {
+.button:focus::before {
   opacity: 1;
 }
 
-.btn:hover {
-  border-color: var(--theme-color-btn-outer-rim);
+.button:hover {
+  border-color: var(--theme-color-button-outer-rim);
 }
 
-.btn:active {
-  border-color: var(--theme-color-btn-focus);
+.button:active {
+  border-color: var(--theme-color-button-focus);
   background: var(--theme-color-focus);
 }
 
-.btn__background-slide::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  background-color: var(--theme-color-focus);
-  transition: transform 300ms var(--transition-timing-function);
-  transform: scaleX(0);
-  transform-origin: left;
-}
+/*.button__background-slide::after {*/
+/*  content: '';*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  bottom: 0;*/
+/*  right: 0;*/
+/*  z-index: -1;*/
+/*  background-color: var(--theme-color-focus);*/
+/*  transition: transform 300ms var(--transition-timing-function);*/
+/*  transform: scaleX(0);*/
+/*  transform-origin: left;*/
+/*}*/
 
-.btn__background-slide:hover::after {
-  background-color: var(--theme-color-hover);
-}
+/*.button__background-slide:hover::after {*/
+/*  background-color: var(--theme-color-hover);*/
+/*}*/
 
-.btn__background-slide:hover::after,
-.btn__background-slide:focus::after {
-  transform: scaleX(1);
-}
+/*.button__background-slide:hover::after,*/
+/*.button__background-slide:focus::after {*/
+/*  transform: scaleX(1);*/
+/*}*/
 
-.btn__background-slide {
-  transition: color 300ms var(--transition-timing-function);
-  z-index: 1;
-}
+/*.button__background-slide {*/
+/*  transition: color 300ms var(--transition-timing-function);*/
+/*  z-index: 1;*/
+/*}*/
 
-.btn__background-slide:hover,
-.btn__background-slide:focus {
-  color: white;
-}
+/*.button__background-slide:hover,*/
+/*.button__background-slide:focus {*/
+/*  color: white;*/
+/*}*/
 
 
 /* Кнопки слайдеров*/
@@ -152,9 +156,9 @@ button {
   margin-right: 19px;
 }
 
-.projects__nav-btn,
-.publications__nav-btn,
-.gallery__nav-btn {
+.projects__nav-button,
+.publications__nav-button,
+.gallery__nav-button {
   position: relative;
   flex-shrink: 0;
   width: 30px;
@@ -166,9 +170,9 @@ button {
   transition: border var(--transition-time) var(--transition-timing-function), background-color var(--transition-time) var(--transition-timing-function);
 }
 
-.projects__nav-btn::before,
-.publications__nav-btn::before,
-.gallery__nav-btn::before {
+.projects__nav-button::before,
+.publications__nav-button::before,
+.gallery__nav-button::before {
   content: "";
   position: absolute;
   top: calc(50% - 6px / 2);
@@ -204,22 +208,22 @@ button {
 
 /* Анимации кнопок */
 
-.projects__nav-btn:focus,
-.publications__nav-btn:focus,
-.gallery__nav-btn:focus {
+.projects__nav-button:focus,
+.publications__nav-button:focus,
+.gallery__nav-button:focus {
   outline: none;
 }
 
-.publications__nav-btn:active,
-.gallery__nav-btn:active,
-.publications__nav-btn:hover,
-.gallery__nav-btn:hover {
+.publications__nav-button:active,
+.gallery__nav-button:active,
+.publications__nav-button:hover,
+.gallery__nav-button:hover {
   background-color: var(--theme-color);
 }
 
-.projects__nav-btn:focus::after,
-.publications__nav-btn:focus::after,
-.gallery__nav-btn:focus::after {
+.projects__nav-button:focus::after,
+.publications__nav-button:focus::after,
+.gallery__nav-button:focus::after {
   content: "";
   position: absolute;
   top: 0;
@@ -232,7 +236,7 @@ button {
 
 /* Отдельно описываю цвета кнопок слайдера Project */
 
-.projects__nav-btn {
+.projects__nav-button {
   background-color: #ECECEC;
 }
 
@@ -246,12 +250,12 @@ button {
   border-right: 1px solid #000000;
 }
 
-.projects__nav-btn:focus::after {
+.projects__nav-button:focus::after {
   border: 2px solid var(--theme-color);
 }
 
-.projects__nav-btn:hover {
-  background-color: var(--theme-color-btn-focus);
+.projects__nav-button:hover {
+  background-color: var(--theme-color-button-focus);
 }
 
 .swiper-button-disabled.projects__slider-button-prev::before {
@@ -266,7 +270,7 @@ button {
 
 /* Стили задизейблиных кнопок слайдеров */
 
-[class*="__nav-btn"].swiper-button-disabled {
+[class*="__nav-button"].swiper-button-disabled {
   cursor: no-drop;
   background-color: #B0B0B0;
 }
@@ -306,6 +310,7 @@ h4 {
   font-size: 48px;
   line-height: 67px;
   color: var(--text-color);
+  word-wrap: break-word;
 }
 
 /*Text*/
@@ -352,6 +357,10 @@ a:focus {
   color: #FFFFFF;
 }
 
+a:active {
+  color: var(--theme-color-active);
+}
+
 /*Images*/
 
 img {
@@ -366,9 +375,9 @@ ul {
   padding: 0;
 }
 
-  li {
-    list-style-type: none;
-  }
+li {
+  list-style-type: none;
+}
 
 /*Form*/
 
@@ -395,19 +404,67 @@ input::-webkit-inner-spin-button {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 920px) {
 
-  /*.btn {*/
-  /*  padding: 0;*/
+  /*delete link :focus*/
+  a:focus {
+    background-color: transparent;
+    color: var(--theme-color);
+  }
+
+  /*delete button :focus and :hover*/
+  .button:focus::before {
+    content: none;
+  }
+
+  .button:hover {
+    /*border-color: transparent;*/
+  }
+
+  /*delete slider button effects*/
+  .publications__nav-button:active,
+  .gallery__nav-button:active,
+  .publications__nav-button:hover,
+  .gallery__nav-button:hover {
+    background-color: #666666;
+  }
+
+  .projects__nav-button:hover {
+    background-color: #ececec;
+  }
+
+  .projects__nav-button,
+  .publications__nav-button,
+  .gallery__nav-button {
+    transition: none;
+  }
+
+  .projects__nav-button:focus::after,
+  .publications__nav-button:focus::after,
+  .gallery__nav-button:focus::after {
+    content: none;
+  }
+
+  .gallery__nav-button:active {
+    border: 3px solid #000000;
+  }
+
+  .projects__nav-button:active {
+    border: 3px solid var(--theme-color);
+  }
+
+  /*.projects__nav-button:active::after {*/
+  /*  content: '';*/
+  /*  border: 2px solid var(--theme-color);*/
   /*}*/
 
 }
 
 @media (max-width: 600px) {
 
-  .btn {
-    width: 200px;
-    height: 40px;
+  .button {
+    /*min-width: 200px;*/
+    min-height: 40px;
     padding: 0;
     font-size: 12px;
     line-height: 16px;

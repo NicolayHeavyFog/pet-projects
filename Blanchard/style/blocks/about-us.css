@@ -1,6 +1,6 @@
 /*About Us*/
 
-.container__about-us {
+.about-us__container {
   padding-bottom: 70px;
 }
 
@@ -14,7 +14,7 @@
 
 @media (max-width: 1024px) {
 
-  .container__about-us {
+  .about-us__container {
     padding-bottom: 70px;
   }
 }
@@ -28,7 +28,7 @@
 
 @media (max-width: 480px) {
 
-  .container__about-us {
+  .about-us__container {
     padding-top: 51px;
     padding-bottom: 40px;
   }

@@ -5,7 +5,7 @@
   z-index: 1;
 }
 
-.container__hero {
+.hero__container {
   padding: 70px 50px 122px;
 }
 
@@ -28,7 +28,7 @@
   line-height: 30px;
 }
 
-.hero__btn {
+.hero__button {
   width: 314px;
   min-height: 70px;
   padding: 20px;
@@ -37,7 +37,7 @@
   line-height: 25px;
 }
 
-.hero__slider-container {
+.hero-slider {
   position: absolute;
   left: 0;
   top: 0;
@@ -50,7 +50,7 @@
   animation-direction: alternate;
 }
 
-.hero__slider-wrapper {
+.hero-slider__wrapper {
   position: relative;
   width: 100%;
   height: 100%;
@@ -61,7 +61,7 @@
   box-sizing: content-box;
 }
 
-.hero__slide {
+.hero-slider__slide {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -82,32 +82,23 @@
   }
 }
 
-
-.hero__background-one {
+.hero-slider__background-one {
   background-image: url('../../image/hero/heroBackground1@1(1920).jpg');
 }
 
-.hero__background-two {
+.hero-slider__background-two {
   background-image: url('../../image/hero/heroBackground2@1(1920).jpg');
 }
 
-.hero__background-three {
+.hero-slider__background-three {
   background-image: url('../../image/hero/heroBackground3@1(1920).jpg');
-}
-
-@media (max-width: 1464px) {
-
-
-
-
 }
 
 @media (max-width: 1024px) {
 
-  .container__hero {
+  .hero__container {
     padding-bottom: 113px;
   }
-
 
   .hero__hero {
     width: 700px;
@@ -122,7 +113,7 @@
     margin-bottom: 133px;
   }
 
-  .hero__background-one {
+  .hero-slider__background-one {
     background-image: -webkit-image-set(
       url("../../image/hero/heroBackground1@2(1024).webp") 2x,
       url("../../image/hero/heroBackground1@1(1024).webp") 1x,
@@ -131,7 +122,7 @@
     );
   }
 
-  .hero__background-two {
+  .hero-slider__background-two {
     background-image: -webkit-image-set(
       url("../../image/hero/heroBackground2@2(1024).webp") 2x,
       url("../../image/hero/heroBackground2@1(1024).webp") 1x,
@@ -140,7 +131,7 @@
     );
   }
 
-  .hero__background-three {
+  .hero-slider__background-three {
     background-image: -webkit-image-set(
       url("../../image/hero/heroBackground3@2(1024).webp") 2x,
       url("../../image/hero/heroBackground3@1(1024).webp") 1x,
@@ -151,9 +142,15 @@
 
 }
 
+@media (max-width: 920px) {
+  .hero__button:hover {
+    border-color: transparent;
+  }
+}
+
 @media (max-width: 768px) {
 
-  .container__hero {
+  .hero__container {
     padding-top: 113px;
     padding-bottom: 114px;
   }
@@ -174,7 +171,7 @@
     font-weight: bold;
   }
 
-  .hero__background-one {
+  .hero-slider__background-one {
     background-image: -webkit-image-set(
       url("../../image/hero/heroBackground1@2(768).webp") 2x,
       url("../../image/hero/heroBackground1@1(768).webp") 1x,
@@ -183,7 +180,7 @@
     );
   }
 
-  .hero__background-two {
+  .hero-slider__background-two {
     background-image: -webkit-image-set(
       url("../../image/hero/heroBackground2@2(768).webp") 2x,
       url("../../image/hero/heroBackground2@1(768).webp") 1x,
@@ -192,7 +189,7 @@
     );
   }
 
-  .hero__background-three {
+  .hero-slider__background-three {
     background-image: -webkit-image-set(
       url("../../image/hero/heroBackground3@2(768).webp") 2x,
       url("../../image/hero/heroBackground3@1(768).webp") 1x,
@@ -222,7 +219,7 @@
 
 @media (max-width: 480px) {
 
-  .container__hero {
+  .hero__container {
     padding: 34px 28px 45px 30px;
   }
 
@@ -242,7 +239,7 @@
     margin-bottom: 42px;
   }
 
-  .hero__btn {
+  .hero__button {
     max-width: 200px;
     min-height: 40px;
     padding: 0 0 0 2px;
@@ -260,7 +257,7 @@
     width: 100%;
   }
 
-  .hero__background-one {
+  .hero-slider__background-one {
     background-image: -webkit-image-set(
       url("../../image/hero/heroBackground1@2(320).webp") 2x,
       url("../../image/hero/heroBackground1@1(320).webp") 1x,
@@ -269,7 +266,7 @@
     );
   }
 
-  .hero__background-two {
+  .hero-slider__background-two {
     background-image: -webkit-image-set(
       url("../../image/hero/heroBackground2@2(320).webp") 2x,
       url("../../image/hero/heroBackground2@1(320).webp") 1x,
@@ -278,7 +275,7 @@
     );
   }
 
-  .hero__background-three {
+  .hero-slider__background-three {
     background-image: -webkit-image-set(
       url("../../image/hero/heroBackground3@2(320).webp") 2x,
       url("../../image/hero/heroBackground3@1(320).webp") 1x,

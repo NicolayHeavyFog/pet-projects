@@ -1,20 +1,19 @@
 <!doctype html>
-<html class="page" lang="ru">
+<html class="page" lang="RU-ru">
 <head>
   <meta charset="UTF-8">
+<!--  <meta name="viewport" content="initial-scale=1.0, width=device-width">-->
   <meta name="viewport"
-        content="initial-scale=1.0, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=373a2fb4-7a7a-4a04-9e68-4ccb6065477a&lang=ru_RU"
-          type="text/javascript"></script>
   <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="style/swiper-bundle.min.css">
 
-  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
-  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=373a2fb4-7a7a-4a04-9e68-4ccb6065477a&lang=ru_RU"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/popperjs.min.js"></script>
+  <script src="js/typpy.min.js"></script>
 
   <title>Blanchard</title>
 </head>
@@ -44,7 +43,7 @@
           </div>
         </nav>
 
-        <button class="btn header-top__log-in-btn">
+        <button class="button header-top__log-in-button">
           <span class="header-top__log-in-text">Войти</span>
         </button>
 
@@ -61,7 +60,7 @@
       <nav class="container header__container">
         <ul class="header-bottom__list">
           <li class="header-bottom__item">
-            <button class="header-bottom__btn" data-path="one">
+            <button class="header-bottom__button" data-path="one">
               <strong class="header-bottom__heading">Реализм</strong>
             </button>
             <div class="header-bottom__dropdown" data-target="one">
@@ -90,7 +89,7 @@
             </div>
           </li>
           <li class="header-bottom__item">
-            <button class="header-bottom__btn" data-path="two">
+            <button class="header-bottom__button" data-path="two">
               <strong class="header-bottom__heading">Импрессионизм</strong>
             </button>
             <div class="header-bottom__dropdown" data-target="two">
@@ -113,7 +112,7 @@
             </div>
           </li>
           <li class="header-bottom__item">
-            <button class="header-bottom__btn" data-path="three">
+            <button class="header-bottom__button" data-path="three">
               <strong class="header-bottom__heading">Постимпрессионизм</strong>
             </button>
             <div class="header-bottom__dropdown" data-target="three">
@@ -142,7 +141,7 @@
             </div>
           </li>
           <li class="header-bottom__item">
-            <button class="header-bottom__btn" data-path="four">
+            <button class="header-bottom__button" data-path="four">
               <strong class="header-bottom__heading">Авангард</strong>
             </button>
             <div class="header-bottom__dropdown" data-target="four">
@@ -171,7 +170,7 @@
             </div>
           </li>
           <li class="header-bottom__item">
-            <button class="header-bottom__btn" data-path="five">
+            <button class="header-bottom__button" data-path="five">
               <strong class="header-bottom__heading">Футуризм</strong>
             </button>
             <div class="header-bottom__dropdown" data-target="five">
@@ -201,16 +200,15 @@
           </li>
         </ul>
 
-        <form class="header-bottom__form" action="">
+        <form class="header-bottom__form" action="https://jsonplaceholder.typicode.com/posts">
+          <button class="header-bottom__search-button">
+            <svg class="header-bottom__search-icon">
+              <use xlink:href="sprite/sprite.svg#search"></use>
+            </svg>
+          </button>
           <label class="header-bottom__form-label">
             <span class="visually-hidden">Поиск</span>
-            <button class="header-bottom__search-btn">
-              <svg class="header-bottom__search-icon">
-                <use xlink:href="sprite/sprite.svg#search"></use>
-              </svg>
-            </button>
-            <input class="header-bottom__input" required type="search" placeholder="Поиск по сайту"
-                   aria-label="Поиск по сайту">
+            <input class="header-bottom__input" required type="search" placeholder="Поиск по сайту">
           </label>
         </form>
 
@@ -218,27 +216,27 @@
     </div>
   </header>
   <section class="hero">
-    <div class="container container__hero">
+    <div class="container hero__container">
       <div class="hero__hero">
         <h2 class="hero__title">Прикоснитесь к&nbsp;прекрасному</h2>
         <p class="hero__text">Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт
           предпосылки для новых предложений.</p>
-        <button class="btn hero__btn">Подписаться на рассылку</button>
+        <button class="button hero__button">Подписаться на рассылку</button>
       </div>
     </div>
   </section>
-  <div class="hero__slider-container ">
-    <div class="hero__slider-wrapper ">
-      <div class="hero__slide swiper-slide hero__background-one"></div>
-      <div class="hero__slide swiper-slide hero__background-two"></div>
-      <div class="hero__slide swiper-slide hero__background-three"></div>
+  <div class="hero-slider">
+    <div class="hero-slider__wrapper">
+      <div class="hero-slider__slide swiper-slide hero-slider__background-one"></div>
+      <div class="hero-slider__slide swiper-slide hero-slider__background-two"></div>
+      <div class="hero-slider__slide swiper-slide hero-slider__background-three"></div>
     </div>
   </div>
 </div>
 <main>
 
   <section class="about-us">
-    <div class="container container__about-us">
+    <div class="container about-us__container">
       <h2 class="title about-us__title" id="aboutUs">О наc</h2>
       <p class="text about-us__text">Ясность нашей позиции очевидна: семантический разбор внешних противодействий
         однозначно определяет
@@ -275,11 +273,11 @@
           <div class="gallery__slider-container">
 
             <div class="gallery__slider-buttons">
-              <button class="gallery__nav-btn gallery__slider-button-prev"></button>
+              <button class="gallery__nav-button gallery__slider-button-prev"></button>
 
               <div class="gallery__slider-pagination"></div>
 
-              <button class="gallery__nav-btn gallery__slider-button-next"></button>
+              <button class="gallery__nav-button gallery__slider-button-next"></button>
             </div>
 
             <div class="gallery__slider-wrapper swiper-wrapper">
@@ -554,8 +552,8 @@
 
         <div class="gallery__offer">
           <p class="text gallery__offer-text">
-            Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a href="#"
-                                                                                                  class="text--color-theme">авторизуйтесь</a>,
+            Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a href=""
+                                                                                                  class="gallery__offer-link">авторизуйтесь</a>,
             либо воспользуйтесь лицензией.
           </p>
         </div>
@@ -566,41 +564,41 @@
   </section>
 
   <section class="catalog">
-    <div class="container container__catalog">
+    <div class="container catalog__container">
       <div class="catalog__title-list">
         <h2 class="title catalog__title" id="catalog">Каталог</h2>
         <ul class="catalog__list tabs">
 
           <li class="catalog__item tabs__item">
-            <button class="tabs__btn" data-path="French">
+            <button class="tabs__button" data-path="French">
               <svg class="catalog__icon">
                 <use xlink:href="sprite/sprite.svg#firstItem"></use>
               </svg>
             </button>
           </li>
           <li class="catalog__item tabs__item">
-            <button class="tabs__btn" data-path="Germany">
+            <button class="tabs__button" data-path="Germany">
               <svg class="catalog__icon">
                 <use xlink:href="sprite/sprite.svg#secondItem"></use>
               </svg>
             </button>
           </li>
           <li class="catalog__item tabs__item">
-            <button class="tabs__btn active" data-path="Italy">
+            <button class="tabs__button active" data-path="Italy">
               <svg class="catalog__icon">
                 <use xlink:href="sprite/sprite.svg#threeItem"></use>
               </svg>
             </button>
           </li>
           <li class="catalog__item tabs__item">
-            <button class="tabs__btn" data-path="Russia">
+            <button class="tabs__button" data-path="Russia">
               <svg class="catalog__icon">
                 <use xlink:href="sprite/sprite.svg#fourItem"></use>
               </svg>
             </button>
           </li>
           <li class="catalog__item tabs__item">
-            <button class="tabs__btn" data-path="Belgium">
+            <button class="tabs__button" data-path="Belgium">
               <svg class="catalog__icon">
                 <use xlink:href="sprite/sprite.svg#fiveItem"></use>
               </svg>
@@ -608,7 +606,8 @@
           </li>
         </ul>
       </div>
-      <div class="catalog__content tab-content" data-target="French">Lorem ipsum dolor sit amet, consectetur adipisicing
+      <div class="catalog__content tab-content" data-target="French"><p class="text catalog__text">Lorem ipsum dolor sit
+        amet, consectetur adipisicing
         elit. A assumenda autem blanditiis consequuntur cum cumque earum iure maxime minima molestias mollitia nihil
         nostrum nulla omnis, pariatur quae quaerat quasi quisquam quos sit sunt tempora totam voluptatem? Architecto
         blanditiis commodi dolore dolorum ea iste molestiae molestias odio odit porro provident quasi recusandae,
@@ -622,9 +621,10 @@
         aliquid animi assumenda consequuntur corporis debitis, deleniti deserunt dolore dolorem dolores doloribus enim
         et ex expedita fugiat illo incidunt laudantium magni minima molestias natus nemo nisi non nulla optio quaerat
         quasi quisquam quo reiciendis rem rerum similique totam ullam voluptas? Accusamus at commodi consequatur
-        corporis eius laudantium quis repellat, sequi! Debitis ex expedita odio pariatur soluta?
+        corporis eius laudantium quis repellat, sequi! Debitis ex expedita odio pariatur soluta?</p>
       </div>
-      <div class="catalog__content tab-content" data-target="Germany">Lorem ipsum dolor sit amet, consectetur
+      <div class="catalog__content tab-content" data-target="Germany"><p class="text catalog__text">Lorem ipsum dolor
+        sit amet, consectetur
         adipisicing elit. Accusantium autem eaque esse iusto saepe sunt, suscipit vitae. Deleniti ea neque nostrum omnis
         optio voluptate. Adipisci aperiam aspernatur blanditiis cum distinctio, dolores eligendi error facere illo
         incidunt laudantium maiores molestiae molestias neque officia quas quidem repellat voluptatibus? Aliquam amet
@@ -638,7 +638,7 @@
         nihil perferendis praesentium provident quia quidem ratione sit totam veritatis voluptatem voluptatum? Error
         fugit illum odit veniam. Blanditiis dicta distinctio et excepturi expedita, explicabo in magnam nesciunt numquam
         quisquam reprehenderit rerum vero? A ad, consequatur doloremque ducimus ea error inventore itaque nesciunt nisi
-        officia perferendis velit voluptatem. Consequuntur, maxime, quam?
+        officia perferendis velit voluptatem. Consequuntur, maxime, quam?</p>
       </div>
       <div class="catalog__content tab-content" data-target="Italy">
         <p class="text catalog__text">Акционеры крупнейших компаний, которые представляют собой яркий пример
@@ -647,12 +647,12 @@
           всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и&nbsp;по&nbsp;сей
           день остаются уделом либералов, которые жаждут быть функционально разнесены на&nbsp;независимые элементы.</p>
 
-        <div class="accordion-container">
+        <div class="catalog-accordion">
 
-          <div class="catalog__accordion-list-pic">
-            <div class="tab-content__accordion-list-pic" data-target="author12">
+          <div class="catalog-accordion__list-pic">
+            <div class="catalog-accordion__tab-content" data-target="author12">
 
-              <picture class="accordion__pic">
+              <picture class="catalog-accordion__pic">
                 <source media="(max-width: 1024px)" type="image/webp"
                         srcset="image/catalog/catalogItaTab@1(1024).webp 1x, image/catalog/catalogItaTab@2(1024).webp 2x">
                 <source media="(max-width: 1024px)" type="image/jpg"
@@ -665,9 +665,9 @@
                      alt="Доменико Гирландайо">
               </picture>
 
-              <h3 class="accordion__pic-desc-title">Доменико Гирландайо</h3>
+              <h3 class="catalog-accordion__pic-title">Доменико Гирландайо</h3>
               <span class="text text--size-xs text--color-grey">2 июня 1448 — 11 января 1494.</span>
-              <p class="text accordion__pic-desc-text">Один из&nbsp;ведущих флорентийских художников Кватроченто,
+              <p class="text catalog-accordion__pic-text">Один из&nbsp;ведущих флорентийских художников Кватроченто,
                 основатель художественной
                 династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где
                 юный Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов, в&nbsp;которых
@@ -676,10 +676,10 @@
 
             </div>
 
-            <div class="tab-content__accordion-list-pic" data-target="anotherAuthor">
-              <div class="accordion-empty-block">
+            <div class="catalog-accordion__tab-content" data-target="anotherAuthor">
+              <div class="catalog-accordion__empty-block">
 
-                <picture class="accordion__pic">
+                <picture class="catalog-accordion__pic">
                   <source media="(max-width: 1422px)"
                           srcset="svg/catalogAccordionEmptyPic(1024).svg">
 
@@ -688,217 +688,218 @@
                 </picture>
 
               </div>
-              <h3 class="accordion__pic-desc-title">Что мы о нём знаем?</h3>
+              <h3 class="catalog-accordion__pic-title">Что мы о нём знаем?</h3>
               <p class="text text--size-s">Пока ничего... Зато мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что
                 посмотреть!</p>
-              <a href="#gallery" class="text text--color-theme text--size-s">В галерею</a>
+              <a href="#gallery" class="catalog-accordion__tab-link">В галерею</a>
             </div>
           </div>
 
 
-          <ul class="catalog__accordion-list">
+          <ul class="catalog-accordion__list">
 
-            <li class="catalog__accordion-item open">
+            <li class="catalog-accordion__item open">
 
-              <div class="accordion-gallery__header">
+              <div class="catalog-accordion__item-header">
 
-                <button class="catalog__accordion-control open-tab" aria-expanded="true">
-                  <span class="catalog__accordion-title">C 1400 по 1499 гг.</span>
+                <button class="catalog-accordion__item-control open-tab" aria-expanded="true">
+                  <span class="catalog-accordion__item-title">C 1400 по 1499 гг.</span>
                 </button>
 
               </div>
-
-              <ul class="accordion-gallery__content open" aria-hidden="false">
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Бенедетто ди Биндо</button>
+              <div class="catalog-accordion__item-content open" aria-hidden="false">
+              <ul class="catalog-accordion__item-list">
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Бенедетто ди Биндо</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Бергоньоне, Амброджо</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Бергоньоне, Амброджо</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Биссоло, Франческо</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Биссоло, Франческо</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Больтраффио, Джованни</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Больтраффио, Джованни</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Бонсиньори, Франческо</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Бонсиньори, Франческо</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Боттичини, Рафаэлло</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Боттичини, Рафаэлло</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Брамантино</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Брамантино</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Бреа, Людовико</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Бреа, Людовико</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Бьяджо д’Антонио Туччи</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Бьяджо д’Антонио Туччи</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Веккьетта</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Веккьетта</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Андреа Верроккьо</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Андреа Верроккьо</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn active-button" data-path="author12">Доменико Гирландайо</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button active-button" data-path="author12">Доменико Гирландайо</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Беноццо Гоццоли</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Беноццо Гоццоли</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Граначчи, Франческо</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Граначчи, Франческо</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Грегорио ди Чекко</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Грегорио ди Чекко</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Джованни да Удине</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Джованни да Удине</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Джованни ди Паоло</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Джованни ди Паоло</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Джорджоне</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Джорджоне</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Парентино, Бернардо</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Парентино, Бернардо</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Пезеллино</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Пезеллино</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Пьетро Перуджино</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Пьетро Перуджино</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Перуцци, Бальдассаре</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Перуцци, Бальдассаре</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Пизанелло</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Пизанелло</button>
                 </li>
-                <li class="accordion__content-item">
-                  <button class="accordion__item-btn" data-path="anotherAuthor">Пинтуриккьо</button>
+                <li class="catalog-accordion__item-element">
+                  <button class="catalog-accordion__element-button" data-path="anotherAuthor">Пинтуриккьо</button>
                 </li>
               </ul>
+              </div>
             </li>
 
-            <li class="catalog__accordion-item">
-              <div class="accordion-gallery__header">
-                <button class="catalog__accordion-control" aria-expanded="false">
-                  <span class=" catalog__accordion-title">C 1500 по 1599 гг.</span>
+            <li class="catalog-accordion__item">
+              <div class="catalog-accordion__item-header">
+                <button class="catalog-accordion__item-control" aria-expanded="false">
+                  <span class=" catalog-accordion__item-title">C 1500 по 1599 гг.</span>
                 </button>
               </div>
-              <div class="accordion-gallery__content accordion__empty" aria-hidden="true">
+              <div class="catalog-accordion__item-content catalog-accordion__item-empty" aria-hidden="true">
 
-                <div class="accordion__empty-pic"></div>
+                <div class="catalog-accordion__item-pic"></div>
 
-                <div class="accordion__pic-desc">
-                  <b class="accordion__empty-title">Здесь пока пусто</b>
-                  <p class="accordion__empty-text">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное
+                <div class="catalog-accordion__item-desc">
+                  <b class="catalog-accordion__item-subtitle">Здесь пока пусто</b>
+                  <p class="catalog-accordion__item-text">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное
                     для себя</p>
-                  <a href="#gallery" class="accordion__empty-link">В галерею</a>
+                  <a href="#gallery" class="catalog-accordion__item-link">В галерею</a>
                 </div>
 
               </div>
             </li>
 
-            <li class="catalog__accordion-item">
-              <div class="accordion-gallery__header">
-                <button class="catalog__accordion-control" aria-expanded="false">
-                  <span class=" catalog__accordion-title">C 1600 по 1699 гг.</span>
+            <li class="catalog-accordion__item">
+              <div class="catalog-accordion__item-header">
+                <button class="catalog-accordion__item-control" aria-expanded="false">
+                  <span class=" catalog-accordion__item-title">C 1600 по 1699 гг.</span>
                 </button>
               </div>
-              <div class="accordion-gallery__content accordion__empty" aria-hidden="true">
+              <div class="catalog-accordion__item-content catalog-accordion__item-empty" aria-hidden="true">
 
-                <div class="accordion__empty-pic"></div>
+                <div class="catalog-accordion__item-pic"></div>
 
-                <div class="accordion__pic-desc">
-                  <b class="accordion__empty-title">Здесь пока пусто</b>
-                  <p class="accordion__empty-text">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное
+                <div class="catalog-accordion__item-desc">
+                  <b class="catalog-accordion__item-subtitle">Здесь пока пусто</b>
+                  <p class="catalog-accordion__item-text">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное
                     для себя</p>
-                  <a href="#gallery" class="accordion__empty-link">В галерею</a>
+                  <a href="#gallery" class="catalog-accordion__item-link">В галерею</a>
                 </div>
 
               </div>
             </li>
 
-            <li class="catalog__accordion-item">
-              <div class="accordion-gallery__header">
-                <button class="catalog__accordion-control" aria-expanded="false">
-                  <span class=" catalog__accordion-title">C 1700 по 1799 гг.</span>
+            <li class="catalog-accordion__item">
+              <div class="catalog-accordion__item-header">
+                <button class="catalog-accordion__item-control" aria-expanded="false">
+                  <span class="catalog-accordion__item-title">C 1700 по 1799 гг.</span>
                 </button>
               </div>
-              <div class="accordion-gallery__content accordion__empty" aria-hidden="true">
+              <div class="catalog-accordion__item-content catalog-accordion__item-empty" aria-hidden="true">
 
-                <div class="accordion__empty-pic"></div>
+                <div class="catalog-accordion__item-pic"></div>
 
-                <div class="accordion__pic-desc">
-                  <b class="accordion__empty-title">Здесь пока пусто</b>
-                  <p class="accordion__empty-text">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное
+                <div class="catalog-accordion__item-desc">
+                  <b class="catalog-accordion__item-subtitle">Здесь пока пусто</b>
+                  <p class="catalog-accordion__item-text">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное
                     для себя</p>
-                  <a href="#gallery" class="accordion__empty-link">В галерею</a>
+                  <a href="#gallery" class="catalog-accordion__item-link">В галерею</a>
                 </div>
 
               </div>
             </li>
 
-            <li class="catalog__accordion-item">
-              <div class="accordion-gallery__header">
-                <button class="catalog__accordion-control" aria-expanded="false">
-                  <span class=" catalog__accordion-title">C 1800 по 1899 гг.</span>
+            <li class="catalog-accordion__item">
+              <div class="catalog-accordion__item-header">
+                <button class="catalog-accordion__item-control" aria-expanded="false">
+                  <span class=" catalog-accordion__item-title">C 1800 по 1899 гг.</span>
                 </button>
               </div>
-              <div class="accordion-gallery__content accordion__empty" aria-hidden="true">
+              <div class="catalog-accordion__item-content catalog-accordion__item-empty" aria-hidden="true">
 
-                <div class="accordion__empty-pic"></div>
+                <div class="catalog-accordion__item-pic"></div>
 
-                <div class="accordion__pic-desc">
-                  <b class="accordion__empty-title">Здесь пока пусто</b>
-                  <p class="accordion__empty-text">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное
+                <div class="catalog-accordion__item-desc">
+                  <b class="catalog-accordion__item-subtitle">Здесь пока пусто</b>
+                  <p class="catalog-accordion__item-text">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное
                     для себя</p>
-                  <a href="#gallery" class="accordion__empty-link">В галерею</a>
+                  <a href="#gallery" class="catalog-accordion__item-link">В галерею</a>
                 </div>
 
               </div>
             </li>
 
-            <li class="catalog__accordion-item">
-              <div class="accordion-gallery__header">
-                <button class="catalog__accordion-control" aria-expanded="false">
-                  <span class=" catalog__accordion-title">C 1900 по 1999 гг.</span>
+            <li class="catalog-accordion__item">
+              <div class="catalog-accordion__item-header">
+                <button class="catalog-accordion__item-control" aria-expanded="false">
+                  <span class=" catalog-accordion__item-title">C 1900 по 1999 гг.</span>
                 </button>
               </div>
-              <div class="accordion-gallery__content accordion__empty" aria-hidden="true">
+              <div class="catalog-accordion__item-content catalog-accordion__item-empty" aria-hidden="true">
 
-                <div class="accordion__empty-pic"></div>
+                <div class="catalog-accordion__item-pic"></div>
 
-                <div class="accordion__pic-desc">
-                  <b class="accordion__empty-title">Здесь пока пусто</b>
-                  <p class="accordion__empty-text">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное
+                <div class="catalog-accordion__item-desc">
+                  <b class="catalog-accordion__item-subtitle">Здесь пока пусто</b>
+                  <p class="catalog-accordion__item-text">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное
                     для себя</p>
-                  <a href="#gallery" class="accordion__empty-link">В галерею</a>
+                  <a href="#gallery" class="catalog-accordion__item-link">В галерею</a>
                 </div>
 
               </div>
             </li>
 
-            <li class="catalog__accordion-item">
-              <div class="accordion-gallery__header">
-                <button class="catalog__accordion-control" aria-expanded="false">
-                  <span class=" catalog__accordion-title">C 2000 г.</span>
+            <li class="catalog-accordion__item">
+              <div class="catalog-accordion__item-header">
+                <button class="catalog-accordion__item-control" aria-expanded="false">
+                  <span class=" catalog-accordion__item-title">C 2000 г.</span>
                 </button>
               </div>
-              <div class="accordion-gallery__content accordion__empty" aria-hidden="true">
+              <div class="catalog-accordion__item-content catalog-accordion__item-empty" aria-hidden="true">
 
-                <div class="accordion__empty-pic"></div>
+                <div class="catalog-accordion__item-pic"></div>
 
-                <div class="accordion__pic-desc">
-                  <b class="accordion__empty-title">Здесь пока пусто</b>
-                  <p class="accordion__empty-text">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное
+                <div class="catalog-accordion__item-desc">
+                  <b class="catalog-accordion__item-subtitle">Здесь пока пусто</b>
+                  <p class="catalog-accordion__item-text">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное
                     для себя</p>
-                  <a href="#gallery" class="accordion__empty-link">В галерею</a>
+                  <a href="#gallery" class="catalog-accordion__item-link">В галерею</a>
                 </div>
 
               </div>
@@ -910,7 +911,8 @@
 
 
       </div>
-      <div class="catalog__content tab-content" data-target="Russia">Lorem ipsum dolor sit amet, consectetur adipisicing
+      <div class="catalog__content tab-content" data-target="Russia"><p class="text catalog__text">Lorem ipsum dolor sit
+        amet, consectetur adipisicing
         elit. Accusantium, assumenda cupiditate dignissimos dolor dolores error ipsa labore natus, odio quo reiciendis
         temporibus vel voluptas? Aliquam aliquid amet asperiores aut consequatur dignissimos dolore doloremque dolorum
         eveniet facilis fugit itaque iusto magnam maxime modi nam necessitatibus neque nesciunt nisi nobis numquam, odit
@@ -924,9 +926,10 @@
         reprehenderit repudiandae temporibus vel. Commodi eaque et obcaecati omnis repudiandae. Ab corporis deleniti
         dolorem, illo nostrum rem reprehenderit. Autem eaque exercitationem hic modi. Accusamus deserunt ea expedita
         laboriosam recusandae! A architecto asperiores aspernatur at delectus dolorem eveniet incidunt ipsam labore
-        laboriosam, magnam quaerat, quibusdam repellat repudiandae sapiente sequi sint, veritatis voluptatum!
+        laboriosam, magnam quaerat, quibusdam repellat repudiandae sapiente sequi sint, veritatis voluptatum!</p>
       </div>
-      <div class="catalog__content tab-content" data-target="Belgium">Lorem ipsum dolor sit amet, consectetur
+      <div class="catalog__content tab-content" data-target="Belgium"><p class="text catalog__text">Lorem ipsum dolor
+        sit amet, consectetur
         adipisicing elit. Amet fugit omnis sit suscipit, veniam voluptate! Assumenda, at cumque ducimus laboriosam
         maiores minima modi nemo nisi nostrum omnis possimus quis ratione saepe, sit tempora veritatis voluptatem? Animi
         deserunt dicta distinctio dolor esse explicabo fuga ipsa, laborum magnam minus optio reiciendis voluptatem!
@@ -940,16 +943,16 @@
         iure maxime mollitia, neque nihil, numquam quas quia quisquam quod ratione repellendus voluptas? Accusamus
         architecto at cupiditate illo inventore iusto mollitia quibusdam ullam. Ab ad amet asperiores atque beatae
         deserunt dicta dolores earum eius est fugiat, fugit maiores modi quo repellendus rerum sequi sit tempora tenetur
-        vel veritatis voluptas!
+        vel veritatis voluptas!</p>
       </div>
     </div>
   </section>
 
   <section class="events">
-    <div class="container container__events" data-mobile="false">
+    <div class="container events__container" data-mobile="false">
       <h2 class="title events__title" id="events">События</h2>
       <div class="wrapper-cards">
-        <article class="event__card">
+        <article class="events__card">
           <picture>
             <source media="(max-width: 450px)" type="image/jpg"
                     srcset="image/events/eventsCard1(320)@1.jpg">
@@ -960,21 +963,21 @@
             <source media="(max-width: 1464px)" type="image/jpg"
                     srcset="image/events/eventsCard1(1024)@1.jpg">
 
-            <img class="event__card-image" src="image/events/eventsCard1(1920)@1.jpg"
+            <img class="events__card-image" src="image/events/eventsCard1(1920)@1.jpg"
                  alt="Книжная гравюра в живом восприятии">
           </picture>
-          <div class="event__card-desc">
-            <address class="event__card-address">Музей им. Щусева</address>
-            <time datetime="2019-03-20" class="event__card-time">с 20 марта по 30 апреля</time>
-            <h3 class="event__card--title">Книжная гравюра в живом восприятии</h3>
-            <p class="text event__card-text">
+          <div class="events__card-desc">
+            <address class="events__card-address">Музей им. Щусева</address>
+            <time datetime="2019-03-20" class="events__card-time">с 20 марта по 30 апреля</time>
+            <h3 class="events__card-title">Книжная гравюра в живом восприятии</h3>
+            <p class="text events__card-text">
               Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую
               продолжили его брат Давид и&nbsp;сын Ридольфо.
             </p>
-            <a class="event__card-link" href="#gallery">Подробнее</a>
+            <a class="events__card-link" href="#gallery">Подробнее</a>
           </div>
         </article>
-        <article class="event__card">
+        <article class="events__card">
           <picture>
             <source media="(max-width: 450px)" type="image/jpg"
                     srcset="image/events/eventsCard2(320)@1.jpg">
@@ -985,21 +988,21 @@
             <source media="(max-width: 1464px)" type="image/jpg"
                     srcset="image/events/eventsCard2(1024)@1.jpg">
 
-            <img class="event__card-image" src="image/events/eventsCard2(1920)@1.jpg"
+            <img class="events__card-image" src="image/events/eventsCard2(1920)@1.jpg"
                  alt="Дмитрий Петров и Сергей Ильин.">
           </picture>
-          <div class="event__card-desc">
-            <address class="event__card-address">MMOMA</address>
-            <time datetime="2019-03-24 19:00" class="event__card-time">24 марта 19:00</time>
-            <h3 class="event__card--title">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</h3>
-            <p class="text event__card-text">
+          <div class="events__card-desc">
+            <address class="events__card-address">MMOMA</address>
+            <time datetime="2019-03-24 19:00" class="events__card-time">24 марта 19:00</time>
+            <h3 class="events__card-title">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</h3>
+            <p class="text events__card-text">
               Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого
               факта.
             </p>
-            <a class="event__card-link" href="#gallery">Подробнее</a>
+            <a class="events__card-link" href="#gallery">Подробнее</a>
           </div>
         </article>
-        <article class="event__card">
+        <article class="events__card">
           <picture>
             <source media="(max-width: 450px)" type="image/jpg"
                     srcset="image/events/eventsCard3(320)@1.jpg">
@@ -1010,20 +1013,20 @@
             <source media="(max-width: 1464px)" type="image/jpg"
                     srcset="image/events/eventsCard3(1024)@1.jpg">
 
-            <img class="event__card-image" src="image/events/eventsCard3(1920)@1.jpg" alt="Выставка">
+            <img class="events__card-image" src="image/events/eventsCard3(1920)@1.jpg" alt="Выставка">
           </picture>
-          <div class="event__card-desc">
-            <address class="event__card-address ">Еврейский музей</address>
-            <time datetime="2019-03-31" class="event__card-time">с 31 марта по 21 апреля</time>
-            <h3 class="event__card--title">Выставка «Формация 2020»</h3>
-            <p class="text event__card-text">
+          <div class="events__card-desc">
+            <address class="events__card-address ">Еврейский музей</address>
+            <time datetime="2019-03-31" class="events__card-time">с 31 марта по 21 апреля</time>
+            <h3 class="events__card-title">Выставка «Формация 2020»</h3>
+            <p class="text events__card-text">
               Идейные соображения высшего порядка, а&nbsp;также современная методология разработки играет важную роль в&nbsp;формировании
               глубокомысленных рассуждений.
             </p>
-            <a class="event__card-link" href="#gallery">Подробнее</a>
+            <a class="events__card-link" href="#gallery">Подробнее</a>
           </div>
         </article>
-        <article class="event__card">
+        <article class="events__card">
           <picture>
             <source media="(max-width: 450px)" type="image/jpg"
                     srcset="image/events/eventsCard4(320)@1.jpg">
@@ -1034,19 +1037,19 @@
             <source media="(max-width: 1464px)" type="image/jpg"
                     srcset="image/events/eventsCard4(1024)@1.jpg">
 
-            <img class="event__card-image" src="image/events/eventsCard4(1920)@1.jpg" alt="Биеннале">
+            <img class="events__card-image" src="image/events/eventsCard4(1920)@1.jpg" alt="Биеннале">
           </picture>
-          <div class="event__card-desc">
-            <address class="event__card-address">Третьяковка на Крымском валу</address>
-            <time datetime="2019-03-30" class="event__card-time">с 30 марта по 30 апреля</time>
-            <h3 class="event__card--title">XXIV Международная биеннале молодого искусства</h3>
-            <p class="text event__card-text">
+          <div class="events__card-desc">
+            <address class="events__card-address">Третьяковка на Крымском валу</address>
+            <time datetime="2019-03-30" class="events__card-time">с 30 марта по 30 апреля</time>
+            <h3 class="events__card-title">XXIV Международная биеннале молодого искусства</h3>
+            <p class="text events__card-text">
               Внезапно, реплицированные с&nbsp;зарубежных источников, современные исследования.
             </p>
-            <a class="event__card-link" href="#gallery">Подробнее</a>
+            <a class="events__card-link" href="#gallery">Подробнее</a>
           </div>
         </article>
-        <article class="event__card">
+        <article class="events__card">
           <picture>
             <source media="(max-width: 450px)" type="image/jpg"
                     srcset="image/events/eventsCard5(320)@1.jpg">
@@ -1057,27 +1060,27 @@
             <source media="(max-width: 1464px)" type="image/jpg"
                     srcset="image/events/eventsCard5(1024)@1.jpg 1x">
 
-            <img class="event__card-image" src="image/events/eventsCard5(1920)@1.jpg"
+            <img class="events__card-image" src="image/events/eventsCard5(1920)@1.jpg"
                  alt="Фотография из серии «Метафора серебра»">
           </picture>
-          <div class="event__card-desc">
-            <address class="event__card-address">MMAM</address>
-            <time datetime="2019-04-08" class="event__card-time">с 8 апреля по 20 мая</time>
-            <h3 class="event__card--title">Джон Винзор. Фотографии из серии «Метафора серебра»</h3>
-            <p class="text event__card-text">
+          <div class="events__card-desc">
+            <address class="events__card-address">MMAM</address>
+            <time datetime="2019-04-08" class="events__card-time">с 8 апреля по 20 мая</time>
+            <h3 class="events__card-title">Джон Винзор. Фотографии из серии «Метафора серебра»</h3>
+            <p class="text events__card-text">
               Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую
               продолжили его брат Давид и&nbsp;сын Ридольфо.
             </p>
-            <a class="event__card-link" href="#gallery">Подробнее</a>
+            <a class="events__card-link" href="#gallery">Подробнее</a>
           </div>
         </article>
       </div>
-      <button class="btn event__btn">Все события</button>
+      <button class="button events__button">Все события</button>
     </div>
   </section>
 
   <section class="publications">
-    <div class="container container__publications">
+    <div class="container publications__container">
       <div class="left-side">
         <h2 class="title publications__title" id="publications">Издания</h2>
         <form class="filter">
@@ -1230,7 +1233,7 @@
                 <em class="publications-card__price">620 руб</em>
                 <span class="publications-card__author">Иттен, Иоханнес</span>
               </div>
-              <button class="btn publications-card__btn">Заказать</button>
+              <button class="button publications-card__button">Заказать</button>
 
             </article>
 
@@ -1249,7 +1252,7 @@
                 <em class="publications-card__price">2 450 руб</em>
                 <span class="publications-card__author">Рудер, Эмиль</span>
               </div>
-              <button class="btn publications-card__btn">Заказать</button>
+              <button class="button publications-card__button">Заказать</button>
 
             </article>
 
@@ -1268,7 +1271,7 @@
                 <em class="publications-card__price">2 200 руб</em>
                 <span class="publications-card__author">Гордон, Юрий</span>
               </div>
-              <button class="btn publications-card__btn">Заказать</button>
+              <button class="button publications-card__button">Заказать</button>
 
             </article>
 
@@ -1287,7 +1290,7 @@
                 <em class="publications-card__price">1 100 руб</em>
                 <span class="publications-card__author">Кричевский, Вла...</span>
               </div>
-              <button class="btn publications-card__btn">Заказать</button>
+              <button class="button publications-card__button">Заказать</button>
 
             </article>
 
@@ -1306,7 +1309,7 @@
                 <em class="publications-card__price">1 450 руб</em>
                 <span class="publications-card__author">Мюллер-Брокма...</span>
               </div>
-              <button class="btn publications-card__btn">Заказать</button>
+              <button class="button publications-card__button">Заказать</button>
 
             </article>
 
@@ -1325,7 +1328,7 @@
                 <em class="publications-card__price">3 200 руб</em>
                 <span class="publications-card__author">Хеллер, Чваст</span>
               </div>
-              <button class="btn publications-card__btn">Заказать</button>
+              <button class="button publications-card__button">Заказать</button>
 
             </article>
 
@@ -1344,7 +1347,7 @@
                 <em class="publications-card__price">2 200 руб</em>
                 <span class="publications-card__author">Арнхейм, Рудольф</span>
               </div>
-              <button class="btn publications-card__btn">Заказать</button>
+              <button class="button publications-card__button">Заказать</button>
 
             </article>
           </div>
@@ -1354,7 +1357,7 @@
   </section>
 
   <section class="projects">
-    <div class="container container__projects">
+    <div class="container projects__container">
       <h2 class="title projects__title" id="projects">Проекты</h2>
       <div class="container__projects-text">
         <p class="text projects__text">Предварительные выводы: постоянное информационно-пропагандистское обеспечение
@@ -1363,9 +1366,9 @@
           государства смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего
           возрастает их
           статус бесполезности. Прежде всего, постоянное <br/> информационно-пропагандистское
-          <button class="tooltip__button js-tooltip" aria-label="Кнопка" data-path="one"
+          <button class="tooltip-button js-tooltip" aria-label="Кнопка" data-path="one"
                   data-tippy-content="Пример современных тенденций &ndash; современная методология разработки">
-            <svg class="tooltip__i">
+            <svg class="tooltip-button__i">
               <use xlink:href="sprite/sprite.svg#toolTipDefault"></use>
             </svg>
           </button>
@@ -1373,16 +1376,16 @@
           однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И нет сомнений,
           что
           действия представителей оппозиции могут быть рассмотрены
-          <button class="tooltip__button js-tooltip" aria-label="Кнопка" data-path="two" data-tippy-content="Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы
+          <button class="tooltip-button js-tooltip" aria-label="Кнопка" data-path="two" data-tippy-content="Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы
           вызывают у вас эмоции">
-            <svg class="tooltip__i">
+            <svg class="tooltip-button__i">
               <use xlink:href="sprite/sprite.svg#toolTipDefault"></use>
             </svg>
           </button>
           исключительно в разрезе маркетинговых и финансовых
-          <button class="tooltip__button js-tooltip" aria-label="Кнопка" data-path="three"
+          <button class="tooltip-button js-tooltip" aria-label="Кнопка" data-path="three"
                   data-tippy-content="В стремлении повысить качество">
-            <svg class="tooltip__i">
+            <svg class="tooltip-button__i">
               <use xlink:href="sprite/sprite.svg#toolTipDefault"></use>
             </svg>
           </button>
@@ -1399,54 +1402,54 @@
       <h3 class="projects__slider-title">Партнёры проектов:</h3>
       <div class="projects__slider">
 
-        <button class="projects__nav-btn projects__slider-button-prev"></button>
+        <button class="projects__nav-button projects__slider-button-prev"></button>
 
         <div class="projects__slider-container">
 
           <ul class="projects__slider-wrapper">
 
             <li class="projects__slide">
-              <a href="" class="projects__slide_content">
+              <a href="" class="projects__slide-content">
                 <img src="image/projects/projectsSlideColor(1920)1.png" alt="Freelands Foundation">
               </a>
             </li>
             <li class="projects__slide">
-              <a href="" class="projects__slide_content">
+              <a href="" class="projects__slide-content">
                 <img src="image/projects/projectsSlideColor(1920)2.png" alt="Institute for Contemporary Art">
               </a>
             </li>
             <li class="projects__slide">
-              <a href="" class="projects__slide_content">
+              <a href="" class="projects__slide-content">
                 <img src="image/projects/projectsSlideColor(1920)3.png" alt="Workhouse">
               </a>
             </li>
             <li class="projects__slide">
-              <a href="" class="projects__slide_content">
+              <a href="" class="projects__slide-content">
                 <img src="image/projects/projectsSlideColor(1920)4.png" alt="1849">
               </a>
             </li>
             <li class="projects__slide">
-              <a href="" class="projects__slide_content">
+              <a href="" class="projects__slide-content">
                 <img src="image/projects/projectsSlideColor(1920)5.png" alt="HISCOX">
               </a>
             </li>
             <li class="projects__slide">
-              <a href="" class="projects__slide_content">
+              <a href="" class="projects__slide-content">
                 <img src="image/projects/projectsSlideColor(1920)6.png" alt="CAMDEN">
               </a>
             </li>
             <li class="projects__slide">
-              <a href="" class="projects__slide_content">
+              <a href="" class="projects__slide-content">
                 <img src="image/projects/projectsSlideColor(1920)7.png" alt="STASSEN">
               </a>
             </li>
             <li class="projects__slide">
-              <a href="" class="projects__slide_content">
+              <a href="" class="projects__slide-content">
                 <img src="image/projects/projectsSlideColor(1920)8.png" alt="Whatts Gallery Artists Village">
               </a>
             </li>
             <li class="projects__slide">
-              <a href="" class="projects__slide_content">
+              <a href="" class="projects__slide-content">
                 <img src="image/projects/projectsSlideColor(1920)9.png" alt="Партнер">
               </a>
             </li>
@@ -1454,18 +1457,18 @@
 
         </div>
 
-        <button class="projects__nav-btn projects__slider-button-next"></button>
+        <button class="projects__nav-button projects__slider-button-next"></button>
 
       </div>
     </div>
   </section>
 
   <section class="contacts">
-    <div class="container container__contacts">
+    <div class="container contacts__container">
       <h2 class="title contacts__title" id="contacts">Контакты</h2>
     </div>
     <div class="contacts__wrap">
-      <div class="container container__contacts">
+      <div class="container contacts__container">
 
         <div class="contacts__contacts-location">
           <h3 class="contacts__contacts-title">Шоурум №4</h3>
@@ -1497,7 +1500,7 @@
                 >
               </label>
             </fieldset>
-            <button class="btn contacts__btn" type="submit">Заказать</button>
+            <button class="button contacts__button" type="submit">Заказать</button>
           </form>
           <span class="contacts__list-title">Связаться в один клик</span>
           <ul class="contacts__list-icon">
@@ -1527,8 +1530,8 @@
 </main>
 
 <footer class="footer">
-  <div class="container container__footer">
-    <a>
+  <div class="container footer__container">
+    <a class="footer__logo-wrapper">
       <img class="footer__logo" src="svg/logo(320).svg" alt="художественная галерея Blanchard">
     </a>
     <ul class="footer__list-icon">

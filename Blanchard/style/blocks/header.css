@@ -13,7 +13,7 @@
   color: var(--header-top-color-link);
 }
 
-.header-top{
+.header-top {
   font-size: 18px;
   background-color: var(--header-top-background);
 }
@@ -22,9 +22,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
-  padding-top: 0;
-  padding-bottom: 0;
+  flex-wrap: wrap;
+  min-height: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .header-top__logo {
@@ -33,7 +34,7 @@
   height: 40px;
 }
 
-.header-top__log-in-btn,
+.header-top__log-in-button,
 .header-top__nav {
   display: inline-block;
 }
@@ -44,6 +45,11 @@
 
 .header-top__list {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.header-top__item {
+  padding: 15px 0;
 }
 
 .header-top__item:not(:last-child) {
@@ -58,6 +64,7 @@
   position: relative;
   z-index: 1;
   display: inline-block;
+  max-width: 200px;
   font-size: 18px;
   line-height: 25px;
   font-weight: 600;
@@ -96,7 +103,7 @@
   content: none;
 }
 
-.header-top__log-in-btn {
+.header-top__log-in-button {
   order: 3;
   position: relative;
   padding: 2px 6px;
@@ -116,30 +123,32 @@
 .header-top__log-in-text {
   display: inline-flex;
   justify-content: flex-end;
-  width: 76px;
+  /*width: 76px;*/
+  min-width: 76px;
+  max-width: 200px;
   height: auto;
   background-image: url("../../svg/log-in.svg");
   background-position: center left 2px;
   background-repeat: no-repeat;
 }
 
-.header-top__log-in-btn::before,
-.header-top__log-in-btn::after {
+.header-top__log-in-button::before,
+.header-top__log-in-button::after {
   content: none;
 }
 
-.header-top__log-in-btn:hover .header-top__log-in-text {
+.header-top__log-in-button:hover .header-top__log-in-text {
   color: var(--header-top-color-link-hover);
   background-position: center left 1px;
   background-image: url("../../svg/log-in-hover.svg");
 }
 
-.header-top__log-in-btn:focus {
+.header-top__log-in-button:focus {
   background-color: var(--header-top-color-link-focus);
   outline: none;
 }
 
-.header-top__log-in-btn:active .header-top__log-in-text {
+.header-top__log-in-button:active .header-top__log-in-text {
   color: var(--header-top-color-link-active);
   background-color: transparent;
   background-position: center left 1px;
@@ -153,7 +162,8 @@
 
 .header-top__search-bar {
   display: none;
-  height: 30px;
+  /*height: 30px;*/
+  height: 34px;
   padding-left: 2px;
 }
 
@@ -175,7 +185,7 @@
 .header-top__search-icon {
   width: 33px;
   height: 35px;
-  fill: #FFFFFF;
+  fill: #ffffff;
   transition: fill var(--transition-time) var(--transition-timing-function);
 }
 
@@ -212,10 +222,10 @@
 }
 
 .header-bottom__item:not(:last-child) {
-  margin-right: 102px;
+  margin-right: 113px;
 }
 
-.header-bottom__btn {
+.header-bottom__button {
   height: 100%;
   display: flex;
   align-items: center;
@@ -224,52 +234,55 @@
   background-color: transparent;
   font-size: 18px;
   font-weight: 400;
-  color: var(--header-bottom-color-btn);
+  color: var(--header-bottom-color-button);
   transition: color var(--transition-time) var(--transition-timing-function);
   cursor: pointer;
 }
 
-.header-bottom__btn:hover {
-  color: var(--header-bottom-color-btn-hover);
+.header-bottom__button:hover {
+  color: var(--header-bottom-color-button-hover);
 }
 
-.header-bottom__btn:focus {
-  color: var(--header-bottom-color-btn-focus);
+.header-bottom__button:focus {
+  color: var(--header-bottom-color-button-focus);
 }
 
-.header-bottom__btn::after {
+.header-bottom__button::after {
   content: "";
+  position: absolute;
+  right: -11px;
   display: inline-block;
   width: 7px;
   height: 7px;
   border-top: 1px solid;
   border-right: 1px solid;
-  margin-left: 4px;
   transform: rotate(135deg);
   transition: transform var(--transition-time) var(--transition-timing-function);
   transform-origin: center;
 }
 
-.header-bottom__btn.is-active {
-  color: var(--header-bottom-color-btn-active);
+.header-bottom__button.is-active {
+  color: var(--header-bottom-color-button-active);
 }
 
-.header-bottom__btn.is-active::after {
+.header-bottom__button.is-active::after {
   transform: rotate(-45deg) translateY(4px);
 }
 
-.header-bottom__btn:active {
-  color: var(--header-bottom-color-btn-active);
+.header-bottom__button:active {
+  color: var(--header-bottom-color-button-active);
 }
 
 .header-bottom__heading {
+  position: relative;
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
 }
 
 .header-bottom__dropdown {
-  top: 47px;
+  /*top: 47px;*/
+  top: calc(100% + 22px);
   display: none;
   padding: 40px 20px 40px 40px;
   background-color: var(--header-dropdown-background);
@@ -307,7 +320,7 @@
 .header-bottom__dropdown-item {
   width: 220px;
   background-position: top;
-  background-size: contain;
+  background-size: cover;
 }
 
 .header-bottom__dropdown-item:not(:last-child) {
@@ -352,20 +365,21 @@
   opacity: 1;
 }
 
-.header-bottom__form {
-}
+/*.header-bottom__form {*/
+/*  padding: 20px 0;*/
+/*}*/
 
 .header-bottom__form-label {
   display: flex;
   align-items: flex-end;
 }
 
-.header-bottom__search-btn {
+.header-bottom__search-button {
   display: flex;
   cursor: pointer;
 }
 
-.header-bottom__search-btn:focus {
+.header-bottom__search-button:focus {
   outline: none;
 }
 
@@ -376,15 +390,15 @@
   transition: fill var(--transition-time) var(--transition-timing-function);
 }
 
-.header-bottom__search-btn:focus .header-bottom__search-icon {
+.header-bottom__search-button:focus .header-bottom__search-icon {
   fill: var(--header-top-color-search-focus);
 }
 
-.header-bottom__search-btn:hover .header-bottom__search-icon {
+.header-bottom__search-button:hover .header-bottom__search-icon {
   fill: var(--header-top-color-search-hover);
 }
 
-.header-bottom__search-btn:active .header-bottom__search-icon {
+.header-bottom__search-button:active .header-bottom__search-icon {
   fill: var(--header-top-color-search-active);
 }
 
@@ -523,7 +537,7 @@
     background-color: var(--header-top-color-burger-hover);
   }
 
-  .header-top__log-in-btn {
+  .header-top__log-in-button {
     width: 240px;
     height: auto;
     padding: 15px 30px;
@@ -537,11 +551,11 @@
     background-position: top 50% left 0;
   }
 
-  .header-top__log-in-btn::before {
+  .header-top__log-in-button::before {
     content: '';
   }
 
-  .header-top__log-in-btn:hover .header-top__log-in-text {
+  .header-top__log-in-button:hover .header-top__log-in-text {
     background-position: top 50% left 3%;
   }
 
@@ -557,19 +571,26 @@
     background: var(--overlay-background);
     transform: none;
     transition: transform var(--transition-time) var(--transition-timing-function);
+    /*overflow-y: auto;*/
+    /*overflow: auto;*/
   }
 
   .header-top__aside {
     display: flex;
     flex-direction: column;
-    width: 370px;
-    height: 100%;
+    width: 50%;
+    height: inherit;
     padding: var(--aside-burger-menu-padding);
+
+    /*overflow: auto;*/
+    /*overflow-y: auto;*/
   }
 
   .header-top__list {
     display: flex;
     flex-direction: column;
+    width: fit-content;
+    height: 80%;
     margin-right: 0;
   }
 
@@ -580,6 +601,7 @@
 
   .header-top__item {
     width: fit-content;
+    padding: 0;
   }
 
   .header-top__item:not(:last-child) {
@@ -617,7 +639,7 @@
     order: 2;
   }
 
-  .header-bottom__search-btn {
+  .header-bottom__search-button {
     order: 1;
     height: 30px;
     background-size: 30px;
@@ -644,7 +666,7 @@
   }
 }
 
-@media (max-width: 930px) {
+@media (max-width: 920px) {
 
   .header-top__search-mobile {
     z-index: 10;
@@ -685,7 +707,7 @@
   }
 
   .header-top__search-icon {
-    height: 30px;
+    height: 34px;
     stroke-width: .5;
     stroke: #FFFFFF;
     transition: fill var(--transition-time) var(--transition-timing-function), stroke var(--transition-time) var(--transition-timing-function);
@@ -721,6 +743,67 @@
     margin-bottom: 0;
   }
 
+  /* delete :focus and :hover */
+  /*Burger*/
+  .header-top__burger:focus .header-top__burger-stick,
+  .header-top__burger:focus .header-top__burger-stick::after,
+  .header-top__burger:focus .header-top__burger-stick::before,
+  .header-top__burger:hover .header-top__burger-stick,
+  .header-top__burger:hover .header-top__burger-stick::after,
+  .header-top__burger:hover .header-top__burger-stick::before {
+    background-color: #ffffff;
+  }
+
+  /*Search*/
+  .header-top__search:focus .header-top__search-icon,
+  .header-top__search:hover .header-top__search-icon {
+    stroke: #ffffff;
+    fill: #ffffff;
+  }
+  .header-top__search.header-top__search--open .header-top__search-icon {
+    fill: #ffffff;
+  }
+  .header-top__log-in-button:hover .header-top__log-in-text {
+    color: #ffffff;
+  }
+
+
+  /*Link*/
+  .header-top__link:focus::before {
+    content: none;
+  }
+  .header-top__link:hover {
+    color: #ffffff;
+  }
+
+  /*Log in button*/
+  .header-top__log-in-button::before {
+    content: none;
+  }
+
+  .header-top__log-in-button:hover {
+    border-color: var(--header-top-color-link-focus)
+  }
+
+  .header-top__log-in-button:hover .header-top__log-in-text {
+    background-position: top 50% left 0;
+  }
+
+  .header-top__log-in-button:focus {
+    background-color: transparent;
+    outline: none;
+  }
+
+  .header-top__log-in-button:hover .header-top__log-in-text {
+    color: #ffffff;
+    background-color: transparent;
+    background-image: url("../../svg/log-in.svg");
+  }
+
+  .header-top__log-in-button:active .header-top__log-in-text {
+    color: #ffffff;
+    background-image: url("../../svg/log-in.svg");
+  }
 }
 
 @media (max-width: 480px) {
@@ -736,7 +819,9 @@
   }
 
   .header__container {
-    height: 45px;
+    min-height: 45px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .header-top__logo {
@@ -813,13 +898,15 @@
     line-height: 32px;
   }
 
-  .header-top__log-in-btn,
+  .header-top__log-in-button,
   .header-top__link {
     font-size: 16px;
     font-weight: 400;
   }
 
-  .header-top__log-in-btn {
+  .header-top__log-in-button {
+    min-height: unset;
+    min-width: unset;
     width: 115px;
     height: 40px;
     padding: 5px;
@@ -827,18 +914,22 @@
   }
 
   .header-top__log-in-text {
-    width: 50px;
-    background-size: 17%;
-    background-position: top 50% left 0;
+    /*width: 50px;*/
+    /*background-size: 17%;*/
+    /*background-position: top 50% left 0;*/
+    /*width: 31px;*/
+    background-size: 20%;
+    min-width: 52px;
+    background-position: top 51% left 0;
   }
 
-  .header-top__log-in-btn:hover .header-top__log-in-text {
-    background-size: 24%;
-    background-position: top 50% left 3%;
-  }
+  /*.header-top__log-in-button:hover .header-top__log-in-text {*/
+  /*  background-size: 24%;*/
+  /*  background-position: top 50% left 3%;*/
+  /*}*/
 
   .header-top__burger-stick--active.header-top__burger {
-    margin-bottom: 10px;
+    margin-bottom: 0;
   }
 
 
