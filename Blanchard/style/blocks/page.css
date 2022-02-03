@@ -1,5 +1,9 @@
 /*Page*/
 
+.page--no-scroll {
+  overflow: hidden;
+}
+
 .page__body {
   font-family: 'open_sans', sans-serif;
   background-color: var(--document-background-color);
@@ -272,11 +276,13 @@ button {
 
 [class*="__nav-button"].swiper-button-disabled {
   cursor: no-drop;
-  background-color: #B0B0B0;
+  /*background-color: #B0B0B0;*/
+  opacity: .5;
 }
 
 [class*="projects__slider-button"].swiper-button-disabled {
-  background-color: #ECECEC;
+  /*background-color: #ECECEC;*/
+  opacity: .5;
 }
 
 /*Hidden*/
@@ -391,11 +397,38 @@ input:focus {
   outline: none;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  -moz-appearance: none;
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/*input::-webkit-outer-spin-button,*/
+/*input::-webkit-inner-spin-button { */
+/*  !* display: none; <- Crashes Chrome on hover *!  */
+/*  -webkit-appearance: none;   */
+/*  margin: 0; !* <-- Apparently some margin are still there even though it's hidden *!*/
+/*}*/
+
 
 @media (max-width: 1464px) {
 

@@ -178,9 +178,9 @@
 .events__card--disabled {
   visibility: hidden;
   opacity: 0;
-  max-height: 0 !important;
+  max-height: 0;
   min-height: 0 !important;
-  margin: 0 !important;
+  margin: 0;
 }
 
 @media (max-width: 1464px) {
@@ -212,10 +212,6 @@
     padding-right: 14px;
   }
 
-  /*.events__card-title,*/
-  /*.events__card-text {*/
-  /*  padding-right: 0;*/
-  /*}*/
 }
 
 @media (max-width: 920px) {
@@ -277,9 +273,9 @@
   .events__button {
     visibility: hidden;
     opacity: 0;
-    max-height: 0 !important;
-    min-height: 0 !important;
-    margin: 0 !important;
+    max-height: 0;
+    min-height: 0;
+    margin: 0;
   }
 
 }

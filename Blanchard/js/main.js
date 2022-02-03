@@ -11,7 +11,9 @@ window.addEventListener('DOMContentLoaded', function () {
   // header bottom dropdown
 
   const params = {
-    btnClassName: "header-bottom__button", activeClassName: "is-active", disabledClassName: "is-disabled"
+    btnClassName: "header-bottom__button",
+    activeClassName: "is-active",
+    disabledClassName: "is-disabled"
   }
 
   function onDisable(evt) {
@@ -25,15 +27,53 @@ window.addEventListener('DOMContentLoaded', function () {
     document.body.addEventListener("click", (evt) => {
       const activeElements = document.querySelectorAll(`.${params.activeClassName}`);
 
+
       if (activeElements.length && !evt.target.closest(`.${params.activeClassName}`)) {
         activeElements.forEach((current) => {
           if (current.classList.contains(params.btnClassName)) {
             current.classList.remove(params.activeClassName);
+            current.ariaExpanded = 'false';
+            switch (current.dataset.path) {
+              case 'one':
+                current.ariaLabel = 'Развернуть список категории Реализм';
+                break;
+              case 'two':
+                current.ariaLabel = 'Развернуть спискок категории Имперссионизм';
+                break;
+              case 'three':
+                current.ariaLabel = 'Развернуть спискок категории Постимпрессионизм';
+                break;
+              case 'four':
+                current.ariaLabel = 'Развернуть список категории Авангард';
+                break;
+              case 'five':
+                current.ariaLabel = 'Развернуть список категорий Футуризм';
+                break;
+            }
           } else {
             current.classList.add(params.disabledClassName);
+            current.ariaExpanded = 'true';
+            switch (current.dataset.path) {
+              case 'one':
+                current.ariaLabel = 'Скрыть список категории Реализм';
+                break;
+              case 'two':
+                current.ariaLabel = 'Скрыть спискок категории Имперссионизм';
+                break;
+              case 'three':
+                current.ariaLabel = 'Скрыть спискок категории Постимпрессионизм';
+                break;
+              case 'four':
+                current.ariaLabel = 'Скрыть список категории Авангард';
+                break;
+              case 'five':
+                current.ariaLabel = 'Скрыть список категорий Футуризм';
+                break;
+            }
           }
         });
       }
+
 
       if (evt.target.closest(`.${params.btnClassName}`)) {
         const btn = evt.target.closest(`.${params.btnClassName}`);
@@ -45,28 +85,50 @@ window.addEventListener('DOMContentLoaded', function () {
         if (!drop.classList.contains(params.activeClassName)) {
           drop.classList.add(params.activeClassName);
           drop.addEventListener("animationend", onDisable);
+          btn.ariaExpanded = 'true';
+          switch (path) {
+            case 'one':
+              btn.ariaLabel = 'Скрыть список категории Реализм';
+              break;
+            case 'two':
+              btn.ariaLabel = 'Скрыть спискок категории Имперссионизм';
+              break;
+            case 'three':
+              btn.ariaLabel = 'Скрыть спискок категории Постимпрессионизм';
+              break;
+            case 'four':
+              btn.ariaLabel = 'Скрыть список категории Авангард';
+              break;
+            case 'five':
+              btn.ariaLabel = 'Скрыть список категорий Футуризм';
+              break;
+          }
         } else {
           drop.classList.add(params.disabledClassName);
+          btn.ariaExpanded = 'false';
+          switch (path) {
+            case 'one':
+              btn.ariaLabel = 'Развернуть список категории Реализм';
+              break;
+            case 'two':
+              btn.ariaLabel = 'Развернуть спискок категории Имперссионизм';
+              break;
+            case 'three':
+              btn.ariaLabel = 'Развернуть спискок категории Постимпрессионизм';
+              break;
+            case 'four':
+              btn.ariaLabel = 'Развернуть список категории Авангард';
+              break;
+            case 'five':
+              btn.ariaLabel = 'Развернуть список категорий Футуризм';
+              break;
+          }
         }
       }
     });
   }
 
   setMenuListener();
-
-  // hero slider
-
-  const swiper = new Swiper('.hero-slider', {
-    slideClass: "hero-slider__slide",
-    wrapperClass: "hero-slider__wrapper",
-    allowTouchMove: false,
-    loop: true,
-    effect: 'fade',
-    speed: 10000,
-    autoplay: {
-      delay: 10000
-    }
-  });
 
   //  burger side menu
 
@@ -193,9 +255,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
   function surveillanceForActiveElement() { // наблюдение за всеми элементами которые трансформируются в зависимости от ширины viewport
     let currentWidth = getWindowWidth();
-    if (currentWidth < 1464) {
+    if (currentWidth <= 1410) {
 
-      if (currentWidth < 1464 && currentWidth > 920) {
+      if (currentWidth <= 1410 && currentWidth > 920) {
         destroyMobileSearchBar();
         addingSearchBarForButton();
         destroyContainerForMobileSearchBar();
@@ -244,6 +306,18 @@ window.addEventListener('DOMContentLoaded', function () {
 
   // Slider Hero
 
+  const swiper = new Swiper('.hero-slider', {
+    slideClass: "hero-slider__slide",
+    wrapperClass: "hero-slider__wrapper",
+    allowTouchMove: false,
+    loop: true,
+    effect: 'fade',
+    speed: 10000,
+    autoplay: {
+      delay: 10000
+    }
+  });
+
   const childOne = $('.hero__background-one');
   const childTwo = $('.hero__background-two');
   const childThree = $('.hero__background-three');
@@ -260,7 +334,9 @@ window.addEventListener('DOMContentLoaded', function () {
   const defaultSelect = () => {
     const element = document.querySelector('.selectCustom');
     const choices = new Choices(element, {
-      searchEnabled: false, position: false, shouldSort: false,
+      searchEnabled: false,
+      position: false,
+      shouldSort: false,
     });
 
     let ariaLabel = element.getAttribute('aria-label');
@@ -271,11 +347,16 @@ window.addEventListener('DOMContentLoaded', function () {
   // Slider Gallery
 
   let gallerySlider = new Swiper(".gallery__slider-container", {
-    slidesPerView: 1, slideClass: "gallery__slide", wrapperClass: "gallery__slider-wrapper", grid: {
+    slidesPerView: 1,
+    slideClass: "gallery__slide",
+    wrapperClass: "gallery__slider-wrapper",
+    grid: {
       rows: 1, fill: "row"
-    }, spaceBetween: 20, pagination: {
+    },
+    spaceBetween: 20, pagination: {
       el: ".gallery__slider-container .gallery__slider-pagination", type: "fraction"
-    }, navigation: {
+    },
+    navigation: {
       nextEl: ".gallery__slider-button-next", prevEl: ".gallery__slider-button-prev"
     },
 
@@ -295,7 +376,15 @@ window.addEventListener('DOMContentLoaded', function () {
       }
     },
 
-    a11y: false, keyboard: true,
+    a11y: {
+      prevSlideMessage: 'Предыдущий набор картин',
+      nextSlideMessage: 'Следующий набор картин',
+      firstSlideMessage: 'Это первая картина',
+      lastSlideMessage: 'Это последяя картина',
+      paginationBulletMessage: 'Слайд номер {{index}}',
+      slideLabelMessage: '{{index}} картина из {{slidesLength}}'
+    },
+    keyboard: true,
 
     watchSlidesProgress: true, slideVisibleClass: 'slide-visible',
 
@@ -322,20 +411,21 @@ window.addEventListener('DOMContentLoaded', function () {
 
   //Modal Window Gallery
 
+  const modal = $('<div class="modal"></div>');
+  const modalOverlay = $('<div class="modal__overlay"></div>');
+  const modalBox = $('<div class="modal__content"></div>');
+  const modalPictureContainer = $('<div class="modal__picture"></div>');
+  const modalImg = $('<img src="../image/gallery/modalGallery1920.png" alt="Картина Казимира Малевича &#34;Женщина с граблями&#34;">');
+  const modalDescribe = $('<div class="modal__describe"></div>');
+  const modalContainerHeaders = $('<div class="modal__headers"></div>');
+  const modalHeaderMain = $('<h2 class="modal__header-main">Казимир Малевич</h2>');
+  const modalHeaderMiddle = $('<h3 class="modal__header-middle">&#34;Женщина с граблями&#34;</h3>');
+  const modalHeaderSmall = $('<h4 class="modal__header-small">1931-1932</h4>');
+  const modalText = $('<p class="text modal__text">Картина из второй серии крестьянского цикла работ Казимира Малевича. Художник\n' + '                принялся за её создание в\n' + '                1930-1931 годах, после того, как первый цикл был утерян после Берлинской и Варшавской выставок в 1927\n' + '                году.</p>')
+  const modalBtnClose = $('<button class="modal__button"></button>');
+  const modalBtnCloseSticks = $('<span class="modal__button-sticks"></span>');
+
   function createModalWindow(container) {
-    const modal = $('<div class="modal"></div>');
-    const modalOverlay = $('<div class="modal__overlay"></div>');
-    const modalBox = $('<div class="modal__content"></div>');
-    const modalPictureContainer = $('<div class="modal__picture"></div>');
-    const modalImg = $('<img src="../image/gallery/modalGallery1920.png" alt="Картина Казимира Малевича &#34;Женщина с граблями&#34;">');
-    const modalDescribe = $('<div class="modal__describe"></div>');
-    const modalContainerHeaders = $('<div class="modal__headers"></div>');
-    const modalHeaderMain = $('<h2 class="modal__header-main">Казимир Малевич</h2>');
-    const modalHeaderMiddle = $('<h3 class="modal__header-middle">&#34;Женщина с граблями&#34;</h3>');
-    const modalHeaderSmall = $('<h4 class="modal__header-small">1931-1932</h4>');
-    const modalText = $('<p class="text modal__text">Картина из второй серии крестьянского цикла работ Казимира Малевича. Художник\n' + '                принялся за её создание в\n' + '                1930-1931 годах, после того, как первый цикл был утерян после Берлинской и Варшавской выставок в 1927\n' + '                году.</p>')
-    const modalBtnClose = $('<button class="modal__button"></button>');
-    const modalBtnCloseSticks = $('<span class="modal__button-sticks"></span>');
 
     modalContainerHeaders.append(modalHeaderMain);
     modalContainerHeaders.append(modalHeaderMiddle);
@@ -363,7 +453,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
   function modalWindowFullScreen(container, slides) {
     if (!$('.modal').length) {
-
       const modalWindow = createModalWindow(container);
       modalWindow.modal.hide();
 
@@ -373,13 +462,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
         gallerySlide.on('click', (ev) => {
           ev.preventDefault();
-
-          // modalWindow.modalPictureContainer.append(modalImg);
-          // modalWindow.modal.show(150);
+          $('.page').addClass('page--no-scroll');
           modalWindow.modal.css('display', 'flex');
           let myTimeout = setTimeout(() => {
             modalWindow.modalBox.show(300);
-            // modalWindow.modalBtnClose.focus();
             clearTimeout(myTimeout);
           }, 150);
 
@@ -401,6 +487,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   function deleteModal(pictureContainer, modalBox, modal) {
     // $(pictureContainer).children('picture').remove();
+    $('.page').removeClass('page--no-scroll');
     modalBox.hide(300);
     let myTimeout = setTimeout(() => {
       modal.hide(300);
@@ -699,7 +786,16 @@ window.addEventListener('DOMContentLoaded', function () {
         nextEl: `.${params.navNext}`, prevEl: `.${params.navPrev}`
       },
 
-      watchSlidesProgress: true, slideVisibleClass: 'slide-visible',
+      watchSlidesProgress: true,
+      slideVisibleClass: 'slide-visible',
+
+      a11y: {
+        prevSlideMessage: 'Предыдущий набор книг',
+        nextSlideMessage: 'Следующий набор книг',
+        firstSlideMessage: 'Это первая книга',
+        lastSlideMessage: 'Это последний книга',
+        slideLabelMessage: 'Книга номер {{index}}'
+      },
 
       on: {
         beforeInit() {
@@ -862,7 +958,15 @@ window.addEventListener('DOMContentLoaded', function () {
         checkItems(item);
       });
     });
+
+    if (checkboxList.hasClass('checkbox__list--open')) {
+      console.log('click');
+      checkboxListBtn.click();
+    }
   }
+
+  // checkItems($('.checkbox__item:nth-child(4)'))
+
 
   function listDesktop() {
     if ((checkboxList.hasClass('checkbox__list--open'))) {
@@ -882,6 +986,13 @@ window.addEventListener('DOMContentLoaded', function () {
 
     });
   }
+
+  // $('.checkbox__item:nth-child(4)').addClass('checkbox__item--active');
+
+  // if (getWindowWidth() <= 750) {
+  //   console.log('click');
+  //   checkboxListBtn.click();
+  // }
 
   function surveillanceForList() {
     const currentWidth = getWindowWidth();
@@ -904,11 +1015,18 @@ window.addEventListener('DOMContentLoaded', function () {
 
     if (currentWidth <= 750) {
       let tooltipMobile = tippy(params.tooltip, {
-        theme: 'default', trigger: 'click',
+        role: 'tooltip',
+        arrow: true,
+        theme: 'default',
+        trigger: 'click',
       });
     } else {
       let tooltipDesktop = tippy(params.tooltip, {
-        maxWidth: 264, theme: 'default', trigger: 'focus',
+        maxWidth: 264,
+        role: 'tooltip',
+        arrow: true,
+        theme: 'default',
+        trigger: 'mouseenter focus'
       });
     }
   }
@@ -941,11 +1059,9 @@ window.addEventListener('DOMContentLoaded', function () {
       },
 
       a11y: {
-        prevSlideMessage: 'Предыдущий слайд',
-        nextSlideMessage: 'Следующий слайд',
-        firstSlideMessage: 'Это первый слайд',
-        lastSlideMessage: 'Это последний слайд',
-        paginationBulletMessage: 'Слайд номер {{index}}',
+        prevSlideMessage: 'Предыдущий набор компаний партнеров',
+        nextSlideMessage: 'Следующий набор компаний партнеров',
+        paginationBulletMessage: 'Компания номер {{index}}',
       },
 
       watchSlidesProgress: true, slideVisibleClass: 'slide-visible',
@@ -978,10 +1094,10 @@ window.addEventListener('DOMContentLoaded', function () {
   sliderProjects();
 
   const selector = document.querySelector("input[type='tel']");
-  const im = new Inputmask("+7 (999)-999-99-99");
-  im.mask(selector);
+  const telSelector = new Inputmask("+7 (999)-999-99-99");
+  telSelector.mask(selector);
 
-  new JustValidate('.form', {
+  new window.JustValidate('.form', {
     colorWrong: '#D11616',
 
     rules: {
@@ -995,29 +1111,21 @@ window.addEventListener('DOMContentLoaded', function () {
       },
     },
 
-    submitHandler: function(form) {
+    submitHandler: function (form) {
       let formData = new FormData(form);
       let xhr = new XMLHttpRequest();
 
-      // xhr.onreadystatechange = function() {
-      //   if (xhr.readyState === 4) {
-      //     if (xhr.status === 200) {
-      //       console.log('Отправлено');
-      //     }
-      //   }
-      // }
-      //
-      // xhr.open('POST', 'mail.php', true);
-      // xhr.send(formData);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            console.log('Отправлено');
+          }
+        }
+      }
 
-      fetch('mail.php', {
-        method: 'POST',
-        body: formData
-      }).then(() => {
-        console.log('Отправлено');
-        form.reset();
-      })
-        .catch(() => console.log('Ошибка'));
+      xhr.open('POST', '../mail.php', true);
+      xhr.send(formData);
+      form.reset();
     },
 
     messages: {
@@ -1066,9 +1174,6 @@ window.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
       myMap.container.fitToViewport();
 
-      // if (currentWidth <= 1500) {
-      //   console.log(myMap.controls);
-      // }
     }, 5000);
 
   }

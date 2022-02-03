@@ -44,6 +44,7 @@
   border-radius: 50%;
   overflow: visible;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .tab-content {
@@ -136,34 +137,32 @@
   width: 100%;
   padding: var(--catalog-accardion-padding-control);
   background-color: transparent;
+  transition: background-color, color var(--transition-time) var(--transition-timing-function);
 }
 
 .catalog-accordion__item-control:focus {
   outline: none;
 }
 
-.catalog-accordion__item-control:focus .catalog-accordion__item-title {
-  transition: background-color var(--transition-time) var(--transition-timing-function), color var(--transition-time) var(--transition-timing-function);
-  /*background-color: var(--catalog-accordion-background-title-focus);*/
+.open-tab.catalog-accordion__item-control:focus .catalog-accordion__item-title {
   background-color: var(--catalog-accordion-border-title-hover);
   color: #ffffff;
 }
 
-/*important нужен, чтобы стили отменяющие hover на мобильных устроствах не зменяли стили ниже*/
+.catalog-accordion__item-control:focus .catalog-accordion__item-title {
+  transition: background-color var(--transition-time) var(--transition-timing-function), color var(--transition-time) var(--transition-timing-function);
+  background-color: var(--catalog-accordion-border-title-hover);
+  color: #ffffff;
+}
+
 .open-tab {
-  border-top: 1px solid var(--catalog-accordion-border-open-tab) !important;
-  border-bottom: 1px solid var(--catalog-accordion-border-open-tab) !important;
+  border-top: 1px solid var(--catalog-accordion-border-open-tab);
+  border-bottom: 1px solid var(--catalog-accordion-border-open-tab);
 }
 
 .open-tab.catalog-accordion__item-control .catalog-accordion__item-title {
-  /*color: var(--catalog-accordion-border-title-hover) !important;*/
-  color: #9d5cd0 !important;
-  /*color: var(--catalog-accordion-background-title-focus) !important;*/
+  color: #9d5cd0;
   background-color: transparent;
-}
-
-.catalog-accordion__item:hover .catalog-accordion__item-control:focus .catalog-accordion__item-title {
-  color: #ffffff;
 }
 
 .open-tab.catalog-accordion__item-control .catalog-accordion__item-title,
@@ -189,7 +188,6 @@
 }
 
 .catalog-accordion__item-title {
-  /*padding-right: 50px;*/
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
@@ -246,7 +244,7 @@
 
 .catalog-accordion__item-title::after {
   right: 19px;
-  top: 45%;
+  top: 44%;
   width: 12px;
   height: 12px;
   border-bottom: 1px solid black;
@@ -257,11 +255,11 @@
 }
 
 .open-tab .catalog-accordion__item-title::after {
-  transform: rotate(225deg) translate(-2px, -2px);
+  transform: rotate(225deg) translate(-3px, -3px);
 }
 
 .open-tab .catalog-accordion__item-title::before {
-  background-color: var(--catalog-accardion-color-circle-active) !important;
+  background-color: var(--catalog-accardion-color-circle-active);
   border-color: var(--catalog-accardion-border-circle-active);
 }
 
@@ -380,6 +378,7 @@
 
 .catalog-accordion__tab-link,
 .catalog-accordion__item-link {
+  display: block;
   font-size: 16px;
   line-height: 20px;
   font-weight: 600;
@@ -752,7 +751,6 @@
   /*.catalog__text {*/
   /*  display: none;*/
   /*}*/
-
   [data-target="Italy"] .catalog__text {
     display: none;
   }
