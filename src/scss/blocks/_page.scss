@@ -1,0 +1,11 @@
+@import '../fonts.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page {
+  font-family: OpenSans, sans-serif, Arial, Helvetica;
+}

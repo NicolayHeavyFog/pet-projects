@@ -1,0 +1,21 @@
+@import 'swiper/css';
+
+.swiper-wrapper {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.swiper-slide {
+  &--bg1 {
+    background-image: url('../../../assets/images/hero1920-1.jpg');
+  }
+
+  &--bg2 {
+    background-image: url('../../../assets/images/hero1920-2.jpg');
+  }
+
+  &--bg3 {
+    background-image: url('../../../assets/images/hero1920-3.jpg');
+  }
+}

@@ -1,0 +1,43 @@
+footer.footer
+  .footer__container
+    .footer__left-side
+      svg.footer__logo
+        use(xlink:href='#logoApp')
+      - var referenceList = [{name: 'fb', link: '#'}, {name: 'vk', link: '#'}, {name: 'instagram', link: '#'}]
+      ul.footer__socity-list
+        each item in referenceList
+          li.footer__socity-item
+            a(class='footer__socity-link', href=`${item.link}`)
+              svg.footer__socity-svg
+                use(xlink:href=`#${item.name}`)
+    .footer__right-side
+      section.footer__section
+        h2.footer__title О нас
+        - var listAboutUs = [{text: 'О компании', link: '#'}, {text: 'Блог', link: '#'}]
+        ul.footer__info-list
+          each item in listAboutUs
+            li.footer__info-item
+              a(class='footer__info-link', href=`${item.link}`)=item.text
+      section.footer__section
+        h2.footer__title Услуги
+        - var listAboutUs = [{text: 'Доставка', link: '#'}, {text: 'Рассрочка и кредит', link: '#'}, {text: 'Сборка и установка', link: '#'}]
+        ul.footer__info-list
+          each item in listAboutUs
+            li.footer__info-item
+              a(class='footer__info-link', href=`${item.link}`)=item.text
+      section.footer__section
+        h2.footer__title Связь с нами
+        - var listAboutUs = [{text: 'Обратная связь', link: '#'}, {text: 'Контакты', link: '#'}]
+        ul.footer__info-list
+          each item in listAboutUs
+            li.footer__info-item
+              a(class='footer__info-link', href=`${item.link}`)=item.text
+      section.footer__section
+        h2.footer__title Сотрудничество
+        - var listAboutUs = [{text: 'Поставщикам', link: '#'}, {text: 'Оптовикам', link: '#'}, {text: 'Карьера', link: '#'}]
+        ul.footer__info-list
+          each item in listAboutUs
+            li.footer__info-item
+              a(class='footer__info-link', href=`${item.link}`)=item.text
+.sub-footer
+  .sub-footer__text SDP®   2011-2021

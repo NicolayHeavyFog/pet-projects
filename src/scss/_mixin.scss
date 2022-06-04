@@ -1,0 +1,188 @@
+@import 'variables';
+
+@mixin container {
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 30px;
+
+  @media (max-width: 1160px) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@mixin link-reset {
+  text-decoration: none;
+}
+
+@mixin button-reset {
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  background-color: unset;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    color: #fff;
+    background-color: $primary-shade;
+    border-color: $primary-shade;
+  }
+
+  &:disabled {
+    color: $grey;
+    background-color: $md-grey;
+
+    &:hover {
+      color: $grey;
+      background-color: $md-grey;
+    }
+
+    &:active {
+      color: $grey;
+      background-color: $md-grey;
+      border-color: transparent;
+    }
+  }
+}
+
+@mixin button-primary {
+  @include button-reset;
+
+  color: #fff;
+  font-weight: 700;
+  background-color: $primary-color;
+
+  &:hover {
+    background-color: $primary-light;
+  }
+
+  &:focus {
+    background-color: $primary-light;
+    border-color: $primary-shade;
+  }
+}
+
+@mixin button-secondary {
+  @include button-reset;
+
+  color: $primary-color;
+  font-weight: 600;
+  background-color: transparent;
+  border-color: $primary-color;
+
+  &:hover {
+    color: #fff;
+    background-color: $primary-color;
+  }
+
+  &:focus {
+    color: #fff;
+    background-color: $primary-light;
+  }
+}
+
+@mixin button-sticks($closed: false) {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: $primary-color;
+  border-radius: 4px;
+
+  &::before {
+    position: absolute;
+    top: -7px;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    background-color: $primary-color;
+    border-radius: 4px;
+    content: '';
+  }
+
+  &::after {
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    background-color: $primary-color;
+    border-radius: 4px;
+    content: '';
+  }
+
+  @if $closed {
+    background-color: transparent;
+
+    &::before {
+      top: unset;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      bottom: unset;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+@mixin footer-title {
+  margin: 0;
+  margin-bottom: 10px;
+  color: $black;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+@mixin link-state {
+  position: relative;
+  @include link-reset;
+
+  z-index: 0;
+  color: $grey;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease-out;
+
+  &::before {
+    position: absolute;
+    top: -1px;
+    right: -10px;
+    bottom: -1px;
+    left: -10px;
+    z-index: -1;
+    background-color: transparent;
+    transition: background-color 0.3s ease-out;
+    content: '';
+  }
+
+  &:hover {
+    color: $primary-color;
+  }
+
+  &:focus {
+    color: $primary-shade;
+    outline: none;
+
+    &::before {
+      background-color: $pink-violet;
+    }
+  }
+
+  &:active {
+    color: $primary-shade;
+  }
+}
