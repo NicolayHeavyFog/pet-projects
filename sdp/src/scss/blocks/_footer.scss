@@ -1,0 +1,142 @@
+@import '../fonts.css';
+@import '../mixin';
+@import '../variables';
+
+.footer {
+  width: 100%;
+  background-color: $md-grey;
+
+  &__container {
+    @include container;
+
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  &__left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 187px;
+    height: 27px;
+  }
+
+  &__socity {
+    &-list {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      height: fit-content;
+    }
+
+    &-link {
+      @include link-reset;
+
+      display: inline-block;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-svg {
+      width: 30px;
+      height: 30px;
+      padding: 3px;
+      transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+      fill: $grey;
+    }
+
+    &-link:focus &-svg {
+      background-color: $primary-light;
+      fill: white;
+    }
+
+    &-link:active &-svg {
+      fill: $primary-shade;
+    }
+
+    &-link:hover &-svg {
+      fill: $primary-color;
+    }
+  }
+
+  &__right-side {
+    display: flex;
+  }
+
+  &__section {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 112px;
+    }
+  }
+
+  &__title {
+    @include footer-title;
+
+    display: inline-block;
+  }
+
+  &__info {
+    &-list {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 6px;
+      }
+    }
+
+    &-link {
+      @include link-state;
+    }
+  }
+
+  @media (max-width: 1160px) {
+    &__container {
+      padding-right: 36px;
+      padding-left: 36px;
+    }
+
+    &__section {
+      &:not(:last-child) {
+        margin-right: 75px;
+      }
+    }
+  }
+}
+
+.sub-footer {
+  width: 100%;
+  padding: 5px 0;
+  text-align: center;
+  background-color: $grey-light;
+
+  &__text {
+    color: $grey;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+  }
+}

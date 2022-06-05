@@ -1,0 +1,48 @@
+header.header
+  .top-header
+    .top-header__container
+      .top-header__left-side
+        .top-header__select-location
+          span.top-header__region Ваш регион:
+          - var listOfCities = ['Москва', 'Казань', 'Уфа', 'Пермь'];
+          select(class='top-header__select' type='select-one' aria-label='Выбор города')
+            each item in listOfCities
+              option(class='top-header__select-item' value=item)=item
+        a(href='tel:+74958854547', aria-label='Контактный номер').top-header__contact
+          svg.top-header__contact-svg
+            use(xlink:href='#contactPhone')
+          span.top-header__contact-number +7 (495) 885-45-47
+      .top-header__right-side
+        nav.top-header__nav
+          - var referenceList = [{text: 'О компании', link: '#'}, {text: 'Гарантия и возврат', link: '#'}, {text: 'Корпоративным клиентам', link: '#'}, {text: 'Дизайн-решение', link: '#'}];
+          ul.top-header__list
+            each item in referenceList
+              li(class='top-header__item')
+                a(class='top-header__item-link' href=`${item.link}`)=item.text
+  .bottom-header
+    .bottom-header__top
+      a.bottom-header__logo(href="#")
+        svg.bottom-header__svg
+          use(xlink:href='#logoApp')
+      - var referenceList = [{text: 'Каталог', link: '#'}, {text: 'Магазины', link: '#'}, {text: 'Шоу-рум', link: '#'}, {text: 'Доставка и оплата', link: '#'}, {text: 'Дисконт', link: '#'}, {text: 'Контакты', link: '#'}]
+      ul.bottom-header__list
+        each item in referenceList
+          li(class='bottom-header__item')
+            a(class='bottom-header__item-link' href=`${item.link}`)=item.text
+    .bottom-header__bottom
+      form.bottom-header__form(action="#")
+        label.bottom-header__form-label
+          input(class='bottom-header__form-search', placeholder='Я хочу купить...')
+          svg.bottom-header__form-svg
+            use(xlink:href='#searchIcon')
+        - var listOfCategories = ['Диваны', 'Комоды', 'Кресла', 'Стулья', 'Пуфы', 'Столы', 'Кровати', 'Аксессуары', 'Тумбы'];
+        select(class='bottom-header__select' type='select-one' aria-label='Выбор категории')
+          each category in listOfCategories
+            option(class='bottom-header__select-item' value=category)=category
+      .bottom-header__user
+        a(class='bottom-header__user-link' href='#')
+          svg.bottom-header__user-svg
+            use(xlink:href='#userIcon')
+        a(class='bottom-header__user-cart' href='#')
+          svg.bottom-header__user-svg
+            use(xlink:href='#cartIcon')

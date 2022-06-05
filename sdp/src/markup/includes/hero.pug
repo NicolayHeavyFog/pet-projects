@@ -1,0 +1,7 @@
+section.hero
+  .swiper
+    - var slides = ['Скидка 15% на первую покупку', '1000+ аксессуаров для дома', 'Коллекция стильного и яркого текстиля'];
+    ul.swiper-wrapper
+      each slide, index in slides
+        li(class=`swiper-slide swiper-slide--bg${index+1}`)=slide
+  .hero__container
