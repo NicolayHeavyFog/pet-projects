@@ -1,0 +1,92 @@
+/*cols*/
+
+.table__col {
+    min-width: fit-content;
+    text-align: start;
+    word-break: break-all;
+}
+
+.table__col:not(:last-child) {
+    padding-right: 15px;
+}
+
+.table__col[data-col="id"] {
+    width: calc(82px - 15px);
+}
+
+.table__col[data-col="name"] {
+    width: calc(369px - 15px);
+    word-break: break-word;
+}
+
+.table__col[data-col="timeCreate"] {
+    width: calc(175px - 15px);
+}
+
+.table__col[data-col="lastChange"] {
+    width: calc(173px - 15px);
+}
+
+.table__col[data-col="contacts"] {
+    width: calc(160px - 15px);
+}
+
+.table__col[data-col="action"] {
+    width: 184px;
+}
+
+@media (max-width: 1027px) {
+
+    .table__col[data-col] {
+        padding-right: 5px;
+    }
+
+    .table__row-header .table__col[data-col="name"] {
+        width: 310px;
+        word-break: break-word;
+    }
+
+    .table__col[data-col="action"] {
+        width: 150px;
+    }
+
+    .table__col[data-col="contacts"] {
+        min-width: calc(130px - 15px);
+    }
+}
+
+@media (max-width: 760px) {
+
+    .table__col:not(:last-child) {
+        padding-right: 15px;
+    }
+
+    .table__col[data-col="id"] {
+        width: 70px;
+    }
+
+    .table__row-header .table__col[data-col="name"] {
+        width: 240px;
+    }
+
+    .table__col[data-col="name"] {
+        width: 240px;
+    }
+
+    .table__col[data-col="timeCreate"] {
+        width: 150px;
+    }
+
+    .table__col[data-col="lastChange"] {
+        width: 150px;
+    }
+
+    .table__col[data-col="contacts"] {
+        width: 115px;
+    }
+
+    .table__col[data-col="action"] {
+        width: 160px;
+    }
+
+}

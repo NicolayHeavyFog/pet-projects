@@ -1,0 +1,7 @@
+/*header container*/
+
+.header__container {
+    max-width: 1366px;
+    padding: 0 20px;
+    margin: 0 auto 40px auto;
+}

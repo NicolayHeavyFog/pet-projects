@@ -1,0 +1,6 @@
+/*tooltip value contact text*/
+
+.clients__contact-value {
+    color: var(--color-purple);
+    text-decoration: underline;
+}

@@ -1,0 +1,15 @@
+/* client information */
+
+.clients__text {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+.table__col[data-col="timeCreate"] .clients__text:first-child {
+    margin-right: 4px;
+}
+
+.table__col[data-col="lastChange"] .clients__text:first-child {
+    margin-right: 4px;
+}

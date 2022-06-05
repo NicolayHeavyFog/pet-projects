@@ -1,0 +1,22 @@
+/*secondary button*/
+
+.button--secondary {
+    color: var(--color-purple);
+    background-color: transparent;
+    border-color: var(--color-purple);
+}
+
+.button--secondary:hover {
+    color: #ffffff;
+    background-color: var(--background-color-button-hover);
+}
+
+.button--secondary:active {
+    color: #ffffff;
+    background-color: var(--background-color-button-active);
+}
+
+.button--secondary[disabled] {
+    border-color: var(--light-grey);
+    color: var(--light-grey);
+}

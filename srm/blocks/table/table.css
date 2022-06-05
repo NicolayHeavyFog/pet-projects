@@ -1,0 +1,29 @@
+/*table block*/
+
+.table {
+    order: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-indent: unset;
+    border-spacing: 0;
+    border-collapse: unset;
+    table-layout: fixed;
+}
+
+.table--downloading + .button--add-client {
+    display: none;
+}
+
+@media (max-width: 760px) {
+
+    .table {
+        width: 300px;
+        overflow: auto;
+    }
+
+    .table::-webkit-scrollbar {
+        display: none;
+    }
+
+}

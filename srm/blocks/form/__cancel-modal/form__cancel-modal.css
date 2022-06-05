@@ -1,0 +1,10 @@
+/*button cancel*/
+
+.form__cancel-modal {
+    display: inline-block;
+    padding: 5px 0;
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    cursor: pointer;
+}

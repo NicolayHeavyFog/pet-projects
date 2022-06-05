@@ -1,0 +1,14 @@
+/*Variables*/
+
+:root {
+    --background-color-page: #f5f5f5;
+    --background-color-header: #ffffff;
+    --color-button-table: #9873ff;
+    --color-purple: #9873ff;
+    --color-grey: #b0b0b0;
+    --light-grey: #c8c5d1;
+    --color-red: #f06a4d;
+
+    --background-color-button-hover: #b89eff;
+    --background-color-button-active: #8052ff;
+}

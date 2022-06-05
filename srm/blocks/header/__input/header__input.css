@@ -1,0 +1,16 @@
+/*header input*/
+
+.header__input {
+    min-height: 40px;
+    min-width: 562px;
+    max-height: 55px;
+    padding-left: 15px;
+    border: 1px solid rgba(51, 51, 51, 0.2);
+    border-radius: 0;
+}
+
+.header__input::placeholder {
+    color: #b0b0b0;
+    font-size: 14px;
+    line-height: 19px;
+}

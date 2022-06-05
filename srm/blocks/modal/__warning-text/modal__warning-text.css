@@ -1,0 +1,8 @@
+/*warning text*/
+
+.modal__warning-text {
+    order: 2;
+    max-width: 275px;
+    margin-bottom: 25px;
+    text-align: center;
+}

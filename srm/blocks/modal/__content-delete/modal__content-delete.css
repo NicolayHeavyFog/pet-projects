@@ -1,0 +1,17 @@
+/*delete context container*/
+
+.modal__content-delete {
+    width: 450px;
+    min-height: 215px;
+    box-sizing: border-box;
+}
+
+
+@media (max-width: 760px) {
+
+    .modal__content-delete {
+        width: 300px;
+        height: 215px;
+    }
+
+}

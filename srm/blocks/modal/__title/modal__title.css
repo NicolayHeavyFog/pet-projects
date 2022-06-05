@@ -1,0 +1,20 @@
+/*modal title*/
+
+.modal__title {
+    display: inline-block;
+    margin: 0 9px 32px 0;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+
+.modal__content-delete .modal__title {
+    margin: 0 0 32px 0;
+}
+
+@media (max-width: 760px) {
+    .modal__content-delete .modal__title {
+        margin: 0 0 11px 0;
+    }
+}

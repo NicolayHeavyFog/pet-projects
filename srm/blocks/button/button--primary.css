@@ -1,0 +1,18 @@
+/*primary button*/
+
+.button--primary {
+    color: #ffffff;
+    background-color: var(--color-purple);
+}
+
+.button--primary:hover {
+    background-color: var(--background-color-button-hover);
+}
+
+.button--primary:active {
+    background-color: var(--background-color-button-active);
+}
+
+.button--primary[disabled] {
+    background-color: var(--light-grey);
+}

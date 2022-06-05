@@ -1,0 +1,32 @@
+/*modal content*/
+
+.modal__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    padding: 30px;
+    background-color: #ffffff;
+    overflow: hidden;
+    transform: scale(.5);
+    transition: transform .3s ease-in-out;
+}
+
+.modal--open .modal__content {
+    transform: scale(1);
+}
+
+.modal__content--disabled {
+    display: none;
+}
+
+@media (max-width: 760px) {
+
+    .modal__content {
+        width: 300px;
+        padding: 30px 15px;
+    }
+
+}

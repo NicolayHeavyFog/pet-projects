@@ -1,0 +1,18 @@
+/*dropdown*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 27%;
+    height: 100%;
+    border-right: 1px solid var(--light-grey);
+}
+
+
+@media (max-width: 760px) {
+
+    .dropdown {
+        width: 37%;
+    }
+
+}

@@ -1,0 +1,7 @@
+/*page*/
+
+.page__body {
+    font-family: 'open_sans', Arial, sans-serif;
+    background-color: var(--background-color-page);
+    color: #333333;
+}

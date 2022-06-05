@@ -1,0 +1,9 @@
+
+.form__input-describe {
+    font-size: 10px;
+    line-height: 14px;
+}
+
+.form__input-describe--purple {
+    color: var(--color-purple);
+}

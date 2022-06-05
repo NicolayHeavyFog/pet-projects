@@ -1,0 +1,83 @@
+/*client button*/
+
+.clients__button {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transition .3s ease-in-out;
+}
+
+.clients__button::after {
+    content: '';
+    order: 1;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-top: 2px;
+    margin-left: 3px;
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.49691e-07 4L0.705 4.705L3.5 1.915L3.5 8L4.5 8L4.5 1.915L7.29 4.71L8 4L4 -3.49691e-07L3.49691e-07 4Z' fill='%239873FF'/%3E%3C/svg%3E%0A");
+    transform: rotate(180deg);
+}
+
+.sort-reverse.clients__button::after {
+    transform: rotate(0);
+}
+
+[data-col="name"] .clients__button::before {
+    content: 'А-Я';
+    order: 2;
+    padding-top: 3px;
+    margin-left: 2px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 14px;
+    color: var(--color-button-table)
+}
+
+[data-col="name"] .sort-reverse.clients__button::before {
+    content: 'Я-А';
+    order: 2;
+    padding-top: 3px;
+    margin-left: 2px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 14px;
+    color: var(--color-button-table)
+}
+
+
+@media (max-width: 1100px) {
+
+    [data-col="name"] .clients__button::after {
+        position: absolute;
+        right: -12px;
+    }
+
+    [data-col="name"] .clients__button::before {
+        position: absolute;
+        right: -30px;
+    }
+
+    [data-col="name"] .clients__button {
+
+    }
+
+    [data-col="timeCreate"] .clients__button {
+        width: 86px;
+    }
+
+    [data-col="lastChange"] .clients__button {
+        width: 68px;
+    }
+
+    .clients__button::after {
+        position: absolute;
+        right: -12px;
+    }
+
+}

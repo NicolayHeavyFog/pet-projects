@@ -1,0 +1,16 @@
+/*label contact*/
+
+.form__label-contact {
+    display: flex;
+    width: calc(100% - 33%);
+    height: 100%;
+    overflow: hidden;
+}
+
+@media (max-width: 760px) {
+
+    .form__label-contact {
+        width: calc(100% - 43%);
+    }
+
+}

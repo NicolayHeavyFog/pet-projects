@@ -1,0 +1,40 @@
+/*tooltip*/
+
+.clients__contact-tooltip {
+    position: absolute;
+    left: calc(-166px / 2);
+    bottom: calc(100% + 10px);
+    min-width: 165px;
+    max-width: 250px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.clients__contact-tooltip::after {
+    content: "";
+    position: absolute;
+    right: 47%;
+    bottom: -11px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 7px 0 7px;
+    border-color: #333 transparent transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.clients__contact-icon:focus + .clients__contact-tooltip,
+.clients__contact-icon:focus + .clients__contact-tooltip::after,
+.clients__contact-icon:hover + .clients__contact-tooltip,
+.clients__contact-icon:hover + .clients__contact-tooltip::after {
+    opacity: 1;
+    visibility: visible;
+}

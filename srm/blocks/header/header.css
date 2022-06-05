@@ -1,0 +1,6 @@
+/*header block*/
+
+.header {
+    background-color: var(--background-color-header);
+    box-shadow: 0 9px 27px rgba(176, 190, 197, 0.32), 0 3px 5px rgba(176, 190, 197, 0.32);
+}

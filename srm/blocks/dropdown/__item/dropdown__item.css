@@ -1,0 +1,19 @@
+/*dropdown item*/
+
+.dropdown__item {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 20px);
+    height: 20px;
+    padding: 5px 10px;
+    text-align: start;
+
+}
+
+.dropdown__item:hover {
+    background-color: #e7e5eb;
+}
+
+.dropdown__item--disabled {
+    display: none;
+}

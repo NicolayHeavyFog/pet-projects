@@ -1,0 +1,25 @@
+/*feedback validation*/
+
+.form__feedback {
+    padding-left: 5px;
+    color: var(--color-red);
+}
+
+.form__feedback + .form__input {
+    border-color: var(--color-red);
+}
+
+
+.form__button-group .form__feedback {
+    max-width: 255px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/*.form__feedback--hidden {*/
+/*    display: none;*/
+/*}*/
+
+/*.form__feedback.form__feedback--hidden + .form__input {*/
+/*    border-color: var(--light-grey);*/
+/*}*/

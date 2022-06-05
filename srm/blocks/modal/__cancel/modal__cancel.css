@@ -1,0 +1,29 @@
+/*modal__cancel*/
+
+.modal__cancel {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.modal__cancel::after,
+.modal__cancel::before {
+    content: '';
+    position: absolute;
+    width: 21px;
+    top: 10px;
+    height: 1px;
+    background-color: var(--light-grey);
+}
+
+.modal__cancel::before {
+    transform: rotate(135deg);
+}
+
+.modal__cancel::after {
+    transform: rotate(45deg);
+}

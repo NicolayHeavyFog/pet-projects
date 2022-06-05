@@ -1,0 +1,12 @@
+/*modal*/
+
+.modal {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in-out;
+}
+
+.modal--open {
+    opacity: 1;
+}

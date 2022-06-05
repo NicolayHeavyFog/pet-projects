@@ -1,0 +1,18 @@
+/*header wrapper*/
+
+.header__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 90px;
+}
+
+
+@media (max-width: 760px) {
+
+    .header__wrapper {
+        justify-content: center;
+        height: 40px;
+    }
+
+}

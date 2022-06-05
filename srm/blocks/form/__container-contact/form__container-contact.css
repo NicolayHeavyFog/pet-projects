@@ -1,0 +1,21 @@
+.form__container-contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 37px;
+    border: 1px solid var(--light-grey);
+}
+
+.form__container-contact {
+    margin-top: 15px;
+}
+
+.form__container-contact:first-child {
+    margin-bottom: 25px;
+}
+
+.form__container-contact:last-child {
+    margin-top: 25px;
+}

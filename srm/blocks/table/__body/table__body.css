@@ -1,0 +1,59 @@
+/*table body*/
+
+.table__body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 41px;
+}
+
+.table__body--downloading {
+    height: 300px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    animation-delay: 3s;
+    animation: fade .5s linear 3.5s 1 normal;
+}
+
+.table__body--downloading::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.00025 40.0005C4.00025 59.8825 20.1182 76.0005 40.0002 76.0005C59.8822 76.0005 76.0002 59.8825 76.0002 40.0005C76.0002 20.1185 59.8823 4.00049 40.0003 4.00049C35.3513 4.00048 30.9082 4.88148 26.8282 6.48648' stroke='%239873FF' stroke-width='8' stroke-miterlimit='10' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    animation: 1.5s infinite ease-in-out normal spinner;
+}
+
+.table__body--downloading .table__row-content {
+    display: none;
+}
+
+@media(max-width: 760px) {
+
+    .table__body {
+        margin-bottom: 17px;
+    }
+
+}
+
+@keyframes spinner {
+    0% {
+        transform:rotate(0deg);
+        transform-origin: center;
+    }
+    100% {
+        transform:rotate(360deg);
+        transform-origin: center;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

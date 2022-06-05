@@ -1,0 +1,86 @@
+/*Global*/
+
+
+@import "../fonts/fonts.css";
+@import "normalize.css";
+@import "variables.css";
+
+/*Blocks*/
+
+@import "../blocks/text/text.css";
+@import "../blocks/text/--color/text--color-grey.css";
+@import "../blocks/text/--color/text--color-purple.css";
+@import "../blocks/text/--size/text--size-header.css";
+@import "../blocks/text/--size/text--size-s.css";
+
+@import "../blocks/button/button.css";
+@import "../blocks/button/button--primary.css";
+@import "../blocks/button/button--secondary.css";
+@import "../blocks/button/button--add-client.css";
+
+@import "../blocks/header/header.css";
+@import "../blocks/header/__container/header__container.css";
+@import "../blocks/header/__wrapper/header__wrapper.css";
+@import "../blocks/header/__icon/header__icon.css";
+@import "../blocks/header/__label/header__label.css";
+@import "../blocks/header/__input/header__input.css";
+
+@import "../blocks/clients/clients.css";
+@import "../blocks/clients/__container/clients__container.css";
+@import "../blocks/clients/__title/clients__title.css";
+@import "../blocks/clients/__button/clients__button.css";
+@import "../blocks/clients/__text/clients__text.css";
+@import "../blocks/clients/__contact-list/clients__contact-list.css";
+@import "../blocks/clients/__contact-item/clients__contact-item.css";
+@import "../blocks/clients/__contact-tooltip/clients__contact-tooltip.css";
+@import "../blocks/clients/__contact-value/cllients__contact-value.css";
+@import "../blocks/clients/__contact-icon/clients__contact-icon.css";
+@import "../blocks/clients/__action-list/clients__action-list.css";
+@import "../blocks/clients/__action-button/clients__action-button.css";
+
+@import "../blocks/table/table.css";
+@import "../blocks/table/__head/table__head.css";
+@import "../blocks/table/__body/table__body.css";
+@import "../blocks/table/__col/table__col.css";
+@import "../blocks/table/__header/table__header.css";
+@import "../blocks/table/__row-header/table__row-header.css";
+@import "../blocks/table/__row-client/table__row-client.css";
+@import "../blocks/table/__container-bullets/table__container-bullets.css";
+@import "../blocks/table/__bullets/table__bullets.css";
+
+@import "../blocks/modal/modal.css"; /*!*/
+@import "../blocks/modal/__overlay/modal__overlay.css"; /*!*/
+@import "../blocks/modal/__header/modal__header.css"; /*!*/
+@import "../blocks/modal/__content/modal__content.css"; /*!*/
+@import "../blocks/modal/__wrapper-block/modal__wrapper-block.css"; /*!*/
+@import "../blocks/modal/__content-delete/modal__content-delete.css";
+@import "../blocks/modal/__warning-text/modal__warning-text.css"; /*!*/
+@import "../blocks/modal/__title/modal__title.css"; /*!*/
+@import "../blocks/modal/__subtitle/modal__subtitle.css"; /*!*/
+@import "../blocks/modal/__cancel/modal__cancel.css"; /*!*/
+
+@import "../blocks/form/form.css"; /*!*/
+@import "../blocks/form/__label/form__label.css"; /*!*/
+@import "../blocks/form/__feedback/form__feedback.css"; /*!*/
+@import "../blocks/form/__input-describe/form__input-describe.css"; /*!*/
+@import "../blocks/form/__input/form__input.css"; /*!*/
+@import "../blocks/form/__wrapper-contacts/form__wrapper-contacts.css";/*!*/
+@import "../blocks/form/__container-contact/form__container-contact.css";/*!*/
+@import "../blocks/form/__label-contact/form__label-contact.css"; /*!*/
+@import "../blocks/form/__value-contact/form__value-contact.css"; /*!*/
+@import "../blocks/form/__delete-contact/form__delete-contact.css";
+@import "../blocks/form/__add-contact/form__add-contact.css"; /*!*/
+@import "../blocks/form/__button-group/form__button-group.css"; /*!*/
+@import "../blocks/form/__cancel-modal/form__cancel-modal.css"; /*!*/
+
+@import "../blocks/dropdown/dropdown.css";
+@import "../blocks/dropdown/__selected-item/dropdown__selected-item.css";
+@import "../blocks/dropdown/__list/dropdown__list.css";
+@import "../blocks/dropdown/__item/dropdown__item.css";
+
+
+@import "../blocks/page/page.css";
+@import "../blocks/page/__body/page__body.css";
+
+
+

@@ -1,0 +1,9 @@
+/*contact item*/
+
+.clients__contact-item {
+    position: relative;
+}
+
+.clients__contact-item:not(:last-child) {
+    margin-right: 7px;
+}

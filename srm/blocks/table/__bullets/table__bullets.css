@@ -1,0 +1,16 @@
+
+.table__bullets {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--light-grey);
+    border-radius: 50%;
+}
+
+.table__bullets:not(:last-child) {
+    margin-right: 15px;
+}
+
+.table__bullets--current {
+    background-color: var(--color-purple);
+}

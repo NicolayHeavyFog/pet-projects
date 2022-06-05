@@ -1,0 +1,6 @@
+/*modal header*/
+
+.modal__header {
+    align-self: flex-start;
+    order: 1;
+}

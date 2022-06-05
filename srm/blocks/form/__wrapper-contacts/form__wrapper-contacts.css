@@ -1,0 +1,14 @@
+/*wrapper contacts*/
+
+.form__wrapper-contacts {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 0 30px;
+    margin: 0 -30px 25px -30px;
+    border: none;
+    background-color: rgba(200,197,209, .3);
+    text-align: center;
+}

@@ -1,0 +1,13 @@
+/*button*/
+
+.button {
+    min-width: 124px;
+    min-height: 44px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    /*transition: background-color, color .3s ease-in-out;*/
+}

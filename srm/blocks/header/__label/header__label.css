@@ -1,0 +1,9 @@
+/*label for header input*/
+
+@media (max-width: 760px) {
+
+    .header__label {
+        display: none;
+    }
+
+}
