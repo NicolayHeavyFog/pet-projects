@@ -7,7 +7,7 @@ footer.footer
       ul.footer__socity-list
         each item in referenceList
           li.footer__socity-item
-            a(class='footer__socity-link', href=`${item.link}`)
+            a(class='footer__socity-link', href=`${item.link}`, aria-label=`Ссылка на наш контакт в ${item.name}`)
               svg.footer__socity-svg
                 use(xlink:href=`#${item.name}`)
     .footer__right-side

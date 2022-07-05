@@ -1,29 +1,109 @@
 @import 'swiper/css';
+@import '../../mixin';
+@import '../../variables';
+@import 'swiper/scss/autoplay';
 
 .hero {
-  // z-index: 2;
+  &__container {
+    margin-bottom: 70px;
+  }
 }
 
-.swiper {
+.hero-swiper {
   z-index: 0;
-}
 
-.swiper-wrapper {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.swiper-slide {
-  &--bg1 {
-    background-image: url('../../assets/images/hero1920-1.jpg');
+  &__wrapper {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
   }
 
-  &--bg2 {
-    background-image: url('../../assets/images/hero1920-2.jpg');
+  &__slide {
+    height: 400px;
+    background-color: $grey;
+    background-size: cover;
+
+    &-container {
+      @include container;
+
+      height: 400px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    &-suggestion {
+      max-width: 500px;
+      margin-bottom: 50px;
+      color: $grey;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 65px;
+
+      &--color-white {
+        color: #fff;
+      }
+    }
+
+    &--background-1 {
+      background-image: url('@images/1920/hero1920-1.jpg');
+    }
+
+    &--background-2 {
+      background-image: url('@images/1920/hero1920-2.jpg');
+    }
+
+    &--background-3 {
+      background-image: url('@images/1920/hero1920-3.jpg');
+    }
   }
 
-  &--bg3 {
-    background-image: url('../../assets/images/hero1920-3.jpg');
+  &__button {
+    @include button-primary;
+
+    width: 187px;
+    height: 50px;
+  }
+
+  &__pagination {
+    position: absolute;
+    bottom: 23px;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__circle {
+    position: relative;
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+
+    &-axic {
+      width: 30px;
+      height: 30px;
+      transform: rotate(-90deg);
+    }
+
+    &-inner {
+      stroke: $secondary-color;
+    }
+
+    &-outer {
+      stroke: #fff;
+      stroke-dashoffset: 440px;
+    }
+
+    &-inner,
+    &-outer {
+      stroke-dasharray: 440px;
+    }
+
+    &--active &-outer {
+      stroke-dashoffset: 220px;
+      transition: stroke-dashoffset 12.6s linear;
+    }
   }
 }

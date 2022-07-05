@@ -1,0 +1,27 @@
+section.form
+  .form__container
+    h2.form__title Форма для обратной связи
+    .form__left-side
+      b.form__subtitle Мы всегда вам рады!
+      p.form__text Безусловно, новая модель организационной деятельности в значительной степени обусловливает важность распределения внутренних резервов и ресурсов.
+      .tooltip
+        button(class='tooltip__button', aria-labelledby='tooltip')
+        .tooltip__text(role='tooltip' id='tooltip') Реплицированные с зарубежных источников, исследования формируют глобальную сеть.
+      form.form__form(action="#")
+        label.form__form-label
+          span.form__form-feedback.js-name
+          input.form__form-input(type="text" name='name' placeholder='Как вас зовут?')
+        label.form__form-label
+          span.form__form-feedback.js-number
+          input.form__form-input(type="tel" name='tel' placeholder='Ваш телефон')
+        label.form__form-label
+          span.form__form-feedback.js-email
+          input.form__form-input(type="email" name='email' placeholder='Ваш e-mail')
+        button.form__form-button Отправить
+        label.check
+          span.form__form-feedback.js-checkbox.form__form-feedback--position-bottom
+          input.check__input(type="checkbox")
+          span.check__box(role="checkbox" aria-checked="false")
+          span.form__form-text Принимаю&nbsp;
+            a(class='form__form-link' href='#') пользовательское соглашение
+    div(class='lazy form__right-side', data-bg=require(`@images/1920/form-decoration-1920.png`))

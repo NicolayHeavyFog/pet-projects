@@ -24,6 +24,7 @@ module.exports = {
   },
   plugins: ['prettier'],
   rules: {
+    'no-console': 'off',
     'no-alert': 0,
     'no-param-reassign': [2, { props: false }],
     'no-plusplus': 0,

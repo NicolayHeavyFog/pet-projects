@@ -1,0 +1,41 @@
+@import '../../mixin';
+@import '../../variables';
+
+.banner {
+  background-size: cover;
+
+  &__container {
+    @include container;
+
+    margin-bottom: 70px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  &__suggestion {
+    display: block;
+    width: 508px;
+    color: $gold;
+    font-weight: 900;
+    font-size: 60px;
+    font-family: PlayfairDisplayblack, Arial, Helvetica, sans-serif;
+    line-height: 72px;
+
+    &-description {
+      display: block;
+      width: 508px;
+      margin-bottom: 50px;
+      color: #fff;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 58px;
+    }
+  }
+
+  &__button {
+    @include button-primary;
+
+    min-width: 187px;
+    min-height: 60px;
+  }
+}

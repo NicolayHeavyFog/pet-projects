@@ -1,0 +1,60 @@
+section.special-offers
+  .special-offers__container
+    h2.special-offers__title Специальные предложения
+    .special-offers__buttons
+      button.special-offers__button-prev
+      button.special-offers__button-next
+    .special-offers__swiper
+      ul.special-offers__wrapper.swiper-wrapper
+        - var cards = [{text: 'Кресло велюровое “X-24”', discount: '9 000', currentPrice: '15 990', oldPrice: '24 990', src: ''}, {text: 'Диван тканевый “Z-44”', discount: '10 000', currentPrice: '22 990', oldPrice: '32 990'}, {text: 'Будильник  “Quartz-23”', discount: '600', currentPrice: '1 290', oldPrice: '1 890'}]
+          li.special-offers__slide.swiper-slide
+            .special-offers__slide-container
+              each card, index in cards
+                if index!==1
+                  .special-offers__card
+                    picture(class='special-offers__card-picture')
+                      img(class='lazy special-offers__card-image', data-src=require(`@images/1920/special-offers-${index+1}-1920.png`), alt=card.text)
+                    .special-offers__card-container
+                      span.special-offers__card-discount='- '+card.discount
+                      h3.special-offers__card-title=card.text
+                      .special-offers__card-content
+                        span.special-offers__card-price=card.currentPrice+'руб'
+                        s.special-offers__card-price.special-offers__card-price--old=card.oldPrice+'руб'
+                      button(class='special-offers__card-button' aria-label=`Купить ${card.text}`) Купить
+                if index===1
+                   .special-offers__card.special-offers__card--background-one
+                    picture(class='special-offers__card-picture')
+                      img(class='lazy special-offers__card-image', data-src=require(`@images/1920/special-offers-${index+1}-1920.png`), alt=card.text)
+                    .special-offers__card-container
+                      span.special-offers__card-discount='- '+card.discount
+                      h3.special-offers__card-title=card.text
+                      .special-offers__card-content
+                        span.special-offers__card-price=card.currentPrice+'руб'
+                        s.special-offers__card-price.special-offers__card-price--old=card.oldPrice+'руб'
+                      button(class='special-offers__card-button' aria-label=`Купить ${card.text}`) Купить
+        - var cards = [{text: 'Мини-скульптура “Oh my deer”', discount: '300', currentPrice: '690', oldPrice: '990'}, {text: 'Диван вел-флок “Z-85”', discount: '10 000', currentPrice: '22 900', oldPrice: '32 990'}, {text: 'Термометр + гидрометр “H-18”', discount: '700', currentPrice: '1 390', oldPrice: '2 090'}]
+          li.special-offers__slide.swiper-slide
+            .special-offers__slide-container
+              each card, index in cards
+                if index!==1
+                  .special-offers__card
+                    picture(class='special-offers__card-picture')
+                      img(class='lazy special-offers__card-image', data-src=require(`@images/1920/special-offers-${index+4}-1920.png`), alt=card.text)
+                    .special-offers__card-container
+                      span.special-offers__card-discount='- '+card.discount
+                      h3.special-offers__card-title=card.text
+                      .special-offers__card-content
+                        span.special-offers__card-price=card.currentPrice+'руб'
+                        s.special-offers__card-price.special-offers__card-price--old=card.oldPrice+'руб'
+                      button(class='special-offers__card-button' aria-label=`Купить ${card.text}`) Купить
+                if index===1
+                  .special-offers__card.special-offers__card--background-two
+                    picture(class='special-offers__card-picture')
+                      img(class='lazy special-offers__card-image', data-src=require(`@images/1920/special-offers-${index+4}-1920.png`), alt=card.text)
+                    .special-offers__card-container
+                      span.special-offers__card-discount='- '+card.discount
+                      h3.special-offers__card-title=card.text
+                      .special-offers__card-content
+                        span.special-offers__card-price=card.currentPrice+'руб'
+                        s.special-offers__card-price.special-offers__card-price--old=card.oldPrice+'руб'
+                      button(class='special-offers__card-button' aria-label=`Купить ${card.text}`) Купить

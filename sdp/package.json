@@ -74,7 +74,10 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "choices.js": "^10.1.0",
+    "inputmask": "^5.0.7",
+    "just-validate": "^3.8.1",
     "normalize.css": "^8.0.1",
-    "swiper": "^8.2.2"
+    "swiper": "^8.2.2",
+    "vanilla-lazyload": "^17.8.2"
   }
 }

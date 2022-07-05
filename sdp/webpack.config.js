@@ -92,6 +92,15 @@ const plugins = () => {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/markup/pages/index.pug'),
       filename: 'index.html',
+      // chunks: ['index.js'],
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/markup/pages/catalog.pug'),
+      filename: 'catalog.html',
+      // chunks: ['catalog.js'],
       minify: {
         collapseWhitespace: isProd,
       },
@@ -115,7 +124,10 @@ const plugins = () => {
 
 module.exports = () => ({
   context: path.resolve(__dirname, 'src'),
-  entry: ['@babel/polyfill', './js/index.js'],
+  entry: {
+    index: ['@babel/polyfill', './js/index.js'],
+    catalog: ['@babel/polyfill', './js/catalog.js'],
+  },
   output: {
     filename: `${filename('js')}`,
     path: path.resolve(__dirname, 'dist'),
@@ -124,7 +136,11 @@ module.exports = () => ({
     clean: true,
   },
   resolve: {
-    // extensions: ['.js'],
+    alias: {
+      '@images': path.resolve(__dirname, 'src/assets/images'),
+      '@': path.resolve(__dirname, 'src'),
+      '@svg': path.resolve(__dirname, 'src/assets/svg'),
+    },
   },
   module: {
     rules: [
@@ -138,7 +154,7 @@ module.exports = () => ({
         use: jsLoaders(),
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
       {

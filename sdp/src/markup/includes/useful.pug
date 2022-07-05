@@ -1,0 +1,14 @@
+section.useful
+  .useful__container
+    h2.useful__title Полезное
+    .useful__buttons
+      button.useful__button-prev
+      button.useful__button-next
+    .useful__swiper
+      ul.useful__wrapper.swiper-wrapper
+        - var cards = ['И нет сомнений, что сделанные на базе интернет-аналитики выводы представляют собой не что иное?', 'Как принято считать, некоторые особенности приносят несомненную пользу обществу?', 'Ясность нашей позиции очевидна: укрепление и развитие внутренней структуры?', 'Прежде всего, консультация с широким активом однозначно фиксирует необходимость распределения?', 'Как принято считать, некоторые особенности приносят несомненную пользу обществу?']
+        each card, index in cards
+          li(class='useful__slide swiper-slide lazy', data-bg=require(`@images/1920/useful-${index+1}-1920.jpg`) )
+            .useful__slide-container
+              p.useful__slide-text=card
+              button.useful__slide-button Читать

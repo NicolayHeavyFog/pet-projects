@@ -12,6 +12,7 @@ export default class Select {
     this.itemClass = options.classNames.item;
     this.dropdownOpenClass = options.classNames.dropdownOpen;
     this.dropdownCloseClass = options.classNames.dropdownClose;
+    this.ariaLabel = options.classNames.ariaLabel;
 
     this.placeholder = options.placeholderText;
 
@@ -31,7 +32,7 @@ export default class Select {
     this.innerSelect.setAttribute('role', 'listbox');
     this.innerSelect.setAttribute('aria-haspopup', true);
     this.innerSelect.setAttribute('aria-expanded', false);
-    this.innerSelect.setAttribute('aria-label', 'Выбор города');
+    this.innerSelect.setAttribute('aria-label', this.ariaLabel); // ????
 
     this.selectedItem = document.createElement('span');
     if (this.placeholder) {

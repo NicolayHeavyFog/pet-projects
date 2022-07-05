@@ -1,0 +1,146 @@
+@import '../../mixin';
+@import '../../variables';
+@import './tooltip';
+
+.form {
+  &__container {
+    @include container;
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 70px;
+  }
+
+  &__title {
+    @include visually-hidden;
+  }
+
+  &__right-side {
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__subtitle {
+    display: block;
+    max-width: 624px;
+    margin-bottom: 9px;
+    color: $black;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  &__text {
+    display: inline;
+    max-width: 624px;
+    margin: 0;
+
+    // margin-bottom: 16px;
+    color: $grey-shade;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &__form {
+    margin-top: 16px;
+
+    &-label {
+      position: relative;
+      display: block;
+    }
+
+    &-input {
+      @include input;
+
+      width: 624px;
+      height: 54px;
+      margin-bottom: 30px;
+      padding-left: 18px;
+      border-radius: 10px;
+
+      &--success {
+        border-color: $green;
+      }
+
+      &--error {
+        border-color: $red;
+      }
+    }
+
+    &-feedback {
+      position: absolute;
+      top: -16px;
+      left: 12px;
+      display: block;
+      width: fit-content;
+      height: fit-content;
+      font-size: 12px;
+      line-height: 16px;
+
+      &--position-bottom {
+        top: calc(100% + 7px);
+      }
+    }
+
+    &-button {
+      @include button-primary;
+
+      display: block;
+      min-width: 159px;
+      min-height: 54px;
+      margin-bottom: 12px;
+    }
+
+    &-text {
+      margin-left: 10px;
+      font-size: 14px;
+    }
+
+    &-link {
+      @include link-state;
+
+      color: $primary-color;
+      text-decoration: underline;
+
+      &::before {
+        right: -3px;
+        left: -3px;
+      }
+    }
+  }
+}
+
+.check {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  &__input {
+    @include visually-hidden;
+  }
+
+  &__box {
+    width: 20px;
+    height: 20px;
+    background-color: tomato;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='20' height='20' fill='white'/%3E%3Crect x='0.5' y='0.5' width='19' height='19' rx='1.5' fill='white' stroke='%23999999'/%3E%3C/svg%3E%0A");
+  }
+
+  &__input:focus + &__box {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='20' height='20' fill='white'/%3E%3Crect x='0.5' y='0.5' width='19' height='19' rx='1.5' fill='white' stroke='%237033ac'/%3E%3C/svg%3E%0A");
+  }
+
+  &__input:hover + &__box {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='20' height='20' fill='white'/%3E%3Crect x='0.5' y='0.5' width='19' height='19' rx='1.5' fill='white' stroke='%23a65cf0'/%3E%3C/svg%3E%0A");
+  }
+
+  &__input:checked + &__box {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='20' height='20' fill='white'/%3E%3Crect width='20' height='20' rx='2' fill='%23A65CF0'/%3E%3Cpath d='M4 10L8.52769 14.5277L16.6473 5.40808' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
+  }
+
+  &__input:checked:focus + &__box {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='20' height='20' fill='white'/%3E%3Crect width='20' height='20' rx='2' fill='%237033ac'/%3E%3Cpath d='M4 10L8.52769 14.5277L16.6473 5.40808' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
+  }
+}

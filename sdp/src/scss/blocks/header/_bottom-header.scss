@@ -32,6 +32,9 @@
     height: 27px;
   }
 
+  &__nav {
+  }
+
   &__list {
     display: flex;
     flex-direction: row;
@@ -75,29 +78,12 @@
     }
 
     &-search {
+      @include input;
+
       width: 761px;
       height: 100%;
       padding-left: 60px;
-      background-color: $grey-light;
-      border: 2px solid transparent;
       border-radius: 10px 0 0 10px;
-      transition: border-color 0.2s ease-out, background-color 0.2s ease-out;
-
-      &::placeholder {
-        color: $grey;
-        font-size: 16px;
-        line-height: 19px;
-      }
-
-      &:hover {
-        background-color: $md-grey;
-      }
-
-      &:focus {
-        background-color: $pink-light;
-        border-color: $primary-color;
-        outline: none;
-      }
 
       &:active {
         + svg {

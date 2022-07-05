@@ -5,7 +5,7 @@ header.header
         .top-header__select-location
           span.top-header__region Ваш регион:
           - var listOfCities = ['Москва', 'Казань', 'Уфа', 'Пермь'];
-          select(class='top-header__select' type='select-one' aria-label='Выбор города')
+          select(class='top-header__select' aria-label='Выбор города')
             each item in listOfCities
               option(class='top-header__select-item' value=item)=item
         a(href='tel:+74958854547', aria-label='Контактный номер').top-header__contact
@@ -22,13 +22,15 @@ header.header
   .bottom-header
     .bottom-header__top
       a.bottom-header__logo(href="#")
+        h1.page__title Магазин мебели Seat down please
         svg.bottom-header__svg
           use(xlink:href='#logoApp')
-      - var referenceList = [{text: 'Каталог', link: '#'}, {text: 'Магазины', link: '#'}, {text: 'Шоу-рум', link: '#'}, {text: 'Доставка и оплата', link: '#'}, {text: 'Дисконт', link: '#'}, {text: 'Контакты', link: '#'}]
-      ul.bottom-header__list
-        each item in referenceList
-          li(class='bottom-header__item')
-            a(class='bottom-header__item-link' href=`${item.link}`)=item.text
+      nav.bottom-header__nav
+        - var referenceList = [{text: 'Каталог', link: 'catalog.html'}, {text: 'Магазины', link: '#'}, {text: 'Шоу-рум', link: '#'}, {text: 'Доставка и оплата', link: '#'}, {text: 'Дисконт', link: '#'}, {text: 'Контакты', link: '#'}]
+        ul.bottom-header__list
+          each item in referenceList
+            li(class='bottom-header__item')
+              a(class='bottom-header__item-link' href=`${item.link}`)=item.text
     .bottom-header__bottom
       form.bottom-header__form(action="#")
         label.bottom-header__form-label
@@ -36,13 +38,13 @@ header.header
           svg.bottom-header__form-svg
             use(xlink:href='#searchIcon')
         - var listOfCategories = ['Диваны', 'Комоды', 'Кресла', 'Стулья', 'Пуфы', 'Столы', 'Кровати', 'Аксессуары', 'Тумбы'];
-        select(class='bottom-header__select' type='select-one' aria-label='Выбор категории')
+        select(class='bottom-header__select' aria-label='Выбор категории')
           each category in listOfCategories
             option(class='bottom-header__select-item' value=category)=category
       .bottom-header__user
-        a(class='bottom-header__user-link' href='#')
+        a(class='bottom-header__user-link' href='#' aria-label='В личный кабинет')
           svg.bottom-header__user-svg
             use(xlink:href='#userIcon')
-        a(class='bottom-header__user-cart' href='#')
+        a(class='bottom-header__user-cart' href='#' aria-label='К корзине покупок')
           svg.bottom-header__user-svg
             use(xlink:href='#cartIcon')

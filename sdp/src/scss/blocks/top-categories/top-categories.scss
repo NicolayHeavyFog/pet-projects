@@ -1,0 +1,162 @@
+@import '../../mixin';
+@import '../../variables';
+
+.top-categories {
+  &__container {
+    @include container;
+
+    margin-bottom: 70px;
+  }
+
+  &__title {
+    @include title-h2;
+
+    text-align: left;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-rows: 511px 405px;
+    grid-template-columns: repeat(6, 188px);
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__item {
+    position: relative;
+    grid-column: span 2;
+    width: 100%;
+    min-height: 100%;
+    background-color: $grey-light;
+    border-radius: 10px;
+
+    &:nth-child(1) {
+      grid-column: span 3;
+    }
+
+    &:nth-child(2) {
+      grid-column: span 3;
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 70%;
+    }
+
+    &-header {
+    }
+
+    &-types {
+      display: flex;
+      margin: 0;
+      margin-bottom: 14px;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    &-type {
+      color: $grey;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14px;
+
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+
+    &-title {
+      @include title-h2;
+    }
+
+    &-link {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      justify-self: flex-end;
+      width: 108px;
+      margin-top: auto;
+      color: $primary-color;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+
+      &::after {
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        display: block;
+        width: 75%;
+        height: 2px;
+        background-color: transparent;
+        transition: background-color 0.3s ease-in-out;
+        content: '';
+      }
+
+      & span {
+        @include slider-button(22px, 22px);
+      }
+
+      &:hover {
+        &::after {
+          background-color: $primary-color;
+        }
+
+        & span {
+          background-color: $primary-color;
+
+          &::after,
+          &::before {
+            background-color: #fff;
+          }
+        }
+      }
+
+      &:focus {
+        outline: none;
+
+        &::after {
+          background-color: $primary-color;
+        }
+
+        & span {
+          background-color: $primary-light;
+
+          &::after,
+          &::before {
+            background-color: #fff;
+          }
+        }
+      }
+
+      &:active {
+        color: $primary-shade;
+
+        &::after {
+          background-color: $primary-shade;
+        }
+
+        & span {
+          background-color: $primary-shade;
+          border-color: $primary-shade;
+
+          &::after,
+          &::before {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
