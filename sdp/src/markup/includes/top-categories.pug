@@ -1,16 +1,24 @@
 section.top-categories
   .top-categories__container
     h2.top-categories__title Топ категории
-    - var suggestions = [{title: 'Диваны', types: ['Прямые', 'Угловые', 'Модульные']}, {title: 'Кресла', types: ['Мягкие', 'Кресла-кровати']}, {title: 'Кровати', types: ['Односпальные', 'Двуспальные']}, {title: 'Тумбы и комоды', types: ['Тумбы', 'Комоды']}, {title: 'Стулья', types: ['Деревянные', 'Металлокаркас']}]
+    -
+      var suggestions = [
+        {title: 'Диваны', types: ['Прямые', 'Угловые', 'Модульные']},
+        {title: 'Кресла', types: ['Мягкие', 'Кресла-кровати']},
+        {title: 'Кровати', types: ['Односпальные', 'Двуспальные']},
+        {title: 'Тумбы и&nbsp;комоды', types: ['Тумбы', 'Комоды']},
+        {title: 'Стулья', types: ['Деревянные', 'Металлокаркас']}
+        ]
     ul.top-categories__list
       each suggestion, index in suggestions
-        li.top-categories__item
-          article(class='top-categories__item-container lazy' data-bg=require(`@images/1920/top-categories-${index + 1}-1920.png`))
-            .top-categories__item-header
-              ul.top-categories__item-types
-                each link in suggestion.types
-                  li.top-categories__item-type
-                    a=link
-              h3.top-categories__item-title=suggestion.title
-            a(class='top-categories__item-link' href='#') В каталог
-              span
+        li(class=`category top-categories__item category--background-${index+1}`)
+          article.category__container
+            ul.category__type-list
+              each link in suggestion.types
+                li.category__type-item=link
+            h3.category__header
+              span.category__header-title!=suggestion.title
+              span.category__header-decoration
+            div.category__link
+              a.category__link-text(href='#') В каталог
+              span.category__link-decoration

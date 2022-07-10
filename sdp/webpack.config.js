@@ -97,14 +97,14 @@ const plugins = () => {
         collapseWhitespace: isProd,
       },
     }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/markup/pages/catalog.pug'),
-      filename: 'catalog.html',
-      // chunks: ['catalog.js'],
-      minify: {
-        collapseWhitespace: isProd,
-      },
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: path.resolve(__dirname, 'src/markup/pages/catalog.pug'),
+    //   filename: 'catalog.html',
+    //   // chunks: ['catalog.js'],
+    //   minify: {
+    //     collapseWhitespace: isProd,
+    //   },
+    // }),
     new FaviconsWebpackPlugin({
       logo: './assets/svg/favIcon.svg',
       inject: true,
@@ -126,7 +126,7 @@ module.exports = () => ({
   context: path.resolve(__dirname, 'src'),
   entry: {
     index: ['@babel/polyfill', './js/index.js'],
-    catalog: ['@babel/polyfill', './js/catalog.js'],
+    // catalog: ['@babel/polyfill', './js/catalog.js'],
   },
   output: {
     filename: `${filename('js')}`,

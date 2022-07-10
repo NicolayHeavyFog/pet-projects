@@ -2,6 +2,8 @@
 @import '../../mixin';
 @import '../../variables';
 
+@import './useful-item';
+
 .useful {
   &__container {
     @include container;
@@ -39,44 +41,24 @@
     overflow: hidden;
   }
 
-  &__wrapper {
+  &__list {
     margin: 0;
     padding: 0;
     list-style-type: none;
   }
 
-  &__slide {
-    width: 100%;
-    min-height: 676px;
-    background-color: $grey-light;
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-radius: 10px;
+  @media (max-width: 1160px) {
+  }
 
-    &-container {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-      padding: calc(30px + 426px) 30px 30px 30px;
+  @media (max-width: 450px) {
+    &__swiper {
+      margin-bottom: 16px;
     }
 
-    &-text {
-      margin: 0;
-      color: $black;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 33px;
-    }
-
-    &-button {
-      @include button-secondary;
-
-      align-self: flex-start;
-      justify-self: flex-end;
-      min-width: 128px;
-      min-height: 54px;
-      margin-top: auto;
+    &__buttons {
+      justify-self: center;
+      order: 3;
+      margin: auto;
     }
   }
 }

@@ -1,3 +1,5 @@
+import '../markup/pages/catalog.pug';
+
 import 'normalize.css';
 import '../scss/pages/catalog.scss';
 

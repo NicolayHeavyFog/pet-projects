@@ -10,8 +10,7 @@
   &__container {
     position: relative;
     width: 84px;
-    margin-right: 30px;
-    padding: 3px 18px 3px 3px;
+    padding: 3px 18px 0 3px;
     overflow: hidden;
     color: $primary-color;
     font-size: 16px;
@@ -21,8 +20,8 @@
 
     &::after {
       position: absolute;
-      top: 28%;
-      right: 7px;
+      top: 31%;
+      right: 8px;
       display: block;
       width: 8px;
       height: 8px;

@@ -5,10 +5,19 @@ section.useful
       button.useful__button-prev
       button.useful__button-next
     .useful__swiper
-      ul.useful__wrapper.swiper-wrapper
-        - var cards = ['И нет сомнений, что сделанные на базе интернет-аналитики выводы представляют собой не что иное?', 'Как принято считать, некоторые особенности приносят несомненную пользу обществу?', 'Ясность нашей позиции очевидна: укрепление и развитие внутренней структуры?', 'Прежде всего, консультация с широким активом однозначно фиксирует необходимость распределения?', 'Как принято считать, некоторые особенности приносят несомненную пользу обществу?']
+      ul.useful__list.swiper-wrapper
+        -
+          var cards = [
+            'И нет сомнений, что сделанные на базе интернет-аналитики выводы представляют собой не что иное?',
+            'Как принято считать, некоторые особенности приносят несомненную пользу обществу?',
+            'Ясность нашей позиции очевидна: укрепление и развитие внутренней структуры?',
+            'Прежде всего, консультация с широким активом однозначно фиксирует необходимость распределения?',
+            'Как принято считать, некоторые особенности приносят несомненную пользу обществу?'
+            ]
         each card, index in cards
-          li(class='useful__slide swiper-slide lazy', data-bg=require(`@images/1920/useful-${index+1}-1920.jpg`) )
-            .useful__slide-container
-              p.useful__slide-text=card
-              button.useful__slide-button Читать
+          li.swiper-slide.useful-item.useful__item
+            .useful-item__container
+              div(class=`useful-item__image useful-item--background-${index+1}`)
+              .useful-item__content
+                p.useful-item__text=card
+                button.useful-item__button Читать

@@ -1,21 +1,25 @@
 .hero
   .hero__container
     .hero-swiper.swiper
-      - var slides = ['Скидка 15% на первую покупку', '1000+ аксессуаров для дома', 'Коллекция стильного и яркого текстиля'];
+      -
+        var slides = ['Скидка 15% <br> на первую покупку',
+                      '1000+ аксессуаров <br> для дома',
+                      'Коллекция <br> стильного <br> и яркого текстиля'];
       ul.hero-swiper__wrapper.swiper-wrapper
         each slide, index in slides
           li(class=`swiper-slide hero-swiper__slide hero-swiper__slide--background-${index+1}`)
             .hero-swiper__slide-container
               if index!==2
-                div(class='hero-swiper__slide-suggestion')=slide
+                div(class='hero-swiper__slide-suggestion')!=slide
               else if index===2
-                .hero-swiper__slide-suggestion.hero-swiper__slide-suggestion--color-white=slide
+                .hero-swiper__slide-suggestion.hero-swiper__slide-suggestion--color-white!=slide
               button.hero-swiper__button Получить!
       .hero-swiper__pagination
         - let count = 0;
         while count < 3
           span.hero-swiper__circle
             svg.hero-swiper__circle-axic
-              circle.hero-swiper__circle-inner(cx='14', cy='14', r='12', stroke-width='3', fill='none')
-              circle.hero-swiper__circle-outer(cx='14', cy='14', r='12', stroke-width='3', fill='none')
+              circle.hero-swiper__circle-inner
+              circle.hero-swiper__circle-outer
               - count += 1;
+    button.hero__button Получить!

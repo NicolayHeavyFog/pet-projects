@@ -14,29 +14,49 @@ header.header
           span.top-header__contact-number +7 (495) 885-45-47
       .top-header__right-side
         nav.top-header__nav
-          - var referenceList = [{text: 'О компании', link: '#'}, {text: 'Гарантия и возврат', link: '#'}, {text: 'Корпоративным клиентам', link: '#'}, {text: 'Дизайн-решение', link: '#'}];
+          -
+            var referenceList = [
+              {text: 'О компании', link: '#'},
+              {text: 'Гарантия и возврат', link: '#'},
+              {text: 'Корпоративным клиентам', link: '#'},
+              {text: 'Дизайн-решение', link: '#'}
+              ];
           ul.top-header__list
             each item in referenceList
               li(class='top-header__item')
                 a(class='top-header__item-link' href=`${item.link}`)=item.text
   .bottom-header
     .bottom-header__top
+      .burger
+        button.burger__button(aria-haspopup='true', aria-expanded='false', aria-label='Выпадающее меню')
+          span.burger__button-sticks
       a.bottom-header__logo(href="#")
         h1.page__title Магазин мебели Seat down please
         svg.bottom-header__svg
           use(xlink:href='#logoApp')
       nav.bottom-header__nav
-        - var referenceList = [{text: 'Каталог', link: 'catalog.html'}, {text: 'Магазины', link: '#'}, {text: 'Шоу-рум', link: '#'}, {text: 'Доставка и оплата', link: '#'}, {text: 'Дисконт', link: '#'}, {text: 'Контакты', link: '#'}]
+        -
+          var referenceList = [
+            {text: 'Каталог', link: 'catalog.html'},
+            {text: 'Магазины', link: '#'},
+            {text: 'Шоу-рум', link: '#'},
+            {text: 'Доставка и оплата', link: '#'},
+            {text: 'Дисконт', link: '#'},
+            {text: 'Контакты', link: '#'}
+            ]
         ul.bottom-header__list
           each item in referenceList
             li(class='bottom-header__item')
               a(class='bottom-header__item-link' href=`${item.link}`)=item.text
+    .bottom-header__overlay.bottom-header__overlay--hide(aria-expanded='true')
+      .bottom-header__overlay-container
     .bottom-header__bottom
       form.bottom-header__form(action="#")
         label.bottom-header__form-label
           input(class='bottom-header__form-search', placeholder='Я хочу купить...')
           svg.bottom-header__form-svg
             use(xlink:href='#searchIcon')
+        button.bottom-header__form-button
         - var listOfCategories = ['Диваны', 'Комоды', 'Кресла', 'Стулья', 'Пуфы', 'Столы', 'Кровати', 'Аксессуары', 'Тумбы'];
         select(class='bottom-header__select' aria-label='Выбор категории')
           each category in listOfCategories
@@ -48,3 +68,4 @@ header.header
         a(class='bottom-header__user-cart' href='#' aria-label='К корзине покупок')
           svg.bottom-header__user-svg
             use(xlink:href='#cartIcon')
+          span.bottom-header__user-number 0

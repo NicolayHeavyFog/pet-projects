@@ -7,6 +7,22 @@
   &__container {
     margin-bottom: 70px;
   }
+
+  &__button {
+    @include button-primary;
+
+    display: none;
+    width: calc(100% - 26px);
+    height: 60px;
+    margin-right: 13px;
+    margin-left: 13px;
+  }
+
+  @media (max-width: 520px) {
+    &__button {
+      display: block;
+    }
+  }
 }
 
 .hero-swiper {
@@ -27,13 +43,13 @@
       @include container;
 
       height: 400px;
-      padding-top: 50px;
-      padding-bottom: 50px;
+      padding-top: 81px;
+      padding-bottom: 48px;
     }
 
     &-suggestion {
-      max-width: 500px;
-      margin-bottom: 50px;
+      max-width: 555px;
+      margin-bottom: 49px;
       color: $grey;
       font-weight: 700;
       font-size: 48px;
@@ -45,15 +61,15 @@
     }
 
     &--background-1 {
-      background-image: url('@images/1920/hero1920-1.jpg');
+      background-image: url('@images/1920/hero-1-1920.jpg');
     }
 
     &--background-2 {
-      background-image: url('@images/1920/hero1920-2.jpg');
+      background-image: url('@images/1920/hero-2-1920.jpg');
     }
 
     &--background-3 {
-      background-image: url('@images/1920/hero1920-3.jpg');
+      background-image: url('@images/1920/hero-3-1920.jpg');
     }
   }
 
@@ -61,12 +77,12 @@
     @include button-primary;
 
     width: 187px;
-    height: 50px;
+    height: 60px;
   }
 
   &__pagination {
     position: absolute;
-    bottom: 23px;
+    bottom: 15px;
     z-index: 10;
     display: block;
     width: 100%;
@@ -99,11 +115,148 @@
     &-inner,
     &-outer {
       stroke-dasharray: 440px;
+      cx: 14;
+      cy: 14;
+      r: 12;
+      stroke-width: 3;
+      fill: none;
     }
 
     &--active &-outer {
       stroke-dashoffset: 220px;
       transition: stroke-dashoffset 12.6s linear;
+    }
+  }
+
+  @media (max-width: 1160px) {
+    &__slide {
+      &--background-1 {
+        background-image: url('@images/1024/hero-1-1024.jpg');
+      }
+
+      &--background-2 {
+        background-image: url('@images/1024/hero-2-1024.jpg');
+      }
+
+      &--background-3 {
+        background-image: url('@images/1024/hero-3-1024.jpg');
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    &__slide {
+      &--background-1 {
+        background-image: url('@images/768/hero-1-768.jpg');
+      }
+
+      &--background-2 {
+        background-image: url('@images/768/hero-2-768.jpg');
+      }
+
+      &--background-3 {
+        background-image: url('@images/768/hero-3-768.jpg');
+      }
+    }
+
+    &__pagination {
+      bottom: 16px;
+    }
+
+    &__circle {
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
+
+      &-axic {
+        width: 20px;
+        height: 20px;
+      }
+
+      &-inner,
+      &-outer {
+        cx: 10;
+        cy: 10;
+        r: 8;
+      }
+
+      &--active &-outer {
+        stroke-dashoffset: 220px;
+        transition: stroke-dashoffset 18.6s linear;
+      }
+    }
+  }
+
+  @media (max-width: 520px) {
+    margin-bottom: 32px;
+
+    &__slide {
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &-container {
+        height: 210px;
+        padding-top: 30px;
+        padding-right: 30px;
+        padding-left: 30px;
+      }
+
+      &--background-1 {
+        background-image: url('@images/320/hero-1-320.jpg');
+      }
+
+      &--background-2 {
+        background-image: url('@images/320/hero-2-320.jpg');
+      }
+
+      &--background-3 {
+        background-image: url('@images/320/hero-3-320.jpg');
+      }
+
+      &-suggestion {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 27px;
+      }
+    }
+
+    &__button {
+      display: none;
+    }
+
+    &__pagination {
+      top: 210px;
+      bottom: unset;
+    }
+
+    &__circle {
+      position: relative;
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+
+      &-axic {
+        width: 14px;
+        height: 14px;
+        transform: rotate(-90deg);
+      }
+
+      &-inner,
+      &-outer {
+        stroke-dasharray: 440px;
+        cx: 7;
+        cy: 7;
+        r: 6;
+        stroke-width: 2;
+        fill: none;
+      }
+
+      &--active &-outer {
+        transition: stroke-dashoffset 25s linear;
+      }
     }
   }
 }

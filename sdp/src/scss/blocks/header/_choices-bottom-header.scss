@@ -5,13 +5,18 @@
   position: relative;
   z-index: 2;
   display: inline-block;
+  width: 27%;
+
+  // min-width: 189px;
+  // min-width: 179px;
+  min-width: 167px;
   height: 100%;
 
   &__container {
     z-index: 0;
     display: flex;
     align-items: center;
-    width: 300px;
+    width: 100%;
     height: 100%;
     padding-right: 18px;
     padding-left: 32px;
@@ -26,8 +31,8 @@
 
     &::after {
       position: absolute;
-      top: 40%;
-      right: 20px;
+      top: 44%;
+      right: 34px;
       display: block;
       width: 8px;
       height: 8px;
@@ -69,7 +74,7 @@
     z-index: -1;
     display: inline-block;
     width: 100%;
-    height: fit-content;
+    height: auto;
     padding: 32px 30px 23px;
     background-color: #fff;
     border: 2px solid $grey-light;
@@ -117,6 +122,40 @@
 
     &:hover {
       color: $primary-light;
+    }
+  }
+
+  @media (max-width: 1160px) {
+    width: 31.5%;
+  }
+
+  @media (max-width: 1000px) {
+    // width: 27.5%;
+
+    &__container {
+      padding-left: 30px;
+    }
+
+    &__list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    width: 100%;
+    min-width: unset;
+    height: 60px;
+
+    &__container {
+      border-radius: 10px;
+
+      &::after {
+        right: 12%;
+      }
+    }
+
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

@@ -4,6 +4,8 @@
 @import 'swiper/scss/autoplay';
 @import 'swiper/scss/keyboard';
 
+@import './offer';
+
 .special-offers {
   &__container {
     @include container;
@@ -19,6 +21,7 @@
   }
 
   &__swiper {
+    width: 100%;
     overflow: hidden;
   }
 
@@ -29,12 +32,16 @@
     list-style-type: none;
   }
 
-  &__slide {
-    &-container {
-      display: grid;
-      grid-template-rows: 511px;
-      grid-template-columns: repeat(4, 296px);
-      gap: 32px;
+  &__slide.swiper-slide {
+    width: calc(25% - 24px);
+    min-width: 200px;
+    max-width: 296px;
+    min-height: 510px;
+
+    &:nth-child(3n + 2) {
+      width: calc(50% - 16px);
+      min-width: 500px;
+      max-width: 634px;
     }
   }
 
@@ -54,121 +61,29 @@
     @include slider-button(32px, 32px);
   }
 
-  &__card {
-    position: relative;
-    min-height: 511px;
-    padding: 37px 30px 30px;
-    text-align: center;
-    background-color: $grey-light;
-    border-radius: 10px;
-
-    &:nth-child(2) {
-      grid-column-start: 2;
-      grid-column-end: 4;
+  @media (max-width: 1220px) {
+    &__slide.swiper-slide {
       width: 100%;
+      min-width: 200px;
+      max-width: 450px;
 
-      &::before {
-        position: absolute;
-        right: 30px;
-        bottom: 30px;
-        display: block;
-        width: 230px;
-        height: 107px;
-        background-color: transparent;
-        background-repeat: no-repeat;
-        background-size: contain;
-        content: '';
+      &:nth-child(3n + 2) {
+        width: 100%;
+        min-width: 200px;
+        max-width: 450px;
       }
     }
+  }
 
-    &--background {
-      &-one {
-        &::before {
-          background-image: url('@images/sofaOne.png');
-        }
-      }
-
-      &-two {
-        &::before {
-          background-image: url('@images/sofaTwo.png');
-        }
-      }
+  @media (max-width: 450px) {
+    &__swiper {
+      margin-bottom: 16px;
     }
 
-    &-picture {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      height: 245px;
-      margin-bottom: 20px;
-    }
-
-    &-container {
-      display: flex;
-      flex-direction: column;
-      height: fit-content;
-      min-height: 180px;
-      text-align: start;
-    }
-
-    &-discount {
-      position: absolute;
-      top: 30px;
-      left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 86px;
-      height: 32px;
-      color: #fff;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 19px;
-      background-color: $secondary-color;
-      border-width: 82px 0 82px 156px;
-
-      &::before {
-        position: absolute;
-        right: -8px;
-        width: 0;
-        height: 0;
-        border-color: transparent transparent transparent $secondary-color;
-        border-style: solid;
-        border-width: 16px 0 16px 8px;
-        content: '';
-      }
-    }
-
-    &-title {
-      width: 225px;
-      margin: 0;
-      margin-bottom: 23px;
-      color: $black;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 31px;
-    }
-
-    &-price {
-      margin-right: 30px;
-      color: $secondary-color;
-      font-size: 18px;
-      line-height: 23px;
-
-      &--old {
-        color: $grey;
-        font-size: 16px;
-        line-height: 21px;
-      }
-    }
-
-    &-button {
-      @include button-secondary;
-
-      justify-self: flex-end;
-      width: 128px;
-      height: 54px;
-      margin-top: auto;
+    &__buttons {
+      justify-self: center;
+      order: 3;
+      margin: auto;
     }
   }
 }

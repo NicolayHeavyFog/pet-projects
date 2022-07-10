@@ -1,0 +1,58 @@
+@import '../../mixin';
+@import '../../variables';
+
+.burger {
+  display: none;
+
+  &__button {
+    @include button-reset;
+
+    position: relative;
+    z-index: 6;
+    display: inline-block;
+    order: 1;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+      z-index: -1;
+      background-color: transparent;
+      transition: background-color 0.3s ease-in-out;
+      content: '';
+    }
+
+    &-sticks {
+      @include button-sticks(false);
+
+      width: 100%;
+      height: 3px;
+    }
+
+    &:focus {
+      outline: none;
+
+      &::before {
+        background-color: $primary-light;
+      }
+    }
+  }
+
+  &--open &__button-sticks {
+    @include button-sticks(true);
+  }
+
+  @media (max-width: 1000px) {
+    display: inline-block;
+    width: 102px;
+
+    &__button {
+      height: 28px;
+    }
+  }
+}

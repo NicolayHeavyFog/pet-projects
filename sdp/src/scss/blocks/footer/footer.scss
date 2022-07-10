@@ -1,6 +1,5 @@
-@import '../fonts.css';
-@import '../mixin';
-@import '../variables';
+@import '../../mixin';
+@import '../../variables';
 
 .footer {
   width: 100%;
@@ -12,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     padding-top: 24px;
-    padding-bottom: 24px;
+    padding-bottom: 22px;
   }
 
   &__left-side {
@@ -20,6 +19,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    width: 15%;
   }
 
   &__logo {
@@ -56,7 +56,7 @@
     &-svg {
       width: 30px;
       height: 30px;
-      padding: 3px;
+      padding: 0;
       transition: fill 0.3s ease-out, background-color 0.3s ease-out;
       fill: $grey;
     }
@@ -77,14 +77,13 @@
 
   &__right-side {
     display: flex;
+    justify-content: space-between;
+    width: 65.9%;
   }
 
   &__section {
     display: inline-block;
-
-    &:not(:last-child) {
-      margin-right: 112px;
-    }
+    width: fit-content;
   }
 
   &__title {
@@ -114,15 +113,50 @@
   }
 
   @media (max-width: 1160px) {
-    &__container {
-      padding-right: 36px;
-      padding-left: 36px;
+    &__left-side {
+      width: 23%;
     }
 
-    &__section {
-      &:not(:last-child) {
-        margin-right: 75px;
-      }
+    &__right-side {
+      display: flex;
+      justify-content: space-between;
+      width: 77%;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    &__container {
+      flex-direction: column;
+    }
+
+    &__left-side,
+    &__right-side {
+      display: flex;
+      width: 100%;
+    }
+
+    &__left-side {
+      flex-direction: row;
+      margin-bottom: 22px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    &__left-side {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__logo {
+      margin-bottom: 24px;
+    }
+
+    &__right-side {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 25px;
+      column-gap: 18px;
     }
   }
 }
@@ -138,5 +172,6 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
+    letter-spacing: 0.7px;
   }
 }
