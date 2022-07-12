@@ -1,8 +1,12 @@
-@import 'swiper/css';
+// @import 'node_modules/swiper/swiper.scss';
 @import '../../mixin';
 @import '../../variables';
-@import 'swiper/scss/autoplay';
-@import 'swiper/scss/keyboard';
+
+// @import 'node_modules/swiper/swiper-bundle.css';
+@import 'node_modules/swiper/swiper';
+
+// @import 'swiper/scss/autoplay';
+// @import 'swiper/scss/keyboard';
 
 @import './offer';
 

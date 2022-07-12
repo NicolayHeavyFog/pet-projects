@@ -2,14 +2,14 @@ footer.footer
   .footer__container
     .footer__left-side
       svg.footer__logo
-        use(xlink:href='#logoApp')
+        use(xlink:href='sprite.svg#logoApp')
       - var referenceList = [{name: 'fb', link: '#'}, {name: 'vk', link: '#'}, {name: 'instagram', link: '#'}]
       ul.footer__socity-list
         each item in referenceList
           li.footer__socity-item
             a(class='footer__socity-link', href=`${item.link}`, aria-label=`Ссылка на наш контакт в ${item.name}`)
               svg.footer__socity-svg
-                use(xlink:href=`#${item.name}`)
+                use(xlink:href=`sprite.svg#${item.name}`)
     .footer__right-side
       section.footer__section
         h2.footer__title О нас

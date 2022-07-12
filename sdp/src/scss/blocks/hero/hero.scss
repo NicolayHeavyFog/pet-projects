@@ -1,7 +1,9 @@
-@import 'swiper/css';
+// @import 'node_modules/swiper/swiper.scss';
 @import '../../mixin';
 @import '../../variables';
-@import 'swiper/scss/autoplay';
+
+// @import 'node_modules/swiper/scss/autoplay';
+@import 'node_modules/swiper/swiper.scss';
 
 .hero {
   &__container {
@@ -61,15 +63,15 @@
     }
 
     &--background-1 {
-      background-image: url('@images/1920/hero-1-1920.jpg');
+      background-image: url('./assets/images/1920/hero-1-1920.jpg');
     }
 
     &--background-2 {
-      background-image: url('@images/1920/hero-2-1920.jpg');
+      background-image: url('./assets/images/1920/hero-2-1920.jpg');
     }
 
     &--background-3 {
-      background-image: url('@images/1920/hero-3-1920.jpg');
+      background-image: url('./assets/images/1920/hero-3-1920.jpg');
     }
   }
 
@@ -131,15 +133,15 @@
   @media (max-width: 1160px) {
     &__slide {
       &--background-1 {
-        background-image: url('@images/1024/hero-1-1024.jpg');
+        background-image: url('./assets/images//1024/hero-1-1024.jpg');
       }
 
       &--background-2 {
-        background-image: url('@images/1024/hero-2-1024.jpg');
+        background-image: url('./assets/images//1024/hero-2-1024.jpg');
       }
 
       &--background-3 {
-        background-image: url('@images/1024/hero-3-1024.jpg');
+        background-image: url('./assets/images//1024/hero-3-1024.jpg');
       }
     }
   }
@@ -147,15 +149,15 @@
   @media (max-width: 900px) {
     &__slide {
       &--background-1 {
-        background-image: url('@images/768/hero-1-768.jpg');
+        background-image: url('./assets/images//768/hero-1-768.jpg');
       }
 
       &--background-2 {
-        background-image: url('@images/768/hero-2-768.jpg');
+        background-image: url('./assets/images//768/hero-2-768.jpg');
       }
 
       &--background-3 {
-        background-image: url('@images/768/hero-3-768.jpg');
+        background-image: url('./assets/images//768/hero-3-768.jpg');
       }
     }
 
@@ -203,15 +205,15 @@
       }
 
       &--background-1 {
-        background-image: url('@images/320/hero-1-320.jpg');
+        background-image: url('./assets/images/320/hero-1-320.jpg');
       }
 
       &--background-2 {
-        background-image: url('@images/320/hero-2-320.jpg');
+        background-image: url('./assets/images/320/hero-2-320.jpg');
       }
 
       &--background-3 {
-        background-image: url('@images/320/hero-3-320.jpg');
+        background-image: url('./assets/images/320/hero-3-320.jpg');
       }
 
       &-suggestion {

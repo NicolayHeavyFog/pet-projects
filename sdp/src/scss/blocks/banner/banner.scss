@@ -2,7 +2,7 @@
 @import '../../variables';
 
 .banner {
-  background-image: url('@images/1920/banner-1920.jpg');
+  background-image: url('./assets/images/1920/banner-1920.jpg');
   background-size: cover;
 
   &__container {
@@ -49,7 +49,7 @@
   }
 
   @media (max-width: 1160px) {
-    background-image: url('@images/1024/banner-1024.jpg');
+    background-image: url('./assets/images/1024/banner-1024.jpg');
 
     &__container {
       padding-right: 36px;
@@ -64,7 +64,7 @@
   }
 
   @media (max-width: 1000px) {
-    background-image: url('@images/768/banner-768.jpg');
+    background-image: url('./assets/images/768/banner-768.jpg');
 
     &__container {
       padding-bottom: 151px;
@@ -82,7 +82,7 @@
       height: 210px;
       margin-bottom: 32px;
       padding: 35px 12px;
-      background-image: url('@images/320/banner-320.jpg');
+      background-image: url('./assets/images/320/banner-320.jpg');
       background-repeat: no-repeat;
       background-size: cover;
     }

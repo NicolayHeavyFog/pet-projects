@@ -21,7 +21,7 @@ section.hight-rating
         li.hight-rating__item
           article.rating-item
             picture.rating-item__picture
-              img(class='lazy rating-item__picture-img', data-src=require(`@images/1920/high-rating-${index+1}-1920.png`), alt=`Диван ${suggestion.title.type} ${suggestion.title.model}`)
+              img(class='lazy rating-item__picture-img', data-src=`./assets/images/1920/high-rating-${index+1}-1920.png`, alt=`Диван ${suggestion.title.type} ${suggestion.title.model}`)
             .rating-item__content
               span.rating-item__rating=suggestion.mark
               h3.rating-item__title

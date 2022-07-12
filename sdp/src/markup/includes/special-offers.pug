@@ -18,10 +18,10 @@ section.special-offers
         each card, index in cards
           li.special-offers__slide.swiper-slide
             if (index!==1 && index!==4)
-              atricle.offer
+              article.offer
                 picture.offer__picture
-                  source(media="(max-width: 1220px)", type='image/png', data-srcset=require(`@images/1024/special-offers-${index+1}-1024.png`))
-                  img(class='lazy offer__picture-img', data-src=require(`@images/1920/special-offers-${index+1}-1920.png`), alt=`${card.title.type} ${card.title.model}`)
+                  source(media="(max-width: 1220px)", type='image/png', data-srcset=`./assets/images/1024/special-offers-${index+1}-1024.png`)
+                  img(class='lazy offer__picture-img', data-src=`./assets/images/1920/special-offers-${index+1}-1920.png`, alt=`${card.title.type} ${card.title.model}`)
                 .offer__container
                   span.offer__discount='- '+card.discount
                   h3.offer__title=card.title.type+ ' ' + card.title.model
@@ -30,10 +30,10 @@ section.special-offers
                     s.offer__price-old=card.oldPrice+' руб'
                   button(class='offer__button' aria-label=`Купить ${card.title.type} ${card.title.model}`) Купить
             if (index===1 || index===4)
-              atricle(class=`offer offer--background-${index}`)
+              article(class=`offer offer--background-${index}`)
                 picture(class='offer__picture')
-                  source(media="(max-width: 1220px)", type='image/png', data-srcset=require(`@images/1024/special-offers-${index+1}-1024.png`))
-                  img(class='lazy offer__picture-image', data-src=require(`@images/1920/special-offers-${index+1}-1920.png`), alt=`${card.title.type} ${card.title.model}`)
+                  source(media="(max-width: 1220px)", type='image/png', data-srcset=`./assets/images/1024/special-offers-${index+1}-1024.png`)
+                  img(class='lazy offer__picture-image', data-src=`./../assets/images/1920/special-offers-${index+1}-1920.png`, alt=`${card.title.type} ${card.title.model}`)
                 .offer__container
                   span.offer__discount='- '+card.discount
                   h3.offer__title=card.title.type+ ' ' + card.title.model
