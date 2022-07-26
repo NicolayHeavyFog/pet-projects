@@ -9,6 +9,8 @@ Blanchard - the first of my project. It is just simply a site with a few common 
 * Jquery lib, (it was entertaining),
 * Pure js,
 
+link - blnchrd.tmweb.ru
+
 `Over time, I comprehend new technologies and use them in a new projects.`
 
 After that, I made a primitive one-page website on Grid - High Photo.
