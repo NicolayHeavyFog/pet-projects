@@ -1,7 +1,15 @@
 doctype html
 html(lang='ru', class='page')
   head
-    include ../includes/headCatalog.pug
+    title Каталог
+    include ../includes/head.pug
+    meta(name='description' content='Магагазин SitDownPls каталог')
+    link(rel='stylesheet' href='./catalog.min.css')
+    script(defer src='./catalog.js')
   body.page__body
     include ../includes/header.pug
+    .breadcrumps
+      span.breadcrumps__passed Главная / Каталог / Диваны /
+      span.breadcrumps__active &nbsp;Прямые диваны
+    include ../includes/catalog.pug
     include ../includes/footer.pug

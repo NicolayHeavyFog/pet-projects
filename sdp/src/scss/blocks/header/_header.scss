@@ -1,0 +1,15 @@
+@import './top-header';
+@import './bottom-header';
+
+.header {
+  position: relative;
+  width: 100%;
+
+  &-plug {
+    display: none;
+
+    @media (max-width: 1000px) {
+      @include plug;
+    }
+  }
+}

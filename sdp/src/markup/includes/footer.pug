@@ -34,7 +34,7 @@ footer.footer
               a(class='footer__info-link', href=`${item.link}`)=item.text
       section.footer__section
         h2.footer__title Сотрудничество
-        - var listAboutUs = [{text: 'Поставщикам', link: '#'}, {text: 'Оптовикам', link: '#'}, {text: 'Карьера', link: '#'}]
+        - var listAboutUs = [{text: 'Поставщикам', link: 'cooperation.html'}, {text: 'Оптовикам', link: '#'}, {text: 'Карьера', link: '#'}]
         ul.footer__info-list
           each item in listAboutUs
             li.footer__info-item

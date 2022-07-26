@@ -1,0 +1,78 @@
+.service {
+  max-width: 624px;
+
+  &__title {
+    @include title-reset;
+
+    margin-bottom: 12px;
+    font-size: 24px;
+    line-height: 33px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0 0 0 25px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 2px;
+    }
+
+    &:first-child {
+      &::marker {
+        content: url('assets/images/service-item-1.svg');
+      }
+    }
+
+    &:nth-child(2) {
+      &::marker {
+        content: url('assets/images/service-item-2.svg');
+      }
+
+      margin-bottom: 6px;
+    }
+
+    &:nth-child(3) {
+      &::marker {
+        content: url('assets/images/service-item-3.svg');
+      }
+
+      margin-bottom: -5px;
+    }
+
+    &-text {
+      display: block;
+      margin: 0;
+      padding-left: 12px;
+      color: $grey-shade;
+      font-size: 16px;
+      line-height: 24px;
+      transform: translate(0, -5px);
+    }
+  }
+
+  @media (max-width: 640px) {
+    &__title {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    &__list {
+      padding: 0 0 0 24px;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 7px;
+      }
+
+      &-text {
+        margin-top: -4px;
+        padding-left: 13px;
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+  }
+}

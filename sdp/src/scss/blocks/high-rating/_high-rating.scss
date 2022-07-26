@@ -1,0 +1,76 @@
+// @import '../../mixin';
+// @import '../../variables';
+@import './rating-item';
+
+.hight-rating {
+  &__container {
+    @include container;
+
+    margin-bottom: 70px;
+  }
+
+  &__title {
+    @include title-h2;
+
+    text-align: left;
+  }
+
+  &__list {
+    display: grid;
+    grid-auto-rows: minmax(420px, 1fr);
+    grid-template-rows: repeat(2, minmax(420px, 1fr));
+    grid-template-columns: repeat(4, minmax(200px, 296px));
+    gap: 32px;
+    margin: 0;
+    margin-bottom: 32px;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__item {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease-out;
+
+    &--disabled {
+      display: none;
+    }
+
+    &--hide {
+      opacity: 0;
+    }
+  }
+
+  &__button {
+    @include button-primary;
+
+    display: block;
+    min-width: 296px;
+    min-height: 60px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media (max-width: 1270px) {
+    &__list {
+      grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
+  }
+
+  @media (max-width: 1000px) {
+    &__list {
+      grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+  }
+
+  @media (max-width: 500px) {
+    &__list {
+      grid-auto-rows: 278px;
+      grid-template-rows: repeat(auto-fill, 278px);
+      grid-template-columns: repeat(2, minmax(140px, 1fr));
+      gap: 16px;
+    }
+  }
+}

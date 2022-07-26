@@ -17,8 +17,8 @@ section.top-categories
               each link in suggestion.types
                 li.category__type-item=link
             h3.category__header
-              span.category__header-title!=suggestion.title
+              a.category__header-title(href='catalog.html' target='_blank')!=suggestion.title
               span.category__header-decoration
             div.category__link
-              a.category__link-text(href='#') В каталог
+              a.category__link-text(href='catalog.html' target='_blank') В каталог
               span.category__link-decoration

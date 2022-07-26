@@ -1,0 +1,53 @@
+.cooperation {
+  &__container {
+    @include container;
+
+    margin-bottom: 70px;
+  }
+
+  &__title {
+    @include title-reset;
+
+    margin-bottom: 32px;
+    color: $black;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+  }
+
+  &__section {
+    margin-bottom: 32px;
+  }
+
+  &__important {
+    display: block;
+    display: flex;
+    align-items: center;
+    max-width: 624px;
+    height: 116px;
+    padding-left: 109px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    background-image: url('./assets/images/cooperation-pen.webp');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+  }
+
+  @media (max-width: 550px) {
+    &__title {
+      font-size: 24px;
+      line-height: 100%;
+    }
+
+    &__important {
+      max-width: 100%;
+      height: 72px;
+      padding-left: 52px;
+      font-size: 16px;
+      line-height: 24px;
+      background-size: 13%;
+    }
+  }
+}

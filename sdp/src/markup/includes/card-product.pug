@@ -1,0 +1,95 @@
+h1.page__title Диван тканевый прямой “D-31” магазина SeatDownPls
+.card-product
+  .card-product__container
+    .card-product__grid
+      picture.card-product__picture(id='picture')
+        source(media="(max-width: 990px)", type="image/webp", srcset=`./assets/images/768/card-product-768-1.webp`)
+        source(media="(max-width: 990px)", type="image/png", srcset=`./assets/images/768/card-product-768-1.webp`)
+        source(media="(max-width: 1160px)", type="image/webp", srcset=`./assets/images/1024/card-product-1024-1.webp`)
+        source(media="(max-width: 1160px)", type="image/png", srcset=`./assets/images/1024/card-product-1024-1.png`)
+        source(type="image/webp", srcset=`./assets/images/1920/card-product-1920-1.webp`)
+        img(class="card-product__image", src="./assets/images/1920/card-product-1920-1.png", alt=`Диван тканевый прямой "D-31"`)
+      ul.card-product__image-list
+        li.card-product__image-item
+          picture.card-product__picture-instance
+            source(type="image/webp", srcset=`./assets/images/1920/card-product-1920-2.webp`)
+            img(class="card-product__image-instance", src=`./assets/images/1920/card-product-1920-2.png`, alt=`Диван тканевый прямой "D-31"`)
+          li.card-product__image-item
+            picture.card-product__picture-instance
+              source(type="image/webp", srcset=`./assets/images/1920/card-product-1920-3.webp`)
+              img(class="card-product__image-instance", src=`./assets/images/1920/card-product-1920-3.png`, alt=`Диван тканевый прямой "D-31"`)
+          li.card-product__image-item
+            picture.card-product__picture-instance
+              source(type="image/webp", srcset=`./assets/images/1920/card-product-1920-4.webp`)
+              img(class="card-product__image-instance", src=`./assets/images/1920/card-product-1920-4.png`, alt=`Диван тканевый прямой "D-31"`)
+          li.card-product__image-item
+            picture.card-product__picture-instance
+              source(type="image/webp", srcset=`./assets/images/1920/card-product-1920-5.webp`)
+              img(class="card-product__image-instance", src=`./assets/images/1920/card-product-1920-5.png`, alt=`Диван тканевый прямой "D-31"`)
+      .card-product__description
+        span.card-product__description-title Опорный механизм
+        p.card-product__description-text Опорный механизм напоминает пантограф, к которому добавили дополнительную секцию. У опорного дивана сиденье «выпрыгивает» вперёд и вытаскивает вторую часть спального места. Заключительный штрих — опустить спинку.
+        p.card-product__description-text Этот механизм не портит пол и не боится ковров. Требуется чуть больше силы, чтобы разложить диван, но подросток справится.
+      ul.card-product__decoration
+        li.card-product__decoration-1
+        li.card-product__decoration-2
+      .card-product__header
+        span.card-product__rating 4,8
+        h2.card-product__title Диван тканевый прямой “D-31”
+        span.card-product__subtitle Мини 120 см без ящика Stark синий (Рогожка)
+        b.card-product__price 28 490 руб
+        button.card-product__button.card-product__button--primary(id='buy1click') Купить в один клик
+        button.card-product__button.card-product__button--cart(id='2cart') + Добавить в корзину
+      -
+        var characteristics = [
+          {key: 'Гарантия', value: '18 месяцев'},
+          {key: 'Артикул', value: 'AAA41269004'},
+          {key: 'Длина', value: '163 см'},
+          {key: 'Высота', value: '90 см'},
+          {key: 'Глубина', value: '108 см'},
+          {key: 'Спальное место', value: '200 см х 125 см'},
+          {key: 'Высота посадки', value: '45 см'},
+          {key: 'Механизм', value: 'Опорный'},
+          {key: 'Тип обивки', value: 'Рогожка'},
+          {key: 'Цвет', value: 'Синий'},
+          {key: 'Наполнитель', value: 'Независимый пружинный блок'},
+          {key: 'Материал каркаса', value: 'Металл. рама с дерев. латами'},
+          {key: 'Количество мест', value: 'Двухместные'},
+          {key: 'Категория', value: 'Прямые тканевые диваны'},
+          {key: 'Возврат', value: 'Условия'},
+        ]
+      ul.card-product__characteristics-list
+        each characteristic in characteristics
+          li.card-product__characteristics-item
+            span.card-product__characteristics-key=characteristic.key
+            span.card-product__characteristics-decoration
+            span.card-product__characteristics-value=characteristic.value
+    .card-product__similar
+      span.card-product__similar-title Похожие товары
+      .card-product__buttons
+        button.card-product__button-prev
+        button.card-product__button-next
+      .swiper.card-product__swiper
+        -
+          var slides = [
+            {title: {type: 'велюровый', model: '“R-85”'}, color: 'Серый', price: '34 990', mark: '4,5', index: 16},
+            {title: {type: 'флоковый', model: '“H-58”'}, color: 'Синий', price: '23 990', mark: '4,6', index: 11},
+            {title: {type: 'велюровый', model: '“S-44”'}, color: 'Синий', price: '19 990', mark: '4,5', index: 17},
+            {title: {type: 'шиниловый', model: '“V-43”'}, color: 'Серый', price: '19 990', mark: '4,8', index: 7},
+            {title: {type: 'из&nbsp;шинила', model: '“C-42”'}, color: 'Серый', price: '18 990', mark: '4,6', index: 13},
+          ]
+        ul.swiper-wrapper.card-product__wrapper
+          each suggestion in slides
+            li.swiper-slide.card-product__slide
+              article.rating-item
+                picture.rating-item__picture
+                  source(type='image/webp', data-srcset=`./assets/images/1920/high-rating-${suggestion.index}-1920.webp`)
+                  img(class='lazy rating-item__picture-img', data-src=`./assets/images/1920/high-rating-${suggestion.index}-1920.png`, alt=`Диван ${suggestion.title.type} ${suggestion.title.model}`)
+                .rating-item__content
+                  span.rating-item__rating=suggestion.mark
+                  h3.rating-item__title
+                    span.rating-item__type!='Диван '+suggestion.title.type
+                    span.rating-item__model=suggestion.title.model
+                  span.rating-item__price=suggestion.price+' руб'
+                button(class='rating-item__button' aria-label!=`Купить диван ${suggestion.title.type} ${suggestion.title.model}`) Купить
+                a.rating-item__link(href='card-product.html' target='_blank' aria-label!=`Перейти к карточке товара диван ${suggestion.title.type} ${suggestion.title.model}`)

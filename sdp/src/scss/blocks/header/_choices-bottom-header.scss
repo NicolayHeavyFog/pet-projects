@@ -3,7 +3,7 @@
 
 .bottom-select {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   display: inline-block;
   width: 27%;
 
@@ -73,17 +73,22 @@
     left: 0;
     z-index: -1;
     display: inline-block;
-    width: 100%;
-    height: auto;
-    padding: 32px 30px 23px;
+    box-sizing: content-box;
+    width: calc(100% - 62px);
+    max-height: 0;
+    padding: 0 30px;
+    overflow: hidden;
     background-color: #fff;
     border: 2px solid $grey-light;
     border-top: none;
     border-radius: 0 0 10px 10px;
     opacity: 0;
-    transition: opacity 0.3s ease-out;
+    transition: opacity 0.3s ease-out, padding 0.3s ease-out,
+      max-height 0.3s ease-out;
+    will-change: max-height;
 
     &--open {
+      padding: 32px 30px 23px;
       opacity: 1;
     }
 

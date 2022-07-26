@@ -1,4 +1,6 @@
+h1.page__title Каталог магазина SeatDownPls
 header.header
+  .header-plug
   .top-header
     .top-header__container
       .top-header__left-side
@@ -30,8 +32,7 @@ header.header
       .burger
         button.burger__button(aria-haspopup='true', aria-expanded='false', aria-label='Выпадающее меню')
           span.burger__button-sticks
-      a.bottom-header__logo(href="#")
-        h1.page__title Магазин мебели Seat down please
+      a.bottom-header__logo(href="index.html" target='_blank')
         svg.bottom-header__svg
           use(xlink:href='sprite.svg#logoApp')
       nav.bottom-header__nav
@@ -42,21 +43,21 @@ header.header
             {text: 'Шоу-рум', link: '#'},
             {text: 'Доставка и оплата', link: '#'},
             {text: 'Дисконт', link: '#'},
-            {text: 'Контакты', link: '#'}
+            {text: 'Контакты', link: 'contact.html'}
             ]
         ul.bottom-header__list
           each item in referenceList
             li(class='bottom-header__item')
-              a(class='bottom-header__item-link' href=`${item.link}`)=item.text
-    .bottom-header__overlay.bottom-header__overlay--hide(aria-expanded='true')
+              a(class='bottom-header__item-link' href=`${item.link}` target='_blank')=item.text
+    .bottom-header__overlay.bottom-header__overlay--hide(aria-expanded='true' aria-label="Меню навигации" role='navigation')
       .bottom-header__overlay-container
     .bottom-header__bottom
       form.bottom-header__form(action="#")
         label.bottom-header__form-label
           input(class='bottom-header__form-search', placeholder='Я хочу купить...')
           svg.bottom-header__form-svg
-            use(xlink:href='#searchIcon')
-        button.bottom-header__form-button
+            use(xlink:href='sprite.svg#searchIcon')
+        button.bottom-header__form-button(aria-label='Поиск по сайту')
         - var listOfCategories = ['Диваны', 'Комоды', 'Кресла', 'Стулья', 'Пуфы', 'Столы', 'Кровати', 'Аксессуары', 'Тумбы'];
         select(class='bottom-header__select' aria-label='Выбор категории')
           each category in listOfCategories

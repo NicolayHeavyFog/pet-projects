@@ -19,6 +19,28 @@
     background-size: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+
+    &--background- {
+      &1 {
+        background-image: url('./assets/images/1920/useful-1-1920.webp');
+      }
+
+      &2 {
+        background-image: url('./assets/images/1920/useful-2-1920.webp');
+      }
+
+      &3 {
+        background-image: url('./assets/images/1920/useful-3-1920.webp');
+      }
+
+      &4 {
+        background-image: url('./assets/images/1920/useful-4-1920.webp');
+      }
+
+      &5 {
+        background-image: url('./assets/images/1920/useful-5-1920.webp');
+      }
+    }
   }
 
   &__content {
@@ -43,28 +65,6 @@
     align-self: flex-start;
     min-width: 128px;
     min-height: 54px;
-  }
-
-  &--background- {
-    &1 {
-      background-image: url('./assets/images/1920/useful-1-1920.jpg');
-    }
-
-    &2 {
-      background-image: url('./assets/images/1920/useful-2-1920.jpg');
-    }
-
-    &3 {
-      background-image: url('./assets/images/1920/useful-3-1920.jpg');
-    }
-
-    &4 {
-      background-image: url('./assets/images/1920/useful-4-1920.jpg');
-    }
-
-    &5 {
-      background-image: url('./assets/images/1920/useful-5-1920.jpg');
-    }
   }
 
   @media (max-width: 1160px) {

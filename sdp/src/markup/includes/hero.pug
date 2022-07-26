@@ -4,7 +4,7 @@
       -
         var slides = ['Скидка 15% <br> на первую покупку',
                       '1000+ аксессуаров <br> для дома',
-                      'Коллекция <br> стильного <br> и яркого текстиля'];
+                      'Коллекция стильного <br> и яркого текстиля'];
       ul.hero-swiper__wrapper.swiper-wrapper
         each slide, index in slides
           li(class=`swiper-slide hero-swiper__slide hero-swiper__slide--background-${index+1}`)
@@ -19,7 +19,7 @@
         while count < 3
           span.hero-swiper__circle
             svg.hero-swiper__circle-axic
-              circle.hero-swiper__circle-inner
-              circle.hero-swiper__circle-outer
+              circle.hero-swiper__circle-inner(r='12')
+              circle.hero-swiper__circle-outer(r='12')
               - count += 1;
     button.hero__button Получить!

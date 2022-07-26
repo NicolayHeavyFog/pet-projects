@@ -10,7 +10,7 @@
   text-align: center;
   background-color: $grey-light;
   background-repeat: no-repeat;
-  background-position: right 10% bottom 10%;
+  background-position: right 8% bottom 7%;
   border-radius: 10px;
 
   &__picture {
@@ -105,11 +105,11 @@
 
   &--background {
     &-1 {
-      background-image: url('./assets/images/sofaOne.png');
+      background-image: url('./assets/images/sofaOne.webp');
     }
 
     &-4 {
-      background-image: url('./assets/images/sofaTwo.png');
+      background-image: url('./assets/images/sofaTwo.webp');
     }
   }
 

@@ -1,7 +1,11 @@
 doctype html
 html(lang='ru').page
   head
-    include ../includes/headIndex.pug
+    title Магазин мебели SitDownPls
+    meta(name='description' content='Магагазин качественной мебели SitDownPls')
+    include ../includes/head.pug
+    script(defer src='./index.js')
+    link(rel='stylesheet' href='./index.min.css')
   body.page__body
     include ../includes/header.pug
     include ../includes/hero.pug

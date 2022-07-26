@@ -1,11 +1,14 @@
-@import '../../mixin';
-@import '../../variables';
-
 @import './choices-top-header';
 
 .top-header {
+  position: relative;
   margin-bottom: 32px;
+  overflow: hidden; // new style
   background-color: $grey-light;
+
+  &__select {
+    opacity: 0;
+  }
 
   &__container {
     @include container;
@@ -24,6 +27,7 @@
   }
 
   &__select-location {
+    position: relative;
     display: flex;
     align-items: flex-end;
     margin-right: 24px;
@@ -176,6 +180,7 @@
 
   @media (max-width: 640px) {
     & {
+      min-height: 106px; // new style
       margin-bottom: 0;
       background-color: transparent;
     }
@@ -211,6 +216,7 @@
     &__nav {
       @include container;
 
+      display: none; // new style
       order: 2;
       min-width: unset;
       padding-top: 24px;
@@ -221,8 +227,8 @@
     &__list {
       display: grid;
       grid-template-rows: repeat(2, 1fr);
-      row-gap: 12px;
       grid-template-columns: repeat(2, minmax(20px, 1fr));
+      row-gap: 12px;
     }
   }
 }

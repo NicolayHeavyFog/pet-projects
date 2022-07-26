@@ -20,7 +20,9 @@ section.special-offers
             if (index!==1 && index!==4)
               article.offer
                 picture.offer__picture
+                  source(media="(max-width: 1220px)", type='image/webp', data-srcset=`./assets/images/1024/special-offers-${index+1}-1024.webp`)
                   source(media="(max-width: 1220px)", type='image/png', data-srcset=`./assets/images/1024/special-offers-${index+1}-1024.png`)
+                  source(type='image/webp', data-srcset=`./assets/images/1920/special-offers-${index+1}-1920.webp`)
                   img(class='lazy offer__picture-img', data-src=`./assets/images/1920/special-offers-${index+1}-1920.png`, alt=`${card.title.type} ${card.title.model}`)
                 .offer__container
                   span.offer__discount='- '+card.discount
@@ -32,7 +34,9 @@ section.special-offers
             if (index===1 || index===4)
               article(class=`offer offer--background-${index}`)
                 picture(class='offer__picture')
+                  source(media="(max-width: 1220px)", type='image/webp', data-srcset=`./assets/images/1024/special-offers-${index+1}-1024.webp`)
                   source(media="(max-width: 1220px)", type='image/png', data-srcset=`./assets/images/1024/special-offers-${index+1}-1024.png`)
+                  source(type='image/webp', data-srcset=`./assets/images/1920/special-offers-${index+1}-1920.webp`)
                   img(class='lazy offer__picture-image', data-src=`./../assets/images/1920/special-offers-${index+1}-1920.png`, alt=`${card.title.type} ${card.title.model}`)
                 .offer__container
                   span.offer__discount='- '+card.discount

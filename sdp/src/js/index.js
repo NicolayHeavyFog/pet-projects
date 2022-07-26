@@ -1,36 +1,35 @@
+import './includes/header/header-top-choices';
+import './includes/header/header-bottom-choices';
+import './includes/hero/hero-slider';
+import './includes/special-offers/special-offers-slider';
+import './includes/useful/useful-slider';
 import LazyLoad from 'vanilla-lazyload';
-// eslint-disable-next-line no-unused-vars
-import choicesTopHeader from './includes/choices-top-header';
-// eslint-disable-next-line no-unused-vars
-import choicesBottomHeader from './includes/choices-bottom-header';
-// eslint-disable-next-line no-unused-vars
-import heroSlider from './includes/heroSlider';
-// eslint-disable-next-line no-unused-vars
-import specialOffersSlider from './includes/specialOffersSlider';
-// eslint-disable-next-line no-unused-vars
-import usefulSlider from './includes/usefulSlider';
-
-import showMoreHandler from './includes/high-rating-show-more';
-import indexValidateHandler from './includes/form-validate';
-import getWindowWidth from './includes/getWindowWidth';
-import surveillanceForHeader from './includes/surveillanceForHeader';
-import { burgerMenu, surveillanceForBurgerMenu } from './includes/burger-menu';
+import showMoreHandler from './includes/high-rating/high-rating-show-more';
+import indexValidateHandler from './includes/form/form-validate';
+import getWindowWidth from './includes/common/get-window-width';
+import surveillanceForHeader from './includes/header/header-watch';
+import {
+  burgerMenu,
+  surveillanceForBurgerMenu,
+} from './includes/header/burger-menu';
+import headerRemovePlug from './includes/header/header-remove-plug';
 
 // eslint-disable-next-line no-unused-vars
 const lazyLoadInstance = new LazyLoad({});
 
-surveillanceForHeader(getWindowWidth());
-burgerMenu();
-surveillanceForBurgerMenu(getWindowWidth());
-showMoreHandler();
-indexValidateHandler();
-
 const previousWidth = getWindowWidth();
+
+surveillanceForHeader(previousWidth);
+burgerMenu();
+surveillanceForBurgerMenu(previousWidth);
+headerRemovePlug();
+showMoreHandler(previousWidth);
+indexValidateHandler();
 
 window.addEventListener('resize', () => {
   const currentWidth = getWindowWidth();
   if (currentWidth !== previousWidth) {
-    showMoreHandler();
+    showMoreHandler(currentWidth);
   }
   surveillanceForHeader(currentWidth);
   surveillanceForBurgerMenu(currentWidth);

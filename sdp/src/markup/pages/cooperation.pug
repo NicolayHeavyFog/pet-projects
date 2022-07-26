@@ -1,0 +1,15 @@
+doctype html
+html(lang='ru', class='page')
+  head
+    title Сотрудничество
+    meta(name='description' content='Магагазин SitDownPls информация по сотрудничеству')
+    include ../includes/head.pug
+    link(rel='stylesheet' href='./cooperation.min.css')
+    script(defer src='./cooperation.js')
+  body.page__body
+    include ../includes/header.pug
+    .breadcrumps
+      span.breadcrumps__passed Главная /
+      span.breadcrumps__active &nbsp;Сотрудничество
+    include ../includes/cooperation.pug
+    include ../includes/footer.pug

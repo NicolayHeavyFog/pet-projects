@@ -1,0 +1,110 @@
+h1.page__title Каталог магазина SeatDownPls
+section.catalog
+  .catalog__container
+    .catalog__filter
+      span.catalog__filter-head Фильтровать по:
+      .catalog__filter-container
+        button.catalog__filter-category(tabindex='-1' data-target='category') Категория
+        ul.catalog__filter-instances(data-purpose='filter')
+          - var instances = ['Диваны','Кресла','Пуфы', 'Кровати', 'Тумбы', 'Комоды', 'Стулья', 'Столы', 'Аксессуары']
+          each instance in instances
+            li.catalog__filter-type
+              label.check(data-filter='furniture')
+                if instance === 'Диваны'
+                  input.check__input(value =`${instance}` type="checkbox" checked)
+                  span.check__box(role="checkbox" aria-checked="true")
+                  span.catalog__filter-text=instance
+                if instance !== 'Диваны'
+                  input.check__input(value =`${instance}` type="checkbox")
+                  span.check__box(role="checkbox" aria-checked="false")
+                  span.catalog__filter-text=instance
+        .catalog__filter-dropdown(data-property='category' aria-hidden='true')
+      .catalog__filter-container
+        button.catalog__filter-category(tabindex='-1', data-target='price') Цена
+        .range-slider(data-purpose='filter')
+          .range-slider__inputs
+            label.range-slider__label
+              span.range-slider__description от
+              input.range-slider__input(type='number' min='0' max='300000' placeholder='2000' id='input-0')
+            label.range-slider__label
+              span.range-slider__description до
+              input.range-slider__input(type="number", min='0', max='300000' placeholder='150000' id='input-1')
+          .range-slider__slider
+        .catalog__filter-dropdown(data-property='price')
+      .catalog__filter-container
+        button.catalog__filter-category(tabindex='-1', data-target='descount') Скидка
+        ul.catalog__filter-instances(data-purpose='filter' aria-hidden='true')
+          - var instances = ['Более 5 000','Менее 5 000','Не важно']
+          each instance in instances
+            li.catalog__filter-type
+              label.check(data-filter='native price')
+                if instance === 'Не важно'
+                  input.check__input(value =`${instance}` type="checkbox" checked)
+                  span.check__box(role="checkbox" aria-checked="true")
+                  span.catalog__filter-text!=instance
+                if instance !== 'Не важно'
+                  input.check__input(value =`${instance}` type="checkbox")
+                  span.check__box(role="checkbox" aria-checked="false")
+                  span.catalog__filter-text!=instance
+        .catalog__filter-dropdown(data-property='descount' aria-hidden='true')
+      .catalog__filter-container
+        button.catalog__filter-category(tabindex='-1' data-target='color') Цвет
+        ul.catalog__filter-instances(data-purpose='filter')
+          - var instances = ['Коричневый','Черный','Бежевый', 'Серый', 'Белый', 'Синий', 'Оранжевый', 'Желтый', 'Зеленый']
+          each instance in instances
+            li.catalog__filter-type
+              label.check(data-filter='color')
+                input.check__input(value =`${instance}` type="checkbox")
+                span.check__box(role="checkbox" aria-checked="false")
+                span.catalog__filter-text=instance
+        .catalog__filter-dropdown(data-property='color' aria-hidden='true')
+      .catalog-banner
+        .catalog-banner__container
+          .catalog-banner__image
+          .catalog-banner__content
+            strong.catalog-banner__title Оксфорд 1950
+            p.catalog-banner__description Новая коллекция изысканных кресел
+            div.catalog-banner__link
+              a.catalog-banner__link-text(href='#' target='_blank') В каталог
+              span.catalog-banner__link-decoration
+    .catalog__header
+      h2.catalog__header-title Каталог
+      ul.catalog__tags-list
+    .catalog__swiper
+      ul.swiper-wrapper.catalog__wrapper
+        -
+          var suggestions = [
+            {title: {type: 'кожаный', model: '“R-94”'}, color: 'Черный', price: '94 990', mark: '5,0'},
+            {title: {type: 'апартековый', model: '“T-75”'}, color: 'Коричневый', price: '69 990', mark: '4,9'},
+            {title: {type: 'тканевый', model: '“D-31”'}, color: 'Синий', price: '28 490', mark: '4,8'},
+            {title: {type: 'велюровый', model: '“Y-68”'}, color: 'Оранжевый', price: '22 990', mark: '4,8'},
+            {title: {type: 'из&nbsp;шинила', model: '“W-95”'}, color: 'Желтый', price: '22 990', mark: '4,8'},
+            {title: {type: 'флоковый', model: '“G-41”'}, color: 'Бежевый', price: '17 990', mark: '4,8'},
+            {title: {type: 'шиниловый', model: '“V-43”'}, color: 'Серый', price: '19 990', mark: '4,8'},
+            {title: {type: 'велюровый', model: '“S-99”'}, color: 'Бежевый', price: '19 990', mark: '4,7'},
+            {title: {type: 'из&nbsp;кожзама', model: '“F-85”'}, color: 'Зеленый', price: '26 990', mark: '4,7'},
+            {title: {type: 'флоковый', model: '“H-64”'}, color: 'Бежевый', price: '25 990', mark: '4,6'},
+            {title: {type: 'флоковый', model: '“H-58”'}, color: 'Синий', price: '23 990', mark: '4,6'},
+            {title: {type: 'из&nbsp;кожзама', model: '“R-43”'}, color: 'Желтый', price: '33 990', mark: '4,6'},
+            {title: {type: 'из&nbsp;шинила', model: '“C-42”'}, color: 'Серый', price: '18 990', mark: '4,6'},
+            {title: {type: 'велюровый', model: '“U-58”'}, color: 'Желтый', price: '21 990', mark: '4,6'},
+            {title: {type: 'флоковый', model: '“F-41”'}, color: 'Белый', price: '17 990', mark: '4,5'},
+            {title: {type: 'велюровый', model: '“R-85”'}, color: 'Серый', price: '34 990', mark: '4,5'},
+            {title: {type: 'велюровый', model: '“S-44”'}, color: 'Синий', price: '19 990', mark: '4,5'},
+            {title: {type: 'из&nbsp;шинила', model: '“С-80”'}, color: 'Желтый', price: '20 990', mark: '4,4'},
+            ]
+        each suggestion, index in suggestions
+          li.swiper-slide.catalog__slide(data-color=`${suggestion.color}` data-price=`${suggestion.price}`)
+            article.rating-item
+              picture.rating-item__picture
+                source(type='image/webp', data-srcset=`./assets/images/1920/high-rating-${index+1}-1920.webp`)
+                img(class="lazy rating-item__picture-img" data-src=`./assets/images/1920/high-rating-${index+1}-1920.png`, alt=`Диван ${suggestion.title.type} ${suggestion.title.model}`)
+              .rating-item__content
+                span.rating-item__rating=suggestion.mark
+                h3.rating-item__title
+                  span.rating-item__type!='Диван '+suggestion.title.type
+                  span.rating-item__model=suggestion.title.model
+                span.rating-item__price=suggestion.price+' руб'
+              button(class='rating-item__button' aria-label!=`Купить диван ${suggestion.title.type} ${suggestion.title.model}`) Купить
+              a.rating-item__link(href='card-product.html' target='_blank' aria-label!=`Перейти к карточке товара диван ${suggestion.title.type} ${suggestion.title.model}`)
+    .catalog__pagination

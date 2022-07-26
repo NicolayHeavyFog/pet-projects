@@ -8,9 +8,8 @@
   }
 
   &__box {
-    width: 14px;
-    height: 14px;
-    background-color: tomato;
+    min-width: 14px;
+    min-height: 14px;
     background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='20' height='20' fill='white'/%3E%3Crect x='0.5' y='0.5' width='19' height='19' rx='1.5' fill='white' stroke='%23999999'/%3E%3C/svg%3E%0A");
   }
 

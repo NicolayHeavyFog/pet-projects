@@ -1,0 +1,137 @@
+// @import '../../mixin';
+// @import '../../variables';
+
+.banner {
+  background-image: url('./assets/images/1920/banner-1920.webp');
+  background-image: image-set(
+    url('./assets/images/1920/banner-1920.webp') type('image/webp'),
+    url('./assets/images/1920/banner-1920.avif') type('image/avif'),
+    url('./assets/images/1920/banner-1920.jpg') type('image/jpeg')
+  );
+  background-size: cover;
+
+  &__container {
+    @include container;
+
+    margin-bottom: 70px;
+    padding-top: 157px;
+    padding-bottom: 150px;
+  }
+
+  &__button {
+    display: none;
+    @include button-primary;
+
+    min-width: 187px;
+    min-height: 60px;
+  }
+
+  &__suggestion {
+    display: block;
+    max-width: 508px;
+    color: $gold;
+    font-weight: 900;
+    font-size: 60px;
+    font-family: PlayfairDisplayblack, Arial, Helvetica, sans-serif;
+    line-height: 72px;
+
+    &-description {
+      display: block;
+      max-width: 508px;
+      margin-bottom: 48px;
+      color: #fff;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 57px;
+    }
+
+    &-button {
+      @include button-primary;
+
+      min-width: 187px;
+      min-height: 60px;
+    }
+  }
+
+  @media (max-width: 1160px) {
+    background-image: url('./assets/images/1024/banner-1024.webp');
+    background-image: image-set(
+      url('./assets/images/1024/banner-1024.webp') type('image/webp'),
+      url('./assets/images/1024/banner-1024.avif') type('image/avif'),
+      url('./assets/images/1024/banner-1024.jpg') type('image/jpeg')
+    );
+
+    &__container {
+      padding-right: 36px;
+      padding-bottom: 149px;
+      padding-left: 36px;
+    }
+
+    &__suggestion-description {
+      margin-bottom: 51px;
+      line-height: 55px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    background-image: url('./assets/images/768/banner-768.webp');
+    background-image: image-set(
+      url('./assets/images/768/banner-768.webp') type('image/webp'),
+      url('./assets/images/768/banner-768.avif') type('image/avif'),
+      url('./assets/images/768/banner-768.jpg') type('image/jpeg')
+    );
+
+    &__container {
+      padding-bottom: 151px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    margin-bottom: 70px;
+    background-image: none;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 210px;
+      margin-bottom: 32px;
+      padding: 35px 12px;
+      background-image: url('./assets/images/320/banner-320.webp');
+      background-image: image-set(
+        url('./assets/images/320/banner-320.webp') type('image/webp'),
+        url('./assets/images/320/banner-320.avif') type('image/avif'),
+        url('./assets/images/320/banner-320.jpg') type('image/jpeg')
+      );
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &__button {
+      display: block;
+      width: calc(100% - 12px - 12px);
+      margin-right: 12px;
+      margin-left: 12px;
+    }
+
+    &__suggestion {
+      width: 200px;
+      margin: 0;
+      font-weight: 900;
+      font-size: 24px;
+      font-family: PlayfairDisplayblack, Arial, Helvetica, sans-serif;
+      line-height: 28px;
+
+      &-description {
+        width: 200px;
+        margin: 0;
+        font-size: 16px;
+        line-height: 18px;
+      }
+
+      &-button {
+        display: none;
+      }
+    }
+  }
+}

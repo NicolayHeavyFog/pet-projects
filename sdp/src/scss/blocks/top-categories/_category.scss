@@ -69,20 +69,26 @@
     display: flex;
 
     &-title {
+      @include link-reset;
+
       color: $black;
       font-weight: 400;
       font-size: 24px;
       line-height: 33px;
+
+      // &::
     }
 
     &-decoration {
       display: none;
+      cursor: pointer;
     }
   }
 
   &__link {
     position: relative;
     display: flex;
+    align-items: center;
     justify-self: flex-end;
     margin-top: auto;
 
@@ -106,6 +112,15 @@
         height: 2px;
         background-color: transparent;
         transition: background-color 0.3s ease-in-out;
+        content: '';
+      }
+
+      &::before {
+        position: absolute;
+        top: -3px;
+        right: -28px;
+        bottom: -3px;
+        left: 0;
         content: '';
       }
 
@@ -152,43 +167,79 @@
     }
 
     &-decoration {
-      @include slider-button(22px, 22px);
+      @include arrow-button;
 
       display: inline-block;
+      cursor: pointer;
     }
 
     &-text:hover + &-decoration {
-      @include slider-button-hover;
+      @include arrow-button-hover;
     }
 
     &-text:focus + &-decoration {
-      @include slider-button-focus;
+      @include arrow-button-focus;
     }
 
     &-text:active + &-decoration {
-      @include slider-button-active;
+      @include arrow-button-active;
     }
   }
 
   &--background- {
     &1 {
-      background-image: url('./assets/images/1920/top-categories-1-1920.png');
+      background-image: url('./assets/images/1920/top-categories-1-1920.webp');
+      background-image: image-set(
+        url('./assets/images/1920/top-categories-1-1920.webp')
+          type('image/webp'),
+        url('./assets/images/1920/top-categories-1-1920.avif')
+          type('image/avif'),
+        url('./assets/images/1920/top-categories-1-1920.jpg') type('image/jpeg')
+      );
     }
 
     &2 {
-      background-image: url('./assets/images/1920/top-categories-2-1920.png');
+      background-image: url('./assets/images/1920/top-categories-2-1920.webp');
+      background-image: image-set(
+        url('./assets/images/1920/top-categories-2-1920.webp')
+          type('image/webp'),
+        url('./assets/images/1920/top-categories-2-1920.avif')
+          type('image/avif'),
+        url('./assets/images/1920/top-categories-2-1920.jpg') type('image/jpeg')
+      );
     }
 
     &3 {
-      background-image: url('./assets/images/1920/top-categories-3-1920.png');
+      background-image: url('./assets/images/1920/top-categories-3-1920.webp');
+      background-image: image-set(
+        url('./assets/images/1920/top-categories-3-1920.webp')
+          type('image/webp'),
+        url('./assets/images/1920/top-categories-3-1920.avif')
+          type('image/avif'),
+        url('./assets/images/1920/top-categories-3-1920.jpg') type('image/jpeg')
+      );
     }
 
     &4 {
-      background-image: url('./assets/images/1920/top-categories-4-1920.png');
+      background-image: url('./assets/images/1920/top-categories-4-1920.webp');
+      background-image: image-set(
+        url('./assets/images/1920/top-categories-4-1920.webp')
+          type('image/webp'),
+        url('./assets/images/1920/top-categories-4-1920.avif')
+          type('image/avif'),
+        url('./assets/images/1920/top-categories-4-1920.jpg') type('image/jpeg')
+      );
     }
 
     &5 {
-      background-image: url('./assets/images/1920/top-categories-5-1920.png');
+      background-image: url('./assets/images/1920/top-categories-5-1920.webp');
+      background-image: image-set(
+        url('./assets/images/1920/top-categories-5-1920.webp')
+          type('image/webp'),
+        url('./assets/images/1920/top-categories-5-1920.avif')
+          type('image/avif'),
+        url('./assets/images/1920/top-categories-5-1920.jpg') type('image/jpeg')
+      );
     }
   }
 
@@ -228,23 +279,63 @@
 
     &--background- {
       &1 {
-        background-image: url('./assets/images/1024/top-categories-1-1024.png');
+        background-image: url('./assets/images/1024/top-categories-1-1024.webp');
+        background-image: image-set(
+          url('./assets/images/1024/top-categories-1-1024.webp')
+            type('image/webp'),
+          url('./assets/images/1024/top-categories-1-1024.avif')
+            type('image/avif'),
+          url('./assets/images/1024/top-categories-1-1024.jpg')
+            type('image/jpeg')
+        );
       }
 
       &2 {
-        background-image: url('./assets/images/1024/top-categories-2-1024.png');
+        background-image: url('./assets/images/1024/top-categories-2-1024.webp');
+        background-image: image-set(
+          url('./assets/images/1024/top-categories-2-1024.webp')
+            type('image/webp'),
+          url('./assets/images/1024/top-categories-2-1024.avif')
+            type('image/avif'),
+          url('./assets/images/1024/top-categories-2-1024.jpg')
+            type('image/jpeg')
+        );
       }
 
       &3 {
-        background-image: url('./assets/images/1024/top-categories-3-1024.png');
+        background-image: url('./assets/images/1024/top-categories-3-1024.webp');
+        background-image: image-set(
+          url('./assets/images/1024/top-categories-3-1024.webp')
+            type('image/webp'),
+          url('./assets/images/1024/top-categories-3-1024.avif')
+            type('image/avif'),
+          url('./assets/images/1024/top-categories-3-1024.jpg')
+            type('image/jpeg')
+        );
       }
 
       &4 {
-        background-image: url('./assets/images/1024/top-categories-4-1024.png');
+        background-image: url('./assets/images/1024/top-categories-4-1024.webp');
+        background-image: image-set(
+          url('./assets/images/1024/top-categories-4-1024.webp')
+            type('image/webp'),
+          url('./assets/images/1024/top-categories-4-1024.avif')
+            type('image/avif'),
+          url('./assets/images/1024/top-categories-4-1024.jpg')
+            type('image/jpeg')
+        );
       }
 
       &5 {
-        background-image: url('./assets/images/1024/top-categories-5-1024.png');
+        background-image: url('./assets/images/1024/top-categories-5-1024.webp');
+        background-image: image-set(
+          url('./assets/images/1024/top-categories-5-1024.webp')
+            type('image/webp'),
+          url('./assets/images/1024/top-categories-5-1024.avif')
+            type('image/avif'),
+          url('./assets/images/1024/top-categories-5-1024.jpg')
+            type('image/jpeg')
+        );
       }
     }
   }
@@ -257,24 +348,59 @@
 
     &--background- {
       &1 {
-        background-image: url('./assets/images/768/top-categories-1-768.png');
+        background-image: url('./assets/images/768/top-categories-1-768.webp');
+        background-image: image-set(
+          url('./assets/images/768/top-categories-1-768.webp')
+            type('image/webp'),
+          url('./assets/images/768/top-categories-1-768.avif')
+            type('image/avif'),
+          url('./assets/images/768/top-categories-1-768.jpg') type('image/jpeg')
+        );
       }
 
       &2 {
-        background-image: url('./assets/images/768/top-categories-2-768.png');
+        background-image: url('./assets/images/768/top-categories-2-768.webp');
+        background-image: image-set(
+          url('./assets/images/768/top-categories-2-768.webp')
+            type('image/webp'),
+          url('./assets/images/768/top-categories-2-768.avif')
+            type('image/avif'),
+          url('./assets/images/768/top-categories-2-768.jpg') type('image/jpeg')
+        );
       }
 
       &3 {
-        background-image: url('./assets/images/768/top-categories-3-768.png');
+        background-image: url('./assets/images/768/top-categories-3-768.webp');
+        background-image: image-set(
+          url('./assets/images/768/top-categories-3-768.webp')
+            type('image/webp'),
+          url('./assets/images/768/top-categories-3-768.avif')
+            type('image/avif'),
+          url('./assets/images/768/top-categories-3-768.jpg') type('image/jpeg')
+        );
         background-size: 100%;
       }
 
       &4 {
-        background-image: url('./assets/images/768/top-categories-4-768.png');
+        background-image: url('./assets/images/768/top-categories-4-768.webp');
+        background-image: image-set(
+          url('./assets/images/768/top-categories-4-768.webp')
+            type('image/webp'),
+          url('./assets/images/768/top-categories-4-768.avif')
+            type('image/avif'),
+          url('./assets/images/768/top-categories-4-768.jpg') type('image/jpeg')
+        );
       }
 
       &5 {
-        background-image: url('./assets/images/768/top-categories-5-768.png');
+        background-image: url('./assets/images/768/top-categories-5-768.webp');
+        background-image: image-set(
+          url('./assets/images/768/top-categories-5-768.webp')
+            type('image/webp'),
+          url('./assets/images/768/top-categories-5-768.avif')
+            type('image/avif'),
+          url('./assets/images/768/top-categories-5-768.jpg') type('image/jpeg')
+        );
       }
     }
   }
@@ -350,18 +476,28 @@
     }
 
     &__header {
-      align-items: flex-end;
+      align-items: center;
 
       &-title {
         max-width: 76px;
         margin-right: 5px;
         font-size: 16px;
         line-height: 19px;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          display: block;
+          content: '';
+        }
       }
 
       &-decoration {
         display: inline-block;
-        @include slider-button(22px, 22px);
+        @include arrow-button;
       }
     }
 
@@ -380,23 +516,58 @@
 
     &--background- {
       &1 {
-        background-image: url('./assets/images/320/top-categories-1-320.png');
+        background-image: url('./assets/images/320/top-categories-1-320.webp');
+        background-image: image-set(
+          url('./assets/images/320/top-categories-1-320.webp')
+            type('image/webp'),
+          url('./assets/images/320/top-categories-1-320.avif')
+            type('image/avif'),
+          url('./assets/images/320/top-categories-1-320.jpg') type('image/jpeg')
+        );
       }
 
       &2 {
-        background-image: url('./assets/images/320/top-categories-2-320.png');
+        background-image: url('./assets/images/320/top-categories-2-320.webp');
+        background-image: image-set(
+          url('./assets/images/320/top-categories-2-320.webp')
+            type('image/webp'),
+          url('./assets/images/320/top-categories-2-320.avif')
+            type('image/avif'),
+          url('./assets/images/320/top-categories-2-320.jpg') type('image/jpeg')
+        );
       }
 
       &3 {
-        background-image: url('./assets/images/320/top-categories-3-320.png');
+        background-image: url('./assets/images/320/top-categories-3-320.webp');
+        background-image: image-set(
+          url('./assets/images/320/top-categories-3-320.webp')
+            type('image/webp'),
+          url('./assets/images/320/top-categories-3-320.avif')
+            type('image/avif'),
+          url('./assets/images/320/top-categories-3-320.jpg') type('image/jpeg')
+        );
       }
 
       &4 {
-        background-image: url('./assets/images/320/top-categories-4-320.png');
+        background-image: url('./assets/images/320/top-categories-4-320.webp');
+        background-image: image-set(
+          url('./assets/images/320/top-categories-4-320.webp')
+            type('image/webp'),
+          url('./assets/images/320/top-categories-4-320.avif')
+            type('image/avif'),
+          url('./assets/images/320/top-categories-4-320.jpg') type('image/jpeg')
+        );
       }
 
       &5 {
-        background-image: url('./assets/images/320/top-categories-5-320.png');
+        background-image: url('./assets/images/320/top-categories-5-320.webp');
+        background-image: image-set(
+          url('./assets/images/320/top-categories-5-320.webp')
+            type('image/webp'),
+          url('./assets/images/320/top-categories-5-320.avif')
+            type('image/avif'),
+          url('./assets/images/320/top-categories-5-320.jpg') type('image/jpeg')
+        );
       }
     }
   }

@@ -1,0 +1,62 @@
+// @import '../../mixin';
+// @import '../../variables';
+@import './useful-item';
+
+.useful {
+  &__container {
+    @include container;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 70px;
+  }
+
+  &__title {
+    @include title-h2;
+
+    display: inline-block;
+    margin-bottom: 26px;
+  }
+
+  &__buttons {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 77px;
+  }
+
+  &__button-prev {
+    @include slider-button;
+
+    transform: rotate(180deg);
+  }
+
+  &__button-next {
+    @include slider-button;
+  }
+
+  &__swiper {
+    overflow: hidden;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  @media (max-width: 1160px) {
+  }
+
+  @media (max-width: 450px) {
+    &__swiper {
+      margin-bottom: 16px;
+    }
+
+    &__buttons {
+      justify-self: center;
+      order: 3;
+      margin: auto;
+    }
+  }
+}
