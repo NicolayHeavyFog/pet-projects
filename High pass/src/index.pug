@@ -1,0 +1,14 @@
+doctype html
+html(lang='ru').page
+  head
+    include blocks/head.pug
+  body.__body
+    header.header
+      include blocks/header-top/header-top.pug
+      include blocks/header-bottom/header-bottom.pug
+    main.main
+      include blocks/hero/hero.pug
+      include blocks/about-us/about-us.pug
+      include blocks/our-projects/our-projects.pug
+      include blocks/contacts/contacts.pug
+    include blocks/footer/footer.pug

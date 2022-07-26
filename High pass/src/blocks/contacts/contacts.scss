@@ -1,0 +1,388 @@
+@import "../../styles/_mixin.scss";
+@import "../../styles/_variables.scss";
+
+.contacts {
+  &__container {
+    @include container;
+    padding-top: 40px;
+    padding-bottom: 68px;
+  }
+
+  &__title {
+    @include title;
+    margin-bottom: 22px;
+    @include fontTTFirsNeue;
+    font-size: 25px;
+    line-height: 31px;
+    color: $colorStrongDark;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template: 1fr / repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  &__map {
+    position: relative;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    overflow: hidden;
+  }
+
+  [class*="ground-pane"] {
+    filter: grayscale(1);
+  }
+
+  [class*="-copyright"] {
+    display: none;
+  }
+
+  &__map-curtain {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 410px;
+    height: 100%;
+    padding: 20px 50px 20px 60px;
+    background-color: rgba($colorStrongDark, .85);
+    transition: transform .5s ease-in-out;
+
+    &--hidden {
+      transform: translateX(-100%);
+    }
+  }
+
+  &__curtain-cancel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__cancel-button {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__curtain-content {
+    margin: auto;
+    transform: translateY(12px);
+    color: #FFFFFF;
+  }
+
+  &__curtain-title {
+    @include title;
+    margin-bottom: 5px;
+    @include fontTTFirsNeue;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 22px;
+  }
+
+  &__curtain-address {
+    @include p;
+    margin-bottom: 4px;
+    color: $grey;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  &__tell-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__tell {
+    @include fontTTFirsNeue;
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  &__tell-svg {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    margin-right: 5px;
+    fill: #FFFFFF;
+  }
+
+  @media(max-width: 1150px) {
+
+    &__grid {
+      display: grid;
+      grid-template: 1fr / repeat(8,  minmax(86px,1fr));
+      column-gap: 30px;
+    }
+
+    &__map {
+      grid-column-start: 1;
+      grid-column-end: 6;
+    }
+
+    &__map-curtain {
+      top: unset;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 34.5%;
+      padding: 25px 30px 21px;
+    }
+
+    &__curtain-content {
+      margin: unset;
+      max-width: 295px;
+      transform: none;
+    }
+
+    &__curtain-address {
+      display: inline;
+      margin-right: 12px;
+    }
+
+    &__tell-wrapper {
+      display: inline-flex;
+    }
+
+    &__tell {
+      display: inline-block;
+      align-self: baseline;
+      color: $colorPrimary;
+    }
+
+    &__tell-svg {
+      margin-right: 3px;
+      fill: $colorPrimary;
+    }
+
+  }
+
+  @media(max-width: 940px) {
+
+    &__grid {
+      grid-template: 459px auto / repeat(6,  minmax(82px,1fr));
+      row-gap: 30px;
+    }
+
+    &__map {
+      grid-column-start: 1;
+      grid-column-end: 7;
+    }
+
+    &__curtain-content {
+      max-width: 436px;
+    }
+
+    &__curtain-address {
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    &__tell-wrapper {
+      display: flex;
+    }
+
+  }
+
+  @media(max-width: 700px) {
+
+    &__container {
+      padding-top: 25px;
+      padding-bottom: 50px;
+    }
+
+    &__title {
+      margin-bottom: 12px;
+    }
+
+    &__grid {
+      grid-template: 472px auto / 1fr;
+      grid-template-columns: 1fr;
+      row-gap: 21px;
+    }
+
+    &__map {
+      grid-column: span 1;
+      margin-right: -21px;
+      margin-left: -21px;
+
+      background-color: $lightGrey;
+    }
+
+    &__map-curtain {
+      height: 33%;
+      padding: 26px 34px 14px 18px;
+
+      &--hidden {
+        transform: translateY(101%);
+      }
+    }
+
+    &__curtain-cancel {
+      top: 19px;
+      right: 19px;
+    }
+
+    &__curtain-title {
+      margin-bottom: 10px;
+      line-height: 21px;
+      letter-spacing: 0;
+    }
+
+    &__curtain-address {
+      margin-right: 0;
+      margin-bottom: 13px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__tell {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+  }
+
+}
+
+@mixin input {
+  @include inputPseudoClass;
+  width: 100%;
+  max-width: 466px;
+  min-width: 278px;
+  height: 50px;
+  padding: 14px 22px;
+  border: 1px solid transparent;
+  background-color: $lightGrey;
+
+  &::placeholder {
+    color: #999999;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+.form {
+  grid-column-start: 5;
+  grid-column-end: 7;
+
+  &__title {
+    @include title;
+    margin-bottom: 11px;
+    @include fontTTFirsNeue;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 10px;
+    color: $colorStrongDark;
+  }
+
+  &__form-description {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #999999;
+  }
+
+  &__input-name.js-validate-error-field,
+  &__input-email.js-validate-error-field,
+  &__input-comment.js-validate-error-field {
+    color: #000000;
+  }
+
+  &__input-name, &__input-email, &__input-comment {
+    @include input;
+    margin-bottom: 20px
+  }
+
+  &__label-name, &__label-email {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input-comment {
+    height: 150px;
+    margin-bottom: 15px;
+    resize: none;
+  }
+
+  &__button-submit {
+    @include buttonPrimary;
+  }
+
+  @media(max-width: 1150px) {
+
+    & {
+      grid-column-start: 6;
+      grid-column-end: 9;
+    }
+
+  }
+
+  @media(max-width: 940px) {
+
+    & {
+      grid-column-start: 1;
+      grid-column-end: 5;
+    }
+
+    &__form-description {
+      max-width: 466px;
+    }
+
+  }
+
+  @media(max-width: 700px) {
+
+    & {
+      grid-column-start: none;
+      grid-column-end: none;
+      grid-column: span 1;
+      max-width: 466px;
+    }
+
+    &__title {
+      margin-bottom: 6px;
+      letter-spacing: 0;
+    }
+
+    &__form-description {
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__input-name, &__input-email {
+      height: 40px;
+    }
+
+    &__input-name, &__input-email, &__input-comment {
+      padding: 10px 22px;
+      font-size: 14px;
+      line-height: 16px;
+
+      &::placeholder {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+
+    &__input-comment {
+      margin-bottom: 16px;
+    }
+
+    &__button-submit {
+      padding: 12px 22px;
+    }
+
+  }
+}

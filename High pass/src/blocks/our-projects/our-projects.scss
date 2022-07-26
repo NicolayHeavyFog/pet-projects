@@ -1,0 +1,76 @@
+@import "../../styles/_mixin.scss";
+@import "../../styles/_variables.scss";
+
+.our-projects {
+
+  &__container {
+    @include container;
+    padding-top: 68px;
+    padding-bottom: 28px;
+  }
+
+  &__title {
+    @include title;
+    margin-bottom: 11px;
+    @include fontTTFirsNeue;
+    color: $colorStrongDark;
+    font-size: 25px;
+    line-height: 31px;
+  }
+
+  &__projects {
+    display: grid;
+    grid-template: repeat(2, 300px) / repeat(12, 1fr);
+    gap: 30px;
+    width: 100%;
+  }
+
+  @media(max-width: 1150px) {
+
+    &__projects {
+      display: grid;
+      grid-template: 286px 307px 307px / repeat(8,  minmax(86px,1fr));
+      row-gap: 24px;
+      column-gap: 30px;
+      grid-auto-flow: dense;
+    }
+
+  }
+
+  @media (max-width: 940px) {
+
+    &__projects {
+      grid-template: 300px 305px 307px 300px / repeat(6,  minmax(82px, 1fr));
+      row-gap: 25px;
+    }
+
+    &__title {
+      margin-bottom: 12px;
+    }
+
+  }
+
+  @media (max-width: 700px) {
+
+    &__container {
+      padding-top: 50px;
+      padding-bottom: 25px;
+    }
+
+    &__projects {
+      grid-template: unset;
+      grid-template-columns: repeat(auto-fit, minmax(278px, 535px));
+      grid-template-rows: repeat(3, minmax(278px, auto)) 422px repeat(2, minmax(300px,1fr)) 430px;
+      justify-content: center;
+      grid-auto-rows: 1fr;
+      row-gap: 24px;
+    }
+
+    &__title {
+      margin-bottom: 14px;
+    }
+
+  }
+
+
+}

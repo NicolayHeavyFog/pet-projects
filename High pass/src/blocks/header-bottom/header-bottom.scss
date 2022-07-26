@@ -1,0 +1,103 @@
+@import "../../styles/_mixin.scss";
+@import "../../styles/_variables.scss";
+
+.header-bottom {
+  display: none;
+  background-color: $colorDark;
+
+  &__container {
+    height: 44px;
+    @include container;
+    @include container-header;
+  }
+
+  &__burger-menu {
+    display: none;
+  }
+
+
+  @media (max-width: 940px) {
+
+    & {
+      display: block;
+    }
+
+  }
+
+  @media (max-width: 700px) {
+
+    & {
+      height: 45px;
+    }
+
+    &__burger-menu {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+      height: 100%;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        bottom: -2px;
+        left: -2px;
+        background-color: transparent;
+        transition: background-color .2s ease-in-out;
+      }
+
+      &:hover .header-bottom__burger-sticks {
+        background-color: $colorPrimary;
+        transition: background-color .2s ease-in-out;
+
+        &::before,
+        &::after {
+          background-color: $colorPrimary;
+          transition: background-color .2s ease-in-out;
+        }
+      }
+
+      &:focus {
+        outline: none;
+        &::before {
+          background-color: $colorDarkPrimary;
+        }
+      }
+    }
+
+    &__burger-sticks {
+      position: relative;
+      width: 20px;
+      height: 2px;
+      background-color: #FFFFFF;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 20px;
+        height: 2px;
+        background-color: #FFFFFF;
+      }
+
+      &::before {
+        top: -8px;
+      }
+
+      &::after {
+        width: 10px;
+        bottom: -8px;
+      }
+
+    }
+
+  }
+}

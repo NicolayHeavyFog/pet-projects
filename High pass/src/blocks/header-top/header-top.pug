@@ -1,0 +1,22 @@
+.header-top
+  .__container
+    .__logo
+      svg.__logo-svg
+        use(xlink:href="images/sprite.svg#LogoEntire")
+      h1.__title High pass
+    ul.__links-list
+      - var links = [{link: 'О студии', to: '#about-us'}, {link: 'Наши проекты', to: '#our-projects'}, {link: 'Услуги', to: '#services'}, {link: 'Мастер-классы', to: '#master-class'}, {link: 'Контакты', to: '#contacts'}]
+      each link in links
+        li.__links-item
+          a.__link(href=link.to)=link.link
+    ul.__contacts-list
+      - var contacts = [{to: '#instagram', idSvg: 'inst'},{to: '#facebook', idSvg: 'fb'},{to: '#vk.com', idSvg: 'vk'}]
+      each contact in contacts
+        li.__contacts-item
+          a.__contact(href=contact.to)
+            svg.__contacts-svg
+              use(xlink:href=`images/sprite.svg#${contact.idSvg}`)
+    form.__search
+      button.__search-button
+        svg.__search-svg
+          use(xlink:href="images/sprite.svg#search")

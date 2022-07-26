@@ -1,0 +1,9 @@
+.idea
+.DS_store
+.DS_Store
+
+/dist
+/node_modules
+
+package-lock.json
+stats.json

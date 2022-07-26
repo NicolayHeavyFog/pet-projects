@@ -1,0 +1,273 @@
+@import "_variables.scss";
+
+@mixin container {
+  position: relative;
+  max-width: 1352px;
+  margin: 0 auto;
+  padding-right: 31px;
+  padding-left: 31px;
+
+  @media (max-width: 940px) {
+    padding-right: 27px;
+    padding-left: 27px;
+  }
+
+  @media (max-width: 700px) {
+    padding-right: 21px;
+    padding-left: 21px;
+  }
+}
+
+@mixin container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@mixin fontTTFirsNeue {
+  font-family: 'TTFirsNeue', 'Roboto', Arial, sans-serif;
+}
+
+@mixin title {
+  margin: 0;
+  font-weight: 700;
+
+  @media (max-width: 700px) {
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: .4px;
+  }
+}
+
+@mixin p {
+  margin: 0;
+}
+
+@mixin button {
+  position: relative;
+  display: inline-block;
+  min-width: 30px;
+  max-width: 200px;
+  width: fit-content;
+  min-height: 50px;
+  padding: 16px 22px;
+  border: none;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  cursor: pointer;
+  transition: background-color .2s ease-in-out;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 3px solid transparent;
+    transition: border .2s ease-in-out;
+  }
+
+  @media (max-width: 700px) {
+    min-height: 40px;
+    padding: 12px 21px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+@mixin buttonPrimary {
+  @include button;
+  background-color: $colorPrimary;
+  color: #FFFFFF;
+
+  &:hover {
+    &::after {
+      border: 3px solid $colorStrongPrimary;
+    }
+  }
+
+  &:focus {
+    background-color: $colorDarkPrimary;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $colorStrongPrimary;
+  }
+}
+
+@mixin buttonSecondary {
+  @include button;
+  background-color: $colorSecondary;
+  color: #223444;
+
+  &:hover {
+    background-color: $colorPrimary;
+  }
+
+  &:focus {
+    &::after {
+      border-color: $colorPrimary;
+    }
+    background-color: $colorDarkPrimary;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $colorStrongPrimary;
+    &::after {
+      border-color: $colorStrongPrimary;
+    }
+  }
+}
+
+@mixin transparentButton {
+  @include buttonSecondary;
+  background-color: transparent;
+  color: #FFFFFF;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 3px solid $colorPrimary;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+@mixin tag {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  display: inline-block;
+  min-width: 56px;
+  max-height: 30px;
+  padding: 7px 14px;
+  background-color: #333333;
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+
+  @media (max-width: 700px) {
+    right: 5px;
+    top: 6px;
+    min-width: 52px;
+    padding: 4px 7px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+@mixin conditionLink {
+  &:hover {
+    fill: $colorPrimary;
+  }
+
+  &:focus {
+    outline: none;
+    fill: $colorDarkPrimary;
+  }
+
+  &:active {
+    fill: $colorStrongPrimary;
+  }
+}
+
+@mixin ghost {
+  &:before {
+    content: '';
+    position:  absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(red, .3);
+    pointer-events: none;
+  }
+}
+
+@mixin inputPseudoClass {
+  transition: border-color .2s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border-color: #FF6E30;
+  }
+
+  &:hover {
+    &::placeholder {
+      color: #FF6E30;
+    }
+  }
+
+  &::placeholder {
+    transition: color .2s ease-in-out;
+  }
+}
+
+@mixin our-projects-card {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  grid-row: span 1;
+
+  &__decorate-pic {
+    margin-bottom: 18px;
+  }
+
+  &__date {
+    justify-self: flex-end;
+    margin-top: auto;
+    padding-left: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6667 1.75004H11.0834V0.583374H9.91675V1.75004H4.08342V0.583374H2.91675V1.75004H2.33341C1.69175 1.75004 1.16675 2.27504 1.16675 2.91671V12.25C1.16675 12.8917 1.69175 13.4167 2.33341 13.4167H11.6667C12.3084 13.4167 12.8334 12.8917 12.8334 12.25V2.91671C12.8334 2.27504 12.3084 1.75004 11.6667 1.75004ZM11.6667 12.25H2.33341V4.66671H11.6667V12.25Z' fill='%23999999'/%3E%3C/svg%3E%0A");
+    background-position: left 32%;
+    background-repeat: no-repeat;
+    color: #999999;
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  &__description {
+    @include p;
+    color: $colorStrongDark;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &__tag {
+    @include tag;
+    top: 7px;
+    right: 7px;
+  }
+
+}
+
+@mixin toggleSlideButtons {
+  min-height: 30px;
+  padding: 5px 2px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}

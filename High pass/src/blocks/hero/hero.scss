@@ -1,0 +1,240 @@
+@import "../../styles/_mixin.scss";
+@import "../../styles/_variables.scss";
+
+.hero {
+
+  &__container {
+    @include container;
+    padding-top: 40px;
+    padding-bottom: 68px;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: calc(50% - 15px) repeat(2, minmax(124px, 300px));
+    grid-template-rows: 13px 300px minmax(133px, 257px);
+    height: 100%;
+  }
+
+  &__main-card {
+    position: relative;
+    display: flex;
+    grid-row: span 3;
+    padding: 60px;
+    background-image: url("images/mainPic.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+  }
+
+  &__offer {
+    align-self: flex-end;
+    margin-top: auto;
+  }
+
+  &__offer-author {
+    margin-bottom: 3px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+  }
+
+  &__offer-title {
+    @include title;
+    margin-bottom: 18px;
+    @include fontTTFirsNeue;
+    color: #FFFFFF;
+    font-size: 37px;
+    line-height: 37px;
+  }
+
+  &__offer-description {
+    @include buttonPrimary;
+  }
+
+  &__offer-tag {
+    @include tag;
+  }
+
+  &__card-description {
+    grid-column: span 2;
+    @include title;
+    @include fontTTFirsNeue;
+    color: $colorStrongDark;
+    font-size: 25px;
+    line-height: 12px;
+  }
+
+  &__sub-card {
+    display: block;
+    width: 100%;
+    height: 100%;
+    align-self: end;
+    grid-column: span 2;
+    background-size: cover;
+    background-position: 50%;
+    &--background {
+      background-image: url("images/mediumPic.jpg");
+    }
+  }
+
+  &__little-card {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-row: span 1;
+    background-size: cover;
+    background-position: 50%;
+    &--background-one {
+      background-image: url("images/littlePic1.jpg");
+    }
+
+    &--background-two {
+      background-image: url("images/littlePic2.jpg");
+    }
+  }
+
+  @media (max-width: 1330px) {
+
+    &__container {
+      padding-top: 33px;
+    }
+
+    &__grid {
+      grid-template-rows: 45px 332px 186px;
+    }
+
+    &__main-card {
+      padding: 30px;
+      background-image: url("images/mainPic-1024.jpg");
+    }
+
+    &__offer-author {
+      margin-bottom: 9px;
+    }
+
+    &__offer-title {
+      font-size: 35px;
+      line-height: 35px;
+    }
+
+    &__card-description {
+      line-height: 25px;
+    }
+
+    &__sub-card {
+      &--background {
+        background-image: url("images/mediumPic-1024.jpg");
+      }
+    }
+
+    &__little-card {
+
+      &--background-one {
+        background-image: url("images/littlePic1-1024.jpg");
+      }
+
+      &--background-two {
+        background-image: url("images/littlePic2-1024.jpg");
+      }
+    }
+  }
+
+  @media (max-width: 940px) {
+
+    &__container {
+      padding-top: 36px;
+    }
+
+    &__grid {
+      grid-template-rows: 31px 228px 133px;
+    }
+
+    &__card-description {
+      font-size: 22px;
+      line-height: 21px;
+      letter-spacing: .5px;
+    }
+
+    &__main-card {
+      padding: 30px;
+      background-image: url("images/mainPic-768.jpg");
+    }
+
+    &__offer-author {
+      margin-bottom: 12px;
+    }
+
+    &__offer-title {
+      font-size: 35px;
+      line-height: 33px;
+    }
+
+    &__sub-card {
+      &--background {
+        background-image: url("images/mediumPic-768.jpg");
+      }
+    }
+  }
+
+  @media (max-width: 760px) {
+    &__grid {
+      grid-template-rows: 40px 228px 133px;
+    }
+  }
+
+  @media (max-width: 700px) {
+
+    &__container {
+      padding-top: 30px;
+      padding-bottom: 50px;
+    }
+
+    &__grid {
+      display: flex;
+      flex-wrap: wrap;
+      grid-template-rows: none;
+    }
+
+    &__main-card {
+      width: 100%;
+      height: 422px;
+      background-image: url("images/mainPic-320.jpg");
+    }
+
+    &__offer-author {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    &__offer-title {
+      margin-bottom: 14px;
+      font-size: 24px;
+      line-height: 26px;
+      letter-spacing: .3px;
+    }
+
+    &__sub-card {
+      width: 100%;
+      height: 186px;
+    }
+
+    &__little-card {
+      width: calc((100% / 2) - 15px);
+      height: 105px;
+    }
+
+    &__card-description {
+      margin-bottom: -16px;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.4px;
+    }
+
+  }
+
+}
+

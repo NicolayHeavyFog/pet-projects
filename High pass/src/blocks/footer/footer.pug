@@ -1,0 +1,21 @@
+footer.footer
+  .__container-top
+    .__left-part
+      .__logo
+        svg.__logo-svg
+          use(xlink:href="images/sprite.svg#logoSVG")
+        span.__logo-name High pass
+      span.__logo-description Фотостудия High pass® 2018-2020
+    .__center-part
+      p.__quote Которая из моих фотографий самая любимая? Та, которую я собираюсь снять завтра.
+      span.__author © Имоджен Каннингем
+    .__right-part
+      span.__contacts Больше интересного:
+      ul.__contacts-list
+        - var contacts = [{to: '#instagram', idSvg: 'inst'},{to: '#facebook', idSvg: 'fb'},{to: '#vk.com', idSvg: 'vk'}]
+        each contact in contacts
+          li.__contacts-item
+            a.__contact(href=contact.to)
+              svg.__contacts-svg
+                use(xlink:href=`images/sprite.svg#${contact.idSvg}`)
+  .__container-bottom

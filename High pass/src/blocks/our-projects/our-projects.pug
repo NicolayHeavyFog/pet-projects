@@ -1,0 +1,46 @@
+section.our-projects
+  .__container
+    h2.__title Наши проекты
+    ul.__projects
+      - var smallCardsProducts = [{describe: 'Синтетически, смешаны с не уникальными данными до степени...', date : '16 июня', tag : 'пейзаж'}, {describe: 'В своём стремлении улучшить опыт мы упускаем, что явные...', date : '28 мая', tag : 'портрет'}, {describe: 'Равным образом, высокое качество позиционных...', date : '14 мая', tag : 'предмет'}]
+      - var mediumCardsProducts = [{describe: 'Как принято считать, многие известные личности и по сей день остаются уделом либералов...', date : '9 марта', tag : 'ретушь'}, {describe: 'С учётом сложившейся международной обстановки, новая модель организационной...', date : '1 марта', tag : 'портрет'}]
+      - var largeCardsProducts = [{title: 'Cемантический разбор', describe: 'В рамках спецификации современных стандартов, интерактивные прототипы', date : '9 апреля', tag : 'fuji'}, {title: 'Забвение', describe: 'Играет важную роль в формировании глубокомысленных рассуждений', date : '20 марта', tag : 'проектзабвение'}]
+
+      each smallCard, index in smallCardsProducts
+        li.card-tiny
+          picture
+            source(media='(max-width: 700px)' type='image/jpg' srcset=`images/productsSmallCard${index + 1}-320.jpg`)
+            source(media='(max-width: 940px)' type='image/jpg' srcset=`images/productsSmallCard${index + 1}-768.jpg`)
+            source(media='(max-width: 1150px)' type='image/jpg' srcset=`images/productsSmallCard${index + 1}-1024.jpg`)
+            img.__decorate-pic(src=`images/productsSmallCard${index + 1}.jpg` alt='Один из наших проектов')
+          p.__description=smallCard.describe
+          span.__date=smallCard.date
+          span.__tag='#' + smallCard.tag
+
+      each largeCard, index in largeCardsProducts
+        if index === 0
+          li.card-large(class=`card-large--background-${index + 1} card-large--margin-bottom`)
+            .__content
+              span.__date=largeCard.date
+              h3.__title=largeCard.title
+              p.__description=largeCard.describe
+              a.__details(href='') О проекте
+              span.__tag='#' + largeCard.tag
+        else
+          li.card-large(class=`card-large--background-${index + 1}`)
+            .__content
+              span.__date=largeCard.date
+              h3.__title=largeCard.title
+              p.__description=largeCard.describe
+              a.__details(href='') О проекте
+              span.__tag='#' + largeCard.tag
+
+      each mediumCard, index in mediumCardsProducts
+        li.card-medium
+          picture
+            source(media='(max-width: 700px)' type='image/jpg' srcset=`images/productsMediumCard${index + 1}-320.jpg`)
+            source(media='(max-width: 1150px)' type='image/jpg' srcset=`images/productsMediumCard${index + 1}-1024.jpg`)
+            img.__decorate-pic(src=`images/productsMediumCard${index + 1}.jpg` alt='Один из наших проектов')
+          p.__description=mediumCard.describe
+          span.__date=mediumCard.date
+          span.__tag='#' + mediumCard.tag

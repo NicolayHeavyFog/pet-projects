@@ -1,0 +1,52 @@
+@import "../../styles/_mixin.scss";
+@import "../../styles/_variables.scss";
+
+.card-tiny {
+  @include our-projects-card;
+  grid-column: span 2;
+
+  &__tag {
+    height: 28px;
+  }
+
+
+  @media(max-width: 1150px) {
+
+    &:nth-child(3) {
+      grid-column-start: 5;
+      grid-column-end: 9;
+    }
+  }
+
+  @media(max-width: 940px) {
+
+    &:nth-child(3) {
+      grid-column-start: unset;
+      grid-column-end: unset;
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 700px) {
+
+    & {
+      grid-column: span 1;
+      grid-row: span 1;
+      grid-column-start: 1;
+    }
+
+    &:nth-child(3) {
+      grid-column: span 1;
+      grid-row: span 1;
+      grid-column-start: 1;
+    }
+
+    &__tag {
+      height: 22px;
+      //padding: 3px 14px;
+      padding-right: 14px;
+      padding-left: 14px;
+    }
+
+  }
+}

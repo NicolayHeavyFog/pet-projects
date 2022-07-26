@@ -1,0 +1,139 @@
+@import "../../styles/_mixin.scss";
+@import "../../styles/_variables.scss";
+
+.master-class {
+  background-color: $colorStrongDark;
+
+  &__container {
+    @include container;
+    padding-top: 42px;
+    padding-bottom: 70px;
+  }
+
+  &__title {
+    @include title;
+    margin-bottom: 15px;
+    @include fontTTFirsNeue;
+    font-size: 25px;
+    color: #FFFFFF;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  &__left-side {
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    display: flex;
+  }
+
+  &__content-event {
+    display: flex;
+    flex-direction: column;
+    max-width: 410px;
+    padding: 15px 0 20px;
+  }
+
+  &__link-event {
+    margin-right: 30px;
+  }
+
+  &__decoration-pic {
+    margin-right: 30px;
+  }
+
+  &__date-event {
+    margin-bottom: 7px;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  &__day-event {
+    margin-right: 18px;
+    padding-left: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6667 1.75004H11.0834V0.583374H9.91675V1.75004H4.08342V0.583374H2.91675V1.75004H2.33341C1.69175 1.75004 1.16675 2.27504 1.16675 2.91671V12.25C1.16675 12.8917 1.69175 13.4167 2.33341 13.4167H11.6667C12.3084 13.4167 12.8334 12.8917 12.8334 12.25V2.91671C12.8334 2.27504 12.3084 1.75004 11.6667 1.75004ZM11.6667 12.25H2.33341V4.66671H11.6667V12.25Z' fill='%23FFFFFF'/%3E%3C/svg%3E%0A");
+    background-position: center left;
+    background-repeat: no-repeat;
+  }
+
+  &__time-event {
+    padding-left: 17px;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.00008 1.16675C3.79175 1.16675 1.16675 3.79175 1.16675 7.00008C1.16675 10.2084 3.79175 12.8334 7.00008 12.8334C10.2084 12.8334 12.8334 10.2084 12.8334 7.00008C12.8334 3.79175 10.2084 1.16675 7.00008 1.16675ZM9.45008 9.45008L6.41675 7.58342V4.08342H7.29175V7.11675L9.91675 8.69175L9.45008 9.45008Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center left;
+    background-repeat: no-repeat;
+  }
+
+  &__title-event {
+    @include title;
+    margin-bottom: 5px;
+    font-weight: 400;
+    @include fontTTFirsNeue;
+    color: #FFFFFF;
+    font-size: 24px;
+    line-height: 20px;
+  }
+
+  &__description-event {
+    @include p;
+    color: $grey;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  &__button-more {
+    @include buttonPrimary;
+    justify-self: flex-end;
+    margin-top: auto;
+  }
+
+  &__right-side {
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 5;
+
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    row-gap: 30px;
+  }
+
+  &__event {
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    display: flex;
+    //align-items: center;
+  }
+
+  &__link-event {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  &__right-side &__decoration-pic {
+    width: unset;
+    margin: 0;
+  }
+
+  &__right-side &__content-event {
+    padding: 0;
+    padding-top: 11px;
+  }
+
+  &__right-side &__date-event {
+    margin: 0;
+    line-height: 21px;
+  }
+
+  &__right-side &__title-event {
+    margin: 0;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}

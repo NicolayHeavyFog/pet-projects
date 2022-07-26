@@ -1,0 +1,30 @@
+@import "../../styles/_mixin.scss";
+@import "../../styles/_variables.scss";
+
+
+.card-medium {
+  @include our-projects-card;
+  grid-column: span 3;
+
+  @media(max-width: 1150px) {
+
+  }
+
+  @media (max-width: 700px) {
+    grid-column: span 1;
+    grid-column-start: 1;
+
+    &:nth-child(even) {
+      margin-top: 6px;
+    }
+
+    &:nth-child(odd) {
+      margin-top: 7px;
+    }
+
+    &__date {
+      line-height: 13px;
+    }
+  }
+
+}

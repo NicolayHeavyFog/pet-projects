@@ -1,0 +1,27 @@
+section.master-class
+  .__container
+    h2.__title Мастер-классы
+    .__grid
+
+      .__left-side
+        img.__decoration-pic(aria-hidden=true src='images/master-classBigPic.jpg')
+        .__content-event
+          .__date-event
+            span.__day-event 8 июня
+            span.__time-event 15:00
+          h3.__title-event Пленка для начинающих
+          p.__description-event Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: семантический разбор внешних противодействий, в своём классическом представлении.
+          a.__button-more Узнать больше
+
+      ul.__right-side
+        - var events = [{day: '9 июня', time: '15:00', title: 'Ретушь. Продвинутый уровень'}, {day: '10 июня', time: '16:00', title: 'Портретная съемка. Свет'}, {day: '11 июня', time: '16:00', title: 'Макросъемка. Проблемы и нюансы'}, {day: '13 июня', time: '18:00', title: 'Творческая ретушь для начинающих'}]
+        each event, index in events
+          li.__event
+            a(href="#").__link-event
+              img.__decoration-pic(aria-hidden=true src=`images/master-classTinyPic${index + 1}.jpg`)
+            .__content-event
+              .__date-event
+                span.__day-event=event.day
+                span.__time-event=event.time
+              h3.__title-event
+                a(href="#").__title-link=event.title

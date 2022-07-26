@@ -1,0 +1,63 @@
+section.service
+  .__container
+    .__header
+      h2.__title Услуги студии
+      .__switcher-slides
+        .__switcher-wrapper
+          .__switcher-button.-active Основной перечень
+          .__switcher-button Услуги по ретуши
+        .__switcher-track
+          .__switcher-stick.-left
+
+    .__card-offer
+      .__card-header
+        span.__card-title Акция!
+        span.__card-subtitle Только в июне
+      span.__card-price -20%
+      span.__card-description 1,5 часа портретной съемки + ретушь 10 снимков
+      a.__card-more Узнать больше
+
+    .__medium-cards
+      ul.__medium-wrapper
+        li.__slide
+          ul.__cards-list
+            - var serviceCardsMedium = [{title : 'Высокий уровень вовлечения', describe: 'Высокий уровень вовлечения представителей целевой аудитории является четким доказательством...'}, {title: 'Диаграммы связей', describe: 'Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий влечет за собой процесс.'}, {title: 'Высокотехнологичная концепция', describe: 'В частности, убеждённость некоторых оппонентов способствует подготовке и реализации анализа существующих...'}, {title: 'Сложившаяся структура организации', describe: 'Кстати,  сторонники тоталитаризма в науке будут объединены в целые кластеры себе подобных.'}, {title: 'Внутренние резервы и ресурсы', describe: 'Банальные, но неопровержимые выводы, а также ключевые особенности структуры проекта являются только методом.'}]
+            each mediumCard, index in serviceCardsMedium
+              li.__card-medium
+                picture.__decoration-set
+                  source(media='(max-width: 1300px)' type='image/jpg' srcset=`images/serviceMediumPic${index + 1}-1024.jpg`)
+                  img.__decoration-pic(aria-hidden=true src=`images/serviceMediumPic${index + 1}.jpg`)
+                .__card-content
+                  h3.__card-title=mediumCard.title
+                  p.__card-description=mediumCard.describe
+                  a.__card-more Подробнее
+        li.__slide
+          ul.__cards-list.-size-less
+            - var serviceCardsMedium = [{title : 'Принимая во внимание показатели'}, {title: 'Таким образом, выбранный нами...'}, {title: 'Также как высокое качество...'}, {title: 'Безусловно, семантический разбор...'}, {title: 'Внезапно, предприниматели в интернете...'}, {title: 'Есть над чем подумать: активные...'}, {title: 'Сделанные на базе аналитики выводы...'}, {title: 'Как принято считать, сторонники...'}, {title: 'Задача организации, в особенности...'}, {title: 'Активно развивающиеся страны...'}]
+            each mediumCard, index in serviceCardsMedium
+              li.__card-medium.-size-less
+                picture.__decoration-set
+                  source(media='(max-width: 1300px)' type='image/jpg' srcset=`images/serviceMediumPic${index + 6}-1024.jpg`)
+                  img.__decoration-pic(aria-hidden=true src=`images/serviceMediumPic${index + 6}.jpg`)
+                .__card-content
+                  h3.__card-title.-size-less=mediumCard.title
+                  a.__card-more Подробнее
+    .__tiny-cards
+      h3.__title Выполненные работы
+      ul.__tiny-wrapper
+        li.__slide
+          ul.__cards-list
+            - for (var x = 1; x <= 16; x++)
+              li.__card-tiny
+                a(href='#')
+                  picture.__decoration-set
+                    source(media='(max-width: 1330px)' type='image/jpg' srcset=`images/serviceTinyPic${x}-1024.jpg`)
+                    img(src=`images/serviceTinyPic${x}.jpg` alt='Пример выполненной работы')
+        li.__slide
+          ul.__cards-list
+            - for (var x = 17; x <= 32; x++)
+              li.__card-tiny
+                a(href='#')
+                  picture.__decoration-set
+                    source(media='(max-width: 1330px)' type='image/jpg' srcset=`images/serviceTinyPic${x}-1024.jpg`)
+                    img(src=`images/serviceTinyPic${x}.jpg` alt='Пример выполненной работы')
