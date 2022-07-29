@@ -21,13 +21,13 @@
 
     &:first-child {
       &::marker {
-        content: url('assets/images/service-item-1.svg');
+        content: url('../assets/images/service-item-1.svg');
       }
     }
 
     &:nth-child(2) {
       &::marker {
-        content: url('assets/images/service-item-2.svg');
+        content: url('../assets/images/service-item-2.svg');
       }
 
       margin-bottom: 6px;
@@ -35,7 +35,7 @@
 
     &:nth-child(3) {
       &::marker {
-        content: url('assets/images/service-item-3.svg');
+        content: url('../assets/images/service-item-3.svg');
       }
 
       margin-bottom: -5px;

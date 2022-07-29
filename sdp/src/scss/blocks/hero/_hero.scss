@@ -56,29 +56,29 @@
     }
 
     &--background-1 {
-      background-image: url('./assets/images/1920/hero-1-1920.webp');
+      background-image: url('../assets/images/1920/hero-1-1920.webp');
       background-image: image-set(
-        url('./assets/images/1920/hero-1-1920.webp') type('image/webp'),
-        url('./assets/images/1920/hero-1-1920.avif') type('image/avif'),
-        url('./assets/images/1920/hero-1-1920.jpg') type('image/jpg')
+        url('../assets/images/1920/hero-1-1920.webp') type('image/webp'),
+        url('../assets/images/1920/hero-1-1920.avif') type('image/avif'),
+        url('../assets/images/1920/hero-1-1920.jpg') type('image/jpg')
       );
     }
 
     &--background-2 {
-      background-image: url('./assets/images/1920/hero-2-1920.webp');
+      background-image: url('../assets/images/1920/hero-2-1920.webp');
       background-image: image-set(
-        url('./assets/images/1920/hero-2-1920.webp') type('image/webp'),
-        url('./assets/images/1920/hero-2-1920.avif') type('image/avif'),
-        url('./assets/images/1920/hero-2-1920.jpg') type('image/jpeg')
+        url('../assets/images/1920/hero-2-1920.webp') type('image/webp'),
+        url('../assets/images/1920/hero-2-1920.avif') type('image/avif'),
+        url('../assets/images/1920/hero-2-1920.jpg') type('image/jpeg')
       );
     }
 
     &--background-3 {
-      background-image: url('./assets/images/1920/hero-3-1920.webp');
+      background-image: url('../assets/images/1920/hero-3-1920.webp');
       background-image: image-set(
-        url('./assets/images/1920/hero-3-1920.webp') type('image/webp'),
-        url('./assets/images/1920/hero-3-1920.avif') type('image/avif'),
-        url('./assets/images/1920/hero-3-1920.jpg') type('image/jpeg')
+        url('../assets/images/1920/hero-3-1920.webp') type('image/webp'),
+        url('../assets/images/1920/hero-3-1920.avif') type('image/avif'),
+        url('../assets/images/1920/hero-3-1920.jpg') type('image/jpeg')
       );
     }
   }
@@ -141,29 +141,29 @@
   @media (max-width: 1160px) {
     &__slide {
       &--background-1 {
-        background-image: url('./assets/images/1024/hero-1-1024.webp');
+        background-image: url('../assets/images/1024/hero-1-1024.webp');
         background-image: image-set(
-          url('./assets/images/1024/hero-1-1024.webp') type('image/webp'),
-          url('./assets/images/1024/hero-1-1024.avif') type('image/avif'),
-          url('./assets/images/1024/hero-1-1024.jpg') type('image/jpeg')
+          url('../assets/images/1024/hero-1-1024.webp') type('image/webp'),
+          url('../assets/images/1024/hero-1-1024.avif') type('image/avif'),
+          url('../assets/images/1024/hero-1-1024.jpg') type('image/jpeg')
         );
       }
 
       &--background-2 {
-        background-image: url('./assets/images/1024/hero-2-1024.webp');
+        background-image: url('../assets/images/1024/hero-2-1024.webp');
         background-image: image-set(
-          url('./assets/images/1024/hero-2-1024.webp') type('image/webp'),
-          url('./assets/images/1024/hero-2-1024.avif') type('image/avif'),
-          url('./assets/images/1024/hero-2-1024.jpg') type('image/jpeg')
+          url('../assets/images/1024/hero-2-1024.webp') type('image/webp'),
+          url('../assets/images/1024/hero-2-1024.avif') type('image/avif'),
+          url('../assets/images/1024/hero-2-1024.jpg') type('image/jpeg')
         );
       }
 
       &--background-3 {
-        background-image: url('./assets/images/1024/hero-3-1024.webp');
+        background-image: url('../assets/images/1024/hero-3-1024.webp');
         background-image: image-set(
-          url('./assets/images/1024/hero-3-1024.webp') type('image/webp'),
-          url('./assets/images/1024/hero-3-1024.avif') type('image/avif'),
-          url('./assets/images/1024/hero-3-1024.jpg') type('image/jpeg')
+          url('../assets/images/1024/hero-3-1024.webp') type('image/webp'),
+          url('../assets/images/1024/hero-3-1024.avif') type('image/avif'),
+          url('../assets/images/1024/hero-3-1024.jpg') type('image/jpeg')
         );
       }
     }
@@ -172,29 +172,29 @@
   @media (max-width: 900px) {
     &__slide {
       &--background-1 {
-        background-image: url('./assets/images/768/hero-1-768.webp');
+        background-image: url('../assets/images/768/hero-1-768.webp');
         background-image: image-set(
-          url('./assets/images/768/hero-1-768.webp') type('image/webp'),
-          url('./assets/images/768/hero-1-768.avif') type('image/avif'),
-          url('./assets/images/768/hero-1-768.jpg') type('image/jpeg')
+          url('../assets/images/768/hero-1-768.webp') type('image/webp'),
+          url('../assets/images/768/hero-1-768.avif') type('image/avif'),
+          url('../assets/images/768/hero-1-768.jpg') type('image/jpeg')
         );
       }
 
       &--background-2 {
-        background-image: url('./assets/images/768/hero-2-768.webp');
+        background-image: url('../assets/images/768/hero-2-768.webp');
         background-image: image-set(
-          url('./assets/images/768/hero-2-768.webp') type('image/webp'),
-          url('./assets/images/768/hero-2-768.avif') type('image/avif'),
-          url('./assets/images/768/hero-2-768.jpg') type('image/jpeg')
+          url('../assets/images/768/hero-2-768.webp') type('image/webp'),
+          url('../assets/images/768/hero-2-768.avif') type('image/avif'),
+          url('../assets/images/768/hero-2-768.jpg') type('image/jpeg')
         );
       }
 
       &--background-3 {
-        background-image: url('./assets/images/768/hero-3-768.webp');
+        background-image: url('../assets/images/768/hero-3-768.webp');
         background-image: image-set(
-          url('./assets/images/768/hero-3-768.webp') type('image/webp'),
-          url('./assets/images/768/hero-3-768.avif') type('image/avif'),
-          url('./assets/images/768/hero-3-768.jpg') type('image/jpeg')
+          url('../assets/images/768/hero-3-768.webp') type('image/webp'),
+          url('../assets/images/768/hero-3-768.avif') type('image/avif'),
+          url('../assets/images/768/hero-3-768.jpg') type('image/jpeg')
         );
       }
     }
@@ -245,29 +245,29 @@
       }
 
       &--background-1 {
-        background-image: url('./assets/images/320/hero-1-320.webp');
+        background-image: url('../assets/images/320/hero-1-320.webp');
         background-image: image-set(
-          url('./assets/images/320/hero-1-320.webp') type('image/webp'),
-          url('./assets/images/320/hero-1-320.avif') type('image/avif'),
-          url('./assets/images/320/hero-1-320.jpg') type('image/jpeg')
+          url('../assets/images/320/hero-1-320.webp') type('image/webp'),
+          url('../assets/images/320/hero-1-320.avif') type('image/avif'),
+          url('../assets/images/320/hero-1-320.jpg') type('image/jpeg')
         );
       }
 
       &--background-2 {
-        background-image: url('./assets/images/320/hero-2-320.webp');
+        background-image: url('../assets/images/320/hero-2-320.webp');
         background-image: image-set(
-          url('./assets/images/320/hero-2-320.webp') type('image/webp'),
-          url('./assets/images/320/hero-2-320.avif') type('image/avif'),
-          url('./assets/images/320/hero-2-320.jpg') type('image/jpeg')
+          url('../assets/images/320/hero-2-320.webp') type('image/webp'),
+          url('../assets/images/320/hero-2-320.avif') type('image/avif'),
+          url('../assets/images/320/hero-2-320.jpg') type('image/jpeg')
         );
       }
 
       &--background-3 {
-        background-image: url('./assets/images/320/hero-3-320.webp');
+        background-image: url('../assets/images/320/hero-3-320.webp');
         background-image: image-set(
-          url('./assets/images/320/hero-3-320.webp') type('image/webp'),
-          url('./assets/images/320/hero-3-320.avif') type('image/avif'),
-          url('./assets/images/320/hero-3-320.jpg') type('image/jpeg')
+          url('../assets/images/320/hero-3-320.webp') type('image/webp'),
+          url('../assets/images/320/hero-3-320.avif') type('image/avif'),
+          url('../assets/images/320/hero-3-320.jpg') type('image/jpeg')
         );
       }
 

@@ -4,6 +4,7 @@
 .bottom-header {
   @include container;
 
+  z-index: 7;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

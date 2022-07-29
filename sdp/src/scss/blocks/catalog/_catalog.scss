@@ -15,6 +15,7 @@
   }
 
   &__filter {
+    z-index: 5;
     display: flex;
     flex-direction: column;
     grid-row: span 4;
@@ -482,11 +483,11 @@
 
   &__image {
     height: 53%;
-    background-image: url('./assets/images/1920/banner-catalog-1920.webp');
+    background-image: url('../assets/images/1920/banner-catalog-1920.webp');
     background-image: image-set(
-      url('./assets/images/1920/banner-catalog-1920.webp') type('image/webp'),
-      url('./assets/images/1920/banner-catalog-1920.avif') type('image/avif'),
-      url('./assets/images/1920/banner-catalog-1920.jpg') type('image/jpeg')
+      url('../assets/images/1920/banner-catalog-1920.webp') type('image/webp'),
+      url('../assets/images/1920/banner-catalog-1920.avif') type('image/avif'),
+      url('../assets/images/1920/banner-catalog-1920.jpg') type('image/jpeg')
     );
     background-size: cover;
     border-top-left-radius: 10px;

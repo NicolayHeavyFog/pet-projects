@@ -1,14 +1,8 @@
-@import '../../mixin';
-@import '../../variables';
-
 .bottom-select {
   position: relative;
   z-index: 5;
   display: inline-block;
   width: 27%;
-
-  // min-width: 189px;
-  // min-width: 179px;
   min-width: 167px;
   height: 100%;
 

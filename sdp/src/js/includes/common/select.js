@@ -32,7 +32,7 @@ export default class Select {
     this.innerSelect.setAttribute('role', 'listbox');
     this.innerSelect.setAttribute('aria-haspopup', true);
     this.innerSelect.setAttribute('aria-expanded', false);
-    this.innerSelect.setAttribute('aria-label', this.ariaLabel); // ????
+    this.innerSelect.setAttribute('aria-label', this.ariaLabel);
 
     this.selectedItem = document.createElement('span');
     if (this.placeholder) {
@@ -42,8 +42,10 @@ export default class Select {
       this.selectedItem.setAttribute('data-value', this.options[0].textContent);
     }
     this.selectedItem.classList.add(this.selectedItemClass);
+    this.selectedItem.setAttribute('role', 'listitem');
     this.optionsDropdown = document.createElement('div');
     this.optionsDropdown.classList.add(this.dropdownClass);
+    this.optionsDropdown.setAttribute('role', 'listbox');
     this.optionsDropdown.setAttribute('aria-expanded', false);
     this.optionsDropdown.classList.add(this.dropdownCloseClass);
 

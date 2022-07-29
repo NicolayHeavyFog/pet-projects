@@ -19,7 +19,7 @@
   &__right-side {
     width: 100%;
     height: 100%;
-    background-image: url('./assets/images/1920/form-decoration-1920.webp');
+    background-image: url('../assets/images/1920/form-decoration-1920.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -157,12 +157,11 @@
 
   @media (max-width: 1000px) {
     &__container {
-      // grid-template-columns: 1.5fr 0.5fr;
       grid-template-columns: 1.5fr 0.69fr;
     }
 
     &__right-side {
-      background-image: url('./assets/images/768/form-decoration-768.webp');
+      background-image: url('../assets/images/768/form-decoration-768.webp');
     }
   }
 

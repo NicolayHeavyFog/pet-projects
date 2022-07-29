@@ -3,6 +3,7 @@ import './includes/header/header-bottom-choices';
 import './includes/hero/hero-slider';
 import './includes/special-offers/special-offers-slider';
 import './includes/useful/useful-slider';
+// import './includes/form/form-tooltip';
 import LazyLoad from 'vanilla-lazyload';
 import showMoreHandler from './includes/high-rating/high-rating-show-more';
 import indexValidateHandler from './includes/form/form-validate';

@@ -2,11 +2,11 @@
 // @import '../../variables';
 
 .banner {
-  background-image: url('./assets/images/1920/banner-1920.webp');
+  background-image: url('../assets/images/1920/banner-1920.webp');
   background-image: image-set(
-    url('./assets/images/1920/banner-1920.webp') type('image/webp'),
-    url('./assets/images/1920/banner-1920.avif') type('image/avif'),
-    url('./assets/images/1920/banner-1920.jpg') type('image/jpeg')
+    url('../assets/images/1920/banner-1920.webp') type('image/webp'),
+    url('../assets/images/1920/banner-1920.avif') type('image/avif'),
+    url('../assets/images/1920/banner-1920.jpg') type('image/jpeg')
   );
   background-size: cover;
 
@@ -54,11 +54,11 @@
   }
 
   @media (max-width: 1160px) {
-    background-image: url('./assets/images/1024/banner-1024.webp');
+    background-image: url('../assets/images/1024/banner-1024.webp');
     background-image: image-set(
-      url('./assets/images/1024/banner-1024.webp') type('image/webp'),
-      url('./assets/images/1024/banner-1024.avif') type('image/avif'),
-      url('./assets/images/1024/banner-1024.jpg') type('image/jpeg')
+      url('../assets/images/1024/banner-1024.webp') type('image/webp'),
+      url('../assets/images/1024/banner-1024.avif') type('image/avif'),
+      url('../assets/images/1024/banner-1024.jpg') type('image/jpeg')
     );
 
     &__container {
@@ -74,11 +74,11 @@
   }
 
   @media (max-width: 1000px) {
-    background-image: url('./assets/images/768/banner-768.webp');
+    background-image: url('../assets/images/768/banner-768.webp');
     background-image: image-set(
-      url('./assets/images/768/banner-768.webp') type('image/webp'),
-      url('./assets/images/768/banner-768.avif') type('image/avif'),
-      url('./assets/images/768/banner-768.jpg') type('image/jpeg')
+      url('../assets/images/768/banner-768.webp') type('image/webp'),
+      url('../assets/images/768/banner-768.avif') type('image/avif'),
+      url('../assets/images/768/banner-768.jpg') type('image/jpeg')
     );
 
     &__container {
@@ -97,11 +97,11 @@
       height: 210px;
       margin-bottom: 32px;
       padding: 35px 12px;
-      background-image: url('./assets/images/320/banner-320.webp');
+      background-image: url('../assets/images/320/banner-320.webp');
       background-image: image-set(
-        url('./assets/images/320/banner-320.webp') type('image/webp'),
-        url('./assets/images/320/banner-320.avif') type('image/avif'),
-        url('./assets/images/320/banner-320.jpg') type('image/jpeg')
+        url('../assets/images/320/banner-320.webp') type('image/webp'),
+        url('../assets/images/320/banner-320.avif') type('image/avif'),
+        url('../assets/images/320/banner-320.jpg') type('image/jpeg')
       );
       background-repeat: no-repeat;
       background-size: cover;
