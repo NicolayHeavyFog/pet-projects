@@ -37,6 +37,7 @@ function removeModal() {
         if (element !== modalButtonCancel) element.remove();
       });
     }, 300);
+    document.body.style.overflow = 'unset';
   }
 }
 
@@ -83,7 +84,7 @@ function openModal() {
     setTimeout(() => {
       modal.classList.add('modal--open');
     }, 0);
-
+    document.body.style.overflow = 'hidden';
     document.addEventListener('click', surveillanceForModal);
   }
 }

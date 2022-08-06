@@ -37,6 +37,7 @@
     justify-content: center;
     width: 100%;
     height: 100%;
+    overflow-y: scroll;
   }
 
   &__win {
@@ -46,6 +47,9 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+
+    // margin-top: 400px;
+    // margin-bottom: 30px;
     background-color: #fff;
     border-radius: 10px;
     transform: translateY(-500px);

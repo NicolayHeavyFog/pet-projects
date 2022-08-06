@@ -17,7 +17,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 50px;
+    min-height: 50px;
   }
 
   &__left-side {
@@ -94,8 +94,12 @@
   &__right-side {
     display: inline-flex;
     align-items: center;
-    width: 55.5%;
+    width: 60%;
     height: 100%;
+
+    // width: 55.5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   &__nav {
@@ -108,17 +112,22 @@
 
   &__list {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
     list-style-type: none;
   }
 
   &__item {
+    width: fit-content;
     font-size: 14px;
     line-height: 14px;
+    text-align: end;
 
     &-link {
       @include link-state;
@@ -152,6 +161,8 @@
 
     &__right-side {
       min-height: 50px;
+      padding-top: 10px;
+      padding-bottom: 10px;
       background-color: $grey-light;
     }
 

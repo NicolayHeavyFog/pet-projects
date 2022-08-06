@@ -109,172 +109,80 @@ const html = () =>
     .pipe(dest('dist'))
     .pipe(browserSync.stream());
 
+function createScript(pathSrc, pathBuild, nameFile) {
+  return src(pathSrc)
+    .pipe(
+      webpackStream({
+        mode: isProd ? 'production' : 'development',
+        output: {
+          filename: nameFile,
+        },
+        module: {
+          rules: [
+            {
+              test: /\.m?js$/,
+              exclude: /node_modules/,
+              use: {
+                loader: 'babel-loader',
+                options: {
+                  presets: [
+                    [
+                      '@babel/preset-env',
+                      {
+                        targets: 'defaults',
+                      },
+                    ],
+                  ],
+                },
+              },
+            },
+          ],
+        },
+        devtool: !isProd ? 'source-map' : false,
+      })
+    )
+    .pipe(dest(pathBuild))
+    .pipe(browserSync.stream());
+}
 const scripts = () => {
-  src(path.srcIndexJs)
-    .pipe(
-      webpackStream({
-        mode: isProd ? 'production' : 'development',
-        output: {
-          filename: 'index.js',
-        },
-        module: {
-          rules: [
-            {
-              test: /\.m?js$/,
-              exclude: /node_modules/,
-              use: {
-                loader: 'babel-loader',
-                options: {
-                  presets: [
-                    [
-                      '@babel/preset-env',
-                      {
-                        targets: 'defaults',
-                      },
-                    ],
-                  ],
-                },
-              },
-            },
-          ],
-        },
-        devtool: !isProd ? 'source-map' : false,
-      })
-    )
-    .pipe(dest(path.buildJsFolder))
-    .pipe(browserSync.stream());
-  src(path.srcCardProduct)
-    .pipe(
-      webpackStream({
-        mode: isProd ? 'production' : 'development',
-        output: {
-          filename: 'card-product.js',
-        },
-        module: {
-          rules: [
-            {
-              test: /\.m?js$/,
-              exclude: /node_modules/,
-              use: {
-                loader: 'babel-loader',
-                options: {
-                  presets: [
-                    [
-                      '@babel/preset-env',
-                      {
-                        targets: 'defaults',
-                      },
-                    ],
-                  ],
-                },
-              },
-            },
-          ],
-        },
-        devtool: !isProd ? 'source-map' : false,
-      })
-    )
-    .pipe(dest(path.buildJsFolder))
-    .pipe(browserSync.stream());
-  src(path.srcCooperationJs)
-    .pipe(
-      webpackStream({
-        mode: isProd ? 'production' : 'development',
-        output: {
-          filename: 'cooperation.js',
-        },
-        module: {
-          rules: [
-            {
-              test: /\.m?js$/,
-              exclude: /node_modules/,
-              use: {
-                loader: 'babel-loader',
-                options: {
-                  presets: [
-                    [
-                      '@babel/preset-env',
-                      {
-                        targets: 'defaults',
-                      },
-                    ],
-                  ],
-                },
-              },
-            },
-          ],
-        },
-        devtool: !isProd ? 'source-map' : false,
-      })
-    )
-    .pipe(dest(path.buildJsFolder))
-    .pipe(browserSync.stream());
-  src(path.srcContactJs)
-    .pipe(
-      webpackStream({
-        mode: isProd ? 'production' : 'development',
-        output: {
-          filename: 'contact.js',
-        },
-        module: {
-          rules: [
-            {
-              test: /\.m?js$/,
-              exclude: /node_modules/,
-              use: {
-                loader: 'babel-loader',
-                options: {
-                  presets: [
-                    [
-                      '@babel/preset-env',
-                      {
-                        targets: 'defaults',
-                      },
-                    ],
-                  ],
-                },
-              },
-            },
-          ],
-        },
-        devtool: !isProd ? 'source-map' : false,
-      })
-    )
-    .pipe(dest(path.buildJsFolder))
-    .pipe(browserSync.stream());
-  return src(path.srcCatalogJs)
-    .pipe(
-      webpackStream({
-        mode: isProd ? 'production' : 'development',
-        output: {
-          filename: 'catalog.js',
-        },
-        module: {
-          rules: [
-            {
-              test: /\.m?js$/,
-              exclude: /node_modules/,
-              use: {
-                loader: 'babel-loader',
-                options: {
-                  presets: [
-                    [
-                      '@babel/preset-env',
-                      {
-                        targets: 'defaults',
-                      },
-                    ],
-                  ],
-                },
-              },
-            },
-          ],
-        },
-        devtool: !isProd ? 'source-map' : false,
-      })
-    )
-    .pipe(dest(path.buildJsFolder))
-    .pipe(browserSync.stream());
+  createScript(path.srcIndexJs, path.buildJsFolder, 'index.js');
+  createScript(path.srcCardProduct, path.buildJsFolder, 'card-product.js');
+  createScript(path.srcCooperationJs, path.buildJsFolder, 'cooperation.js');
+  createScript(path.srcContactJs, path.buildJsFolder, 'contact.js');
+  return createScript(path.srcCatalogJs, path.buildJsFolder, 'catalog.js');
+  // src(path.srcIndexJs)
+  //   .pipe(
+  //     webpackStream({
+  //       mode: isProd ? 'production' : 'development',
+  //       output: {
+  //         filename: 'index.js',
+  //       },
+  //       module: {
+  //         rules: [
+  //           {
+  //             test: /\.m?js$/,
+  //             exclude: /node_modules/,
+  //             use: {
+  //               loader: 'babel-loader',
+  //               options: {
+  //                 presets: [
+  //                   [
+  //                     '@babel/preset-env',
+  //                     {
+  //                       targets: 'defaults',
+  //                     },
+  //                   ],
+  //                 ],
+  //               },
+  //             },
+  //           },
+  //         ],
+  //       },
+  //       devtool: !isProd ? 'source-map' : false,
+  //     })
+  //   )
+  //   .pipe(dest(path.buildJsFolder))
+  //   .pipe(browserSync.stream());
 };
 const images = () =>
   src([`${path.srcImgFolder}.{jpg,jpeg,png,svg}`])
@@ -337,7 +245,7 @@ const svgSprites = () =>
 
 const resources = () => {
   src(`${srcFolder}/mail.php`).pipe(dest(buildFolder));
-  src(`${srcFolder}/phpmailer`).pipe(dest(buildFolder));
+  src(`${srcFolder}/phpmailer/**/**`).pipe(dest(`${buildFolder}/phpmailer`));
   src(`${srcFolder}/favicon.svg`).pipe(dest(buildFolder));
   return src(path.srcResources).pipe(dest(path.buildResources));
 };

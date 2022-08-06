@@ -89,50 +89,43 @@ const indexValidateHandler = function () {
       const { default: createCompleteMassage } = await import(
         './form-complete-massage'
       );
-      console.log('Validation passes and form submitted', event);
       const formData = new FormData(event.target);
-
-      console.log(...formData);
-
       const xhr = new XMLHttpRequest();
 
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
+            const massage = createCompleteMassage();
+            form.append(massage);
+            massage.classList.remove('form__form-complete--hide');
+            setTimeout(() => {
+              massage.classList.add('form__form-complete--active');
+            }, 0);
+            setTimeout(() => {
+              massage.classList.remove('form__form-complete--active');
+              setTimeout(() => {
+                massage.classList.add('form__form-complete--hide');
+                massage.remove();
+              }, 300);
+            }, 2000);
+
             console.log('Отправлено');
           }
         }
       };
 
-      // xhr.open('POST', './mail.php', true);
-      // xhr.send(formData);
+      xhr.open('POST', '../mail.php', true);
+      xhr.send(formData);
 
-      console.log(event.srcElement);
       const labels = Array.from(event.srcElement.children);
       labels.forEach((currentLabel) => {
-        console.log(currentLabel);
         const currentInput = currentLabel.querySelector(
           '.form__form-input--success'
         );
-        console.log(currentInput);
         if (currentInput)
           currentInput.classList.remove('form__form-input--success');
       });
 
-      const massage = createCompleteMassage();
-      form.append(massage);
-
-      massage.classList.remove('form__form-complete--hide');
-      setTimeout(() => {
-        massage.classList.add('form__form-complete--active');
-      }, 0);
-      setTimeout(() => {
-        massage.classList.remove('form__form-complete--active');
-        setTimeout(() => {
-          massage.classList.add('form__form-complete--hide');
-          massage.remove();
-        }, 300);
-      }, 2000);
       event.target.reset();
     });
 };
